@@ -178,3 +178,18 @@ git checkout blog
 git push origin blog
 ```
 
+
+
+#### 五、发布到github pages
+
+设置master分支为主页，则可通过`<https://yansheng836.github.io/>`访问
+
+
+
+如果有购买域名，可设置对应域名，或者直接在/source/添加`CNAME`文件(注意：该文件没有后缀)，内容为域名：
+
+```
+www.yansheng.xyz
+```
+
+成功后在setting中会显示可通过域名访问，而不是原来的路径。
