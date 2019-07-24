@@ -2,14 +2,19 @@
 
 menu:
   主页: /
-  随笔: /tags/随笔/
+  #随笔: /tags/随笔/
+  分类: /categories 
+  归档: /archives/index.html
+  标签: /tags
 
 # SubNav
 subnav:
-  github: "#"
-  weibo: "#"
-  rss: "#"
-  zhihu: "#"
+  github: "https://github.com/yansheng836"
+  gitee: "https://gitee.com/yansheng0083"
+  csdn: "https://blog.csdn.net/weixin_41287260"
+  #weibo: "https://www.yansheng.xyz"
+  #rss: "#"
+  zhihu: "https://www.zhihu.com/people/he-tang-yue-se-37-11/activities"
   #qq: "#"
   #weixin: "#"
   #jianshu: "#"
@@ -17,7 +22,7 @@ subnav:
   #segmentfault: "#"
   #bilibili: "#"
   #acfun: "#"
-  #mail: "mailto:litten225@qq.com"
+  mail: "1812871846@qq.com"
   #facebook: "#"
   #google: "#"
   #twitter: "#"
@@ -33,7 +38,7 @@ root: /
 # Content
 
 # 文章太长，截断按钮文字
-excerpt_link: more
+excerpt_link: 'more'
 # 文章卡片右下角常驻链接，不需要请设置为false
 show_all_link: '展开全文'
 # 数学公式
@@ -65,10 +70,12 @@ top: true
 # Miscellaneous
 baidu_analytics: ''
 google_analytics: ''
-favicon: /favicon.png
+
+#设置网站图标
+favicon: /assets/img/favicon.ico
 
 #你的头像url
-avatar:
+avatar: https://s2.ax1x.com/2019/07/22/eP6NFI.jpg
 
 #是否开启分享
 share_jia: true
@@ -120,11 +127,9 @@ smart_menu:
   aboutme: '关于我'
 
 friends:
-  友情链接1: http://localhost:4000/
-  友情链接2: http://localhost:4000/
-  友情链接3: http://localhost:4000/
-  友情链接4: http://localhost:4000/
-  友情链接5: http://localhost:4000/
-  友情链接6: http://localhost:4000/
+  CSDN博客: https://blog.csdn.net/weixin_41287260
+  Tinypng图片压缩: https://tinypng.com/
+  路过图床: https://imgchr.com/
+  
 
-aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
+aboutme: 看书<br>打码<br>锻炼<br>

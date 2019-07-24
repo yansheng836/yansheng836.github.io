@@ -1,4 +1,4 @@
-H:\博客备份
+# **博客备份**
 
 ### 一、准备工作
 
@@ -180,7 +180,7 @@ git push origin blog
 
 
 
-#### 五、发布到github pages
+### 五、发布到github pages
 
 设置master分支为主页，则可通过`<https://yansheng836.github.io/>`访问
 
@@ -193,3 +193,12 @@ www.yansheng.xyz
 ```
 
 成功后在setting中会显示可通过域名访问，而不是原来的路径。
+
+
+
+### 六、主题简单个性化设置
+
+将主题中的个人信息为自己的。
+
+参考：[主题简单个性化设置](./docs/主题简单个性化设置/md)
+

@@ -3,17 +3,18 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-keywords:
-author: John Doe
-language:
-timezone:
+title: 荷塘月色的博客
+subtitle: 每天进步一点点 
+description: 一名在广东读书的大学生，专业为《计算机科学与技术》。
+keywords: "前端,javascript,jquery,html5,开发者,程序猿,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验"
+author: 荷塘月色
+language: zh-Hans
+timezone:      #时区，默认为电脑时区
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+#url: http://yoursite.com
+url: https://www.yansheng.xyz/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -31,6 +32,7 @@ i18n_dir: :lang
 #告诉hexo的解析器，跳过渲染(skip_render)README.md文件
 skip_render: 
  - 'README.md'
+ - 'docs/*.md'
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -42,6 +44,7 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
+# 代码块的设置：语法高亮
 highlight:
   enable: true
   line_number: true
@@ -87,3 +90,49 @@ deploy:
   type: git
   repository: https://github.com/yansheng836/yansheng836.github.io.git
   branch: master
+
+#标签不能正常显示的问题
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true
+
+# Security
+## 文章加密 hexo-blog-encrypt
+encrypt:
+    enable: true
+
+#引用：
+#---
+#title: hello world
+#date: 2016-03-30 21:18:02   
+#tags:       
+#password: 12345   （密码）
+#abstract: Welcome to my blog,if you want to read the blog please enter the password. 
+#message: Please enter password to read.     
+#---
+#
+#password: 是该博客加密使用的密码
+#abstract: 是该博客的摘要，会显示在博客的列表页
+#message: 这个是博客查看时，密码输入框上面的描述性文字
+#
+
+#自动生成sitemap
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
