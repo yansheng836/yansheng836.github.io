@@ -159,6 +159,8 @@ git remote add origin https://github.com/yansheng836/yansheng836.github.io.git
 
 ```
 
+为方便将yilia的主题配置进行同步（其实该主题已经很久没更新了……），直接删除/themes/yilia/下的.git删除。
+
 
 
 创建一个分支存放写作内容，方便同步到同一仓库的不同分支，先提交一次，不然会报`fatal: Not a valid object name: 'master'.`
