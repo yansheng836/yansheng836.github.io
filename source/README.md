@@ -29,6 +29,12 @@ hexo clean     #删除缓冲文件(db.json)和(public中的)已生成的静态文件。
 hexo generate  #读取配置文件，根据主题配置，将md解析成HTML，将source里的文件转换到public文件夹。
 hexo server    #将静态文件部署到本地，预览。
 hexo deploy    #清理.deploy_git文件夹，将public复制到.deploy_git，发布到github。
+
+#简写形式为
+hexo clean
+hexo g
+hexo s
+hexo d
 ```
 如下图：
 
@@ -66,7 +72,9 @@ hexo deploy    #清理.deploy_git文件夹，将public复制到.deploy_git，发布到github。
 >
 >  值得注意的是，`hexo deploy`并不会对本地或远程的写作分支进行任何操作，因此依旧需要手动推送写作分支的所有改动以实现版本控制。此外，如果您的Github Pages需要使用CNAME文件**自定义域名**，请将CNAME文件置于写作分支的`source_dir`目录下，只有这样`hexo deploy`才能将CNAME文件一并推送至部署分支。
 
-  有了方向就好办了，于是乎我就像是和杜甫“剑外忽传收蓟北，初闻涕泪满衣裳。”一样开心，与此同时”出门左转找度娘，出门右转找哥哥“，求得一篇：CSDN博客[Hexo备份与恢复](https://blog.csdn.net/zk673820543/article/details/52698760)，大意和官方文档基本一致：用一个仓库的两个分支分别存放部署分支和写作分支。就比如我的:
+很多人都吐槽hexo的官方文档实在是有点简陋，但是有些问题也许可以在[它的github仓库的issues](https://github.com/hexojs/hexo/issues)里面找到答案。
+
+有了方向就好办了，于是乎我就像是和杜甫“剑外忽传收蓟北，初闻涕泪满衣裳。”一样开心，与此同时”出门左转找度娘，出门右转找哥哥“，求得一篇：CSDN博客[Hexo备份与恢复](https://blog.csdn.net/zk673820543/article/details/52698760)，大意和官方文档基本一致：用一个仓库的两个分支分别存放部署分支和写作分支。就比如我的:
 
 > yansheng836.github.io
 >
@@ -105,6 +113,6 @@ git push origin blog
 
 ## License 
 
-<div style="text-align:left"><img src="https://img.shields.io/github/license/yansheng836/yansheng836.github.io/tree/master.svg"/></div>
+<div style="text-align:left"><img src="https://img.shields.io/github/license/yansheng836/yansheng836.github.io.svg"/></div>
 
   This software is licensed under the MIT License. [View the license](https://github.com/yansheng836/yansheng836.github.io/blob/master/LICENSE).
