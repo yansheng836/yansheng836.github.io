@@ -2,11 +2,11 @@
 title: the different between categories and tags
 date: 2019-07-23 16:52:02
 categories:
-- IT
-- Front-End
-- hexo
+ - IT
+ - Front-End
+ - hexo
 tags:
-- hexo
+ - hexo
 ---
 
 ## 分类和标签

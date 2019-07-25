@@ -3,8 +3,8 @@
 menu:
   主页: /
   #随笔: /tags/随笔/
-  分类: /categories 
-  归档: /archives/index.html
+  分类: /categories
+  归档: /archives
   标签: /tags
 
 # SubNav
@@ -28,7 +28,7 @@ subnav:
   #twitter: "#"
   #linkedin: "#"
 
-rss: /atom.xml
+# rss: /atom.xml
 
 # 是否需要修改 root 路径
 # 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
