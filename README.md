@@ -35,4 +35,11 @@ git push origin blog #如果设置了blog为默认分支，可以直接git push
 
 将主题中的个人信息为自己的。
 
-参考：[主题简单个性化设置](https://github.com/yansheng836/yansheng836.github.io/blob/blog/docs/2主题简单个性化设置.md)
+详见：[主题简单个性化设置](https://github.com/yansheng836/yansheng836.github.io/blob/blog/docs/2主题简单个性化设置.md)
+
+
+
+## 四、扩展主题的个性化设置
+
+主要是新增一些外加的功能。
+详见：[扩展主题的个性化设置](https://github.com/yansheng836/yansheng836.github.io/blob/blog/docs/3扩展主题的个性化设置.md)
