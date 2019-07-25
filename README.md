@@ -39,7 +39,7 @@ hexo deploy    #清理.deploy_git文件夹，将public复制到.deploy_git，发布到github。
 ### 3. 第二次探索：hexo中的`.deploy_git`
 
   根据上面的分析，我们可以发现一个问题：这里的`.deploy_git`版本管理其实是单向的，只有push，没有pull（或者fetch+merge）；另一方面我们到`.deploy_git`文件夹打开git命令行，运行`git remote`来查看远程仓库，发现没有远程仓库，但是它确是是能够上传的，说明是被hexo封装了（详情可见`/_config.yml`的Deployment部分内容），而封装就意味着丢失一些东西，就比如高级语言虽然比底层语言好用，但是速度却慢得多。
-  
+
   从hexo的命令来看，我们只是一味的将本地的生成的静态文件推送到远程仓库，而没有将远程仓库拉取到本地，因为”**拉取到本地**“其实这是没有意义的！我认为主要原因有下面二：
 
 （1）由hexo的主要命令我们知道：上传的文件基本是静态页面相关的文件，没有配置文件，每次部署都会自动生成，所以拉取远程仓库根本没有意义。
@@ -105,6 +105,6 @@ git push origin blog
 
 ## License 
 
-<div style="text-align:left"><img src="https://img.shields.io/github/license/yansheng836/yansheng836.github.io.svg"/></div>
+<div style="text-align:left"><img src="https://img.shields.io/github/license/yansheng836/yansheng836.github.io/tree/master.svg"/></div>
 
   This software is licensed under the MIT License. [View the license](https://github.com/yansheng836/yansheng836.github.io/blob/master/LICENSE).
