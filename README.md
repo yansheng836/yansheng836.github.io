@@ -27,7 +27,7 @@ git push origin blog #如果设置了blog为默认分支，可以直接git push
 
 搭建基本框架，实现双分支部署。
 
-详见：[hexo+yilia基本框架搭建](./tree/blog/docs/1hexo+yilia基本框架搭建.md)
+详见：[hexo+yilia基本框架搭建](https://github.com/yansheng836/yansheng836.github.io/blob/blog/docs/1hexo%2Byilia基本框架搭建.md)
 
 
 
@@ -35,5 +35,4 @@ git push origin blog #如果设置了blog为默认分支，可以直接git push
 
 将主题中的个人信息为自己的。
 
-参考：[主题简单个性化设置](./tree/blog/docs/2主题简单个性化设置.md)
-
+参考：[主题简单个性化设置](https://github.com/yansheng836/yansheng836.github.io/blob/blog/docs/2主题简单个性化设置.md)
