@@ -110,29 +110,3 @@ jsonContent:
     excerpt: false
     categories: true
     tags: true
-
-# Security
-## 文章加密 hexo-blog-encrypt
-encrypt:
-    enable: true
-
-#引用：
-#---
-#title: hello world
-#date: 2016-03-30 21:18:02   
-#tags:       
-#password: 12345   （密码）
-#abstract: Welcome to my blog,if you want to read the blog please enter the password. 
-#message: Please enter password to read.     
-#---
-#
-#password: 是该博客加密使用的密码
-#abstract: 是该博客的摘要，会显示在博客的列表页
-#message: 这个是博客查看时，密码输入框上面的描述性文字
-#
-
-#自动生成sitemap
-sitemap:
-  path: sitemap.xml
-baidusitemap:
-  path: baidusitemap.xml

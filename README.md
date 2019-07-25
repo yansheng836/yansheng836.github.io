@@ -4,7 +4,7 @@
 
 1. 安装git。
 2. 注册github，新建一个特殊的仓库(username.github.io)。
-3. 安装node.js。
+3. 安装Node.js。
 
 
 
@@ -24,7 +24,15 @@ hexo server
 
 
 
-![1563978429421](C:\Users\yansheng\AppData\Roaming\Typora\typora-user-images\1563978429421.png)
+![eZEIaj.jpg](https://s2.ax1x.com/2019/07/25/eZEIaj.jpg)
+
+
+
+
+
+
+
+
 
 
 
@@ -38,11 +46,11 @@ hexo server
 
    <https://github.com/theme-next/hexo-theme-next>
 
-   ![1563986574404](C:\Users\yansheng\AppData\Roaming\Typora\typora-user-images\1563986574404.png)
+   ![eZE5ZQ.jpg](https://s2.ax1x.com/2019/07/25/eZE5ZQ.jpg)
 
      2.2. yilia: <https://github.com/litten/hexo-theme-yilia>
 
-![1563986365828](C:\Users\yansheng\AppData\Roaming\Typora\typora-user-images\1563986365828.png)
+![eZEhqg.jpg](https://s2.ax1x.com/2019/07/25/eZEhqg.jpg)
 
 
 
@@ -81,7 +89,9 @@ hexo server
 
    效果图：
 
-   ![1563987355476](C:\Users\yansheng\AppData\Roaming\Typora\typora-user-images\1563987355476.png)
+   ![eZEoIs.jpg](https://s2.ax1x.com/2019/07/25/eZEoIs.jpg)
+   
+   
 
 
 
@@ -200,5 +210,5 @@ www.yansheng.xyz
 
 将主题中的个人信息为自己的。
 
-参考：[主题简单个性化设置](./docs/主题简单个性化设置/md)
+参考：[主题简单个性化设置](./blog/docs/主题简单个性化设置.md)
 
