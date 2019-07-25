@@ -6,6 +6,14 @@
         <% if (!post.noDate){ %>
         <%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %>
         <% } %>
+
+	<!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+        <% if(theme.word_count && !post.no_word_count){%>
+          <%- partial('post/word') %>
+          <% } %>
+        <!-- 添加完成 -->
+
       </header>
     <% } %>
     <div class="article-entry" itemprop="articleBody">
