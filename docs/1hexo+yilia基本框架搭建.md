@@ -44,14 +44,27 @@ hexo server
 默认主题是`landscape`，好像不是很好看，一般都会更换主题。
 
 现在比较流行的有下面几种：（部署方式在github上面都有，有问题也可以去那里问。）
- - next: Elegant theme for Hexo.<https://github.com/iissnan/hexo-theme-next>（已停止更新）或者（新的）
-<https://github.com/theme-next/hexo-theme-next>
+ - **next**:  Elegant theme for Hexo.
 
-   ![eZE5ZQ.jpg](https://s2.ax1x.com/2019/07/25/eZE5ZQ.jpg)
+  github旧（已停止更新）:<https://github.com/iissnan/hexo-theme-next>
 
- - yilia:一个简洁优雅的hexo主题 A simple and elegant theme for hexo. <https://github.com/litten/hexo-theme-yilia>
+  github（新的）:<https://github.com/theme-next/hexo-theme-next>
+
+![eZE5ZQ.jpg](https://s2.ax1x.com/2019/07/25/eZE5ZQ.jpg)
+
+
+ - **yilia**: 一个简洁优雅的hexo主题 A simple and elegant theme for hexo.
+
+   github:  <https://github.com/litten/hexo-theme-yilia>
 
 ![eZEhqg.jpg](https://s2.ax1x.com/2019/07/25/eZEhqg.jpg)
+
+
+- **yelee**: 简而不减 Hexo 双栏博客主题; Another simple and elegant theme for Hexo.(基于yilia)
+
+  github（已停更）: <https://github.com/MOxFIVE/hexo-theme-yelee>
+
+![euFG2q.jpg](https://s2.ax1x.com/2019/07/26/euFG2q.jpg)
 
 
 
