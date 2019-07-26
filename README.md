@@ -1,6 +1,6 @@
 # **yansheng836.github.io**
 
-![GitHub repo size](https://img.shields.io/github/repo-size/yansheng836/yansheng836.github.io.svg)![GitHub last commit](https://img.shields.io/github/last-commit/yansheng836/yansheng836.github.io.svg) ![GitHub language count](https://img.shields.io/github/languages/count/yansheng836/yansheng836.github.io.svg) ![GitHub top language](https://img.shields.io/github/languages/top/yansheng836/yansheng836.github.io.svg)[![MIT license](https://img.shields.io/github/license/yansheng836/yansheng836.github.io.svg)](https://github.com/yansheng836/yansheng836.github.io/blob/master/LICENSE)
+![GitHub repo size](https://img.shields.io/github/repo-size/yansheng836/yansheng836.github.io.svg) ![GitHub last commit](https://img.shields.io/github/last-commit/yansheng836/yansheng836.github.io.svg) ![GitHub language count](https://img.shields.io/github/languages/count/yansheng836/yansheng836.github.io.svg) ![GitHub top language](https://img.shields.io/github/languages/top/yansheng836/yansheng836.github.io.svg) [![MIT license](https://img.shields.io/github/license/yansheng836/yansheng836.github.io.svg)](https://github.com/yansheng836/yansheng836.github.io/blob/master/LICENSE)
 
 我的个人博客。访问地址：[https://www.yansheng.xyz](https://www.yansheng.xyz)。
 
@@ -10,6 +10,7 @@
 
 ## master分支说明：
 主要用于备份hexo生成的文件静态文件（html），用于发布到github pages。
+
 博客构建过程和备份，可见另一个分支:[blog分支](https://github.com/yansheng836/yansheng836.github.io/tree/blog)。
 
 
@@ -114,4 +115,6 @@ git push origin blog
 ## License 
 
 <div style="text-align:left"><img src="https://img.shields.io/github/license/yansheng836/yansheng836.github.io.svg"/></div>
-This software is licensed under the MIT License. [View the license](https://github.com/yansheng836/yansheng836.github.io/blob/master/LICENSE).
+
+This software is licensed under the MIT License. 
+[View the license](https://github.com/yansheng836/yansheng836.github.io/blob/master/LICENSE)
