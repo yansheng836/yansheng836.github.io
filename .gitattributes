@@ -1,13 +1,18 @@
 ﻿*.js linguist-language=JavaScript
 #"E" 代表 "effective"，即【高效】。EJS 是一套简单的模板语言，帮你利用普通的 JavaScript 代码生成 HTML 页面。
 #EJS 没有如何组织内容的教条；也没有再造一套迭代和控制流语法；有的只是普通的 JavaScript 代码而已。
-*.ejs linguist-language=JavaScript
+*.ejs linguist-language=EJS
 
-*.css linguist-language=css
+*.css linguist-language=CSS
 #Scss(Sassy CSS)：
 #Sass官方号称：世界上最成熟、最稳定、最强大的专业级CSS扩展语言！
 #Sass (Syntactically Awesome Stylesheets，语法的样式表)是一种动态样式语言，语法跟css一样(但多了些功能)，比css好写，而且更容易阅读。
 #Sass语法类似与Haml，属于缩排语法（makeup），用意就是为了快速写Html和Css。
-*.scss linguist-language=css
+*.scss linguist-language=SCSS
 
-*.html linguist-language=html
+*.html linguist-language=HTML
+
+#yaml 语言（或者说是一种规范吧）可以编写 .yml 文件，和 json 一样是配置文件。
+*.yml linguist-language=YAML
+
+*.md linguist-language=Markdown
