@@ -111,6 +111,6 @@ jsonContent:
     categories: true
     tags: true
 
-# 是否开启字数统计
+# 是否开启字数统计、阅读时长
 #不需要使用，直接设置值为false，或注释掉
-word_count: True
+word_count: false

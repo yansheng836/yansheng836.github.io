@@ -139,13 +139,7 @@ aboutme: 看书<br>打码<br>锻炼<br>躺草地，看天空
 # 好像不起作用？
 since: 2019
 
-#文章字数阅读时长
-# Post wordcount display settings
-# Dependencies: https://github.com/willin/hexo-wordcount
-post_wordcount:
-  #item_text: true
-  wordcount: true
-  #min2read: true
 
-
-
+# 是否开启访问量统计功能(不蒜子)
+busuanzi:
+ enable: true
