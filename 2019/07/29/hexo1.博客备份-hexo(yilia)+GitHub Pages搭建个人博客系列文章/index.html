@@ -17,7 +17,7 @@
 <meta property="og:description" content="偶然间看到github pages+hexo搭建的博客，感觉很不错，就想自己也动手搭建一个这样的博客。因为从未接触过，所以刚开始搭建只能到各种博客论坛找教程，虽然教程很多，但是因为时间比较久了，很多配图都失效了；加之每个人的电脑环境都不一样……加上其它的林林总总的原因，其实搭建过程还是比较艰难的！ 这篇文章介绍的是有关“博客备份”的内容，有些人可能会疑惑：为什么还没有搭建好，就开始讲备份？在软件测">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/25/eZNX6S.jpg">
-<meta property="og:updated_time" content="2019-07-29T13:26:36.860Z">
+<meta property="og:updated_time" content="2019-07-29T13:50:15.502Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo1.博客备份-hexo(yilia)+GitHub Pages搭建个人博客系列文章">
 <meta name="twitter:description" content="偶然间看到github pages+hexo搭建的博客，感觉很不错，就想自己也动手搭建一个这样的博客。因为从未接触过，所以刚开始搭建只能到各种博客论坛找教程，虽然教程很多，但是因为时间比较久了，很多配图都失效了；加之每个人的电脑环境都不一样……加上其它的林林总总的原因，其实搭建过程还是比较艰难的！ 这篇文章介绍的是有关“博客备份”的内容，有些人可能会疑惑：为什么还没有搭建好，就开始讲备份？在软件测">
@@ -236,29 +236,18 @@
 </blockquote>
 <p>这样部署，即使是重装电脑，我们也可以hexo的环境恢复到本地，并且同步之前的博客到本地，这样博客就会有历史了。当然你也可以新建一个仓库存放blog分支，这两种方法二选一，你随意。</p>
 <h2 id="master分支说明"><a href="#master分支说明" class="headerlink" title="master分支说明"></a>master分支说明</h2><p>主要用于备份hexo生成的文件静态文件（html），用于发布到github pages。</p>
-<p>详细内容可到我的博客上进行查看 : <a href="https://github.com/yansheng836/yansheng836.github.io/tree/master" target="_blank" rel="noopener">master分支</a>。</p>
+<p>详细内容可到我的github仓库上进行查看 : <a href="https://github.com/yansheng836/yansheng836.github.io/tree/master" target="_blank" rel="noopener">master分支</a>。</p>
 <h2 id="blog分支说明"><a href="#blog分支说明" class="headerlink" title="blog分支说明"></a>blog分支说明</h2><p>博客构建过程和备份，计划记录下部署过程，方便恢复。</p>
 <p>新建该分支后，可设置该分支为默认分支<code>Settings--&gt;branches--&gt;Default branch:master设置为blog--&gt;update</code>，这样以后仓库主页显示就是blog分支，而且拉取（或者克隆）的时候拉取的就是blog分支，而不是原来默认的master分支。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git clone url</span><br><span class="line">git push</span><br><span class="line"><span class="meta">#</span><span class="bash">其实是下面的简写形式</span></span><br><span class="line">git clone -b master url [&lt;repository-name&gt;]</span><br><span class="line">git push origin master</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">设置blog为默认分支后，相当于是这样的：</span></span><br><span class="line">git clone -b blog url [&lt;repository-name&gt;]</span><br><span class="line">git push origin blog</span><br></pre></td></tr></table></figure>
 
-<p>详细内容可到我的博客上进行查看 : <a href="https://github.com/yansheng836/yansheng836.github.io/tree/blog" target="_blank" rel="noopener">blog分支</a>。</p>
+<p>详细内容可到我的github仓库上进行查看 : <a href="https://github.com/yansheng836/yansheng836.github.io/tree/blog" target="_blank" rel="noopener">blog分支</a>。</p>
 <hr>
 <p>hexo+yilia 个人博客搭建系列文章：</p>
-<p>hexo(yilia)+GitHub Pages搭建个人博客1：博客备份</p>
-<p>hexo(yilia)+GitHub Pages搭建个人博客2：基本框架搭建</p>
-<p>hexo(yilia)+GitHub Pages搭建个人博客3：主题简单个性化设置</p>
-<p>hexo(yilia)+GitHub Pages搭建个人博客4：扩展主题的个性化设置</p>
-<p>hexo1.博客备份-hexo(yilia)+GitHub Pages搭建个人博客系列文章</p>
-<p>hexo2.基本框架搭建-hexo(yilia)+GitHub Pages搭建个人博客系列文章</p>
-<p>hexo3.主题简单个性化设置-hexo(yilia)+GitHub Pages搭建个人博客系列文章</p>
-<p>hexo4.扩展主题的个性化设置-hexo(yilia)+GitHub Pages搭建个人博客系列文章</p>
-<ol>
-<li><a href>hexo(yilia)+GitHub Pages搭建个人博客1：备份</a></li>
-<li></li>
-<li><a href>23</a></li>
-<li><a href>23</a></li>
-<li>[</li>
-</ol>
+<p>1.<a href="https://www.yansheng.xyz/2019/07/29/hexo1.博客备份-hexo(yilia)+GitHub Pages搭建个人博客系列文章/">hexo1.博客备份-hexo(yilia)+GitHub Pages搭建个人博客系列文章</a></p>
+<p>2.<a href="https://www.yansheng.xyz/2019/07/29/hexo2.基本框架搭建-hexo(yilia)+GitHub Pages搭建个人博客系列文章">hexo2.基本框架搭建-hexo(yilia)+GitHub Pages搭建个人博客系列文章</a></p>
+<p>3.<a href="https://www.yansheng.xyz/2019/07/29/hexo3.主题简单个性化设置-hexo(yilia)+GitHub Pages搭建个人博客系列文章">hexo3.主题简单个性化设置-hexo(yilia)+GitHub Pages搭建个人博客系列文章</a></p>
+<p>4.<a href="https://www.yansheng.xyz/2019/07/29/hexo4.扩展主题的个性化设置-hexo(yilia)+GitHub Pages搭建个人博客系列文章">hexo4.扩展主题的个性化设置-hexo(yilia)+GitHub Pages搭建个人博客系列文章</a></p>
 
       
 
