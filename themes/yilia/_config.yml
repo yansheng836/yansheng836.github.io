@@ -3,9 +3,9 @@
 menu:
   主页: /
   #随笔: /tags/随笔/
-  分类: /categories
+  #分类: /categories
   归档: /archives
-  标签: /tags
+  #标签: /tags
 
 # SubNav
 subnav:
@@ -143,3 +143,6 @@ since: 2019
 # 是否开启访问量统计功能(不蒜子)
 busuanzi:
  enable: true
+
+#头像是否旋转(如果不要旋转取false)
+avatarrotation: true

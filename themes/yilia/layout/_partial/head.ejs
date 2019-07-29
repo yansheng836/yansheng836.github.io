@@ -32,6 +32,13 @@
     <link rel="icon" href="<%- theme.favicon %>">
   <% } %>
   <%- partial('css') %>
+
+<!--增加旋转头像的css-->
+<% if (theme.avatarrotation){ %>
+	<link rel="stylesheet" type="text/css" href="/./avatarrotation.css">
+<% } %>
+<!--增加旋转头像的css-->
+
   <style type="text/css">
   <% var defaultCtnBg = 'linear-gradient(200deg,#a0cfe4,#e8c37e)' %>
     #container.show {
