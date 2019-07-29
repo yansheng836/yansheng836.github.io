@@ -16,14 +16,15 @@
 <meta property="og:site_name" content="荷塘月色的博客">
 <meta property="og:description" content="虽然yilia主题已经集成了挺多功能的，界面也很不错。但是在某些方面好像还是略有欠缺。这篇博客主要是介绍一些外加的扩展功能。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://s2.ax1x.com/2019/07/29/e8DVS0.th.jpg">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/26/enG0f0.jpg">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/26/enGDpV.jpg">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/26/enGwYq.jpg">
-<meta property="og:updated_time" content="2019-07-29T13:26:53.799Z">
+<meta property="og:updated_time" content="2019-07-29T14:20:18.778Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo4.扩展主题的个性化设置-hexo(yilia)+GitHub Pages搭建个人博客系列文章">
 <meta name="twitter:description" content="虽然yilia主题已经集成了挺多功能的，界面也很不错。但是在某些方面好像还是略有欠缺。这篇博客主要是介绍一些外加的扩展功能。">
-<meta name="twitter:image" content="https://s2.ax1x.com/2019/07/26/enG0f0.jpg">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/07/29/e8DVS0.th.jpg">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -205,7 +206,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>虽然<code>yilia</code>主题已经集成了挺多功能的，界面也很不错。但是在某些方面好像还是略有欠缺。这篇博客主要是介绍一些外加的扩展功能。</p>
+        <div style="text-align:center">
+<img src="https://s2.ax1x.com/2019/07/29/e8DVS0.th.jpg" width height title="hexo"></div>
+
+<p>虽然<code>yilia</code>主题已经集成了挺多功能的，界面也很不错。但是在某些方面好像还是略有欠缺。这篇博客主要是介绍一些外加的扩展功能。</p>
 <a id="more"></a>
 
 <h2 id="一、增加侧边导航栏的SubNav图标"><a href="#一、增加侧边导航栏的SubNav图标" class="headerlink" title="一、增加侧边导航栏的SubNav图标"></a>一、增加侧边导航栏的SubNav图标</h2><p>参考：<a href="https://blog.zscself.com/posts/70677220/" target="_blank" rel="noopener">修改Yilia左下角SubNav的社交图标</a></p>
@@ -331,20 +335,14 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 
 <h2 id="九、为头像增加旋转效果"><a href="#九、为头像增加旋转效果" class="headerlink" title="九、为头像增加旋转效果"></a>九、为头像增加旋转效果</h2><p>参考：<a href="https://qianlei6148.github.io/2018/10/01/hexo模版yilia头像增加旋转效果/" target="_blank" rel="noopener">hexo模版yilia头像增加旋转效果/</a></p>
-<ol>
-<li>在<code>themes\yilia\source\</code>文件夹下<br>增加一个css文件<code>avatarrotation.css</code>用来旋转360度<br>内容如下：</li>
-</ol>
+<p>1.在<code>themes\yilia\source\</code>文件夹下<br>增加一个css文件<code>avatarrotation.css</code>用来旋转360度<br>内容如下：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.left-col</span> <span class="selector-id">#header</span> <span class="selector-class">.profilepic</span> <span class="selector-tag">img</span> &#123;</span><br><span class="line">	<span class="comment">/* 控制旋转速度时间*/</span></span><br><span class="line">  <span class="attribute">-webkit-transition</span>: -webkit-transform <span class="number">1.0s</span> ease-out;</span><br><span class="line">  <span class="attribute">-moz-transition</span>: -moz-transform <span class="number">1.0s</span> ease-out;</span><br><span class="line">  <span class="attribute">transition</span>: transform <span class="number">1.0s</span> ease-out;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.left-col</span> <span class="selector-id">#header</span> <span class="selector-class">.profilepic</span> <span class="selector-tag">img</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">	<span class="comment">/* 鼠标经过360% */</span></span><br><span class="line">  <span class="attribute">-webkit-transform</span>: <span class="built_in">rotateZ</span>(360deg);</span><br><span class="line">  <span class="attribute">-moz-transform</span>: <span class="built_in">rotateZ</span>(360deg);</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotateZ</span>(360deg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<ol start="2">
-<li>然后在<code>themes\yilia\layout\_partial\head.ejs</code>文件中添加进去创建的<code>css</code>文件：<br>找到<code>&lt;%- partial(&#39;css&#39;) %&gt;</code>，在它的下面添加代码，把刚才写的文件添加进去，<strong>注意！！是在它的下面添加，不然旋转速度将不会生效</strong></li>
-</ol>
+<p>2.然后在<code>themes\yilia\layout\_partial\head.ejs</code>文件中添加进去创建的<code>css</code>文件：<br>找到<code>&lt;%- partial(&#39;css&#39;) %&gt;</code>，在它的下面添加代码，把刚才写的文件添加进去，<strong>注意！！是在它的下面添加，不然旋转速度将不会生效</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (theme.avatarrotation)&#123; %&gt;</span><br><span class="line">	&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/./avatarrotation.css&quot;&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
 
 <p>如果<code>css</code>不生效，查看<code>css</code>中的<code>href</code>位置是否写错了，可根据你具体存放的位置写路径。</p>
-<ol start="3">
-<li>最后在<code>主题文件_config.yml</code>中添加</li>
-</ol>
+<p>3.最后在<code>主题文件_config.yml</code>中添加</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#头像是否旋转(如果不要旋转取false)</span></span><br><span class="line"><span class="attr">avatarrotation:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
 <p>重新发布，最终就可以旋转了！</p>
@@ -362,6 +360,8 @@
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  author_id:</span> <span class="string">defaultAuthorId</span></span><br><span class="line"><span class="attr">  language:</span></span><br></pre></td></tr></table></figure>
 
 <p>您可以提供将用于初始化新帖子元数据的默认值。这些可以是基元或数组。</p>
+<hr>
+<p>hexo(yilia)+GitHub Pages搭建个人博客系列文章：<br>1.<a href="https://www.yansheng.xyz/2019/07/29/hexo1.博客备份-hexo(yilia)+GitHub Pages搭建个人博客系列文章/">hexo1.博客备份-hexo(yilia)+GitHub Pages搭建个人博客系列文章</a><br>2.<a href="https://www.yansheng.xyz/2019/07/29/hexo2.基本框架搭建-hexo(yilia)+GitHub Pages搭建个人博客系列文章">hexo2.基本框架搭建-hexo(yilia)+GitHub Pages搭建个人博客系列文章</a><br>3.<a href="https://www.yansheng.xyz/2019/07/29/hexo3.主题简单个性化设置-hexo(yilia)+GitHub Pages搭建个人博客系列文章">hexo3.主题简单个性化设置-hexo(yilia)+GitHub Pages搭建个人博客系列文章</a><br>4.hexo4.扩展主题的个性化设置-hexo(yilia)+GitHub Pages搭建个人博客系列文章</p>
 
       
 
