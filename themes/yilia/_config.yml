@@ -146,3 +146,9 @@ busuanzi:
 
 #头像是否旋转(如果不要旋转取false)
 avatarrotation: true
+
+# hexo-admin 设置密码
+admin:
+  username: yansheng
+  #password_hash: be121740bf988b2225a313fa1f107ca1
+  #secret: a secret something
