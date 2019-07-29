@@ -88,7 +88,9 @@ theme: yilia
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/yansheng836/yansheng836.github.io.git
+  repository: 
+     github: https://github.com/yansheng836/yansheng836.github.io.git
+     coding: https://git.dev.tencent.com/yansheng836/yansheng836.coding.me.git
   branch: master
 
 #标签不能正常显示的问题
