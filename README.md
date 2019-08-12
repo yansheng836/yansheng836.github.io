@@ -47,3 +47,10 @@ git push origin blog #如果设置了blog为默认分支，可以直接git push
 
 主要是新增一些外加的功能。
 详见：[扩展主题的个性化设置](https://github.com/yansheng836/yansheng836.github.io/blob/blog/docs/3扩展主题的个性化设置.md)
+
+
+
+## 五、博客新增功能说明
+
+详情请看：[CHANGE_LOGS.md](https://github.com/yansheng836/yansheng836.github.io/blob/blog/CHANGE_LOGS.md)
+
