@@ -1,0 +1,47 @@
+2549da9 HEAD@{0}: reset: moving to 2549da9
+4335dd5 HEAD@{1}: reset: moving to 4335dd5
+2549da9 HEAD@{2}: reset: moving to head^
+4335dd5 HEAD@{3}: checkout: moving from master to blog
+9bc5d3a HEAD@{4}: checkout: moving from photos to master
+4335dd5 HEAD@{5}: checkout: moving from blog to photos
+4335dd5 HEAD@{6}: commit: bug:尝试添加相册功能，但是失败了
+2549da9 HEAD@{7}: commit: add photos/
+20b9de1 HEAD@{8}: commit: 发布博客：'2016十大校花排行榜，美翻了'
+1ea084b HEAD@{9}: commit: :scroll:添加'博客新增功能说明'
+176119b HEAD@{10}: commit: 发布博客：'文件对比软件:Beyond Compare 4-破解方法'
+e591ce0 HEAD@{11}: commit: 发布博客：一分钟教你快速识别不同茶叶分类.md
+afbe55e HEAD@{12}: commit: 备份文章
+0eaea6b HEAD@{13}: commit: 发布博客
+019814a HEAD@{14}: commit: update docs/4.待添加个性化设置.md
+6cb2b65 HEAD@{15}: commit: 添加将来要实现的一些功能的计划
+836bfcf HEAD@{16}: commit: feat:安装`hexo-admin`插件
+9ce8e58 HEAD@{17}: commit: feat:为头像增加旋转效果
+43a05e9 HEAD@{18}: commit: feat:新增：为博客设置404页面
+023f055 HEAD@{19}: commit: feat:补充了一种通过插件实现‘文章置顶’的方法
+eade77f HEAD@{20}: commit: feat:新增：添加背景音乐
+0f90646 HEAD@{21}: commit: docs:update .gitattributes
+8bd757f HEAD@{22}: commit: docs:update .gitattributes
+32d6d35 HEAD@{23}: commit: docs:修改部分说明文档
+2b64b8d HEAD@{24}: commit: feat:新增：设置文章置顶功能
+3c4fdca HEAD@{25}: commit: 备份node_modules/hexo-generator-index/lib/generator.js
+77779b9 HEAD@{26}: commit: feat:添加“不蒜子”访问量统计功能
+2473aa5 HEAD@{27}: reset: moving to head^
+eb50fac HEAD@{28}: commit: feat:添加“不蒜子”访问量统计功能
+2473aa5 HEAD@{29}: commit: feat:1.设置建站时间（有bug，无效）。 2.添加字数统计和阅读时长功能
+c30d357 HEAD@{30}: commit: feat:新增侧边栏归档、分类、标签内容，存在bug
+0ebf454 HEAD@{31}: reset: moving to head^
+419fec5 HEAD@{32}: commit: feat:新增侧边栏归档、分类、标签内容，存在bug
+0ebf454 HEAD@{33}: commit: feat:增加侧边导航栏的SubNav图标
+1a9f37e HEAD@{34}: commit: test:新增几篇文章，用于测试一些功能
+e470148 HEAD@{35}: commit: docs(README.md):修改了失效的超链接
+3f65513 HEAD@{36}: reset: moving to head^
+1da052d HEAD@{37}: commit: docs(README.md):修改了失效的超链接
+3f65513 HEAD@{38}: commit: docs(README.md):添加了配置文件的说明
+8d148bd HEAD@{39}: commit: refactor:为“个人信息不完全的内容”进行修改,更新README.md
+14bd16e HEAD@{40}: reset: moving to head^
+a59ae6c HEAD@{41}: commit: fix:为“个人信息不完全的内容”进行修改
+14bd16e HEAD@{42}: commit: feat:主题简单个性化设置
+b934891 HEAD@{43}: commit: feat:关联域名
+9bc5d3a HEAD@{44}: checkout: moving from master to blog
+9bc5d3a HEAD@{45}: commit: delete the /themes/yilia/.git to add the configuration file to the repository
+2792c6f HEAD@{46}: commit (initial): init the blog
