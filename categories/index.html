@@ -317,19 +317,10 @@
 
 
 
-  
-  
-  
 
-  
+<!-- valine评论 -->
 
-  
-
-  
-
-
-
-    <section id="comments">
+    <section id="comments" class="comments">
       <style>
         .comments{margin:30px;padding:10px;background:#fff}
         @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
@@ -342,7 +333,7 @@
    var verify = 'false' == true ? true : false;
     window.onload = function() {
         new Valine({
-            el: '#comment',
+            el: '.comment',
             notify: notify,
             verify: verify,
             app_id: "e0wHRLzR2W4jQiydYamXSgyk-gzGzoHsz",
@@ -353,6 +344,21 @@
     }
 </script>
   </section>
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+
 
 
 <!-- 下面这个是评论框的结束标志 -->
