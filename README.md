@@ -1,56 +1,56 @@
-# **²©¿Í±¸·İ**
+# **åšå®¢å¤‡ä»½**
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/yansheng836/yansheng836.github.io.svg) ![GitHub last commit](https://img.shields.io/github/last-commit/yansheng836/yansheng836.github.io.svg) ![GitHub language count](https://img.shields.io/github/languages/count/yansheng836/yansheng836.github.io.svg) ![GitHub top language](https://img.shields.io/github/languages/top/yansheng836/yansheng836.github.io.svg) [![MIT license](https://img.shields.io/github/license/yansheng836/yansheng836.github.io.svg)](https://github.com/yansheng836/yansheng836.github.io/blob/master/LICENSE)
 
-[master·ÖÖ§´«ËÍÃÅ](https://github.com/yansheng836/yansheng836.github.io/tree/master)
+[masteråˆ†æ”¯ä¼ é€é—¨](https://github.com/yansheng836/yansheng836.github.io/tree/master)
 
-## Ò»¡¢blog·ÖÖ§ËµÃ÷
+## ä¸€ã€blogåˆ†æ”¯è¯´æ˜
 
-<font color="red">blog·ÖÖ§ÊÇÓÃÀ´±¸·İhexoµÄÅäÖÃÎÄ¼şºÍ²©¿ÍÔ´ÎÄ¼ş(*.md)µÄ¡£</font>
+<font color="red">blogåˆ†æ”¯æ˜¯ç”¨æ¥å¤‡ä»½hexoçš„é…ç½®æ–‡ä»¶å’Œåšå®¢æºæ–‡ä»¶(*.md)çš„ã€‚</font>
 
-Ç°ÆÚ¼Æ»®¼òµ¥¼ÇÂ¼¹¹½¨¹ı³Ì£¬¾¡¿ÉÄÜ°ÑÃ¿Ò»¸ö¹¦ÄÜµÄÅäÖÃ¹ı³Ì¼ÇÂ¼Ò»ÏÂ£¬ÕâÑùÈç¹ûÒÔºó³öÏÖÎÊÌâÒ²¿ÉÒÔ½øĞĞ¶ÔÓ¦µÄ»Ö¸´¡££¨²é¿´Ê±£¬×¢Òâ¶Ô±ÈÃ¿¸öÌá½»Ö®¼äµÄ±ä»¯£©¡£
+å‰æœŸè®¡åˆ’ç®€å•è®°å½•æ„å»ºè¿‡ç¨‹ï¼Œå°½å¯èƒ½æŠŠæ¯ä¸€ä¸ªåŠŸèƒ½çš„é…ç½®è¿‡ç¨‹è®°å½•ä¸€ä¸‹ï¼Œè¿™æ ·å¦‚æœä»¥åå‡ºç°é—®é¢˜ä¹Ÿå¯ä»¥è¿›è¡Œå¯¹åº”çš„æ¢å¤ã€‚ï¼ˆæŸ¥çœ‹æ—¶ï¼Œæ³¨æ„å¯¹æ¯”æ¯ä¸ªæäº¤ä¹‹é—´çš„å˜åŒ–ï¼‰ã€‚
 
-ºóÆÚ¼Æ»®×÷Îª´æ·Å²©¿ÍÔ´ÂëµÄ²Ö¿â£¬·ÀÖ¹²©¿Í¶ªÊ§£¬¿ÉÒÔÊµÏÖ¶à»úÆ÷Ğ´²©¿Í¡£
+åæœŸè®¡åˆ’ä½œä¸ºå­˜æ”¾åšå®¢æºç çš„ä»“åº“ï¼Œé˜²æ­¢åšå®¢ä¸¢å¤±ï¼Œå¯ä»¥å®ç°å¤šæœºå™¨å†™åšå®¢ã€‚
 
-Ã¿´ÎĞ´Íê²©¿ÍÒªÍ¬Ê±Í¬²½µ½¸Ã²Ö¿âµÄ²»Í¬·ÖÖ§ÉÏ£¬ÒÔÊµÏÖÕæÕıµÄÍ¬²½(±¸·İ)¡£
+æ¯æ¬¡å†™å®Œåšå®¢è¦åŒæ—¶åŒæ­¥åˆ°è¯¥ä»“åº“çš„ä¸åŒåˆ†æ”¯ä¸Šï¼Œä»¥å®ç°çœŸæ­£çš„åŒæ­¥(å¤‡ä»½)ã€‚
 ```shell
 #Writing
-# Í¬²½µ½master·ÖÖ§
+# åŒæ­¥åˆ°masteråˆ†æ”¯
 hexo clean
 hexo generate
 hexo deploy
 
-# ÊÖ¶¯Í¬²½µ½blog·ÖÖ§ÉÏ
+# æ‰‹åŠ¨åŒæ­¥åˆ°blogåˆ†æ”¯ä¸Š
 git add. 
-git commit -m "Ìá½»ĞÅÏ¢"
-git push origin blog #Èç¹ûÉèÖÃÁËblogÎªÄ¬ÈÏ·ÖÖ§£¬¿ÉÒÔÖ±½Ógit push
+git commit -m "æäº¤ä¿¡æ¯"
+git push origin blog #å¦‚æœè®¾ç½®äº†blogä¸ºé»˜è®¤åˆ†æ”¯ï¼Œå¯ä»¥ç›´æ¥git push
 ```
 
 
-## ¶ş¡¢hexo+yilia»ù±¾¿ò¼Ü´î½¨
+## äºŒã€hexo+yiliaåŸºæœ¬æ¡†æ¶æ­å»º
 
-´î½¨»ù±¾¿ò¼Ü£¬ÊµÏÖË«·ÖÖ§²¿Êğ¡£
+æ­å»ºåŸºæœ¬æ¡†æ¶ï¼Œå®ç°åŒåˆ†æ”¯éƒ¨ç½²ã€‚
 
-Ïê¼û£º[hexo+yilia»ù±¾¿ò¼Ü´î½¨](https://github.com/yansheng836/yansheng836.github.io/blob/blog/docs/1hexo%2Byilia»ù±¾¿ò¼Ü´î½¨.md)
-
-
-
-## Èı¡¢Ö÷Ìâ¼òµ¥¸öĞÔ»¯ÉèÖÃ
-
-½«Ö÷ÌâÖĞµÄ¸öÈËĞÅÏ¢Îª×Ô¼ºµÄ¡£
-
-Ïê¼û£º[Ö÷Ìâ¼òµ¥¸öĞÔ»¯ÉèÖÃ](https://github.com/yansheng836/yansheng836.github.io/blob/blog/docs/2Ö÷Ìâ¼òµ¥¸öĞÔ»¯ÉèÖÃ.md)
+è¯¦è§ï¼š[hexo+yiliaåŸºæœ¬æ¡†æ¶æ­å»º](https://github.com/yansheng836/yansheng836.github.io/blob/blog/docs/1hexo%2ByiliaåŸºæœ¬æ¡†æ¶æ­å»º.md)
 
 
 
-## ËÄ¡¢À©Õ¹Ö÷ÌâµÄ¸öĞÔ»¯ÉèÖÃ
+## ä¸‰ã€ä¸»é¢˜ç®€å•ä¸ªæ€§åŒ–è®¾ç½®
 
-Ö÷ÒªÊÇĞÂÔöÒ»Ğ©Íâ¼ÓµÄ¹¦ÄÜ¡£
-Ïê¼û£º[À©Õ¹Ö÷ÌâµÄ¸öĞÔ»¯ÉèÖÃ](https://github.com/yansheng836/yansheng836.github.io/blob/blog/docs/3À©Õ¹Ö÷ÌâµÄ¸öĞÔ»¯ÉèÖÃ.md)
+å°†ä¸»é¢˜ä¸­çš„ä¸ªäººä¿¡æ¯ä¸ºè‡ªå·±çš„ã€‚
+
+è¯¦è§ï¼š[ä¸»é¢˜ç®€å•ä¸ªæ€§åŒ–è®¾ç½®](https://github.com/yansheng836/yansheng836.github.io/blob/blog/docs/2ä¸»é¢˜ç®€å•ä¸ªæ€§åŒ–è®¾ç½®.md)
 
 
 
-## Îå¡¢²©¿ÍĞÂÔö¹¦ÄÜËµÃ÷
+## å››ã€æ‰©å±•ä¸»é¢˜çš„ä¸ªæ€§åŒ–è®¾ç½®
 
-ÏêÇéÇë¿´£º[CHANGE_LOGS.md](https://github.com/yansheng836/yansheng836.github.io/blob/blog/CHANGE_LOGS.md)
+ä¸»è¦æ˜¯æ–°å¢ä¸€äº›å¤–åŠ çš„åŠŸèƒ½ã€‚
+è¯¦è§ï¼š[æ‰©å±•ä¸»é¢˜çš„ä¸ªæ€§åŒ–è®¾ç½®](https://github.com/yansheng836/yansheng836.github.io/blob/blog/docs/3æ‰©å±•ä¸»é¢˜çš„ä¸ªæ€§åŒ–è®¾ç½®.md)
+
+
+
+## äº”ã€åšå®¢æ–°å¢åŠŸèƒ½è¯´æ˜
+
+è¯¦æƒ…è¯·çœ‹ï¼š[CHANGE_LOGS.md](https://github.com/yansheng836/yansheng836.github.io/blob/blog/CHANGE_LOGS.md)
 
