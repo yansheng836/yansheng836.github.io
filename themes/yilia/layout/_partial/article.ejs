@@ -12,7 +12,7 @@
         <% if(theme.word_count && !post.no_word_count){%>
           <%- partial('post/word') %>
           <% } %>
-        <!-- 添加完成 -->
+    <!-- 添加完成 -->
 
       </header>
     <% } %>
@@ -88,6 +88,24 @@
 
 
 <% if (!index && post.comments){ %>
+
+<!-- valine评论 -->
+<% if (theme.valine && theme.valine.appid && theme.valine.appkey){ %>
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <%- partial('post/valine', {
+        key: post.slug,
+        title: post.title,
+        url: config.url+url_for(post.path)
+        }) %>
+  </section>
+<% } %>
+<!-- valine评论 -->
+
+
   <% if (theme.duoshuo){ %>
   <%- partial('post/duoshuo', {
       key: post.slug,
@@ -137,4 +155,14 @@
       url: config.url+url_for(post.path)
     }) %>
   <% } %>
+
+
+
+
+<!-- 下面这个是评论框的结束标志 -->
 <% } %>
+
+
+
+
+

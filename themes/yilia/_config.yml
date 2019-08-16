@@ -99,11 +99,27 @@ changyan_conf: false
 disqus: false
 
 #5、Gitment
-gitment_owner: false      #你的 GitHub ID
-gitment_repo: ''          #存储评论的 repo
-gitment_oauth:
-  client_id: ''           #client ID
-  client_secret: ''       #client secret
+#gitment_owner: yansheng836      #你的 GitHub ID
+#gitment_repo: 'yansheng836.github.io'          #存储评论的 repo
+#gitment_oauth:
+#  client_id: '8dc4c64250caa31962d1'           #client ID
+#  client_secret: '5e49e86e01d6cbed7f2d61f8d04917e284ec3d9f'       #client secret
+
+#6、 valine配置
+#valine_appid: 'e0wHRLzR2W4jQiydYamXSgyk-gzGzoHsz'
+#valine_appkey: 'rH599gMNkG2Dy68onUdeyqvr'
+
+
+#6、Valine https://valine.js.org
+valine: 
+ appid: 'e0wHRLzR2W4jQiydYamXSgyk-gzGzoHsz'  #Leancloud应用的appId
+ appkey: 'rH599gMNkG2Dy68onUdeyqvr'  #Leancloud应用的appKey
+ verify: false #验证码
+ notify: true #评论回复提醒
+ avatar: retro #评论列表头像样式：''/mm/identicon/monsterid/wavatar/retro/hide
+ #头像类型可见： https://valine.js.org/avatar.html
+ placeholder: Just go go #评论框占位符
+
 
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
