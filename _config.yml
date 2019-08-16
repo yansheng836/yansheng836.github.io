@@ -116,3 +116,27 @@ jsonContent:
 # 是否开启字数统计、阅读时长
 #不需要使用，直接设置值为false，或注释掉
 word_count: false
+
+
+# hexo-neat
+# 博文压缩，exclude表示不包括，即不压缩的内容
+neat_enable: true
+# 压缩html
+neat_html:
+  enable: true
+  exclude:
+# 压缩css  
+neat_css:
+  enable: true
+  exclude:
+    - '**/*.min.css'
+# 压缩js
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '**/*.min.js'
+    - '**/jquery.fancybox.pack.js'
+    - '**/index.js'  
