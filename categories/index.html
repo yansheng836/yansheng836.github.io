@@ -201,7 +201,7 @@
 	<!-- 需要添加的位置 -->
         <!-- 开始添加字数统计-->
         
-        <!-- 添加完成 -->
+    <!-- 添加完成 -->
 
       </header>
     
@@ -326,24 +326,26 @@
   
 
   
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+
+
+<!-- valine评论 -->
+
+    <div id="comment"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 <script>
-var gitment = new Gitment({
-  id: "https://www.yansheng.xyz/categories/index.html",
-  owner: 'yansheng836',
-  repo: 'yansheng836.github.io',
-  oauth: {
-    client_id: '8dc4c64250caa31962d1',
-    client_secret: '5e49e86e01d6cbed7f2d61f8d04917e284ec3d9f',
-  },
-})
-gitment.render('gitment-ctn')
+new Valine({
+    el: '#comment' ,
+    notify:false, 
+    verify:false, 
+    appId: 'e0wHRLzR2W4jQiydYamXSgyk-gzGzoHsz',
+    appKey: 'rH599gMNkG2Dy68onUdeyqvr',
+    placeholder: 'ヾﾉ≧∀≦)o欢迎评论!',
+    path:window.location.pathname, 
+    avatar:'mm' 
+});
 </script>
-  
-
-
+ 
+ <!-- valine评论 -->
           </div>
         </div>
       </div>
