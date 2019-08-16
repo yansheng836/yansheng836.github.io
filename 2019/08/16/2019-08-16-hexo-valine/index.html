@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://www.yansheng.xyz">
-  <title>测试valine评论 | 荷塘月色的博客</title>
+  <title>hexo+yilia添加valine评论 | 荷塘月色的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="测试valine评论">
+  <meta name="description" content="添加valine评论">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="测试valine评论">
-<meta property="og:url" content="https://www.yansheng.xyz/2019/08/16/测试valine评论/index.html">
+<meta property="og:title" content="hexo+yilia添加valine评论">
+<meta property="og:url" content="https://www.yansheng.xyz/2019/08/16/2019-08-16-hexo-valine/index.html">
 <meta property="og:site_name" content="荷塘月色的博客">
-<meta property="og:description" content="测试valine评论">
+<meta property="og:description" content="添加valine评论">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-16T11:54:52.194Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/16/mmDUS0.jpg">
+<meta property="og:updated_time" content="2019-08-16T14:06:53.278Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="测试valine评论">
-<meta name="twitter:description" content="测试valine评论">
+<meta name="twitter:title" content="hexo+yilia添加valine评论">
+<meta name="twitter:description" content="添加valine评论">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/08/16/mmDUS0.jpg">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -172,14 +174,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-测试valine评论" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2019-08-16-hexo-valine" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      测试valine评论
+      hexo+yilia添加valine评论
     </h1>
   
 
@@ -193,8 +195,8 @@
 
 <!--引入不蒜子并添加文章访问量(结束) -->
 
-<a href="/2019/08/16/测试valine评论/" class="archive-article-date">
-  	<time datetime="2019-08-16T11:53:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-16</time>
+<a href="/2019/08/16/2019-08-16-hexo-valine/" class="archive-article-date">
+  	<time datetime="2019-08-16T13:52:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-16</time>
 </a>
         
 
@@ -207,7 +209,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>测试valine评论</p>
+        <h1 id="添加valine评论"><a href="#添加valine评论" class="headerlink" title="添加valine评论"></a>添加valine评论</h1><p><img src="https://s2.ax1x.com/2019/08/16/mmDUS0.jpg" alt="mmDUS0.jpg"></p>
+<a id="more"></a>
+
+<p>参考链接</p>
+<ul>
+<li><a href="https://blog.xxwhite.com/2017/Valine.html" target="_blank" rel="noopener">https://blog.xxwhite.com/2017/Valine.html</a></li>
+<li><a href="http://anata.me/2018/04/05/hexo%E4%B8%BB%E9%A2%98yilia%E6%B7%BB%E5%8A%A0valine%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/" target="_blank" rel="noopener">http://anata.me/2018/04/05/hexo%E4%B8%BB%E9%A2%98yilia%E6%B7%BB%E5%8A%A0valine%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</a></li>
+<li>yilia主题的github：<a href="https://github.com/litten/hexo-theme-yilia/pull/646" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia/pull/646</a></li>
+<li>valine介绍：<a href="https://valine.js.org/" target="_blank" rel="noopener">https://valine.js.org/</a></li>
+</ul>
+<hr>
+<h2 id="1-注册leancloud"><a href="#1-注册leancloud" class="headerlink" title="1.注册leancloud"></a>1.注册leancloud</h2><p>到官网：<a href="https://leancloud.cn" target="_blank" rel="noopener">https://leancloud.cn</a>，注册一个账号，然后创建应用，名字可以随意。然后会生成一个应用，有对应的<code>APP ID</code>，<code>APP KEY</code>，在<code>设置&gt;应用key</code>可以查看。</p>
+<h2 id="2-hexo设置"><a href="#2-hexo设置" class="headerlink" title="2.hexo设置"></a>2.hexo设置</h2><h3 id="2-1-在博客主题文件中添加评论设置"><a href="#2-1-在博客主题文件中添加评论设置" class="headerlink" title="2.1 在博客主题文件中添加评论设置"></a>2.1 在博客主题文件中添加评论设置</h3><p>在<code>H:\Hexo\themes\yilia\_config.yml</code>大概在<code>#5、Gitment</code>后面添加valine设置，内容如下（注意把里面的<code>APP ID</code>，<code>APP KEY</code>换成自己应用中的信息）</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#6、Valine https://valine.js.org</span></span><br><span class="line"><span class="attr">valine:</span> </span><br><span class="line"><span class="attr"> appid:</span> <span class="string">'APP ID'</span>  <span class="comment">#Leancloud应用的appId</span></span><br><span class="line"><span class="attr"> appkey:</span> <span class="string">'APP KEY'</span>  <span class="comment">#Leancloud应用的appKey</span></span><br><span class="line"><span class="attr"> verify:</span> <span class="literal">false</span> <span class="comment">#验证码</span></span><br><span class="line"><span class="attr"> notify:</span> <span class="literal">false</span> <span class="comment">#评论回复提醒</span></span><br><span class="line"><span class="attr"> avatar:</span> <span class="string">retro</span> <span class="comment">#评论列表头像样式：''/mm/identicon/monsterid/wavatar/retro/hide</span></span><br><span class="line"> <span class="comment">#头像类型可见： https://valine.js.org/avatar.html</span></span><br><span class="line"><span class="attr"> placeholder:</span> <span class="string">Just</span> <span class="string">go</span> <span class="string">go</span> <span class="comment">#评论框占位符</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-为article-ejs添加valine评论"><a href="#2-2-为article-ejs添加valine评论" class="headerlink" title="2.2 为article.ejs添加valine评论"></a>2.2 为<code>article.ejs</code>添加valine评论</h3><p>在<code>H:\Hexo\themes\yilia\layout\_partial\article.ejs</code>中搜索这行代码<code>&lt;% if (!index &amp;&amp; post.comments){ %&gt;</code>，在其后面添加代码：(这个代码是有响应式的)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (theme.valine &amp;&amp; theme.valine.appid &amp;&amp; theme.valine.appkey)&#123; %&gt;</span><br><span class="line">    &lt;section id=&quot;comments&quot; class=&quot;comments&quot;&gt;</span><br><span class="line">      &lt;style&gt;</span><br><span class="line">        .comments&#123;margin:30px;padding:10px;background:#fff&#125;</span><br><span class="line">        @media screen and (max-width:800px)&#123;.comments&#123;margin:auto;padding:10px;background:#fff&#125;&#125;</span><br><span class="line">      &lt;/style&gt;</span><br><span class="line">      &lt;%- partial(&apos;post/valine&apos;, &#123;</span><br><span class="line">        key: post.slug,</span><br><span class="line">        title: post.title,</span><br><span class="line">        url: config.url+url_for(post.path)</span><br><span class="line">        &#125;) %&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-新建文件valine-ejs"><a href="#2-3-新建文件valine-ejs" class="headerlink" title="2.3 新建文件valine.ejs"></a>2.3 新建文件<code>valine.ejs</code></h3><p>新建文件<code>H:\Hexo\themes\yilia\layout\_partial\post\valine.ejs</code>，内容为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;vcomment&quot; class=&quot;comment&quot;&gt;&lt;/div&gt; </span><br><span class="line">&lt;script src=&quot;//cdn1.lncld.net/static/js/3.0.4/av-min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;//unpkg.com/valine/dist/Valine.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">   var notify = &apos;&lt;%= theme.valine.notify %&gt;&apos; == true ? true : false;</span><br><span class="line">   var verify = &apos;&lt;%= theme.valine.verify %&gt;&apos; == true ? true : false;</span><br><span class="line">    window.onload = function() &#123;</span><br><span class="line">        new Valine(&#123;</span><br><span class="line">            el: &apos;.comment&apos;,</span><br><span class="line">            notify: notify,</span><br><span class="line">            verify: verify,</span><br><span class="line">            app_id: &quot;&lt;%= theme.valine.appid %&gt;&quot;,</span><br><span class="line">            app_key: &quot;&lt;%= theme.valine.appkey %&gt;&quot;,</span><br><span class="line">            placeholder: &quot;&lt;%= theme.valine.placeholder %&gt;&quot;,</span><br><span class="line">            avatar:&quot;&lt;%= theme.valine.avatar %&gt;&quot;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-生成发布"><a href="#3-生成发布" class="headerlink" title="3.生成发布"></a>3.生成发布</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s  #本地可以预览效果，或者hexo d</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-后台查看数据"><a href="#4-后台查看数据" class="headerlink" title="4.后台查看数据"></a>4.后台查看数据</h2><p><code>应用&gt;存储&gt;comment</code></p>
+<p><strong>注意</strong>：这里还要设置一下web安全域名，位置：<code>应用&gt;设置&gt;安全中心&gt;Web安全域名</code></p>
+<h2 id="5-升级"><a href="#5-升级" class="headerlink" title="5.升级"></a>5.升级</h2><h3 id="5-1头像设置"><a href="#5-1头像设置" class="headerlink" title="5.1头像设置"></a>5.1头像设置</h3><p>可切换多种头像，请看下面代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">avatar: retro #评论列表头像样式：&apos;&apos;/mm/identicon/monsterid/wavatar/retro/hide</span><br><span class="line"> #头像类型可见： https://valine.js.org/avatar.html</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2验证码"><a href="#5-2验证码" class="headerlink" title="5.2验证码"></a>5.2验证码</h3><p>这个比较多争议，官网是说：“由于是<code>无后端</code>的评论系统，验证工作也就只能在前端做，体验上可能不会太优雅。</p>
+<p>验证码默认是关闭的，如果你觉得太烦人或者太反人类，那就请不要打开。” </p>
+<h3 id="5-3邮箱验证"><a href="#5-3邮箱验证" class="headerlink" title="5.3邮箱验证"></a>5.3邮箱验证</h3><p>这个我暂时也不知道怎么设置。</p>
 
       
 
@@ -298,7 +330,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://www.yansheng.xyz/2019/08/16/测试valine评论/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://www.yansheng.xyz/2019/08/16/2019-08-16-hexo-valine/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -334,6 +366,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#添加valine评论"><span class="toc-number">1.</span> <span class="toc-text">添加valine评论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-注册leancloud"><span class="toc-number">1.1.</span> <span class="toc-text">1.注册leancloud</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-hexo设置"><span class="toc-number">1.2.</span> <span class="toc-text">2.hexo设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-在博客主题文件中添加评论设置"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 在博客主题文件中添加评论设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-为article-ejs添加valine评论"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 为article.ejs添加valine评论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-新建文件valine-ejs"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3 新建文件valine.ejs</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-生成发布"><span class="toc-number">1.3.</span> <span class="toc-text">3.生成发布</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-后台查看数据"><span class="toc-number">1.4.</span> <span class="toc-text">4.后台查看数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-升级"><span class="toc-number">1.5.</span> <span class="toc-text">5.升级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1头像设置"><span class="toc-number">1.5.1.</span> <span class="toc-text">5.1头像设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2验证码"><span class="toc-number">1.5.2.</span> <span class="toc-text">5.2验证码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3邮箱验证"><span class="toc-number">1.5.3.</span> <span class="toc-text">5.3邮箱验证</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -351,8 +396,8 @@
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
+   var notify = 'true' == true ? true : false;
+   var verify = 'true' == true ? true : false;
     window.onload = function() {
         new Valine({
             el: '.comment',
@@ -361,13 +406,13 @@
             app_id: "e0wHRLzR2W4jQiydYamXSgyk-gzGzoHsz",
             app_key: "rH599gMNkG2Dy68onUdeyqvr",
             placeholder: "Just go go",
-            avatar:"mm"
+            avatar:"retro"
         });
     }
 </script>
   </section>
 
-
+<!-- valine评论 -->
 
 
   
