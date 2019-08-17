@@ -4,6 +4,7 @@ date: 2019-08-16 21:52:21
 tags:
  - hexo
 toc: ture
+declare: true
 ---
 
 # 添加valine评论
