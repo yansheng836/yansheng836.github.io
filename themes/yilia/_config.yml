@@ -121,6 +121,13 @@ valine:
  placeholder: Just go go #评论框占位符
 
 
+
+# 开启百度站长平台自动推送(https://ziyuan.baidu.com/linksubmit/index)
+# 页面被访问了，就会被推送过去。
+baidu_push: true
+
+
+
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
   # 头像上面的背景颜色

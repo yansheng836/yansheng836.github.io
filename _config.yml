@@ -87,11 +87,33 @@ theme: yilia
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+- type: git
   repository: 
      github: https://github.com/yansheng836/yansheng836.github.io.git
      coding: https://git.dev.tencent.com/yansheng836/yansheng836.coding.me.git
   branch: master
+  # 发布时，同时进行百度推送
+- type: baidu_url_submitter
+
+# 百度主动推送
+baidu_url_submit:
+  count: 10 ## 比如 3，代表提交最新的三个链接
+  host: www.yansheng.xyz ## 在百度站长平台中注册的域名
+  token: 97IX0GHugJYeJWxe ## 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
+  path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里
+  mip: false
+  amp: true
+
+# 百度主动推送deployer,执行hexo deploy的时候，新的连接就会被推送了
+#deploy:
+#- type: s3 ## 这是我原来的deployer
+#  bucket: www.yansheng.xyz
+#- type: baidu_url_submitter ## 这是新加的
+
+# 百度sitemap
+baidusitemap:
+path: baidusitemap.xml
+
 
 #标签不能正常显示的问题
 jsonContent:
@@ -139,4 +161,5 @@ neat_js:
   exclude:
     - '**/*.min.js'
     - '**/jquery.fancybox.pack.js'
-    - '**/index.js'  
+    - '**/index.js'
+
