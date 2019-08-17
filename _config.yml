@@ -140,7 +140,7 @@ jsonContent:
 word_count: false
 
 
-# hexo-neat
+# hexo-neat  github:https://github.com/rozbo/hexo-neat
 # 博文压缩，exclude表示不包括，即不压缩的内容
 neat_enable: true
 # 压缩html
@@ -162,4 +162,5 @@ neat_js:
     - '**/*.min.js'
     - '**/jquery.fancybox.pack.js'
     - '**/index.js'
+    - '**/ins.js'   #忽略压缩/source/photos/ins.js文件，不然会出现错误，相册会显示不出来
 
