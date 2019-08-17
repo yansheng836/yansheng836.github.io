@@ -333,10 +333,14 @@ img {
 svg:not(:root) {
     overflow:hidden
 }
+/*处理代码块错乱问题：
+删除：white-space:pre-wrap;
+这个问题是自动换行造成的，使用不自动换行的white-space:pre;
+样式代码块部分会自动出现底部滚动条，行号错乱问题就没有了。
+*/
 pre {
     overflow:auto;
     white-space:pre;
-    white-space:pre-wrap;
     word-wrap:break-word
 }
 code, kbd, pre, samp {
@@ -819,8 +823,9 @@ body {
 ::-webkit-scrollbar-button:end:active {
     background:url(./img/scrollbar_arrow.png) no-repeat -30px -18px
 }
+/* 修改代码块样式-修改代码背景色:原background:#272822; */
 .article-entry .highlight, .article-entry pre {
-    background:#272822;
+    background:#1a0139;
     margin:10px 0;
     padding:10px;
     overflow:auto;
@@ -828,8 +833,9 @@ body {
     font-size:.9em;
     line-height:22.400000000000002px
 }
+/* 修改代码块样式-修改行号颜色:原color:#666; */
 .article-entry .gist .gist-file .gist-data .line-numbers, .article-entry .highlight .gutter pre, .article-entry .highlight .gutter pre .line {
-    color:#666
+    color:#fc0000
 }
 .article-entry code, .article-entry pre {
     font-family:Source Code Pro, Consolas, Monaco, Menlo, monospace
@@ -883,8 +889,9 @@ body {
 .article-entry .highlight .gutter pre .line {
     text-shadow:none
 }
+/* 修改代码块样式-修改代码字体颜色:原color:#fff; */
 .article-entry .highlight .line {
-    color:#fff;
+    color:#00ff0d;
     min-height:19px
 }
 .article-entry .gist {
