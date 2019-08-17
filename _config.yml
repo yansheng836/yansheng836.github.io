@@ -91,6 +91,7 @@ deploy:
   repository: 
      github: https://github.com/yansheng836/yansheng836.github.io.git
      coding: https://git.dev.tencent.com/yansheng836/yansheng836.coding.me.git
+     gitee: https://gitee.com/yansheng0083/yansheng0083.git
   branch: master
   # 发布时，同时进行百度推送
 - type: baidu_url_submitter
