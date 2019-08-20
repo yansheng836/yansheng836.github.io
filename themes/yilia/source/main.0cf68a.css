@@ -1,10 +1,60 @@
-/*版权声明的样式*/
+/*《分类页面，标签页面样式*/
+.category-count {
+	text-align:center;
+	line-height:3;
+	font-size:18px;
+	font-weight: 700;
+}
+.category-list {
+	text-align:center;
+	padding:20px
+}
+.category-list li.category-list-item {
+	display:inline-block;
+	margin:0 1em .5em 0;
+	padding:4px;
+	border:1px solid #aaaaaa;
+	font-size:1.2rem
+}
+.category-list li.category-list-item:hover {
+	background:rgba(204,204,204,0.3)
+}
+.tag-cloud {
+	text-align:center;
+	padding:20px
+}
+.tag-cloud a {
+	margin:0 20px;
+	word-break:keep-all;
+	position:relative
+}
+.tag-cloud a:hover::before {
+	width:100%;
+	left:0;
+	right:auto
+}
+.tag-cloud a::before {
+	content:"";
+	position:absolute;
+	width:0;
+	right:0;
+	bottom:0;
+	height:2px;
+	background:#08c;
+	-webkit-transition:width .3s ease;
+	transition:width .3s ease
+}
+/*分类页面，标签页面样式》*/
+
+
+/*《版权声明的样式*/
 .declare {
   background-color: #eaeaea;
   margin-top: 2em;
   border-left: 3px solid #ff1700;
   padding: .5em 1em; 
 }
+/*版权声明的样式》*/
 
 .clearfix:after, .clearfix:before {
     content:"";

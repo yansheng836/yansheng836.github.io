@@ -1,0 +1,24 @@
+<article class="article">
+  <h3 class="category-count">共计 <%= site.categories.length %> 个分类, <%= site.tags.length %> 个标签</h3>
+  <% if (site.categories.length){ %>
+  <ul class="category-list">
+    <% site.categories.sort('name').each(function(item){ %>
+      <% if(item.posts.length){ %>
+        <li class="category-list-item">
+          <a href="<%- config.root %><%- item.path %>" class="category-list-link" title="<%= item.name %>">
+            <%= item.name %>
+            <span class="category-list-count"><%= item.posts.length %></span>
+          </a>
+        </li>
+      <% } %>
+    <% }) %>
+  </ul>
+  <% } %>
+  <div class="tag-cloud">
+    <%- tagcloud({
+      min_font: 20, 
+      max_font: 35, 
+      amount: 999
+    }) %>
+  </div>
+</article>
