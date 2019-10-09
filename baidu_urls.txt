@@ -1,10 +1,10 @@
-https://www.yansheng.xyz/2019/08/16/2019-08-16-hexo-valine/
-https://www.yansheng.xyz/2019/08/13/2016十大校花排行榜，美翻了/
-https://www.yansheng.xyz/2019/07/30/文件对比软件-Beyond-Compare-4-破解方法/
-https://www.yansheng.xyz/2019/07/30/一分钟教你快速识别不同茶叶分类/
-https://www.yansheng.xyz/2019/07/29/hexo4.扩展主题的个性化设置-hexo(yilia)+GitHub Pages搭建个人博客系列文章/
-https://www.yansheng.xyz/2019/07/29/hexo3.主题简单个性化设置-hexo(yilia)+GitHub Pages搭建个人博客系列文章/
-https://www.yansheng.xyz/2019/07/29/hexo2.基本框架搭建-hexo(yilia)+GitHub Pages搭建个人博客系列文章/
-https://www.yansheng.xyz/2019/07/29/hexo1.博客备份-hexo(yilia)+GitHub Pages搭建个人博客系列文章/
-https://www.yansheng.xyz/2019/07/25/what-is-casual-literary-notes/
-https://www.yansheng.xyz/2019/07/22/the-first-blog-writtern-by-hexo/
+https://yansheng836.github.io/2019/08/16/2019-08-16-hexo-valine/
+https://yansheng836.github.io/2019/08/13/2016十大校花排行榜，美翻了/
+https://yansheng836.github.io/2019/07/30/文件对比软件-Beyond-Compare-4-破解方法/
+https://yansheng836.github.io/2019/07/30/一分钟教你快速识别不同茶叶分类/
+https://yansheng836.github.io/2019/07/29/hexo4.扩展主题的个性化设置-hexo(yilia)+GitHub Pages搭建个人博客系列文章/
+https://yansheng836.github.io/2019/07/29/hexo3.主题简单个性化设置-hexo(yilia)+GitHub Pages搭建个人博客系列文章/
+https://yansheng836.github.io/2019/07/29/hexo2.基本框架搭建-hexo(yilia)+GitHub Pages搭建个人博客系列文章/
+https://yansheng836.github.io/2019/07/29/hexo1.博客备份-hexo(yilia)+GitHub Pages搭建个人博客系列文章/
+https://yansheng836.github.io/2019/07/25/what-is-casual-literary-notes/
+https://yansheng836.github.io/2019/07/22/the-first-blog-writtern-by-hexo/
