@@ -2,11 +2,6 @@
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
-    <div class="mymenucontainer" onclick="myFunction(this)">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-     </div>
     <div class="left-col" q-class="show:isShow">
       <%- partial('_partial/left-col', null, {cache: !config.relative_link}) %>
     </div>
@@ -29,26 +24,4 @@
     <%- partial('_partial/viewer') %>
   </div>
 </body>
-
-<!--隐藏左侧边栏目的脚本 -->
-<script>
-    var hide = false;
-    function myFunction(x) {
-        x.classList.toggle("change");
-        if(hide == false){
-            $(".left-col").css('display', 'none');
-            $(".mid-col").css("left", 6);
-            $(".tools-col").css('display', 'none');
-            $(".tools-col.hide").css('display', 'none');
-            hide = true;
-        }else{
-            $(".left-col").css('display', '');
-            $(".mid-col").css("left", 300);
-            $(".tools-col").css('display', '');
-            $(".tools-col.hide").css('display', '');
-            hide = false;
-        }
-    }
-</script>
-
 </html>

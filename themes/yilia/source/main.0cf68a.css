@@ -1,60 +1,62 @@
 /*《分类页面，标签页面样式*/
- .category-count {
-    text-align:center;
-    line-height:3;
-    font-size:18px;
-    font-weight: 700;
+.category-count {
+	text-align:center;
+	line-height:3;
+	font-size:18px;
+	font-weight: 700;
 }
 .category-list {
-    text-align:center;
-    padding:20px
+	text-align:center;
+	padding:20px
 }
 .category-list li.category-list-item {
-    display:inline-block;
-    margin:0 1em .5em 0;
-    padding:4px;
-    border:1px solid #aaaaaa;
-    font-size:1.2rem
+	display:inline-block;
+	margin:0 1em .5em 0;
+	padding:4px;
+	border:1px solid #aaaaaa;
+	font-size:1.2rem
 }
 .category-list li.category-list-item:hover {
-    background:rgba(204, 204, 204, 0.3)
+	background:rgba(204,204,204,0.3)
 }
 .tag-cloud {
-    text-align:center;
-    padding:20px
+	text-align:center;
+	padding:20px
 }
 .tag-cloud a {
-    margin:0 20px;
-    word-break:keep-all;
-    position:relative
+	margin:0 20px;
+	word-break:keep-all;
+	position:relative
 }
 .tag-cloud a:hover::before {
-    width:100%;
-    left:0;
-    right:auto
+	width:100%;
+	left:0;
+	right:auto
 }
 .tag-cloud a::before {
-    content:"";
-    position:absolute;
-    width:0;
-    right:0;
-    bottom:0;
-    height:2px;
-    background:#08c;
-    -webkit-transition:width .3s ease;
-    transition:width .3s ease
+	content:"";
+	position:absolute;
+	width:0;
+	right:0;
+	bottom:0;
+	height:2px;
+	background:#08c;
+	-webkit-transition:width .3s ease;
+	transition:width .3s ease
 }
 /*分类页面，标签页面样式》*/
 
+
 /*《版权声明的样式*/
- .declare {
-    background-color: #eaeaea;
-    margin-top: 2em;
-    border-left: 3px solid #ff1700;
-    padding: .5em 1em;
+.declare {
+  background-color: #eaeaea;
+  margin-top: 2em;
+  border-left: 3px solid #ff1700;
+  padding: .5em 1em; 
 }
 /*版权声明的样式》*/
- .clearfix:after, .clearfix:before {
+
+.clearfix:after, .clearfix:before {
     content:"";
     display:table
 }
@@ -386,10 +388,8 @@ svg:not(:root) {
 这个问题是自动换行造成的，使用不自动换行的white-space:pre;
 样式代码块部分会自动出现底部滚动条，行号错乱问题就没有了。
 */
- pre, textarea {
-    overflow: auto
-}
 pre {
+    overflow:auto;
     white-space:pre;
     word-wrap:break-word
 }
@@ -622,12 +622,13 @@ i {
     content:"\E735"
 }
 /* 添加码云和CSDN的标签的图标 */
- .icon-gitee:before {
+.icon-gitee:before {
     content:"码"
 }
 .icon-csdn:before {
     content:"C"
 }
+
 .icon-film:before {
     content:"\E7B7"
 }
@@ -853,7 +854,7 @@ body {
 ::-webkit-scrollbar-button:start {
     width:10px;
     height:10px;
-    background:url(./img/scrollbar_arrow.png) no-repeat 0 0 
+    background:url(./img/scrollbar_arrow.png) no-repeat 0 0
 }
 ::-webkit-scrollbar-button:start:hover {
     background:url(./img/scrollbar_arrow.png) no-repeat -15px 0
@@ -873,23 +874,22 @@ body {
     background:url(./img/scrollbar_arrow.png) no-repeat -30px -18px
 }
 /* 修改代码块样式-修改代码背景色:原background:#272822; */
- .article-entry .highlight, .article-entry pre {
-    background: rgba(79, 79, 79, .5);
-    margin: 10px 0;
-    padding: 10px;
-    overflow: auto;
-    color: #fff;
-    font-size: 1.05em;
-    line-height: 22.4px
+.article-entry .highlight, .article-entry pre {
+    background:#1a0139;
+    margin:10px 0;
+    padding:10px;
+    overflow:auto;
+    color:#fff;
+    font-size:.9em;
+    line-height:22.400000000000002px
 }
 /* 修改代码块样式-修改行号颜色:原color:#666; */
- .article-entry .gist .gist-file .gist-data .line-numbers, .article-entry .highlight .gutter pre, .article-entry .highlight .gutter pre .line {
-    color:#DCDCDC
+.article-entry .gist .gist-file .gist-data .line-numbers, .article-entry .highlight .gutter pre, .article-entry .highlight .gutter pre .line {
+    color:#fc0000
 }
-.article-entry .gist .gist-file, .article-entry code, .article-entry pre {
-    font-family: Source Code Pro, Consolas, Monaco, Menlo, monospace
+.article-entry code, .article-entry pre {
+    font-family:Source Code Pro, Consolas, Monaco, Menlo, monospace
 }
-
 .article-entry code {
     background:#eee;
     padding:0 .3em;
@@ -940,9 +940,9 @@ body {
     text-shadow:none
 }
 /* 修改代码块样式-修改代码字体颜色:原color:#fff; */
- .article-entry .highlight .line {
-    color: #fff;
-    min-height: 19px
+.article-entry .highlight .line {
+    color:#00ff0d;
+    min-height:19px
 }
 .article-entry .gist {
     margin:0 -20px;
@@ -991,30 +991,29 @@ body {
     text-decoration:underline
 }
 pre .comment {
-    color: #FFEC8B
+    color:#75715e
 }
 pre .class .params, pre .function .keyword, pre .keyword {
-    color: #66d9ef
+    color:#66d9ef
 }
 pre .css .value, pre .doctype, pre .function, pre .params, pre .tag {
-    color: #fff
+    color:#fff
 }
 pre .at_rule, pre .at_rule .keyword, pre .css~* .tag, pre .preprocessor, pre .preprocessor .keyword, pre .title {
-    color: #fa9400
+    color:#f92672
 }
 pre .attribute, pre .built_in, pre .class, pre .css~* .class, pre .function .title {
-    color: #a6e22e
+    color:#a6e22e
 }
 pre .string, pre .value {
-    color: #e6db74
+    color:#e6db74
 }
 pre .number {
-    color: #FFE4B5
+    color:#7163d7
 }
 pre .css~* .id, pre .id {
-    color: #fd971f
+    color:#fd971f
 }
-
 #header .tagcloud a {
     color:#fff
 }
@@ -1236,8 +1235,9 @@ pre .css~* .id, pre .id {
 #header .header-nav .social a.github:hover {
     border:1px solid #909ab6
 }
+
 /* 下面两个是新增的csdn和gitee */
- #header .header-nav .social a.csdn {
+#header .header-nav .social a.csdn {
     background:#C71D23;
     border:1px solid #C71D23;
 }
@@ -1251,6 +1251,8 @@ pre .css~* .id, pre .id {
 #header .header-nav .social a.gitee:hover {
     border:1px solid #C71D23;
 }
+
+
 #header .header-nav .social a.facebook {
     background:#3b5998;
     border:1px solid #3b5998
@@ -1876,24 +1878,23 @@ pre .css~* .id, pre .id {
     padding-left:7.6923%
 }
 .article-entry p {
-    margin-top:10px;
-    font-size: 18px
+    margin-top:10px
 }
 .article-entry li code, .article-entry p code {
-    padding: 1px 3px;
-    margin: 0 3px;
-    background: #ddd;
-    border: 1px solid #ccc;
-    word-wrap: break-word;
-    font-size: 14px
-}
-.article-entry li code, .article-entry p code, .article-entry pre {
-    font-family: Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace
+    padding:1px 3px;
+    margin:0 3px;
+    background:#ddd;
+    border:1px solid #ccc;
+    font-family:Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace;
+    word-wrap:break-word;
+    font-size:14px
 }
 .article-entry blockquote {
-    border-left:5px solid #657b83;
+    background:#ddd;
+    border-left:5px solid #ccc;
     padding:15px 20px;
     margin-top:10px;
+    border-left:5px solid #657b83;
     background:#f6f6f6
 }
 .article-entry blockquote p {
@@ -1972,6 +1973,7 @@ pre .css~* .id, pre .id {
     color:#657b83;
     border:1px solid #ccc;
     text-shadow:0 1px #444;
+    font-family:Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace
 }
 .article-entry pre code {
     font-size:14px
@@ -2008,7 +2010,7 @@ pre .css~* .id, pre .id {
     padding:0 32px 10px;
     min-height:30px
 }
-#article-nav .article-nav-link-wrap, .article-entry pre code {
+#article-nav .article-nav-link-wrap {
     font-size:14px
 }
 #article-nav .article-nav-link-wrap .article-nav-title {
@@ -2915,7 +2917,7 @@ pre .css~* .id, pre .id {
     }
 }
 /*! PhotoSwipe Default UI CSS by Dmitry Semenov | photoswipe.com | MIT license */
- .pswp__button {
+.pswp__button {
     width:44px;
     height:44px;
     position:relative;
@@ -3319,7 +3321,7 @@ a.pswp__share--download:hover {
     background:none
 }
 /*! PhotoSwipe main CSS by Dmitry Semenov | photoswipe.com | MIT license */
- .pswp {
+.pswp {
     display:none;
     position:absolute;
     width:100%;
