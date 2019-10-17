@@ -189,4 +189,4 @@ licensee_img: https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png    #版权�
 
 # 飘雪特效(不开启设置为false)
 # https://github.com/MlgmXyysd/snow.js
-snow: flase
+snow: false
