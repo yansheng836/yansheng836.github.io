@@ -83,6 +83,15 @@ pagination_dir: page
 #theme: landscape
 theme: yilia
 
+# 安装rss插件 npm install hexo-generator-feed
+plugins:
+  hexo-generator-feed
+#Feed Atom
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+
 # 部署到github的仓库
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
