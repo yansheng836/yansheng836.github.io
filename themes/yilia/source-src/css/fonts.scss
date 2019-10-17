@@ -22,6 +22,31 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* 新模板，参考：https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/0006834b5bb480b83dfba028c0f0073aa0ff4e36#diff-37125011f1c485ef4209f31ba31134ba */
+@font-face {font-family: "fonteditor";
+  src: url('./fonts/fonteditor.eot'); /* IE9*/
+  src: url('./fonts/fonteditor.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./fonts/fonteditor.woff') format('woff'), /* chrome, firefox */
+  url('./fonts/fonteditor.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('./fonts/fonteditor.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'fonteditor' !important;
+  speak: none;
+  font-size:16px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .icon-twitter:before { content: "\e600"; }
 
 .icon-facebook:before { content: "\e601"; }

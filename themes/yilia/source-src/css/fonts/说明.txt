@@ -1,0 +1,10 @@
+说明：这里有两套模板
+
+1.iconfont*:之前默认的icon字体模板
+
+2.fonteditor*:后面修改的icon字体模板：https://github.com/JoeyBling/hexo-theme-yilia-plus
+
+注意：
+themes/yilia/source-src/css/fonts/  该文件夹下的内容是源码，好像要编译的，这里仅仅是做备份
+
+themes/yilia/source/fonts/ 如果想要简单更换，应该修改这个文件夹的内容
