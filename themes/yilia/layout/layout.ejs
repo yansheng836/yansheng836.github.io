@@ -23,5 +23,19 @@
     <%- partial('_partial/tools') %>
     <%- partial('_partial/viewer') %>
   </div>
+
+<%# 《飘雪特效 %>
+<% if (theme.snow){ %>
+  <script type="text/javascript" src="<%- url_for('lib/snow.js') %>"></script>
+  <script>
+    snow.down();
+    $(window).resize(function() {
+	  $("canvas").css("z-index","500").remove();
+	  snow.down();
+    });
+  </script>
+<% } %>
+<%# 飘雪特效》 %>
+
 </body>
 </html>
