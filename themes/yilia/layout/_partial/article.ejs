@@ -25,7 +25,7 @@
         <%- post.content %>
       <% } %>
 
-      <!-- 添加版权声明 -->
+<!-- 《添加版权声明 -->
     <%
   var sUrl = url.replace(/index\.html$/, '');
   sUrl = /^(http:|https:)\/\//.test(sUrl) ? sUrl : 'https:' + sUrl;
@@ -40,7 +40,7 @@
     <%}%>
     <br>
     <strong>本文链接：</strong>
-    <%= sUrl%>
+    <a href="<%= config.url %>/<%= post.path %>" title="<%= post.title %>" target="_blank"><%= config.url %>/<%= post.path %></a>
     <br>
     <strong>版权声明：</strong>
     本作品采用
@@ -55,7 +55,7 @@
   <div class="declare" hidden="hidden"></div>
 <% } %>
 
-      <!-- 添加版权声明 -->
+<!-- 添加版权声明》 -->
 
       <% if ((theme.reward_type === 2 || (theme.reward_type === 1 && post.reward)) && !index){ %>
         <div class="page-reward">
