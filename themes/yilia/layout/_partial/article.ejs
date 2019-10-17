@@ -7,12 +7,11 @@
         <%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %>
         <% } %>
 
-	<!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-        <% if(theme.word_count && !post.no_word_count){%>
-          <%- partial('post/word') %>
-          <% } %>
-    <!-- 添加完成 -->
+    <!-- 《开始添加字数统计-->
+     <% if(theme.word_count && theme.word_count.enable && !post.no_word_count){%>
+      <%- partial('post/word') %>
+    <% } %>
+    <!-- 添加字数统计完成》 -->
 
       </header>
     <% } %>

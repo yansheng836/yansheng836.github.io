@@ -136,14 +136,17 @@ jsonContent:
     categories: true
     tags: true
 
-# 是否开启字数统计、阅读时长
-#不需要使用，直接设置值为false，或注释掉
-word_count: false
-
+# https://github.com/willin/hexo-wordcount
+# 是否开启字数统计、阅读时长(关闭请设置enable为false)
+# 也可以单独在md文件里Front-matter设置`no_word_count: true`属性，来自定义关闭字数统计
+word_count:
+  enable: true
+  # 只在文章详情显示(不在首页显示)
+  only_article_visit: true
 
 # hexo-neat  github:https://github.com/rozbo/hexo-neat
 # 博文压缩，exclude表示不包括，即不压缩的内容
-neat_enable: true
+neat_enable: false
 # 压缩html
 neat_html:
   enable: true

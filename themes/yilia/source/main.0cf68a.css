@@ -513,10 +513,11 @@ i {
 * {
     box-sizing:border-box
 }
+/* 替换了下面的iconfont.8c627f.woff为fonteditor.d8c45c.woff，主要是为了添加icon-statistics */
 @font-face {
     font-family:iconfont;
     src:url(./fonts/iconfont.b322fa.eot);
-    src:url(./fonts/iconfont.b322fa.eot#iefix) format("embedded-opentype"), url(./fonts/iconfont.8c627f.woff) format("woff"), url(./fonts/iconfont.16acc2.ttf) format("truetype"), url(./fonts/iconfont.45d7ee.svg#iconfont) format("svg")
+    src:url(./fonts/iconfont.b322fa.eot#iefix) format("embedded-opentype"), url(./fonts/fonteditor.d8c45c.woff) format("woff"), url(./fonts/iconfont.16acc2.ttf) format("truetype"), url(./fonts/iconfont.45d7ee.svg#iconfont) format("svg")
 }
 [class*=" icon-"], [class^=icon-] {
     font-family:iconfont!important;
@@ -557,8 +558,12 @@ i {
 .icon-list:before {
     content:"\E682"
 }
+/* .icon-book:before,.icon-statistics:before 主要用于文章头部的字数统计  */
 .icon-book:before {
     content:"\E6FE"
+}
+.icon-statistics:before {
+    content: "\E89F"
 }
 .icon-home:before {
     content:"\E6BB"
