@@ -5,4 +5,5 @@ toc: false
 comments: false
 type: categories
 layout: categories
+no_word_count: true
 ---
