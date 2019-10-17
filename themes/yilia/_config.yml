@@ -190,3 +190,9 @@ licensee_img: https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png    #版权�
 # 飘雪特效(不开启设置为false)
 # https://github.com/MlgmXyysd/snow.js
 snow: false
+
+# Tab Title Change | 标签页标题切换
+tab_title_change: 
+  enable: true
+  left_tab_title: '(つェ⊂) 我藏好了哦~ '
+  return_tab_title: '(*´∇｀*) 被你发现啦~ '
