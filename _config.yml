@@ -14,7 +14,9 @@ timezone:      #时区，默认为电脑时区
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 #url: http://yoursite.com
-url: https://yansheng836.github.io
+#url: https://yansheng836.github.io
+url: http://yansheng.xyz
+
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -114,16 +116,12 @@ baidu_url_submit:
   mip: false
   amp: true
 
-# 百度主动推送deployer,执行hexo deploy的时候，新的连接就会被推送了
-#deploy:
-#- type: s3 ## 这是我原来的deployer
-#  bucket: www.yansheng.xyz
-#- type: baidu_url_submitter ## 这是新加的
-
 # 百度sitemap
 baidusitemap:
-path: baidusitemap.xml
-
+    path: baidusitemap.xml
+# 通用sitemap
+sitemap:
+    path: sitemap.xml
 
 #标签不能正常显示的问题
 jsonContent:
@@ -155,7 +153,7 @@ word_count:
 
 # hexo-neat  github:https://github.com/rozbo/hexo-neat
 # 博文压缩，exclude表示不包括，即不压缩的内容
-neat_enable: false
+neat_enable: true
 # 压缩html
 neat_html:
   enable: true
