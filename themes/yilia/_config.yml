@@ -165,8 +165,11 @@ since: 2019
 busuanzi:
  enable: true
 
-#头像是否旋转(如果不要旋转取false)
+# 头像是否旋转(如果不要旋转取false)
 avatarrotation: true
+
+# 心知天气(如果不用为false):https://www.seniverse.com
+xinzhi_weather: true
 
 # hexo-admin 设置密码
 admin:
