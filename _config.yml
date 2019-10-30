@@ -14,8 +14,8 @@ timezone:      #时区，默认为电脑时区
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 #url: http://yoursite.com
-#url: https://yansheng836.github.io
-url: http://yansheng.xyz
+url: https://yansheng836.github.io
+#url: http://www.yansheng.xyz
 
 root: /
 permalink: :year/:month/:day/:title/
@@ -158,6 +158,8 @@ neat_enable: true
 neat_html:
   enable: true
   exclude:
+    - '**/google4cc750c2e2103b7c.html' #忽略Google的站点(https://yansheng836.github.io) 验证文件，Google不同网站的验证文件都一样。
+    - '**/baidu_verify_QgSK2r2blo.html' #忽略百度的站点(https://yansheng836.github.io) 验证文件，百度的就每个网站一个内容。
 # 压缩css  
 neat_css:
   enable: true
@@ -174,4 +176,3 @@ neat_js:
     - '**/jquery.fancybox.pack.js'
     - '**/index.js'
     - '**/ins.js'   #忽略压缩/source/photos/ins.js文件，不然会出现错误，相册会显示不出来
-
