@@ -1,73 +1,64 @@
 @charset"utf-8";
 
 /*《分类页面，标签页面样式*/
- .category-count {
-    text-align:center;
-    line-height:3;
-    font-size:30px;
-    /* font-weight: 700; */
-    font-family: STCaiyun, STXingkai;
-}
-/* 手机端CSS代码 */
- @media screen and (max-width: 960px) {
-    .category-count {
-        text-align:center;
-        line-height:3;
-        font-size:25px;
-        /* font-weight: 700; */
-        font-family: STCaiyun, STXingkai;
-    }
+.category-count {
+	text-align:center;
+	line-height:3;
+	font-size:18px;
+	font-weight: 700;
 }
 .category-list {
-    text-align:center;
-    padding:20px
+	text-align:center;
+	padding:20px
 }
 .category-list li.category-list-item {
-    display:inline-block;
-    margin:0 1em .5em 0;
-    padding:4px;
-    border:1px solid #aaaaaa;
-    font-size:1.2rem
+	display:inline-block;
+	margin:0 1em .5em 0;
+	padding:4px;
+	border:1px solid #aaaaaa;
+	font-size:1.2rem
 }
 .category-list li.category-list-item:hover {
-    background:rgba(204, 204, 204, 0.3)
+	background:rgba(204,204,204,0.3)
 }
 .tag-cloud {
-    text-align:center;
-    padding:20px
+	text-align:center;
+	padding:20px
 }
 .tag-cloud a {
-    margin:0 20px;
-    word-break:keep-all;
-    position:relative
+	margin:0 20px;
+	word-break:keep-all;
+	position:relative
 }
 .tag-cloud a:hover::before {
-    width:100%;
-    left:0;
-    right:auto
+	width:100%;
+	left:0;
+	right:auto
 }
 .tag-cloud a::before {
-    content:"";
-    position:absolute;
-    width:0;
-    right:0;
-    bottom:0;
-    height:2px;
-    background:#08c;
-    -webkit-transition:width .3s ease;
-    transition:width .3s ease
+	content:"";
+	position:absolute;
+	width:0;
+	right:0;
+	bottom:0;
+	height:2px;
+	background:#08c;
+	-webkit-transition:width .3s ease;
+	transition:width .3s ease
 }
 /*分类页面，标签页面样式》*/
 
+
 /*《版权声明的样式*/
- .declare {
-    background-color: #eaeaea;
-    margin-top: 2em;
-    border-left: 3px solid #ff1700;
-    padding: .5em 1em;
+.declare {
+  background-color: #eaeaea;
+  margin-top: 2em;
+  border-left: 3px solid #ff1700;
+  padding: .5em 1em; 
 }
 /*版权声明的样式》*/
- .clearfix:after, .clearfix:before {
+
+.clearfix:after, .clearfix:before {
     content:"";
     display:table
 }
@@ -358,15 +349,6 @@ a {
 a:active {
     outline:0
 }
-/* 文章中的超链接,鼠标悬浮特效 */
- .article-entry li a:hover, .article-entry p a:hover {
-    background: 0 0;
-    text-decoration: underline;
-    color: #08c;
-    /* font-size:18px; */
-    font-weight:bold;
-    transition:.8s;
-}
 abbr[title] {
     border-bottom:1px dotted
 }
@@ -408,7 +390,7 @@ svg:not(:root) {
 这个问题是自动换行造成的，使用不自动换行的white-space:pre;
 样式代码块部分会自动出现底部滚动条，行号错乱问题就没有了。
 */
- pre {
+pre {
     overflow:auto;
     white-space:pre;
     word-wrap:break-word
@@ -484,16 +466,16 @@ input::-ms-clear, input::-ms-reveal {
     display:none
 }
 input::-moz-placeholder, textarea::-moz-placeholder {
-    color:#ededed
+    color:#999
 }
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-    color:#ededed
+    color:#999
 }
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-    color:#ededed
+    color:#999
 }
 .placeholder {
-    color:#ededed
+    color:#999
 }
 table {
     border-collapse:collapse;
@@ -510,8 +492,7 @@ dd, dl, li, ol, ul {
     padding:0
 }
 ol, ul {
-    /* list-style:none outside none */
-    list-style:none;
+    list-style:none outside none
 }
 h1, h2, h3 {
     line-height:2;
@@ -533,7 +514,7 @@ i {
     box-sizing:border-box
 }
 /* 替换了下面的iconfont.8c627f.woff为fonteditor.d8c45c.woff，主要是为了添加icon-statistics */
- @font-face {
+@font-face {
     font-family:iconfont;
     src:url(./fonts/iconfont.b322fa.eot);
     src:url(./fonts/iconfont.b322fa.eot#iefix) format("embedded-opentype"), url(./fonts/fonteditor.d8c45c.woff) format("woff"), url(./fonts/iconfont.16acc2.ttf) format("truetype"), url(./fonts/iconfont.45d7ee.svg#iconfont) format("svg")
@@ -578,11 +559,11 @@ i {
     content:"\E682"
 }
 /* .icon-book:before,.icon-statistics:before 主要用于文章头部的字数统计  */
- .icon-book:before {
+.icon-book:before {
     content:"\E6FE"
 }
 .icon-statistics:before {
-    content:"\E89F"
+    content: "\E89F"
 }
 .icon-home:before {
     content:"\E6BB"
@@ -648,12 +629,13 @@ i {
     content:"\E735"
 }
 /* 添加码云和CSDN的标签的图标 */
- .icon-gitee:before {
+.icon-gitee:before {
     content:"码"
 }
 .icon-csdn:before {
     content:"C"
 }
+
 .icon-film:before {
     content:"\E7B7"
 }
@@ -701,7 +683,7 @@ body, button, input, select, textarea {
     line-height:1.75
 }
 body {
-    /* overflow-y:hidden; */
+    overflow-y:hidden;
     background:#eaeaea
 }
 #container, body, html {
@@ -714,9 +696,9 @@ body {
 }
 #container {
     position:relative;
-    /* min-height:100% */
+    min-height:100%
 }
-#container .anm-canvas, #mobile-nav {
+#container .anm-canvas {
     display:none
 }
 #container.show .anm-canvas {
@@ -746,8 +728,7 @@ body {
     width:300px;
     position:fixed;
     opacity:1;
-    transition:all .3s ease-in;
-    -ms-transition: all .3s ease-in;
+    transition:all .2s ease-in;
     height:100%;
     z-index:999
 }
@@ -784,7 +765,7 @@ body {
     -webkit-line-clamp:2;
     -webkit-box-orient:vertical
 }
-/* .left-col #header .header-menu {
+.left-col #header .header-menu {
     font-weight:300;
     line-height:31px;
     text-transform:uppercase;
@@ -796,26 +777,12 @@ body {
     -webkit-box-orient:horizontal;
     -webkit-box-pack:center;
     -webkit-box-align:center
-} */
-
-/* 这个字体不错font-family: STCaiyun,STXingkai; */
- .left-col #header .header-menu {
-    font-family: STCaiyun, STXingkai;
-    line-height: 31px;
-    text-transform: uppercase;
-    float: none;
-    min-height: 150px;
-    margin-left: -12px;
-    -webkit-box-pack: center;
-    -webkit-box-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 .left-col #header .header-menu li {
     cursor:default
 }
 .left-col #header .header-menu li a {
-    font-size:20px;
+    font-size:14px;
     min-width:300px
 }
 .left-col #header .header-smart-menu {
@@ -863,8 +830,8 @@ body {
     transition:.3s
 }
 ::-webkit-scrollbar {
-    width: 10px;
-    height:14px;
+    width:10px;
+    height:10px
 }
 ::-webkit-scrollbar-button {
     width:0;
@@ -876,8 +843,7 @@ body {
 ::-webkit-scrollbar-corner {
     display:block
 }
-/*代码块的滚动棒*/
- ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     border-radius:8px;
     background-color:rgba(0, 0, 0, .2)
 }
@@ -915,18 +881,18 @@ body {
     background:url(./img/scrollbar_arrow.png) no-repeat -30px -18px
 }
 /* 修改代码块样式-修改代码背景色:原background:#272822; */
- .article-entry .highlight, .article-entry pre {
-    background:#7a7a79;
+.article-entry .highlight, .article-entry pre {
+    background:#1a0139;
     margin:10px 0;
-    /* padding:10px; */
+    padding:10px;
     overflow:auto;
     color:#fff;
-    font-size:1.05em;
-    line-height:22.4px;
+    font-size:.9em;
+    line-height:22.400000000000002px
 }
 /* 修改代码块样式-修改行号颜色:原color:#666; */
- .article-entry .gist .gist-file .gist-data .line-numbers, .article-entry .highlight .gutter pre, .article-entry .highlight .gutter pre .line {
-    color:#dcdcdc;
+.article-entry .gist .gist-file .gist-data .line-numbers, .article-entry .highlight .gutter pre, .article-entry .highlight .gutter pre .line {
+    color:#fc0000
 }
 .article-entry code, .article-entry pre {
     font-family:Source Code Pro, Consolas, Monaco, Menlo, monospace
@@ -952,12 +918,11 @@ body {
 }
 .article-entry .highlight table {
     margin:0;
-    /* width:auto */
+    width:auto
 }
 .article-entry .highlight td {
     border:none;
-    /* padding:0 */
-    padding: 3px;
+    padding:0
 }
 .article-entry .highlight figcaption {
     color:highlight-comment;
@@ -976,16 +941,14 @@ body {
 }
 .article-entry .highlight .gutter pre {
     text-align:right;
-    /* padding-right:20px; */
-    padding: 6px;
-    background: #333
+    padding-right:20px
 }
 .article-entry .highlight .gutter pre .line {
     text-shadow:none
 }
 /* 修改代码块样式-修改代码字体颜色:原color:#fff; */
- .article-entry .highlight .line {
-    color:#fff;
+.article-entry .highlight .line {
+    color:#00ff0d;
     min-height:19px
 }
 .article-entry .gist {
@@ -1027,9 +990,6 @@ body {
     margin-top:1em;
     margin-left:20px
 }
-.article-entry em, .article-inner h6 {
-    font-style: italic
-}
 .article-entry .gist .gist-file .gist-meta a {
     color:#258fb8;
     font-weight:400
@@ -1037,49 +997,31 @@ body {
 .article-entry .gist .gist-file .gist-meta a:hover {
     text-decoration:underline
 }
-/* 代码块样式之评论：黄色 */
- pre .comment {
-    color:#ffec8b
+pre .comment {
+    color:#75715e
 }
-/* 代码块样式之类的参数、函数的关键字、关键字：蓝色 */
- pre .class .params, pre .function .keyword, pre .keyword {
+pre .class .params, pre .function .keyword, pre .keyword {
     color:#66d9ef
 }
-/* 代码块样式之css的属性值、函数名、参数、标签：白色 */
- pre .css .value, pre .doctype, pre .function, pre .params, pre .tag {
+pre .css .value, pre .doctype, pre .function, pre .params, pre .tag {
     color:#fff
-    /* color:#66d9ef; */
 }
-/* 代码块样式之HTML或者xml的头部元素：红色(颜色较浅) */
- pre .meta {
-    color:#f78da1;
+pre .at_rule, pre .at_rule .keyword, pre .css~* .tag, pre .preprocessor, pre .preprocessor .keyword, pre .title {
+    color:#f92672
 }
-/* 代码块样式之HTML的标签：红色 */
- pre .tag .name {
-    /* color:#dc3958; */
-    color:#ff6481;
-}
-/* 代码块样式之：色 */
- pre .at_rule, pre .at_rule .keyword, pre .css~* .tag, pre .preprocessor, pre .preprocessor .keyword, pre .title {
-    color:#fa9400
-}
-/* 代码块样式之属性、类、函数的title：绿色 */
- pre .attr, pre .attribute, pre .built_in, pre .class, pre .css~* .class, pre .function .title {
+pre .attribute, pre .built_in, pre .class, pre .css~* .class, pre .function .title {
     color:#a6e22e
 }
-/* 代码块样式之字符串、属性值：猪肝色 */
- pre .string, pre .value {
+pre .string, pre .value {
     color:#e6db74
 }
-/* 代码块样式之数字：粉红色 */
- pre .number {
-    color:#ffe4b5
+pre .number {
+    color:#7163d7
 }
 pre .css~* .id, pre .id {
     color:#fd971f
 }
-/* 下面是分类页面（标签云tagcloud）的超链接的样式 */
- #header .tagcloud a {
+#header .tagcloud a {
     color:#fff
 }
 .tagcloud a {
@@ -1300,8 +1242,9 @@ pre .css~* .id, pre .id {
 #header .header-nav .social a.github:hover {
     border:1px solid #909ab6
 }
+
 /* 下面两个是新增的csdn和gitee */
- #header .header-nav .social a.csdn {
+#header .header-nav .social a.csdn {
     background:#C71D23;
     border:1px solid #C71D23;
 }
@@ -1315,6 +1258,8 @@ pre .css~* .id, pre .id {
 #header .header-nav .social a.gitee:hover {
     border:1px solid #C71D23;
 }
+
+
 #header .header-nav .social a.facebook {
     background:#3b5998;
     border:1px solid #3b5998
@@ -1812,7 +1757,6 @@ pre .css~* .id, pre .id {
     border-top:1px solid #fff;
     border-bottom:1px solid #fff;
     background:#fff;
-    /* background: rgba(255,255,255,.5); */
     transition:all .2s ease-in
 }
 .article img {
@@ -1943,23 +1887,14 @@ pre .css~* .id, pre .id {
 .article-entry p {
     margin-top:10px
 }
-/* 行内代码块``的样式，参考csdn的
-    color: #c7254e;
-    background-color: #f9f2f4;
-    border-radius: 2px;
-	padding: 2px 4px;
-*/
- .article-entry li code, .article-entry p code {
-    color: #c7254e;
-    background-color: #f9f2f4;
-    border-radius: 2px;
-    padding:2px 4px;
+.article-entry li code, .article-entry p code {
+    padding:1px 3px;
     margin:0 3px;
-    /* background:#ddd; */
-    /* border:2px solid #ccc; */
+    background:#ddd;
+    border:1px solid #ccc;
     font-family:Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace;
     word-wrap:break-word;
-    /* font-size:14px */
+    font-size:14px
 }
 .article-entry blockquote {
     background:#ddd;
@@ -2989,7 +2924,7 @@ pre .css~* .id, pre .id {
     }
 }
 /*! PhotoSwipe Default UI CSS by Dmitry Semenov | photoswipe.com | MIT license */
- .pswp__button {
+.pswp__button {
     width:44px;
     height:44px;
     position:relative;
@@ -3393,7 +3328,7 @@ a.pswp__share--download:hover {
     background:none
 }
 /*! PhotoSwipe main CSS by Dmitry Semenov | photoswipe.com | MIT license */
- .pswp {
+.pswp {
     display:none;
     position:absolute;
     width:100%;
