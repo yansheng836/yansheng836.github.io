@@ -4,6 +4,7 @@ date: 2019-07-29 16:31:23
 tags:
  - hexo
 toc: true
+declare: true
 ---
 
 <div style="text-align:center">
@@ -16,7 +17,6 @@ toc: true
 ## 一、增加侧边导航栏的SubNav图标
 
 参考：[修改Yilia左下角SubNav的社交图标](https://blog.zscself.com/posts/70677220/)
-
 [Font Awesome:一套绝佳的图标字体库和CSS框架](http://fontawesome.dashgame.com/)
 
 1. 这里只是添加csdn和gitee图标，其他可以参照上面两个链接进行设置。在`H:\Hexo\themes\yilia\source\main.0cf68a.css`文件中添加下面的代码（最好是在gitbub附近，分类管理）
@@ -69,8 +69,6 @@ subnav:
   csdn: "https://blog.csdn.net/username"
 ```
 
-
-
 ## 二、新增侧边栏归档、分类、标签内容--有bug（分类、标签）
 
 参考：hexo-theme-next的wiki：[创建分类页面](https://github.com/iissnan/hexo-theme-next/wiki/%E5%88%9B%E5%BB%BA%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2)
@@ -106,8 +104,6 @@ menu:
 Add a custom footer
 ```
 
-
-
 ## 三、设定站点建立时间--有bug（没有实现）
 
 参考：[https://github.com/iissnan/hexo-theme-next/wiki/%E8%AE%BE%E5%AE%9A%E7%AB%99%E7%82%B9%E5%BB%BA%E7%AB%8B%E6%97%B6%E9%97%B4](https://github.com/iissnan/hexo-theme-next/wiki/设定站点建立时间)
@@ -120,8 +116,6 @@ Add a custom footer
 since: 2013
 ```
 
-
-
 ## 四、添加字数统计和阅读时长功能
 
 参考：[hexo下yilia主题添加字数统计和阅读时长功能](https://blog.csdn.net/weixin_34259232/article/details/91182835)
@@ -132,7 +126,7 @@ since: 2013
 2. 文件配置
    在`theme\yilia\layout\_partial\post`下创建word.ejs文件：
 
-```ejs
+```html
 <div style="margin-top:10px;">
     <span class="post-time">
       <span class="post-meta-item-icon">
@@ -155,7 +149,7 @@ since: 2013
 
  然后在`themes/yilia/layout/_partial/article.ejs`中添加:
 
-```ejs
+```html
 <div class="article-inner">
     <% if (post.link || post.title){ %>
       <header class="article-header">
@@ -191,7 +185,6 @@ word_count: True
 <font color="red">注意：本地测试时，访问量是不准确的！</font>
 
 1. 配置是否开启不蒜子访问量统计功能
-
 在`themes/yilia/_config.yml`添加属性
 
 ```yml
@@ -201,10 +194,9 @@ busuanzi:
 ```
 
 2. 引入不蒜子并添加站点访问量
-
  在`themes/yilia/layout/_partial/footer.ejs`末尾(</footer>之前)添加如下代码
 
-```ejs
+```html
 <% if (theme.busuanzi && theme.busuanzi.enable){ %>
         <!-- 不蒜子统计 -->
         <span id="busuanzi_container_site_pv">
@@ -222,10 +214,9 @@ busuanzi:
 
 我找到的添加位置主要有两种，下面会上图，可以选择自己喜欢的，推荐第一种。
 3.1 这种形式是：外面不显示，只在文章里面才显示，位置为右上角时间的右边。
-
 在`themes/yilia/layout/_partial/post/date.ejs`开头添加如下代码
 
-```ejs
+```html
 <% if (theme.busuanzi && theme.busuanzi.enable && !index){ %>
         <!-- 不蒜子统计 -->
         <span id="busuanzi_container_page_pv" style='display:none' class="<%= class_name %>">
@@ -235,17 +226,13 @@ busuanzi:
 ```
 
 主页样式：![enG0f0.jpg](https://s2.ax1x.com/2019/07/26/enG0f0.jpg)
-
 文章样式（注意右上角）：![enGDpV.jpg](https://s2.ax1x.com/2019/07/26/enGDpV.jpg)
-
-
 
 3.2 这种形式是：显示在标签的后面，即不仅文章里面会显示，外面主页也会显示，个人感觉体验略差。
 参考：[hexo yilia 文章浏览量统计](https://codegitz.github.io/2018/04/13/hexo-yilia-文章浏览量统计/)
-
 需要修改的文件：`H:\Hexo\themes\yilia\layout\_partial\article.ejs`
 
-```ejs
+```html
      <%- partial('post/tag') %>
 
     <!-- 文末访问量统计（开始） -->
@@ -257,23 +244,16 @@ busuanzi:
 
 主页和文章样式（注意标签后面，因为之前忘记截图了，这是我自己标记的位置，不是实际显示效果）：![enGwYq.jpg](https://s2.ax1x.com/2019/07/26/enGwYq.jpg)
 
-
-
 ## 六、设置文章置顶功能
 
 参考：解决Hexo博客文章置顶问题：<https://zhwhong.cn/2017/03/23/deal-with-hexo-article-top-problem/>
-
 （这篇博客用的是另一个基于yilia的主题，感觉还是挺不错的，github：<https://github.com/MOxFIVE/hexo-theme-yelee>，但是也停止更新很久了……）
-
 原理：在Hexo生成首页HTML时，将top值高的文章排在前面，达到置顶功能。
-
 修改Hexo文件夹下的`node_modules/hexo-generator-index/lib/generator.js`，在生成文章之前进行文章top值排序。
-
-
 
 <font color="red">注意：一般情况下，git默认是忽略该文件的，所以应该先将该文件加到仓库，提交一次进行备份，然后再进行修改，不然不能实现备份该文件功能，可参考下面的示例代码进行操作：</font>
 
-```shell
+```bash
 # 为了方便起见，不修改.gitignored文件，直接将该文件强制加入仓库。
 # 注意：修改后，再添加该文件时也要强制添加
 git add -f node_modules/hexo-generator-index/lib/generator.js
@@ -285,11 +265,9 @@ git status
 git commit -m "back up node_modules/hexo-generator-index/lib/generator.js"
 ```
 
-
-
 下面是`generator.js`修改后的代码：
 
-```js
+```javascript
 'use strict';
 
 var pagination = require('hexo-pagination');
@@ -331,7 +309,7 @@ module.exports = function(locals) {
 
 1. blog目录下执行以下命令：
 
-```shell
+```bash
 npm uninstall hexo-generator-index --save
 npm install hexo-generator-index-pin-top --save
 ```
@@ -349,8 +327,6 @@ categories:
 ---
 ```
 
-
-
 ## 七、添加背景音乐
 
 参考：[hexo+yilia个性化之-添加背景音乐](https://www.writebug.site/2018/04/21/hexo-yilia%E4%B8%AA%E6%80%A7%E5%8C%96%E4%B9%8B-%E6%B7%BB%E5%8A%A0%E8%83%8C%E6%99%AF%E9%9F%B3%E4%B9%90/)
@@ -358,14 +334,12 @@ categories:
 1. 到网易云官网获取音乐外链：搜索音乐-->生成外链播放器-->复制代码
 2. 打开路径 `themes/yilia/layout/_partial/left-col.ejs`，在`</nav>`上面添加代码，就像下面这样。
 
-```ejs
+```html
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=228 height=86 src="//music.163.com/outchain/player?type=2&id=1371939273&auto=0&height=66"></iframe>
 </nav>
 ```
 
 3. 根据需要设置宽高属性，宽建议228。
-
-
 
 ## 八、为博客设置404页面
 
@@ -387,11 +361,9 @@ permalink: /404.html
 Page not found! :(
 ```
 
-
-
 推荐使用腾讯公益404页面（注意要把首页链接换成自己的）：
 
-```mariadb
+```markdown
 ---
 title: 404 Not Found：该页无法显示
 date: 2019-07-26 21:51:29
@@ -412,13 +384,11 @@ permalink: /404.html
 
 然后转换、部署就可以了。
 
-```shell
+```bash
 hexo clean
 hexo g
 hexo d
 ```
-
-
 
 ## 九、为头像增加旋转效果
 
@@ -446,7 +416,7 @@ hexo d
 2.然后在`themes\yilia\layout\_partial\head.ejs`文件中添加进去创建的`css`文件：
 找到`<%- partial('css') %>`，在它的下面添加代码，把刚才写的文件添加进去，**注意！！是在它的下面添加，不然旋转速度将不会生效**
 
-```ejs
+```html
 <% if (theme.avatarrotation){ %>
 	<link rel="stylesheet" type="text/css" href="/./avatarrotation.css">
 <% } %>
@@ -463,8 +433,6 @@ avatarrotation: true
 
 重新发布，最终就可以旋转了！
 
-
-
 ## 十、安装`hexo-admin`插件
 
 github官网：<https://github.com/jaredly/hexo-admin>
@@ -473,17 +441,13 @@ github官网：<https://github.com/jaredly/hexo-admin>
 
 hexo-admin 是一个Hexo博客引擎的管理用户界面插件。这个插件最初是作为本地编辑器设计的，在本地运行hexo使用hexo-admin编写文章，<font color="red">左边写右边预览</font>，然后通过hexo g或hexo d（hexo g是本地渲染，hexo d是将渲染的静态页面发布到GitHub）将生成的静态页面发布到GitHub等静态服务器。如果你使用的是非静态托管服务器，比如自己买的主机搭建的hexo，那么一定要设置hexo-admin  的密码，否则谁都可以编辑你的文章。
 
-
-
 ### 1.安装管理员并启动
 
-```shell
+```bash
 npm install --save hexo-admin
 hexo server -d
 open http://localhost:4000/admin/
 ```
-
-
 
 ### 2.密码保护
 
@@ -501,8 +465,6 @@ admin:
 Hexo管理员设置中的实用程序可以散列您的密码并`admin` 为您生成该部分。启动Hexo并转到`Settings > Setup authentification` 并填写您的信息。将生成的YAML复制到您的`_config.yml`。
 
 一旦到位，启动您的hexo服务器，然后`/admin/`将要求您输入密码。
-
-
 
 ### 3.自定义帖子元数据
 

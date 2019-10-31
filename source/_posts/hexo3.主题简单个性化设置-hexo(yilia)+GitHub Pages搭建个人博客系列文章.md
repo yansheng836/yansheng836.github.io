@@ -4,6 +4,7 @@ date: 2019-07-29 16:30:55
 tags:
  - hexo
 toc: true
+declare: true
 ---
 
 <div style="text-align:center">
@@ -48,11 +49,9 @@ jsonContent:
 
 jsonContent(标签不能正常显示的问题)，该功能需要添加依赖：
 
-```
+```bash
 npm i hexo-generator-json-content --save
 ```
-
-
 
 ## 二、主题配置`Hexo/themes/yilia/_config.yml`配置
 
@@ -67,15 +66,11 @@ menu;subnav;favicon(设置网站图标);avatar(头像);friends(社交)
 favicon: /assets/img/favicon.ico
 ```
 
-
-
 图标介绍及制作可参考：<http://www.faviconico.org/>
 
 <font color="red">推荐原因：可以预览图标，就是你制作后图标后，点击预览，它会将当前网页图标设置成你的图标。</font>
 
 > `favicon.ico`一般用于作为缩略的网站标志，它显示在浏览器的地址栏、浏览器标签上或者在收藏夹上，是展示网站个性的缩略logo标志，也可以说是网站头像,目前主要的浏览器都支持favicon.ico图标，如果要让网站看起来更专业、更美、更有个性，favicon.ico是必不可少的，你在本站使用ICO图标转换工具就可以轻松将您的网站图标转换成favicon.ico。
-
-
 
 ---
 

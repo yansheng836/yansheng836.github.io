@@ -4,6 +4,7 @@ date: 2019-07-29 16:30:27
 tags:
  - hexo
 toc: true
+declare: true
 ---
 
 <div style="text-align:center">
@@ -29,15 +30,13 @@ toc: true
 
 ### 3. 安装Node.js。
 
-
-
 ## 三、安装hexo，并初始化
 
 参考官网教程：<https://hexo.io/zh-cn/index.html>
 
 在你需要安装hexo的地方打开git命令行工具，运行一下命令（注：#开头为注释）
 
-```shell
+```bash
 # 全局安装hexo
 # 并初始化一个文件夹Hexo作为hexo的根目录（可自定义，命令格式为`hexo init <folder>`）
 # 进入Hexo文件夹
@@ -53,8 +52,6 @@ hexo server
 
 ![eZEIaj.jpg](https://s2.ax1x.com/2019/07/25/eZEIaj.jpg)
 
-
-
 ## 四、更换主题
 
 ### 4.1 主题介绍
@@ -64,31 +61,21 @@ hexo server
 现在比较流行的挺多的，这里只列举几种：（部署方式在github上面都有，有问题也可以去那里问。）
 
 - **next**:  Elegant theme for Hexo.
-
   github旧（已停止更新）:<https://github.com/iissnan/hexo-theme-next>
-
   github（新的）:<https://github.com/theme-next/hexo-theme-next>
-
 ![eZE5ZQ.jpg](https://s2.ax1x.com/2019/07/25/eZE5ZQ.jpg)
 
 - **yilia**: 一个简洁优雅的hexo主题 A simple and elegant theme for hexo.
-
   github:  <https://github.com/litten/hexo-theme-yilia>
-
 ![eZEhqg.jpg](https://s2.ax1x.com/2019/07/25/eZEhqg.jpg)
 
 - **yelee**: 简而不减 Hexo 双栏博客主题; Another simple and elegant theme for Hexo.(基于yilia)
-
   github（已停更）: <https://github.com/MOxFIVE/hexo-theme-yelee>
-
 ![euFG2q.jpg](https://s2.ax1x.com/2019/07/26/euFG2q.jpg)
-
-
 
 ### 4.2 更换yilia主题的简单介绍
 
 我选的是yilia，以下是安装方式，参考：
-
 - yilia 的仓库介绍（适用说明）：<https://github.com/litten/hexo-theme-yilia>。
 - yilia 的仓库管理者 `litten` 的博客备份仓库：<https://github.com/litten/BlogBackup>。
 
@@ -97,7 +84,7 @@ hexo server
 
 #### 安装
 
-```
+```bash
 $ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
 ```
 
@@ -111,14 +98,14 @@ $ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
 
 该主题好像已经很久没有更新了，最近的一次更新好像是2017年的。
 
-```
+```bash
 cd themes/yilia
 git pull
 ```
 
 #### 部署：
 
-```
+```bash
 hexo clean
 hexo generate
 hexo server
@@ -126,11 +113,7 @@ hexo server
 
 浏览器访问：<http://localhost:4000/>，注意访问期间不能按停止命令`Ctrl+C`,不然会停止服务，页面404。
 
-效果图：
-
-![eZEoIs.jpg](https://s2.ax1x.com/2019/07/25/eZEoIs.jpg)
-
-   
+效果图：![eZEoIs.jpg](https://s2.ax1x.com/2019/07/25/eZEoIs.jpg)
 
 ## 五、将hexo部署到github上面，实现双分支部署
 
@@ -176,7 +159,7 @@ skip_render:
 
 如果有修改配置文件，最好都进行重新编译。
 
-```
+```bash
 hexo clean
 hexo g
 hexo d
@@ -184,13 +167,13 @@ hexo d
 
 如果出现类似错误：
 
-```
+```bash
 ERROR Deployer not found: git
 ```
 
 需要添加git依赖：
 
-```
+```bash
 npm install hexo-deployer-git --save
 ```
 
@@ -202,7 +185,7 @@ npm install hexo-deployer-git --save
 
 在hexo根目录下新建仓库，用于管理写作分支（之前的部署到github的为部署分支）
 
-```
+```bash
 git init
 git remote add origin https://github.com/yansheng836/yansheng836.github.io.git
 ```
@@ -242,14 +225,14 @@ fatal: Not a valid object name: 'master'
 
 添加、提交
 
-```
+```bash
 git add .
 git commit -m "init the blog"
 ```
 
 创建分支，并同步到github的blog分支
 
-```
+```bash
 git branch blog
 git checkout blog
 git push origin blog
@@ -263,7 +246,7 @@ git push origin blog
 
 每次写完博客要同时同步到该仓库的不同分支上，以实现真正的同步(备份)。
 
-```shell
+```bash
 #Writing
 # 同步到master分支
 hexo clean
@@ -288,7 +271,7 @@ www.yansheng.xyz
 
 然后发布到github上
 
-```shell
+```bash
 hexo clean
 hexo generate
 hexo deploy

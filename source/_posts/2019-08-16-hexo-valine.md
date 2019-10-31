@@ -11,7 +11,6 @@ declare: true
 
 ![mmDUS0.jpg](https://s2.ax1x.com/2019/08/16/mmDUS0.jpg)
 
-
 <!--more-->
 
 参考链接
@@ -26,8 +25,6 @@ declare: true
 ## 1.注册leancloud
 
 到官网：<https://leancloud.cn>，注册一个账号，然后创建应用，名字可以随意。然后会生成一个应用，有对应的`APP ID`，`APP KEY`，在`设置>应用key`可以查看。
-
-
 
 ## 2.hexo设置
 
@@ -51,7 +48,7 @@ valine:
 
 在`H:\Hexo\themes\yilia\layout\_partial\article.ejs`中搜索这行代码`<% if (!index && post.comments){ %>`，在其后面添加代码：(这个代码是有响应式的)
 
-```ejs
+```html
 <% if (theme.valine && theme.valine.appid && theme.valine.appkey){ %>
     <section id="comments" class="comments">
       <style>
@@ -71,7 +68,7 @@ valine:
 
 新建文件`H:\Hexo\themes\yilia\layout\_partial\post\valine.ejs`，内容为：
 
-```ejs
+```html
 <div id="vcomment" class="comment"></div> 
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
@@ -94,7 +91,7 @@ valine:
 
 ## 3.生成发布
 
-```shell
+```bash
 hexo g
 hexo s  #本地可以预览效果，或者hexo d 
 ```
@@ -111,7 +108,7 @@ hexo s  #本地可以预览效果，或者hexo d
 
 可切换多种头像，请看下面代码：
 
-```
+```yml
 avatar: retro #评论列表头像样式：''/mm/identicon/monsterid/wavatar/retro/hide
  #头像类型可见： https://valine.js.org/avatar.html
 ```

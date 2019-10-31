@@ -15,8 +15,12 @@ declare: true
 经测试，发现有以下几个问题：
 
 1. 引用块里面的代码块样式有问题。
-2. MySQL等SQL需要统一设置为SQL，不然不高亮。
-3. cmd命令/shell语言等使用bash，不然不高亮。
+2. 如果语言不支持高亮，默认使用plain（简单的，无格式的）。
+3. MySQL等SQL需要统一设置为SQL，不然不高亮。
+4. shell脚本使用bash，不然不高亮。
+5. cmd命令/Linux命令使用bash，可以部分高亮。
+6. markdown代码块不支持高亮。
+7. ejs使用HTML进行高亮。
 
 <!--more-->
 
@@ -177,10 +181,24 @@ VALUES (value1,value2,value3,...);
 ```mysql
 SELECT * from runoob_tbl ORDER BY submission_date ASC;
 ```
+## MySQL-->SQL
+
+```sql
+SELECT * from runoob_tbl ORDER BY submission_date ASC;
+```
 
 ## Shell
 
 ```shell
+for loop in 1 2 3 4 5
+do
+    echo "The value is: $loop"
+done
+```
+
+## Shell-->BASH
+
+```bash
 for loop in 1 2 3 4 5
 do
     echo "The value is: $loop"
@@ -225,3 +243,57 @@ int main()
     return 0;
 }
 ```
+
+## Markdown
+
+```Markdown
+这是超链接：<https://github.com/yansheng836/>
+下面的是列表：
+- 列表
+- 列表
+```
+
+## EJS
+
+```ejs
+<% if (theme.valine && theme.valine.appid && theme.valine.appkey){ %>
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <%- partial('post/valine', {
+        key: post.slug,
+        title: post.title,
+        url: config.url+url_for(post.path)
+        }) %>
+  </section>
+<% } %>
+```
+
+## EJS-->HTML
+
+```HTML
+<% if (theme.valine && theme.valine.appid && theme.valine.appkey){ %>
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <%- partial('post/valine', {
+        key: post.slug,
+        title: post.title,
+        url: config.url+url_for(post.path)
+        }) %>
+  </section>
+<% } %>
+```
+
+## YML
+
+```YML
+#hexo g 会默认将所有md文件转换成（渲染成）HTML文件放到public文件夹中；加上这句话的意思就是告诉hexo的解析器，跳过渲染(skip_render)README.md文件
+skip_render: 
+ - 'README.md'
+```
+
