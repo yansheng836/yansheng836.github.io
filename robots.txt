@@ -1,0 +1,42 @@
+# 允许所有用户代理的浏览器爬虫进行访问（爬起数据）
+User-agent: *
+
+# 允许访问的内容
+Allow: /
+Allow: /2019/
+Allow: /archives/
+Allow: /categories/
+Allow: /2019/
+Allow: /page/
+Allow: /photos/
+Allow: /tags/
+
+# 不允许访问的内容
+Disallow: /assets/
+Disallow: /fonts/
+Disallow: /img/
+Disallow: /js/
+Disallow: /music/
+Disallow: /css/
+
+Disallow: /*.js
+Disallow: /*.css
+
+# 网站地图Sitemap
+Sitemap: http://yansheng.xyz/sitemap.xml
+Sitemap: http://yansheng.xyz/baidusitemap.xml
+Sitemap: https://yansheng.xyz/sitemap.xml
+Sitemap: http://yansheng.xyz/baidusitemap.xml
+Sitemap: http://www.yansheng.xyz/sitemap.xml
+Sitemap: http://www.yansheng.xyz/baidusitemap.xml
+Sitemap: https://www.yansheng.xyz/sitemap.xml
+Sitemap: https://www.yansheng.xyz/baidusitemap.xml
+
+Sitemap: https://yansheng836.github.io/sitemap.xml
+Sitemap: https://yansheng836.github.io/baidusitemap.xml
+
+Sitemap: https://yansheng0083.gitee.io/sitemap.xml
+Sitemap: https://yansheng0083.gitee.io/baidusitemap.xml
+
+Sitemap: http://yansheng836.coding.me/sitemap.xml
+Sitemap: http://yansheng836.coding.me/baidusitemap.xml
