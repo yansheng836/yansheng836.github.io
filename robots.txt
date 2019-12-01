@@ -1,12 +1,11 @@
-# 允许所有用户代理的浏览器爬虫进行访问（爬起数据）
+# 允许所有用户代理的浏览器爬虫进行访问（爬取数据）
 User-agent: *
 
 # 允许访问的内容
 Allow: /
-Allow: /2019/
 Allow: /archives/
+Allow: /article/
 Allow: /categories/
-Allow: /2019/
 Allow: /page/
 Allow: /photos/
 Allow: /tags/
@@ -27,6 +26,7 @@ Sitemap: http://yansheng.xyz/sitemap.xml
 Sitemap: http://yansheng.xyz/baidusitemap.xml
 Sitemap: https://yansheng.xyz/sitemap.xml
 Sitemap: http://yansheng.xyz/baidusitemap.xml
+
 Sitemap: http://www.yansheng.xyz/sitemap.xml
 Sitemap: http://www.yansheng.xyz/baidusitemap.xml
 Sitemap: https://www.yansheng.xyz/sitemap.xml
