@@ -1,3 +1,57 @@
-// build time:Wed Jan 01 2020 23:12:14 GMT+0800 (GMT+08:00)
-window.onload=function(){var a=document.getElementById("code_rain_canvas");var r=a.getContext("2d");var t=window.screen;var o=a.width=t.width;var n=a.height;a.width=o;a.height=n;var e=12;var h=Math.floor(o/e);var l=[];for(var v=0;v<h;v++){l.push(0)}var i="WELCOME TO WWW.ITRHX.COM";function d(){r.fillStyle="rgba(238,238,238,.08)";r.fillRect(0,0,o,n);r.font="600 "+e+"px  Georgia";r.fillStyle=["#33B5E5","#0099CC","#AA66CC","#9933CC","#99CC00","#669900","#FFBB33","#FF8800","#FF4444","#CC0000"][parseInt(Math.random()*10)];for(var t=0;t<h;t++){var v=Math.floor(Math.random()*i.length);var d=t*e;var f=l[t]*e;r.fillText(i[v],d,f);if(f>=a.height&&Math.random()>.99){l[t]=0}l[t]++}}function f(){var a=Math.floor(Math.random()*256);var r=Math.floor(Math.random()*256);var t=Math.floor(Math.random()*256);return"rgb("+a+","+r+","+t+")"}d();setInterval(d,35)};
-//rebuild by neat 
+window.onload = function(){
+    //获取画布对象
+    var canvas = document.getElementById("code_rain_canvas");
+    //获取画布的上下文
+    var context =canvas.getContext("2d");
+    var s = window.screen;
+    var W = canvas.width = s.width;
+    var H = canvas.height;
+    //获取浏览器屏幕的宽度和高度
+    //var W = window.innerWidth;
+    //var H = window.innerHeight;
+    //设置canvas的宽度和高度
+    canvas.width = W;
+    canvas.height = H;
+    //每个文字的字体大小
+    var fontSize = 12;
+    //计算列
+    var colunms = Math.floor(W /fontSize);	
+    //记录每列文字的y轴坐标
+    var drops = [];
+    //给每一个文字初始化一个起始点的位置
+    for(var i=0;i<colunms;i++){
+        drops.push(0);
+    }
+    //运动的文字
+    var str ="WELCOME TO WWW.ITRHX.COM";
+    //4:fillText(str,x,y);原理就是去更改y的坐标位置
+    //绘画的函数
+    function draw(){
+        context.fillStyle = "rgba(238,238,238,.08)";//遮盖层
+        context.fillRect(0,0,W,H);
+        //给字体设置样式
+        context.font = "600 "+fontSize+"px  Georgia";
+        //给字体添加颜色
+        context.fillStyle = ["#33B5E5", "#0099CC", "#AA66CC", "#9933CC", "#99CC00", "#669900", "#FFBB33", "#FF8800", "#FF4444", "#CC0000"][parseInt(Math.random() * 10)];//randColor();可以rgb,hsl, 标准色，十六进制颜色
+        //写入画布中
+        for(var i=0;i<colunms;i++){
+            var index = Math.floor(Math.random() * str.length);
+            var x = i*fontSize;
+            var y = drops[i] *fontSize;
+            context.fillText(str[index],x,y);
+            //如果要改变时间，肯定就是改变每次他的起点
+            if(y >= canvas.height && Math.random() > 0.99){
+                drops[i] = 0;
+            }
+            drops[i]++;
+        }
+    };
+    function randColor(){//随机颜色
+        var r = Math.floor(Math.random() * 256);
+        var g = Math.floor(Math.random() * 256);
+        var b = Math.floor(Math.random() * 256);
+        return "rgb("+r+","+g+","+b+")";
+    }
+    draw();
+    setInterval(draw,35);
+};

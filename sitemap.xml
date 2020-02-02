@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.yansheng.xyz/photos/data.json</loc>
+    
+    <lastmod>2020-02-02T15:28:13.507Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yansheng.xyz//404.html</loc>
+    
+    <lastmod>2020-01-03T05:58:02.241Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yansheng.xyz/tags/index.html</loc>
+    
+    <lastmod>2020-01-02T12:50:32.089Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.yansheng.xyz/article/94a46e7b.html</loc>
     
     <lastmod>2020-01-01T15:09:55.457Z</lastmod>
@@ -12,13 +33,6 @@
     <loc>https://www.yansheng.xyz/article/e62c38c4.html</loc>
     
     <lastmod>2020-01-01T14:53:37.598Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.yansheng.xyz/photos/data.json</loc>
-    
-    <lastmod>2020-01-01T13:53:50.716Z</lastmod>
     
   </url>
   
@@ -205,13 +219,6 @@
   </url>
   
   <url>
-    <loc>https://www.yansheng.xyz//404.html</loc>
-    
-    <lastmod>2019-11-11T05:26:59.916Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.yansheng.xyz/article/2928fb74.html</loc>
     
     <lastmod>2019-11-10T08:55:09.199Z</lastmod>
@@ -306,13 +313,6 @@
     <loc>https://www.yansheng.xyz/categories/index.html</loc>
     
     <lastmod>2019-10-17T07:28:33.541Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.yansheng.xyz/tags/index.html</loc>
-    
-    <lastmod>2019-08-20T05:13:38.076Z</lastmod>
     
   </url>
   
