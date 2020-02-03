@@ -190,6 +190,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	        
 				<li><a href="/photos">相册</a></li>
 	        
+				<li><a href="/tags">标签</a></li>
+	        
+				<li><a href="/message-board">留言墙</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -291,6 +295,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -311,13 +319,17 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/categories">分类</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories">分类</a></li>
 		        
-					<li style="width: 25%"><a href="/archives">归档</a></li>
+					<li style="width: 16.666666666666668%"><a href="/archives">归档</a></li>
 		        
-					<li style="width: 25%"><a href="/photos">相册</a></li>
+					<li style="width: 16.666666666666668%"><a href="/photos">相册</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/tags">标签</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/message-board">留言墙</a></li>
 		        
 				</ul>
 			</nav>
@@ -370,7 +382,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
        <i class="icon-statistics"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">193字</span>
+        <span class="post-count">190字</span>
       </span>
     </span>
 
@@ -400,24 +412,12 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 使用详见：<a href="https://www.jianshu.com/p/2aaac7a19736" target="_blank" rel="noopener">https://www.jianshu.com/p/2aaac7a19736</a>，<a href="https://wxnacy.com/2018/12/12/hexo-add-rss/" target="_blank" rel="noopener">https://wxnacy.com/2018/12/12/hexo-add-rss/</a></p>
 <a id="more"></a>
 <h3 id="1-先安装插件：">1.先安装插件：</h3>
-<pre><code class="language-bash">npm install hexo-generator-feed
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed</span><br></pre></td></tr></table></figure>
 <h3 id="2-在hexo根目录配置文件-config-yml中配置插件">2.在hexo根目录配置文件<code>_config.yml</code>中配置插件:</h3>
-<pre><code class="language-yml"># Extensions
-plugins:
-  hexo-generator-feed
-#Feed Atom
-feed:
-  type: atom
-  path: atom.xml
-  limit: 20 # 最新的20篇文章
-</code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="attr">plugins:</span></span><br><span class="line">  <span class="string">hexo-generator-feed</span></span><br><span class="line"><span class="comment">#Feed Atom</span></span><br><span class="line"><span class="attr">feed:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">atom</span></span><br><span class="line"><span class="attr">  path:</span> <span class="string">atom.xml</span></span><br><span class="line"><span class="attr">  limit:</span> <span class="number">20</span> <span class="comment"># 最新的20篇文章</span></span><br></pre></td></tr></table></figure>
 <h3 id="3-开启主题的左侧边栏的rss功能">3.开启主题的左侧边栏的RSS功能</h3>
 <p>在主题的配置文件<code>theme/yilia/_config.yml</code>中进行设置:</p>
-<pre><code class="language-yml"># SubNav
-subnav:
-  rss: &quot;atom.xml&quot; 
-</code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># SubNav</span></span><br><span class="line"><span class="attr">subnav:</span></span><br><span class="line"><span class="attr">  rss:</span> <span class="string">"atom.xml"</span></span><br></pre></td></tr></table></figure>
 <h3 id="4-重新生成文件">4.重新生成文件</h3>
 <p><code>hexo clean, hexo g</code>后会在<code>public</code>目录下生成<code>auto.xml</code>订阅文件，到浏览器进行访问，点击图标会跳转到<code>*/auto.xml</code>界面，显示最近的几篇文章的更新。</p>
 

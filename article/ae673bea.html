@@ -190,6 +190,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	        
 				<li><a href="/photos">相册</a></li>
 	        
+				<li><a href="/tags">标签</a></li>
+	        
+				<li><a href="/message-board">留言墙</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -291,6 +295,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -311,13 +319,17 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/categories">分类</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories">分类</a></li>
 		        
-					<li style="width: 25%"><a href="/archives">归档</a></li>
+					<li style="width: 16.666666666666668%"><a href="/archives">归档</a></li>
 		        
-					<li style="width: 25%"><a href="/photos">相册</a></li>
+					<li style="width: 16.666666666666668%"><a href="/photos">相册</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/tags">标签</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/message-board">留言墙</a></li>
 		        
 				</ul>
 			</nav>
@@ -370,7 +382,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
        <i class="icon-statistics"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">400字</span>
+        <span class="post-count">398字</span>
       </span>
     </span>
 
@@ -400,34 +412,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <a id="more"></a>
 <h3 id="配置">配置</h3>
 <p>该配置可以管理我们想要搜索引擎爬取的内容，Allow表示允许被访问的，Disallow是不允许的意思。注意后面两个Sitemap就是网站地图了。而网站地图前面说了是给爬虫用的。这里配置在robots中。可参考如下配置：</p>
-<pre><code class="language-plain"># 允许所有用户代理的浏览器爬虫进行访问（爬起数据）
-User-agent: *
-
-# 允许访问的内容
-Allow: /
-Allow: /2019/
-Allow: /archives/
-Allow: /categories/
-Allow: /2019/
-Allow: /page/
-Allow: /photos/
-Allow: /tags/
-
-# 不允许访问的内容
-Disallow: /assets/
-Disallow: /fonts/
-Disallow: /img/
-Disallow: /js/
-Disallow: /music/
-Disallow: /css/
-
-Disallow: /*.js
-Disallow: /*.css
-
-# 网站地图Sitemap
-Sitemap: https://www.yansheng.xyz/sitemap.xml
-Sitemap: https://www.yansheng.xyz/baidusitemap.xml
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"># 允许所有用户代理的浏览器爬虫进行访问（爬起数据）</span><br><span class="line">User-agent: *</span><br><span class="line"></span><br><span class="line"># 允许访问的内容</span><br><span class="line">Allow: /</span><br><span class="line">Allow: /2019/</span><br><span class="line">Allow: /archives/</span><br><span class="line">Allow: /categories/</span><br><span class="line">Allow: /2019/</span><br><span class="line">Allow: /page/</span><br><span class="line">Allow: /photos/</span><br><span class="line">Allow: /tags/</span><br><span class="line"></span><br><span class="line"># 不允许访问的内容</span><br><span class="line">Disallow: /assets/</span><br><span class="line">Disallow: /fonts/</span><br><span class="line">Disallow: /img/</span><br><span class="line">Disallow: /js/</span><br><span class="line">Disallow: /music/</span><br><span class="line">Disallow: /css/</span><br><span class="line"></span><br><span class="line">Disallow: /*.js</span><br><span class="line">Disallow: /*.css</span><br><span class="line"></span><br><span class="line"># 网站地图Sitemap</span><br><span class="line">Sitemap: https://www.yansheng.xyz/sitemap.xml</span><br><span class="line">Sitemap: https://www.yansheng.xyz/baidusitemap.xml</span><br></pre></td></tr></table></figure>
 <h3 id="进入搜索引擎管理平台更新robots">进入搜索引擎管理平台更新robots</h3>
 <p>Google Search Console: <a href="https://www.google.com/webmasters/tools/home?hl=zh-CN" target="_blank" rel="noopener">https://www.google.com/webmasters/tools/home?hl=zh-CN</a><br>
 百度站长平台: <a href="http://zhanzhang.baidu.com/" target="_blank" rel="noopener">http://zhanzhang.baidu.com/</a></p>

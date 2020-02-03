@@ -192,6 +192,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	        
 				<li><a href="/photos">相册</a></li>
 	        
+				<li><a href="/tags">标签</a></li>
+	        
+				<li><a href="/message-board">留言墙</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -293,6 +297,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -313,13 +321,17 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/categories">分类</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories">分类</a></li>
 		        
-					<li style="width: 25%"><a href="/archives">归档</a></li>
+					<li style="width: 16.666666666666668%"><a href="/archives">归档</a></li>
 		        
-					<li style="width: 25%"><a href="/photos">相册</a></li>
+					<li style="width: 16.666666666666668%"><a href="/photos">相册</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/tags">标签</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/message-board">留言墙</a></li>
 		        
 				</ul>
 			</nav>
@@ -409,25 +421,12 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>步骤：</p>
 <p>1.到<a href="https://music.163.com/" target="_blank" rel="noopener">网易云官网</a>获取音乐外链：搜索音乐–&gt;生成外链播放器（使用iframe插件形式）–&gt;复制代码</p>
 <p>2.打开路径 <code>themes/yilia/layout/_partial/left-col.ejs</code>，在最后一个<code>&lt;/nav&gt;</code>上面添加代码，就像下面这样。注意是否需要自动播放，建议不要设置为自动播放（src中的<code>auto=0</code>表示不自动播放，如果是1就自动播放）。</p>
-<pre><code class="language-html">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=228 height=86 
-        src=&quot;//music.163.com/outchain/player?type=2&amp;id=1371939273&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;
-&lt;/nav&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">marginwidth</span>=<span class="string">"0"</span> <span class="attr">marginheight</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">228</span> <span class="attr">height</span>=<span class="string">86</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">src</span>=<span class="string">"//music.163.com/outchain/player?type=2&amp;id=1371939273&amp;auto=0&amp;height=66"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>3.根据需要设置宽高属性，宽建议228。</p>
 <p>4.为了方便起见，设置成能够在主题的配置文件中开启和关闭的形式：</p>
-<pre><code class="language-html">&lt;!-- 《左侧边栏添加--网易云音乐插件 --&gt;
-&lt;!-- https://www.writebug.site/2018/04/21/hexo-yilia个性化之-添加背景音乐/ --&gt;
-&lt;% if(theme.simple_163_music &amp;&amp; theme.simple_163_music.enable){ %&gt;
-    &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=228 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=1371939273&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;
-&lt;% } %&gt;
-&lt;!-- 网易云音乐插件》--&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 《左侧边栏添加--网易云音乐插件 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- https://www.writebug.site/2018/04/21/hexo-yilia个性化之-添加背景音乐/ --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">theme.simple_163_music</span> &amp;&amp; <span class="attr">theme.simple_163_music.enable</span>)&#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">iframe</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">marginwidth</span>=<span class="string">"0"</span> <span class="attr">marginheight</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">228</span> <span class="attr">height</span>=<span class="string">86</span> <span class="attr">src</span>=<span class="string">"//music.163.com/outchain/player?type=2&amp;id=1371939273&amp;auto=0&amp;height=66"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 网易云音乐插件》--&gt;</span></span><br></pre></td></tr></table></figure>
 <p>同时需要在主题的配置文件<code>themes/yilia/_config.yml</code>中开启：</p>
-<pre><code class="language-yml"># 音乐
-# 简单的网易云音乐
-simple_163_music:
- enable: true
-</code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 音乐</span></span><br><span class="line"><span class="comment"># 简单的网易云音乐</span></span><br><span class="line"><span class="attr">simple_163_music:</span></span><br><span class="line"><span class="attr"> enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p>如需关闭设置为false。</p>
 <h3 id="复杂版：aplayer音乐播放器">复杂版：APlayer音乐播放器</h3>
 <p>参考：</p>
@@ -439,67 +438,9 @@ simple_163_music:
 </ul>
 <h4 id="安装步骤">安装步骤</h4>
 <p>1.打开路径 <code>themes/yilia/layout/_partial/left-col.ejs</code>，在最后一个<code>&lt;/nav&gt;</code>上面添加代码，就像下面这样。</p>
-<pre><code class="language-html">&lt;!-- 《左侧边栏添加--APlayer音乐播放器 --&gt;
-&lt;% if(theme.aplayer.enable) { %&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css&quot;&gt;
-&lt;!-- // 这里div的样式是笔者自己修改过的，你可以直接使用APlayer官方的原配置：&lt;div id=&quot;aplayer&quot;&gt;&lt;/div&gt; --&gt;
-&lt;div id=&quot;aplayer&quot; style=&quot;position:absolute;left;0;bottom:0;&quot;&gt;&lt;/div&gt;
-&lt;script src=&quot;https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-    const ap = new APlayer({
-        container: document.getElementById('aplayer'),
-        autoplay: false,
-        listFolded: true,
-        listMaxHeight: 90,
-        order: 'list',
-        loop: 'all',
-        theme: '#b7daff',
-        preload: 'none',
-        mutex: true,
-        lrcType: 3,
-        volume: 0.7,
-        fixed: true,
-        audio: [{
-                name: '亲爱的旅人啊（Cover：木村弓）',
-                artist: '周深',
-                lrc: '/music/lrc/亲爱的旅人啊（Cover：木村弓）-周深.lrc',
-                cover: 'http://p1.music.126.net/1YrCPOBV314i-mTtlDg8mQ==/109951164148664637.jpg?param=300x300',
-                url: 'http://m10.music.126.net/20191102134206/7c499bc0065a03c980aa04817b2b7b2b/ymusic/555f/525a/5258/b5f91cd86ce0046a6f70e249d0802a1e.mp3'
-            },
-            {
-                name: '陈情令：无羁',
-                artist: 'Silu Wang',
-                lrc: '',
-                cover: 'http://p2.music.126.net/8eL7nls1F8o48_umy0uqBQ==/109951164361652548.jpg?param=300x300',
-                url: 'http://m10.music.126.net/20191102144314/e85a4a99852144dced7bc7eace047ecc/ymusic/015d/550f/5152/67f6f0756ebe8bd362f5f85c507acf68.mp3'
-            }
-        ]
-    });
-
-    &lt;!-- 根据封面自适应主题色 --&gt;
-    const colorThief = new ColorThief();
-    const setTheme = (index) =&gt; {
-        if (!ap.list.audios[index].theme) {
-            colorThief.getColorAsync(ap.list.audios[index].cover, function(color) {
-                ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
-            });
-        }
-    };
-    setTheme(ap.list.index);
-    ap.on('listswitch', (data) =&gt; {
-        setTheme(data.index);
-    });
-&lt;/script&gt;
-&lt;% } %&gt;
-&lt;!-- 左侧边栏添加--APlayer音乐播放器》 --&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 《左侧边栏添加--APlayer音乐播放器 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">theme.aplayer.enable</span>) &#123; %&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- // 这里div的样式是笔者自己修改过的，你可以直接使用APlayer官方的原配置：&lt;div id="aplayer"&gt;&lt;/div&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"aplayer"</span> <span class="attr">style</span>=<span class="string">"position:absolute;left;0;bottom:0;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> ap = <span class="keyword">new</span> APlayer(&#123;</span></span><br><span class="line"><span class="javascript">        container: <span class="built_in">document</span>.getElementById(<span class="string">'aplayer'</span>),</span></span><br><span class="line"><span class="javascript">        autoplay: <span class="literal">false</span>,</span></span><br><span class="line"><span class="javascript">        listFolded: <span class="literal">true</span>,</span></span><br><span class="line">        listMaxHeight: 90,</span><br><span class="line"><span class="javascript">        order: <span class="string">'list'</span>,</span></span><br><span class="line"><span class="javascript">        loop: <span class="string">'all'</span>,</span></span><br><span class="line"><span class="javascript">        theme: <span class="string">'#b7daff'</span>,</span></span><br><span class="line"><span class="javascript">        preload: <span class="string">'none'</span>,</span></span><br><span class="line"><span class="javascript">        mutex: <span class="literal">true</span>,</span></span><br><span class="line">        lrcType: 3,</span><br><span class="line">        volume: 0.7,</span><br><span class="line"><span class="javascript">        fixed: <span class="literal">true</span>,</span></span><br><span class="line">        audio: [&#123;</span><br><span class="line"><span class="javascript">                name: <span class="string">'亲爱的旅人啊（Cover：木村弓）'</span>,</span></span><br><span class="line"><span class="javascript">                artist: <span class="string">'周深'</span>,</span></span><br><span class="line"><span class="javascript">                lrc: <span class="string">'/music/lrc/亲爱的旅人啊（Cover：木村弓）-周深.lrc'</span>,</span></span><br><span class="line"><span class="javascript">                cover: <span class="string">'http://p1.music.126.net/1YrCPOBV314i-mTtlDg8mQ==/109951164148664637.jpg?param=300x300'</span>,</span></span><br><span class="line"><span class="javascript">                url: <span class="string">'http://m10.music.126.net/20191102134206/7c499bc0065a03c980aa04817b2b7b2b/ymusic/555f/525a/5258/b5f91cd86ce0046a6f70e249d0802a1e.mp3'</span></span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line"><span class="javascript">                name: <span class="string">'陈情令：无羁'</span>,</span></span><br><span class="line"><span class="javascript">                artist: <span class="string">'Silu Wang'</span>,</span></span><br><span class="line"><span class="javascript">                lrc: <span class="string">''</span>,</span></span><br><span class="line"><span class="javascript">                cover: <span class="string">'http://p2.music.126.net/8eL7nls1F8o48_umy0uqBQ==/109951164361652548.jpg?param=300x300'</span>,</span></span><br><span class="line"><span class="javascript">                url: <span class="string">'http://m10.music.126.net/20191102144314/e85a4a99852144dced7bc7eace047ecc/ymusic/015d/550f/5152/67f6f0756ebe8bd362f5f85c507acf68.mp3'</span></span></span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line"><span class="xml">    <span class="comment">&lt;!-- 根据封面自适应主题色 --&gt;</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> colorThief = <span class="keyword">new</span> ColorThief();</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> setTheme = <span class="function">(<span class="params">index</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (!ap.list.audios[index].theme) &#123;</span></span><br><span class="line"><span class="javascript">            colorThief.getColorAsync(ap.list.audios[index].cover, <span class="function"><span class="keyword">function</span>(<span class="params">color</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                ap.theme(<span class="string">`rgb(<span class="subst">$&#123;color[<span class="number">0</span>]&#125;</span>, <span class="subst">$&#123;color[<span class="number">1</span>]&#125;</span>, <span class="subst">$&#123;color[<span class="number">2</span>]&#125;</span>)`</span>, index);</span></span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    setTheme(ap.list.index);</span><br><span class="line"><span class="javascript">    ap.on(<span class="string">'listswitch'</span>, (data) =&gt; &#123;</span></span><br><span class="line">        setTheme(data.index);</span><br><span class="line">    &#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 左侧边栏添加--APlayer音乐播放器》 --&gt;</span></span><br></pre></td></tr></table></figure>
 <p>2.同时需要在主题的配置文件<code>themes/yilia/_config.yml</code>中开启：</p>
-<pre><code class="language-yml"># 添加APlayer音乐播放器，官网：https://aplayer.js.org
-# github: https://github.com/MoePlayer/APlayer
-aplayer:
-  enable: true
-</code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加APlayer音乐播放器，官网：https://aplayer.js.org</span></span><br><span class="line"><span class="comment"># github: https://github.com/MoePlayer/APlayer</span></span><br><span class="line"><span class="attr">aplayer:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p>如需关闭设置为false。</p>
 <h4 id="说明">说明</h4>
 <p>1.存在问题：<code>fixed: true</code>模式下，歌曲列表高度<code>listMaxHeight</code>好像无效。</p>
@@ -509,66 +450,9 @@ aplayer:
 <p>上面说到的歌曲列表高度<code>listMaxHeight</code>问题，应该是一个bug，详见：<a href="https://github.com/MoePlayer/APlayer/issues/345" target="_blank" rel="noopener">listMaxHeight does not work and no scroll in Fixed mode</a>，但是可以不进行设置，因为它有一个默认值250px。</p>
 <h4 id="更新">更新</h4>
 <p>将配置分开，方便修改。</p>
-<pre><code class="language-html">            &lt;!-- 《左侧边栏添加--APlayer音乐播放器：详见：https://aplayer.js.org/#/zh-Hans/ --&gt;
-            &lt;% if(theme.aplayer.enable) { %&gt;
-                &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css&quot;&gt;
-
-                &lt;div id=&quot;aplayer&quot; style=&quot;text-align:left&quot;&gt;&lt;/div&gt;
-                &lt;script src=&quot;https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js&quot;&gt;&lt;/script&gt;
-                &lt;script src=&quot;https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js&quot;&gt;&lt;/script&gt;
-
-                &lt;!-- 为方便修改，添加一个配置文件，修改时直接修改配置文件即可。 --&gt;
-                &lt;script type=&quot;text/javascript&quot; src=&quot;&lt;%- url_for('js/APlayer_config.js') %&gt;&quot;&gt;&lt;/script&gt;
-
-                &lt;!-- 根据封面自适应主题色，主要是作用于进度条 --&gt;
-                &lt;script type=&quot;text/javascript&quot;&gt;
-                      const colorThief = new ColorThief();
-                      const setTheme = (index) =&gt; {
-                        if (!ap.list.audios[index].theme) {
-                          colorThief.getColorAsync(ap.list.audios[index].cover, function(color) {
-                            ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
-                          });
-                        }
-                      };
-                      setTheme(ap.list.index);
-                      ap.on('listswitch', (data) =&gt; {
-                        setTheme(data.index);
-                      });       
-                &lt;/script&gt;
-            &lt;% } %&gt;
-            &lt;!-- 左侧边栏添加--APlayer音乐播放器》 --&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 《左侧边栏添加--APlayer音乐播放器：详见：https://aplayer.js.org/#/zh-Hans/ --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">theme.aplayer.enable</span>) &#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"aplayer"</span> <span class="attr">style</span>=<span class="string">"text-align:left"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 为方便修改，添加一个配置文件，修改时直接修改配置文件即可。 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"&lt;%- url_for('js/APlayer_config.js') %&gt;"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 根据封面自适应主题色，主要是作用于进度条 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">          <span class="keyword">const</span> colorThief = <span class="keyword">new</span> ColorThief();</span></span><br><span class="line"><span class="javascript">          <span class="keyword">const</span> setTheme = <span class="function">(<span class="params">index</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">if</span> (!ap.list.audios[index].theme) &#123;</span></span><br><span class="line"><span class="javascript">              colorThief.getColorAsync(ap.list.audios[index].cover, <span class="function"><span class="keyword">function</span>(<span class="params">color</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                ap.theme(<span class="string">`rgb(<span class="subst">$&#123;color[<span class="number">0</span>]&#125;</span>, <span class="subst">$&#123;color[<span class="number">1</span>]&#125;</span>, <span class="subst">$&#123;color[<span class="number">2</span>]&#125;</span>)`</span>, index);</span></span><br><span class="line">              &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;;</span><br><span class="line">          setTheme(ap.list.index);</span><br><span class="line"><span class="javascript">          ap.on(<span class="string">'listswitch'</span>, (data) =&gt; &#123;</span></span><br><span class="line">            setTheme(data.index);</span><br><span class="line">          &#125;);       </span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 左侧边栏添加--APlayer音乐播放器》 --&gt;</span></span><br></pre></td></tr></table></figure>
 <p>配置文件<code>H:\Hexo\themes\yilia\source\js\APlayer_config.js</code>:</p>
-<pre><code class="language-js">const ap = new APlayer({
-    container: document.getElementById('aplayer'),
-    fixed: true,
-    autoplay: false,
-    theme: '#b7daff',
-    loop: 'all',
-    order: 'list',
-    preload: 'auto',
-    volume: 0.5,
-    lrcType: 3,
-    mutex: true,
-    listFolded: false,
-
-    audio: [{
-            name: '一直很安静',
-            artist: '阿桑',
-            lrc: '/music/lrc/一直很安静 - 阿桑.lrc',
-            cover: 'https://p1.music.126.net/SpovasHBud2A1qXXADXsBg==/109951163167455610.jpg?param=300x300',
-            url: 'http://q0fzyzixq.bkt.clouddn.com/audio/mp3/一直很安静 - 阿桑.mp3'
-                  },
-        {
-            name: '亲爱的旅人啊（Cover：木村弓）',
-            artist: '周深',
-            lrc: '/music/lrc/亲爱的旅人啊（Cover：木村弓）-周深.lrc',
-            cover: 'https://p1.music.126.net/1YrCPOBV314i-mTtlDg8mQ==/109951164148664637.jpg?param=300x300',
-            url: 'http://q0fzyzixq.bkt.clouddn.com/audio/mp3/亲爱的旅人啊（Cover：木村弓） - 周深.mp3'
-                  }
-        ]
-});
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ap = <span class="keyword">new</span> APlayer(&#123;</span><br><span class="line">    container: <span class="built_in">document</span>.getElementById(<span class="string">'aplayer'</span>),</span><br><span class="line">    fixed: <span class="literal">true</span>,</span><br><span class="line">    autoplay: <span class="literal">false</span>,</span><br><span class="line">    theme: <span class="string">'#b7daff'</span>,</span><br><span class="line">    loop: <span class="string">'all'</span>,</span><br><span class="line">    order: <span class="string">'list'</span>,</span><br><span class="line">    preload: <span class="string">'auto'</span>,</span><br><span class="line">    volume: <span class="number">0.5</span>,</span><br><span class="line">    lrcType: <span class="number">3</span>,</span><br><span class="line">    mutex: <span class="literal">true</span>,</span><br><span class="line">    listFolded: <span class="literal">false</span>,</span><br><span class="line"></span><br><span class="line">    audio: [&#123;</span><br><span class="line">            name: <span class="string">'一直很安静'</span>,</span><br><span class="line">            artist: <span class="string">'阿桑'</span>,</span><br><span class="line">            lrc: <span class="string">'/music/lrc/一直很安静 - 阿桑.lrc'</span>,</span><br><span class="line">            cover: <span class="string">'https://p1.music.126.net/SpovasHBud2A1qXXADXsBg==/109951163167455610.jpg?param=300x300'</span>,</span><br><span class="line">            url: <span class="string">'http://q0fzyzixq.bkt.clouddn.com/audio/mp3/一直很安静 - 阿桑.mp3'</span></span><br><span class="line">                  &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            name: <span class="string">'亲爱的旅人啊（Cover：木村弓）'</span>,</span><br><span class="line">            artist: <span class="string">'周深'</span>,</span><br><span class="line">            lrc: <span class="string">'/music/lrc/亲爱的旅人啊（Cover：木村弓）-周深.lrc'</span>,</span><br><span class="line">            cover: <span class="string">'https://p1.music.126.net/1YrCPOBV314i-mTtlDg8mQ==/109951164148664637.jpg?param=300x300'</span>,</span><br><span class="line">            url: <span class="string">'http://q0fzyzixq.bkt.clouddn.com/audio/mp3/亲爱的旅人啊（Cover：木村弓） - 周深.mp3'</span></span><br><span class="line">                  &#125;</span><br><span class="line">        ]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>分开后，如果需要更新歌曲，只需要更新音乐的配置文件<code>APlayer_config.js</code>就可以了，而不是修改主题的布局文件。</p>
 
       

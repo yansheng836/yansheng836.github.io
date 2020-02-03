@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.yansheng.xyz/message-board/index.html</loc>
+    
+    <lastmod>2020-02-02T17:19:13.232Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.yansheng.xyz/photos/data.json</loc>
     
     <lastmod>2020-02-02T15:28:13.507Z</lastmod>

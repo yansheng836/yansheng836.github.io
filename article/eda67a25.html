@@ -196,6 +196,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	        
 				<li><a href="/photos">相册</a></li>
 	        
+				<li><a href="/tags">标签</a></li>
+	        
+				<li><a href="/message-board">留言墙</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -297,6 +301,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -317,13 +325,17 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/categories">分类</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories">分类</a></li>
 		        
-					<li style="width: 25%"><a href="/archives">归档</a></li>
+					<li style="width: 16.666666666666668%"><a href="/archives">归档</a></li>
 		        
-					<li style="width: 25%"><a href="/photos">相册</a></li>
+					<li style="width: 16.666666666666668%"><a href="/photos">相册</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/tags">标签</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/message-board">留言墙</a></li>
 		        
 				</ul>
 			</nav>
@@ -376,7 +388,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
        <i class="icon-statistics"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">904字</span>
+        <span class="post-count">909字</span>
       </span>
     </span>
 
@@ -418,87 +430,28 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </ul>
 <h3 id="配置">配置</h3>
 <p><code>H:\Hexo\themes\yilia\_config.yml</code>原内容：</p>
-<pre><code class="language-yml"># Miscellaneous
-baidu_analytics: ''
-google_analytics: ''
-</code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Miscellaneous</span></span><br><span class="line"><span class="attr">baidu_analytics:</span> <span class="string">''</span></span><br><span class="line"><span class="attr">google_analytics:</span> <span class="string">''</span></span><br></pre></td></tr></table></figure>
 <p>主要是配置对应的id即可（google_analytics的代码好像更新了，建议新建，使用新的代码）。</p>
 <h4 id="百度">百度</h4>
 <p>网址生成的原代码（id是一串字符串，这里隐藏了）</p>
-<pre><code class="language-js">&lt;script&gt;
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement(&quot;script&quot;);
-  hm.src = &quot;https://hm.baidu.com/hm.js?id&quot;;
-  var s = document.getElementsByTagName(&quot;script&quot;)[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-&lt;/script&gt;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">var</span> _hmt = _hmt || [];</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> hm = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">  hm.src = <span class="string">"https://hm.baidu.com/hm.js?id"</span>;</span><br><span class="line">  <span class="keyword">var</span> s = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"script"</span>)[<span class="number">0</span>]; </span><br><span class="line">  s.parentNode.insertBefore(hm, s);</span><br><span class="line">&#125;)();</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 <p><img src="http://bucket836.oss-cn-shenzhen.aliyuncs.com/image-1573050740534.png" alt="file"></p>
 <p>对应的配置文件<code>H:\Hexo\themes\yilia\layout\_partial\baidu-analytics.ejs</code>:</p>
-<pre><code class="language-html">&lt;% if (theme.baidu_analytics){ %&gt;
-&lt;script&gt;
-var _hmt = _hmt || [];
-(function() {
-	var hm = document.createElement(&quot;script&quot;);
-	hm.src = &quot;https://hm.baidu.com/hm.js?&lt;%= theme.baidu_analytics %&gt;&quot;;
-	var s = document.getElementsByTagName(&quot;script&quot;)[0]; 
-	s.parentNode.insertBefore(hm, s);
-})();
-&lt;/script&gt;
-&lt;% } %&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">theme.baidu_analytics</span>)&#123; %&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> _hmt = _hmt || [];</span></span><br><span class="line"><span class="javascript">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> hm = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span></span><br><span class="line"><span class="javascript">	hm.src = <span class="string">"https://hm.baidu.com/hm.js?&lt;%= theme.baidu_analytics %&gt;"</span>;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> s = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"script"</span>)[<span class="number">0</span>]; </span></span><br><span class="line">	s.parentNode.insertBefore(hm, s);</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
 <h4 id="google全局网站代码-gtag-js">Google全局网站代码 (gtag.js)</h4>
 <p>我找了好久才找到代码，因此记录下：</p>
 <p><strong>生成代码</strong>：控制台–&gt;（左下角）管理–&gt;管理–&gt;（中间）媒体资源–&gt;（中间）跟踪信息–&gt;跟踪代码</p>
 <p><img src="http://bucket836.oss-cn-shenzhen.aliyuncs.com/image-1573052579176.png" alt="file"></p>
 <p>这是针对此媒体资源的全局网站代码 (gtag.js) 跟踪代码。请复制此代码，并将其作为第一个项目粘贴到您要跟踪的每个网页的<code>&lt;HEAD&gt;</code>  标记中。如果您的网页上已经有全局网站代码，则只需将以下代码段中的 <strong>config</strong> 行添加到现有的全局网站代码。</p>
-<pre><code class="language-js">&lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;
-&lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=ID&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'ID');
-&lt;/script&gt;
-</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;</span><br><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"https://www.googletagmanager.com/gtag/js?id=ID"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="built_in">window</span>.dataLayer = <span class="built_in">window</span>.dataLayer || [];</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">gtag</span>(<span class="params"></span>)</span>&#123;dataLayer.push(<span class="built_in">arguments</span>);&#125;</span><br><span class="line">  gtag(<span class="string">'js'</span>, <span class="keyword">new</span> <span class="built_in">Date</span>());</span><br><span class="line">  gtag(<span class="string">'config'</span>, <span class="string">'ID'</span>);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 <p><img src="http://bucket836.oss-cn-shenzhen.aliyuncs.com/image-1573050951989.png" alt="file"></p>
 <p>对应的配置文件<code>H:\Hexo\themes\yilia\layout\_partial\google_analytics.ejs</code>:</p>
-<pre><code class="language-html">&lt;% if (theme.google_analytics){ %&gt;
-&lt;!-- Google Analytics --&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', '&lt;%= theme.google_analytics %&gt;', 'auto');
-ga('send', 'pageview');
-
-&lt;/script&gt;
-&lt;!-- End Google Analytics --&gt;
-&lt;% } %&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">theme.google_analytics</span>)&#123; %&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Google Analytics --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">(<span class="function"><span class="keyword">function</span>(<span class="params">i,s,o,g,r,a,m</span>)</span>&#123;i[<span class="string">'GoogleAnalyticsObject'</span>]=r;i[r]=i[r]||<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">(i[r].q=i[r].q||[]).push(<span class="built_in">arguments</span>)&#125;,i[r].l=<span class="number">1</span>*<span class="keyword">new</span> <span class="built_in">Date</span>();a=s.createElement(o),</span></span><br><span class="line">m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)</span><br><span class="line"><span class="javascript">&#125;)(<span class="built_in">window</span>,<span class="built_in">document</span>,<span class="string">'script'</span>,<span class="string">'//www.google-analytics.com/analytics.js'</span>,<span class="string">'ga'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">ga(<span class="string">'create'</span>, <span class="string">'&lt;%= theme.google_analytics %&gt;'</span>, <span class="string">'auto'</span>);</span></span><br><span class="line"><span class="javascript">ga(<span class="string">'send'</span>, <span class="string">'pageview'</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- End Google Analytics --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
 <p>代码好像更新了，yilia主题自带的代码应该是旧的，更换为下面的：</p>
-<pre><code class="language-html">&lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;
-&lt;% if (theme.google_analytics){ %&gt;
-    &lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=&lt;%= theme.google_analytics %&gt;&quot;&gt;&lt;/script&gt;
-    &lt;script&gt;
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '&lt;%= theme.google_analytics %&gt;');
-    &lt;/script&gt;
-&lt;% } %&gt;
-&lt;!-- End Google Analytics --&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">theme.google_analytics</span>)&#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">"https://www.googletagmanager.com/gtag/js?id=&lt;%= theme.google_analytics %&gt;"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">window</span>.dataLayer = <span class="built_in">window</span>.dataLayer || [];</span></span><br><span class="line"><span class="javascript">      <span class="function"><span class="keyword">function</span> <span class="title">gtag</span>(<span class="params"></span>)</span>&#123;dataLayer.push(<span class="built_in">arguments</span>);&#125;</span></span><br><span class="line"><span class="javascript">      gtag(<span class="string">'js'</span>, <span class="keyword">new</span> <span class="built_in">Date</span>());</span></span><br><span class="line"><span class="javascript">      gtag(<span class="string">'config'</span>, <span class="string">'&lt;%= theme.google_analytics %&gt;'</span>);</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- End Google Analytics --&gt;</span></span><br></pre></td></tr></table></figure>
 <h4 id="配置id">配置id</h4>
 <p><code>H:\Hexo\themes\yilia\_config.yml</code></p>
-<pre><code class="language-yml"># Miscellaneous(杂项):百度统计、Google统计
-baidu_analytics: '百度统计id'
-google_analytics: 'Google统计id'
-</code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Miscellaneous(杂项):百度统计、Google统计</span></span><br><span class="line"><span class="attr">baidu_analytics:</span> <span class="string">'百度统计id'</span></span><br><span class="line"><span class="attr">google_analytics:</span> <span class="string">'Google统计id'</span></span><br></pre></td></tr></table></figure>
 <h4 id="成功效果">成功效果</h4>
 <p>本地测试，F12打开控制台，没有报相关错误，而且在<code>Sources--&gt;Page</code>有显示下面两个网站，说明配置成功了。过一段之间再去数据分析控制台查看，应该就会有数据。百度介绍说好像是20分钟就有数据了，我试了下，真有了，很快。google也立刻就有数据了。</p>
 <p><img src="http://bucket836.oss-cn-shenzhen.aliyuncs.com/image-1573051922653.png" alt="file"></p>

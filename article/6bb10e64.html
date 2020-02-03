@@ -192,6 +192,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	        
 				<li><a href="/photos">相册</a></li>
 	        
+				<li><a href="/tags">标签</a></li>
+	        
+				<li><a href="/message-board">留言墙</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -293,6 +297,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -313,13 +321,17 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/categories">分类</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories">分类</a></li>
 		        
-					<li style="width: 25%"><a href="/archives">归档</a></li>
+					<li style="width: 16.666666666666668%"><a href="/archives">归档</a></li>
 		        
-					<li style="width: 25%"><a href="/photos">相册</a></li>
+					<li style="width: 16.666666666666668%"><a href="/photos">相册</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/tags">标签</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/message-board">留言墙</a></li>
 		        
 				</ul>
 			</nav>
@@ -372,7 +384,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
        <i class="icon-statistics"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">304字</span>
+        <span class="post-count">305字</span>
       </span>
     </span>
 
@@ -401,13 +413,9 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p><img src="http://bucket836.oss-cn-shenzhen.aliyuncs.com/image-1575912501635.png" alt="file"></p>
 <a id="more"></a>
 <p>当前的版本是 2.3，打算升级到最新的 2.6。可以使用下面的命令查看 Ruby 版本：</p>
-<pre><code class="language-bash">$ ruby -v
-ruby 2.3.1p112 (2016-04-26) [x86_64-linux-gnu]
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ruby -v</span><br><span class="line">ruby 2.3.1p112 (2016-04-26) [x86_64-linux-gnu]</span><br></pre></td></tr></table></figure>
 <h3 id="添加-ppa-源：">添加 PPA 源：</h3>
-<pre><code class="language-bash">sudo add-apt-repository ppa:brightbox/ruby-ng
-sudo apt-get update
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:brightbox/ruby-ng</span><br><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>Launchpad PPA Repositories是很有用的非ubuntu官方的第三方个人资源库，可以很方便地安装第三方软件。<br>
 但是在运行add-apt-repository命令时，有时会提示命令不存在，这个时候直接apt-get<br>
@@ -415,15 +423,11 @@ add-apt-repository是不可以的！ 解决的方法是安装software-properties
 输入命令：<code>apt-get install software-properties-common</code></p>
 </blockquote>
 <h3 id="先删除旧版本：">先删除旧版本：</h3>
-<pre><code class="language-bash">$ sudo apt-get purge --auto-remove ruby
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get purge --auto-remove ruby</span><br></pre></td></tr></table></figure>
 <h3 id="然后安装新版本：">然后安装新版本：</h3>
-<pre><code class="language-bash">$ sudo apt-get install ruby2.6 ruby2.6-dev
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install ruby2.6 ruby2.6-dev</span><br></pre></td></tr></table></figure>
 <h3 id="安装后查看版本号：">安装后查看版本号：</h3>
-<pre><code class="language-bash">$ ruby -v
-ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-linux-gnu]
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ruby -v</span><br><span class="line">ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-linux-gnu]</span><br></pre></td></tr></table></figure>
 <p>更新成功后，重新扫描，漏洞少了20个……</p>
 <hr>
 <p>相关链接：</p>

@@ -194,6 +194,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	        
 				<li><a href="/photos">相册</a></li>
 	        
+				<li><a href="/tags">标签</a></li>
+	        
+				<li><a href="/message-board">留言墙</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -295,6 +299,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -315,13 +323,17 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/categories">分类</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories">分类</a></li>
 		        
-					<li style="width: 25%"><a href="/archives">归档</a></li>
+					<li style="width: 16.666666666666668%"><a href="/archives">归档</a></li>
 		        
-					<li style="width: 25%"><a href="/photos">相册</a></li>
+					<li style="width: 16.666666666666668%"><a href="/photos">相册</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/tags">标签</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/message-board">留言墙</a></li>
 		        
 				</ul>
 			</nav>
@@ -374,7 +386,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
        <i class="icon-statistics"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">299字</span>
+        <span class="post-count">297字</span>
       </span>
     </span>
 
@@ -420,24 +432,17 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <img src="http://bucket836.oss-cn-shenzhen.aliyuncs.com/image-1573122807031.png" alt="file"></p>
 <h2 id="hexo渲染器">hexo渲染器</h2>
 <h3 id="测试html">测试HTML</h3>
-<pre><code>&lt;div&gt;这是div&lt;/div&gt;
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;这是div&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <div>这是div</div>
 <h3 id="测试换行">测试换行</h3>
-<pre><code>换行&lt;br&gt;
-换行
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">换行&lt;br&gt;</span><br><span class="line">换行</span><br></pre></td></tr></table></figure>
 <p>换行<br><br>
 换行</p>
 <h3 id="测试相同标题">测试相同标题</h3>
 <h3 id="测试相同标题-v2">测试相同标题</h3>
 <p>查看相同标题的id是否重复，理论上会添加’-v2’ '-v3’等后缀。</p>
 <h3 id="测试有序列表">测试有序列表</h3>
-<pre><code>1. 11111
-2. 22222
-3. 33333
-1. 11111 # 这个能够正确处理
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 11111</span><br><span class="line">2. 22222</span><br><span class="line">3. 33333</span><br><span class="line">1. 11111 # 这个能够正确处理</span><br></pre></td></tr></table></figure>
 <ol>
 <li>11111</li>
 <li>22222</li>
@@ -445,18 +450,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <li>11111</li>
 </ol>
 <p>注意list后面不能有空行，不然会出现问题：序号占一行，然后内容从下一行开始</p>
-<pre><code># 空行的情况
-1. 1111
-
-2. 2222
-
-# 处理后
-1.
-1111
-
-2.
-2222
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 空行的情况</span><br><span class="line">1. 1111</span><br><span class="line"></span><br><span class="line">2. 2222</span><br><span class="line"></span><br><span class="line"># 处理后</span><br><span class="line">1.</span><br><span class="line">1111</span><br><span class="line"></span><br><span class="line">2.</span><br><span class="line">2222</span><br></pre></td></tr></table></figure>
 <h3 id="测试无序列表">测试无序列表</h3>
 <ul>
 <li>无序列表</li>

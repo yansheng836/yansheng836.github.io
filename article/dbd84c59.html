@@ -192,6 +192,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	        
 				<li><a href="/photos">相册</a></li>
 	        
+				<li><a href="/tags">标签</a></li>
+	        
+				<li><a href="/message-board">留言墙</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -293,6 +297,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -313,13 +321,17 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/categories">分类</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories">分类</a></li>
 		        
-					<li style="width: 25%"><a href="/archives">归档</a></li>
+					<li style="width: 16.666666666666668%"><a href="/archives">归档</a></li>
 		        
-					<li style="width: 25%"><a href="/photos">相册</a></li>
+					<li style="width: 16.666666666666668%"><a href="/photos">相册</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/tags">标签</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/message-board">留言墙</a></li>
 		        
 				</ul>
 			</nav>
@@ -437,61 +449,23 @@ socketTimeout          socket操作（读写）超时，单位：毫秒。 0表�
 <h4 id="jdbc-url中的各个参数详解">jdbc URL中的各个参数详解</h4>
 <p><a href="https://blog.csdn.net/weixin_34220963/article/details/86463924" target="_blank" rel="noopener">https://blog.csdn.net/weixin_34220963/article/details/86463924</a></p>
 <hr>
-<pre><code class="language-java">String url = &quot;jdbc:mysql://localhost:3306/DATABASES-NAME?characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC&amp;rewriteBatchedStatements=true&amp;allowPublicKeyRetrieval=true&quot;;
-</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String url = <span class="string">"jdbc:mysql://localhost:3306/DATABASES-NAME?characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC&amp;rewriteBatchedStatements=true&amp;allowPublicKeyRetrieval=true"</span>;</span><br></pre></td></tr></table></figure>
 <p><a href="https://dev.mysql.com/doc/connectors/en/connector-j-reference-configuration-properties.html" target="_blank" rel="noopener">https://dev.mysql.com/doc/connectors/en/connector-j-reference-configuration-properties.html</a></p>
 <h4 id="2-连接名">2.连接名</h4>
 <p>云服务器：jdbc:mysql://192.168.0.105:3306/shgb_fz</p>
 <p>本地：jdbc:mysql://localhost:3306/shgb_fz，简写形式：jdbc:mysql:///shgb_fz</p>
 <h4 id="3-jdbc8">3.jdbc8</h4>
-<pre><code class="language-java">Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;);
-String url = &quot;jdbc:mysql://localhost:3306/DATABASES-NAME?characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC&amp;rewriteBatchedStatements=true&amp;allowPublicKeyRetrieval=true&quot;;
-		
-————————————————
-版权声明：本文为CSDN博主「溜溜的小胖」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/aliuxina/article/details/91358010
-</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Class.forName(<span class="string">"com.mysql.cj.jdbc.Driver"</span>);</span><br><span class="line">String url = <span class="string">"jdbc:mysql://localhost:3306/DATABASES-NAME?characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC&amp;rewriteBatchedStatements=true&amp;allowPublicKeyRetrieval=true"</span>;</span><br><span class="line">		</span><br><span class="line">————————————————</span><br><span class="line">版权声明：本文为CSDN博主「溜溜的小胖」的原创文章，遵循 CC <span class="number">4.0</span> BY-SA 版权协议，转载请附上原文出处链接及本声明。</span><br><span class="line">原文链接：https:<span class="comment">//blog.csdn.net/aliuxina/article/details/91358010</span></span><br></pre></td></tr></table></figure>
 <h4 id="3-xml文件需要转义">3.xml文件需要转义</h4>
-<pre><code>&amp;
-转义为
-&amp;amp;
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&amp;</span><br><span class="line">转义为</span><br><span class="line">&amp;amp;</span><br></pre></td></tr></table></figure>
 <h4 id="测试-v2">测试</h4>
 <p>利用junit进行测试，直接模拟数据，从控制台插入到数据库，查看是否乱码。</p>
 <p>涉及到的问题</p>
 <p>1.基于spring的句junit测试：junit测试Dao层：<a href="https://blog.csdn.net/lovelease/article/details/70155788" target="_blank" rel="noopener">https://blog.csdn.net/lovelease/article/details/70155788</a></p>
-<pre><code class="language-java">package com.project.dao;
- 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
- 
- 
-@RunWith(SpringJUnit4ClassRunner.class)	// 不能是PowerMock等别的class，否则无法识别spring的配置文件
-@ContextConfiguration(&quot;file:conf/applicationContext.xml&quot;)	// 读取spring配置文件
-public class userDAOTest {
-	
-	@Autowired	//检索applicationContext.xml，自动注入指定的bean
-	UserDAO userDAO;
- 
-	@Test
-	public void testGetUser() {
-		int userId = 1;
-		String nickname = &quot;昵称1&quot;;
-		
-		Assert.assertEquals(userId, userDAO.getUser( userId ).getUserId());
-		Assert.assertEquals(nickname, userDAO.getUser( userId ).getNickname());
-	}
-}
-</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.project.dao;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> org.junit.Assert;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.ContextConfiguration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.junit4.SpringJUnit4ClassRunner;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="meta">@RunWith</span>(SpringJUnit4ClassRunner.class)	<span class="comment">// 不能是PowerMock等别的class，否则无法识别spring的配置文件</span></span><br><span class="line"><span class="meta">@ContextConfiguration</span>(<span class="string">"file:conf/applicationContext.xml"</span>)	<span class="comment">// 读取spring配置文件</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">userDAOTest</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Autowired</span>	<span class="comment">//检索applicationContext.xml，自动注入指定的bean</span></span><br><span class="line">	UserDAO userDAO;</span><br><span class="line"> </span><br><span class="line">	<span class="meta">@Test</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testGetUser</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> userId = <span class="number">1</span>;</span><br><span class="line">		String nickname = <span class="string">"昵称1"</span>;</span><br><span class="line">		</span><br><span class="line">		Assert.assertEquals(userId, userDAO.getUser( userId ).getUserId());</span><br><span class="line">		Assert.assertEquals(nickname, userDAO.getUser( userId ).getNickname());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="1-runwith和-contextconfiguration的作用解析">1.@RunWith和@ContextConfiguration的作用解析</h5>
 <p><a href="https://blog.csdn.net/H838071332/article/details/89916490" target="_blank" rel="noopener">https://blog.csdn.net/H838071332/article/details/89916490</a></p>
-<pre><code>@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration( locations = {&quot;classpath:applicationContext.xml&quot;} )
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@RunWith(SpringJUnit4ClassRunner.class)</span><br><span class="line">@ContextConfiguration( locations = &#123;&quot;classpath:applicationContext.xml&quot;&#125; )</span><br></pre></td></tr></table></figure>
 <p>@RunWith(SpringJUnit4ClassRunner.class)：<br>
 @Runwith的作用是让测试的实例在spring容器的环境下运行，那么什么是spring容器的环境，这个容器环境就是如:service, controller等包的使用就是spring容器。<br>
 @ContextConfiguration：<br>
@@ -502,15 +476,10 @@ public void test{
 </code></pre>
 <p>2、可以写多个配置文件<br>
 用，隔开如下：</p>
-<pre><code>@ContextConfiguration( locations = {&quot;classpath:applicationContext.xml&quot;,&quot;classpath:applicationContext2.xml&quot;}
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@ContextConfiguration( locations = &#123;&quot;classpath:applicationContext.xml&quot;,&quot;classpath:applicationContext2.xml&quot;&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="2-spring的-contextconfiguration注解">2.spring的@ContextConfiguration注解</h5>
 <p><a href="https://blog.csdn.net/fanbaodan/article/details/100121551" target="_blank" rel="noopener">https://blog.csdn.net/fanbaodan/article/details/100121551</a></p>
-<pre><code>@ContextConfiguration(value=&quot;/applicationContext.xml&quot;) 		 //方法一
-@ContextConfiguration(locations=&quot;/applicationContext.xml&quot;)   //方法二
-@ContextConfiguration(&quot;classpath:/applicationContext.xml&quot;)   //方法三
-@ContextConfiguration(&quot;/applicationContext.xml&quot;)  		     //方法四
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@ContextConfiguration(value=&quot;/applicationContext.xml&quot;) 		 //方法一</span><br><span class="line">@ContextConfiguration(locations=&quot;/applicationContext.xml&quot;)   //方法二</span><br><span class="line">@ContextConfiguration(&quot;classpath:/applicationContext.xml&quot;)   //方法三</span><br><span class="line">@ContextConfiguration(&quot;/applicationContext.xml&quot;)  		     //方法四</span><br></pre></td></tr></table></figure>
 <p>切记前边要加一个 “/” 代表根目录（不带双引号）<br>
 这是我亲测的几种都可以正常运行junit。</p>
 <p>其实也不用去死记， 这个分开也就是两块;</p>
@@ -530,12 +499,7 @@ public void test{
 <p><a href="https://blog.csdn.net/shan9liang/article/details/40452469" target="_blank" rel="noopener">https://blog.csdn.net/shan9liang/article/details/40452469</a></p>
 <h5 id="4-spring系列-contextconfiguration注解的使用">4.Spring系列——@ContextConfiguration注解的使用</h5>
 <p><a href="https://blog.csdn.net/m0_37941483/article/details/90727830" target="_blank" rel="noopener">https://blog.csdn.net/m0_37941483/article/details/90727830</a></p>
-<pre><code>@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {&quot;classpath*:/*.xml&quot;})
-public class CDPlayerTest {
-
-}
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@RunWith(SpringJUnit4ClassRunner.class)</span><br><span class="line">@ContextConfiguration(locations = &#123;&quot;classpath*:/*.xml&quot;&#125;)</span><br><span class="line">public class CDPlayerTest &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>@ContextConfiguration括号里的locations = {“classpath*😕*.xml”}就表示将class路径里的所有.xml文件都包括进来，那么刚刚创建的那么XML文件就会包括进来，那么里面自动扫描的bean就都可以拿到了，此时就可以在测试类中使用@Autowired注解来获取之前自动扫描包下的所有bean</p>
 <p>classpath和classpath*区别:</p>
 <p>classpath：只会到你的class路径中查找找文件。</p>

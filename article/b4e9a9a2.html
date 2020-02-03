@@ -193,6 +193,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	        
 				<li><a href="/photos">相册</a></li>
 	        
+				<li><a href="/tags">标签</a></li>
+	        
+				<li><a href="/message-board">留言墙</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -294,6 +298,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -314,13 +322,17 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/categories">分类</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories">分类</a></li>
 		        
-					<li style="width: 25%"><a href="/archives">归档</a></li>
+					<li style="width: 16.666666666666668%"><a href="/archives">归档</a></li>
 		        
-					<li style="width: 25%"><a href="/photos">相册</a></li>
+					<li style="width: 16.666666666666668%"><a href="/photos">相册</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/tags">标签</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/message-board">留言墙</a></li>
 		        
 				</ul>
 			</nav>
@@ -410,17 +422,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <h3 id="2-第一次探索：hexo的主要工作流程">2. 第一次探索：hexo的主要工作流程</h3>
 <p>然后想着既然hexo是使用git部署到github，那么就是用了版本管理，我想着它应该要起作用了。因此想试下能不能恢复借此之前的正确配置，一番挣扎后，我放弃了，因为这和普通的git还是有一定差别的。</p>
 <p>我去研究了下hexo的主要的常用命令：</p>
-<pre><code class="language-bash">hexo clean     #删除缓冲文件(db.json)和(public中的)已生成的静态文件。
-hexo generate  #读取配置文件，根据主题配置，将md解析成HTML，将source里的文件转换到public文件夹。
-hexo server    #将静态文件部署到本地，预览。
-hexo deploy    #清理.deploy_git文件夹，将public复制到.deploy_git，发布到github。
-
-#简写形式为
-hexo clean
-hexo g
-hexo s
-hexo d
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">hexo clean     <span class="comment">#删除缓冲文件(db.json)和(public中的)已生成的静态文件。</span></span><br><span class="line">hexo generate  <span class="comment">#读取配置文件，根据主题配置，将md解析成HTML，将source里的文件转换到public文件夹。</span></span><br><span class="line">hexo server    <span class="comment">#将静态文件部署到本地，预览。</span></span><br><span class="line">hexo deploy    <span class="comment">#清理.deploy_git文件夹，将public复制到.deploy_git，发布到github。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#简写形式为</span></span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 <p>如下图：<br>
 <img src="https://s2.ax1x.com/2019/07/25/eZNX6S.jpg" alt="hexo的主要工作流程"></p>
 <h3 id="3-第二次探索：hexo中的-deploy-git">3. 第二次探索：hexo中的<code>.deploy_git</code></h3>
@@ -453,16 +455,7 @@ hexo d
 <h2 id="blog分支说明">blog分支说明</h2>
 <p>博客构建过程和备份，计划记录下部署过程，方便恢复。</p>
 <p>新建该分支后，可设置该分支为默认分支<code>Settings--&gt;branches--&gt;Default branch:master设置为blog--&gt;update</code>，这样以后仓库主页显示就是blog分支，而且拉取（或者克隆）的时候拉取的就是blog分支，而不是原来默认的master分支。</p>
-<pre><code class="language-bash">git clone url
-git push
-#其实是下面的简写形式
-git clone -b master url [&lt;repository-name&gt;]
-git push origin master
-
-#设置blog为默认分支后，相当于是这样的：
-git clone -b blog url [&lt;repository-name&gt;]
-git push origin blog
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> url</span><br><span class="line">git push</span><br><span class="line"><span class="comment">#其实是下面的简写形式</span></span><br><span class="line">git <span class="built_in">clone</span> -b master url [&lt;repository-name&gt;]</span><br><span class="line">git push origin master</span><br><span class="line"></span><br><span class="line"><span class="comment">#设置blog为默认分支后，相当于是这样的：</span></span><br><span class="line">git <span class="built_in">clone</span> -b blog url [&lt;repository-name&gt;]</span><br><span class="line">git push origin blog</span><br></pre></td></tr></table></figure>
 <p>详细内容可到我的github仓库上进行查看 : <a href="https://github.com/yansheng836/yansheng836.github.io/tree/blog" target="_blank" rel="noopener">blog分支</a>。</p>
 <hr>
 <p>hexo(yilia)+GitHub Pages搭建个人博客系列文章：<br>

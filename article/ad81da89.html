@@ -197,6 +197,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	        
 				<li><a href="/photos">相册</a></li>
 	        
+				<li><a href="/tags">标签</a></li>
+	        
+				<li><a href="/message-board">留言墙</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -298,6 +302,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -318,13 +326,17 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/categories">分类</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories">分类</a></li>
 		        
-					<li style="width: 25%"><a href="/archives">归档</a></li>
+					<li style="width: 16.666666666666668%"><a href="/archives">归档</a></li>
 		        
-					<li style="width: 25%"><a href="/photos">相册</a></li>
+					<li style="width: 16.666666666666668%"><a href="/photos">相册</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/tags">标签</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/message-board">留言墙</a></li>
 		        
 				</ul>
 			</nav>
@@ -414,12 +426,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <hr>
 <h2 id="commit-message-和-change-log-编写指南">Commit message 和 Change log 编写指南</h2>
 <p>Git 每次提交代码，都要写 Commit message（提交说明），否则就不允许提交。</p>
-<pre><code class="language-bash">$ git commit -m &quot;hello world&quot;
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m <span class="string">"hello world"</span></span><br></pre></td></tr></table></figure>
 <p>上面代码的<code>-m</code>参数，就是用来指定 commit mesage 的。</p>
 <p>如果一行不够，可以只执行<code>git commit</code>，就会跳出文本编辑器，让你写多行。</p>
-<pre><code class="language-bash">$ git commit
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit</span><br></pre></td></tr></table></figure>
 <p>基本上，你写什么都行（<a href="http://www.commitlogsfromlastnight.com/" target="_blank" rel="noopener">这里</a>，<a href="http://blog.no-panic.at/2014/10/20/funny-initial-git-commit-messages/" target="_blank" rel="noopener">这里</a>和<a href="http://whatthecommit.com/" target="_blank" rel="noopener">这里</a>）。</p>
 <p><img src="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016010601.png" alt></p>
 <p>但是，一般来说，commit message 应该清晰明了，说明本次提交的目的。</p>
@@ -429,24 +439,17 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>格式化的Commit message，有几个好处。</p>
 <p><strong>（1）提供更多的历史信息，方便快速浏览。</strong></p>
 <p>比如，下面的命令显示上次发布后的变动，每个commit占据一行。你只看行首，就知道某次 commit 的目的。</p>
-<pre><code class="language-bash">$ git log &lt;last tag&gt; HEAD --pretty=format:%s
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> &lt;last tag&gt; HEAD --pretty=format:%s</span><br></pre></td></tr></table></figure>
 <p><img src="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016010604.png" alt></p>
 <p><strong>（2）可以过滤某些commit（比如文档改动），便于快速查找信息。</strong></p>
 <p>比如，下面的命令仅仅显示本次发布新增加的功能。</p>
-<pre><code class="language-bash">$ git log &lt;last release&gt; HEAD --grep feature
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> &lt;last release&gt; HEAD --grep feature</span><br></pre></td></tr></table></figure>
 <p><strong>（3）可以直接从commit生成Change log。</strong></p>
 <p>Change Log 是发布新版本时，用来说明与上一个版本差异的文档，详见后文。</p>
 <p><img src="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016010603.png" alt></p>
 <h3 id="二-commit-message-的格式">二、Commit message 的格式</h3>
 <p>每次提交，Commit message 都包括三个部分：Header，Body 和 Footer。</p>
-<pre><code>&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
-// 空一行
-&lt;body&gt;
-// 空一行
-&lt;footer&gt;
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</span><br><span class="line">// 空一行</span><br><span class="line">&lt;body&gt;</span><br><span class="line">// 空一行</span><br><span class="line">&lt;footer&gt;</span><br></pre></td></tr></table></figure>
 <p>其中，Header 是必需的，Body 和 Footer 可以省略。</p>
 <p>不管是哪一个部分，任何一行都不得超过72个字符（或100个字符）。这是为了避免自动换行影响美观。</p>
 <h4 id="2-1-header">2.1 Header</h4>
@@ -474,14 +477,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </ul>
 <h4 id="2-2-body">2.2 Body</h4>
 <p>Body 部分是对本次 commit 的详细描述，可以分成多行。下面是一个范例。</p>
-<pre><code>More detailed explanatory text, if necessary.  Wrap it to 
-about 72 characters or so. 
-
-Further paragraphs come after blank lines.
-
-- Bullet points are okay, too
-- Use a hanging indent
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">More detailed explanatory text, if necessary.  Wrap it to </span><br><span class="line">about 72 characters or so. </span><br><span class="line"></span><br><span class="line">Further paragraphs come after blank lines.</span><br><span class="line"></span><br><span class="line">- Bullet points are okay, too</span><br><span class="line">- Use a hanging indent</span><br></pre></td></tr></table></figure>
 <p>有两个注意点。</p>
 <p>（1）使用第一人称现在时，比如使用<code>change</code>而不是<code>changed</code>或<code>changes</code>。</p>
 <p>（2）应该说明代码变动的动机，以及与以前行为的对比。</p>
@@ -489,64 +485,32 @@ Further paragraphs come after blank lines.
 <p>Footer 部分只用于两种情况。</p>
 <p><strong>（1）不兼容变动</strong></p>
 <p>如果当前代码与上一个版本不兼容，则 Footer 部分以<code>BREAKING CHANGE</code>开头，后面是对变动的描述、以及变动理由和迁移方法。</p>
-<pre><code>BREAKING CHANGE: isolate scope bindings definition has changed.
-
-    To migrate the code follow the example below:
-
-    Before:
-
-    scope: {
-      myAttr: 'attribute',
-    }
-
-    After:
-
-    scope: {
-      myAttr: '@',
-    }
-
-    The removed `inject` wasn't generaly useful for directives so there should be no code using it.
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">BREAKING CHANGE: isolate scope bindings definition has changed.</span><br><span class="line"></span><br><span class="line">    To migrate the code follow the example below:</span><br><span class="line"></span><br><span class="line">    Before:</span><br><span class="line"></span><br><span class="line">    scope: &#123;</span><br><span class="line">      myAttr: &apos;attribute&apos;,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    After:</span><br><span class="line"></span><br><span class="line">    scope: &#123;</span><br><span class="line">      myAttr: &apos;@&apos;,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    The removed `inject` wasn&apos;t generaly useful for directives so there should be no code using it.</span><br></pre></td></tr></table></figure>
 <p><strong>（2）关闭 Issue</strong></p>
 <p>如果当前 commit 针对某个issue，那么可以在 Footer 部分关闭这个 issue 。</p>
-<pre><code>Closes #234
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Closes #234</span><br></pre></td></tr></table></figure>
 <p>也可以一次关闭多个 issue 。</p>
-<pre><code>Closes #123, #245, #992
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Closes #123, #245, #992</span><br></pre></td></tr></table></figure>
 <h4 id="2-4-revert">2.4 Revert</h4>
 <p>还有一种特殊情况，如果当前 commit 用于撤销以前的 commit，则必须以<code>revert:</code>开头，后面跟着被撤销 Commit 的 Header。</p>
-<pre><code class="language-plain">revert: feat(pencil): add 'graphiteWidth' option
-
-This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">revert: feat(pencil): add &apos;graphiteWidth&apos; option</span><br><span class="line"></span><br><span class="line">This reverts commit 667ecc1654a317a13331b17617d973392f415f02.</span><br></pre></td></tr></table></figure>
 <p>Body部分的格式是固定的，必须写成<code>This reverts commit &amp;lt;hash&gt;.</code>，其中的<code>hash</code>是被撤销 commit 的 SHA 标识符。</p>
 <p>如果当前 commit 与被撤销的 commit，在同一个发布（release）里面，那么它们都不会出现在 Change log 里面。如果两者在不同的发布，那么当前 commit，会出现在 Change log 的<code>Reverts</code>小标题下面。</p>
 <h3 id="三-commitizen">三、Commitizen</h3>
 <p><a href="https://github.com/commitizen/cz-cli" target="_blank" rel="noopener">Commitizen</a>是一个撰写合格 Commit message 的工具。</p>
 <p>安装命令如下。</p>
-<pre><code class="language-bash">$ npm install -g commitizen
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g commitizen</span><br></pre></td></tr></table></figure>
 <p>然后，在项目目录里，运行下面的命令，使其支持 Angular 的 Commit message 格式。</p>
-<pre><code class="language-bash">$ commitizen init cz-conventional-changelog --save --save-exact
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ commitizen init cz-conventional-changelog --save --save-exact</span><br></pre></td></tr></table></figure>
 <p>以后，凡是用到<code>git commit</code>命令，一律改为使用<code>git cz</code>。这时，就会出现选项，用来生成符合格式的 Commit message。</p>
 <p><img src="http://www.ruanyifeng.com/blogimg/asset/2016/bg2016010605.png" alt></p>
 <h3 id="四-validate-commit-msg">四、validate-commit-msg</h3>
 <p><a href="https://github.com/kentcdodds/validate-commit-msg" target="_blank" rel="noopener">validate-commit-msg</a> 用于检查 Node 项目的 Commit message 是否符合格式。</p>
 <p>它的安装是手动的。首先，拷贝下面这个<a href="https://github.com/kentcdodds/validate-commit-msg/blob/master/index.js" target="_blank" rel="noopener">JS文件</a>，放入你的代码库。文件名可以取为<code>validate-commit-msg.js</code>。</p>
 <p>接着，把这个脚本加入 Git 的 hook。下面是在<code>package.json</code>里面使用 <a href="http://npm.im/ghooks" target="_blank" rel="noopener">ghooks</a>，把这个脚本加为<code>commit-msg</code>时运行。</p>
-<pre><code class="language-json">&quot;config&quot;: {
-    &quot;ghooks&quot;: {
-      &quot;commit-msg&quot;: &quot;./validate-commit-msg.js&quot;
-    }
-  }
-</code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">"config": &#123;</span><br><span class="line">    "ghooks": &#123;</span><br><span class="line">      "commit-msg": "./validate-commit-msg.js"</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <p>然后，每次<code>git commit</code>的时候，这个脚本就会自动检查 Commit message 是否合格。如果不合格，就会报错。</p>
-<pre><code class="language-bash">$ git add -A 
-$ git commit -m &quot;edit markdown&quot; 
-INVALID COMMIT MSG: does not match &quot;&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;&quot; ! was: edit markdown
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add -A </span><br><span class="line">$ git commit -m <span class="string">"edit markdown"</span> </span><br><span class="line">INVALID COMMIT MSG: does not match <span class="string">"&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;"</span> ! was: edit markdown</span><br></pre></td></tr></table></figure>
 <h3 id="五-生成-change-log">五、生成 Change log</h3>
 <p>如果你的所有 Commit 都符合 Angular 格式，那么发布新版本时， Change log 就可以用脚本自动生成（<a href="https://github.com/ajoslin/conventional-changelog/blob/master/CHANGELOG.md" target="_blank" rel="noopener">例1</a>，<a href="https://github.com/karma-runner/karma/blob/master/CHANGELOG.md" target="_blank" rel="noopener">例2</a>，<a href="https://github.com/btford/grunt-conventional-changelog/blob/master/CHANGELOG.md" target="_blank" rel="noopener">例3</a>）。</p>
 <p>生成的文档包括以下三个部分。</p>
@@ -557,24 +521,14 @@ INVALID COMMIT MSG: does not match &quot;&lt;type&gt;(&lt;scope&gt;): &lt;subjec
 </ul>
 <p>每个部分都会罗列相关的 commit ，并且有指向这些 commit 的链接。当然，生成的文档允许手动修改，所以发布前，你还可以添加其他内容。</p>
 <p><a href="https://github.com/ajoslin/conventional-changelog" target="_blank" rel="noopener">conventional-changelog</a> 就是生成 Change log 的工具，运行下面的命令即可。</p>
-<pre><code class="language-bash">$ npm install -g conventional-changelog
-$ cd my-project
-$ conventional-changelog -p angular -i CHANGELOG.md -w
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g conventional-changelog</span><br><span class="line">$ <span class="built_in">cd</span> my-project</span><br><span class="line">$ conventional-changelog -p angular -i CHANGELOG.md -w</span><br></pre></td></tr></table></figure>
 <p>上面命令不会覆盖以前的 Change log，只会在<code>CHANGELOG.md</code>的头部加上自从上次发布以来的变动。</p>
 <p>如果你想生成所有发布的 Change log，要改为运行下面的命令。</p>
-<pre><code>$ conventional-changelog -p angular -i CHANGELOG.md -w -r 0
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ conventional-changelog -p angular -i CHANGELOG.md -w -r 0</span><br></pre></td></tr></table></figure>
 <p>为了方便使用，可以将其写入<code>package.json</code>的<code>scripts</code>字段。</p>
-<pre><code class="language-json">{
-  &quot;scripts&quot;: {
-    &quot;changelog&quot;: &quot;conventional-changelog -p angular -i CHANGELOG.md -w -r 0&quot;
-  }
-}
-</code></pre>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"changelog"</span>: <span class="string">"conventional-changelog -p angular -i CHANGELOG.md -w -r 0"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>以后，直接运行下面的命令即可。</p>
-<pre><code class="language-bash">$ npm run changelog
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run changelog</span><br></pre></td></tr></table></figure>
 <p>（完）</p>
 <h4 id="文档信息">文档信息</h4>
 <ul>

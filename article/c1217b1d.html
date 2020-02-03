@@ -195,6 +195,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	        
 				<li><a href="/photos">相册</a></li>
 	        
+				<li><a href="/tags">标签</a></li>
+	        
+				<li><a href="/message-board">留言墙</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -296,6 +300,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -316,13 +324,17 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/categories">分类</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories">分类</a></li>
 		        
-					<li style="width: 25%"><a href="/archives">归档</a></li>
+					<li style="width: 16.666666666666668%"><a href="/archives">归档</a></li>
 		        
-					<li style="width: 25%"><a href="/photos">相册</a></li>
+					<li style="width: 16.666666666666668%"><a href="/photos">相册</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/tags">标签</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/message-board">留言墙</a></li>
 		        
 				</ul>
 			</nav>
@@ -423,10 +435,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>站长平台：<a href="https://ziyuan.baidu.com/" target="_blank" rel="noopener">https://ziyuan.baidu.com</a></p>
 <p>前提：注册百度，添加站点、验证站点。</p>
 <p><strong>注意</strong>：使用HTML进行验证的话，要保证该文件上传到网站后是一模一样的，即不然被渲染和压缩，跳过渲染可以再HTML文件前面加入下面的内容；跳过压缩因插件而异。跳过该HTML文件。</p>
-<pre><code>---
-layout: false
----
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">layout: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 <p>验证成功就能在百度找到你的网站了,如<code>site:www.yansheng.xyz</code>，不过百度好像没有那么快，可能需要一两天。</p>
 <h4 id="主动推送">主动推送</h4>
 <p>参考：<a href="https://hui-wang.info/2016/10/23/Hexo%E6%8F%92%E4%BB%B6%E4%B9%8B%E7%99%BE%E5%BA%A6%E4%B8%BB%E5%8A%A8%E6%8F%90%E4%BA%A4%E9%93%BE%E6%8E%A5/" target="_blank" rel="noopener">Hexo插件之百度主动提交链接</a></p>
@@ -439,95 +448,38 @@ layout: false
 <code>npm install hexo-baidu-url-submit --save</code></p>
 <h5 id="配置-百度主动推送">配置“百度主动推送”</h5>
 <p>然后，同样在根目录下，把以下内容配置到<code>_config.yml</code>文件中:</p>
-<pre><code class="language-yml"># 百度主动推送
-baidu_url_submit:
-  count: 1 ## 提交最新的一个链接
-  host: www.hui-wang.info ## 在百度站长平台中注册的域名
-  token: your_token ## 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
-  path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里
-</code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 百度主动推送</span></span><br><span class="line"><span class="attr">baidu_url_submit:</span></span><br><span class="line"><span class="attr">  count:</span> <span class="number">1</span> <span class="comment">## 提交最新的一个链接</span></span><br><span class="line"><span class="attr">  host:</span> <span class="string">www.hui-wang.info</span> <span class="comment">## 在百度站长平台中注册的域名</span></span><br><span class="line"><span class="attr">  token:</span> <span class="string">your_token</span> <span class="comment">## 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!</span></span><br><span class="line"><span class="attr">  path:</span> <span class="string">baidu_urls.txt</span> <span class="comment">## 文本文档的地址， 新链接会保存在此文本文档里</span></span><br></pre></td></tr></table></figure>
 <p>其次，记得查看<code>_config.yml</code>文件中url的值， 必须包含是百度站长平台注册的域名（一般有www）， 比如:</p>
-<pre><code class="language-yml"># URL
-url: http://www.hui-wang.info
-</code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="attr">url:</span> <span class="attr">http://www.hui-wang.info</span></span><br></pre></td></tr></table></figure>
 <p>最后，加入新的deployer:</p>
-<pre><code class="language-yml">deploy:
-- type: s3 ## 这是我原来的deployer
-  bucket: hui-wang.info
-- type: baidu_url_submitter ## 这是新加的
-</code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">- type:</span> <span class="string">s3</span> <span class="comment">## 这是我原来的deployer</span></span><br><span class="line"><span class="attr">  bucket:</span> <span class="string">hui-wang.info</span></span><br><span class="line"><span class="attr">- type:</span> <span class="string">baidu_url_submitter</span> <span class="comment">## 这是新加的</span></span><br></pre></td></tr></table></figure>
 <p>注意：上面是官方的文档，而实际上应该要这样，可参考我的：</p>
-<pre><code class="language-yml">deploy:
-- type: git
-  repository: 
-     github: https://github.com/yansheng836/yansheng836.github.io.git
-     coding: https://git.dev.tencent.com/yansheng836/yansheng836.coding.me.git
-  branch: master
-  # 发布时，同时进行百度推送
-- type: baidu_url_submitter
-</code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">- type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repository:</span> </span><br><span class="line"><span class="attr">     github:</span> <span class="attr">https://github.com/yansheng836/yansheng836.github.io.git</span></span><br><span class="line"><span class="attr">     coding:</span> <span class="attr">https://git.dev.tencent.com/yansheng836/yansheng836.coding.me.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br><span class="line">  <span class="comment"># 发布时，同时进行百度推送</span></span><br><span class="line"><span class="attr">- type:</span> <span class="string">baidu_url_submitter</span></span><br></pre></td></tr></table></figure>
 <p>因为不是有两个deploy，要放在一起。</p>
 <h5 id="如何进行推送">如何进行推送</h5>
 <p>执行<code>hexo deploy</code>的时候，新的连接就会被推送了。如下图</p>
 <p><img src="https://s2.ax1x.com/2019/08/17/mnv2AU.jpg" alt="mnv2AU.jpg"></p>
 <p>查看官网信息(如下所示)我们可以知道这是推送成功了。</p>
 <p>补充：官网信息查看方式**(标题栏)网站支持-&gt;数据引入-&gt;链接提交-&gt;自动提交-&gt;主动推送**，在下面就有推送成功的信息（如下）。</p>
-<pre><code class="language-json">#成功返回示例：
-{
-    &quot;remain&quot;:4999998,
-    &quot;success&quot;:2,
-    &quot;not_same_site&quot;:[],
-    &quot;not_valid&quot;:[]
-}
-</code></pre>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#成功返回示例：</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"remain"</span>:<span class="number">4999998</span>,</span><br><span class="line">    <span class="attr">"success"</span>:<span class="number">2</span>,</span><br><span class="line">    <span class="attr">"not_same_site"</span>:[],</span><br><span class="line">    <span class="attr">"not_valid"</span>:[]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>重新生成后，我们可以发现在<code>public\</code>目录下生成有<code>baidu_urls.txt</code>里面的就是推送的链接。</p>
 <h4 id="自动推送">自动推送</h4>
 <p>参考：<a href="https://purewhite.io/2017/04/29/hexo-baidu-url-submit/" target="_blank" rel="noopener">https://purewhite.io/2017/04/29/hexo-baidu-url-submit/</a></p>
 <p><a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3" target="_blank" rel="noopener">https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3</a></p>
 <p>1.在配置<code>H:\Hexo\themes\yilia\_config.yml</code>中开启功能：</p>
-<pre><code class="language-yml"># 开启百度站长平台自动推送(https://ziyuan.baidu.com/linksubmit/index)
-# 页面被访问了，就会被推送过去。
-baidu_push: true
-</code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 开启百度站长平台自动推送(https://ziyuan.baidu.com/linksubmit/index)</span></span><br><span class="line"><span class="comment"># 页面被访问了，就会被推送过去。</span></span><br><span class="line"><span class="attr">baidu_push:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p>2.新建<code>H:\Hexo\themes\yilia\layout\_partial\baidu-push.ejs</code>：</p>
-<pre><code class="language-html">&lt;% if (theme.baidu_push){ %&gt;
-&lt;!-- 开启百度站长平台自动推送https://ziyuan.baidu.com/linksubmit/index，
-https://ziyuan.baidu.com/college/courseinfo?id=267&amp;page=2#h2_article_title19--&gt;
-&lt;script&gt;
-  (function () {
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    } else {
-      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName(&quot;script&quot;)[0];
-    s.parentNode.insertBefore(bp, s);
-  })();
-&lt;/script&gt;
-&lt;% } %&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">theme.baidu_push</span>)&#123; %&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 开启百度站长平台自动推送https://ziyuan.baidu.com/linksubmit/index，</span></span><br><span class="line"><span class="comment">https://ziyuan.baidu.com/college/courseinfo?id=267&amp;page=2#h2_article_title19--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> bp = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> curProtocol = <span class="built_in">window</span>.location.protocol.split(<span class="string">':'</span>)[<span class="number">0</span>];</span></span><br><span class="line"><span class="javascript">    <span class="keyword">if</span> (curProtocol === <span class="string">'https'</span>) &#123;</span></span><br><span class="line"><span class="javascript">      bp.src = <span class="string">'https://zz.bdstatic.com/linksubmit/push.js'</span>;</span></span><br><span class="line"><span class="javascript">    &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="javascript">      bp.src = <span class="string">'http://push.zhanzhang.baidu.com/push.js'</span>;</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> s = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"script"</span>)[<span class="number">0</span>];</span></span><br><span class="line">    s.parentNode.insertBefore(bp, s);</span><br><span class="line">  &#125;)();</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
 <p>3.在<code>H:\Hexo\themes\yilia\layout\_partial\head.ejs</code>的<code>&lt;/head&gt;</code>前引入脚本：</p>
-<pre><code class="language-html">&lt;!--百度自动推送--&gt;
-&lt;%- partial('baidu-push') %&gt;
-&lt;/head&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--百度自动推送--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">baidu-push</span>') %&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h4 id="sitemap">sitemap</h4>
 <p>参考博客:<a href="https://purewhite.io/2017/04/29/hexo-baidu-url-submit/" target="_blank" rel="noopener">https://purewhite.io/2017/04/29/hexo-baidu-url-submit/</a></p>
 <p>我们使用 <code>hexo generator-baidu-sitemap</code>这个插件，github：<a href="https://github.com/coneycode/hexo-generator-baidu-sitemap" target="_blank" rel="noopener">https://github.com/coneycode/hexo-generator-baidu-sitemap</a></p>
 <p>或者使用这个插件：<a href="https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap" target="_blank" rel="noopener">https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap</a>:它将为页面，帖子，类别，标签和XSL样式表生成单独的站点地图文件。</p>
 <h5 id="安装hexo-generator-baidu-sitemap插件">安装<code>hexo generator-baidu-sitemap</code>插件</h5>
-<pre><code class="language-bash">#if your hexo version is 2.x.x, you should install as follow:
-$ npm install hexo-generator-baidu-sitemap@0.0.8 --save
-
-#if version is 3.x.x, you should install as follow:
-$ npm install hexo-generator-baidu-sitemap --save
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#if your hexo version is 2.x.x, you should install as follow:</span></span><br><span class="line">$ npm install hexo-generator-baidu-sitemap@0.0.8 --save</span><br><span class="line"></span><br><span class="line"><span class="comment">#if version is 3.x.x, you should install as follow:</span></span><br><span class="line">$ npm install hexo-generator-baidu-sitemap --save</span><br></pre></td></tr></table></figure>
 <h5 id="然后在-config-yml-里面配置一下：">然后在<code>_config.yml</code> 里面配置一下：</h5>
-<pre><code class="language-yml">baidusitemap:
-  path: baidusitemap.xml
-</code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">baidusitemap:</span></span><br><span class="line"><span class="attr">  path:</span> <span class="string">baidusitemap.xml</span></span><br></pre></td></tr></table></figure>
 <p><code>hexo g</code>后，会在<code>public\</code>目录下生成站点文件<code>baidusitemap.xml</code>。</p>
 <h5 id="百度站长平台设置">百度站长平台设置</h5>
 <p>之后去百度站长平台提交一下 sitemap 的路径就好，一般都是 <code>www.example.com/baidusitemap.xml</code>，一段时间后，去百度搜索相关信息就会出现这些网页。</p>
@@ -539,19 +491,13 @@ $ npm install hexo-generator-baidu-sitemap --save
 <h4 id="添加网站-验证">添加网站、验证</h4>
 <p>登录Google账号，打开搜索控制台：<a href="https://search.google.com/search-console" target="_blank" rel="noopener">https://search.google.com/search-console</a>，添加你的网站，需要验证网站，它那里会提供几种验证方式，我是用HTML，下载它的HTML文件，将它添加到你的网站根目录下，然后点击验证。</p>
 <p>**注意：**使用HTML进行验证的话，要保证该文件上传到网站后是一模一样的，即不然被渲染和压缩，跳过渲染可以再HTML文件前面加入下面的内容，跳过压缩因插件而异。</p>
-<pre><code>---
-layout: false
----
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">layout: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 <p>验证成功很快就能再Google找到你的网站了,如<code>site:www.yansheng.xyz</code>。</p>
 <h4 id="安装hexo-generator-sitemap插件">安装<code>hexo-generator-sitemap</code>插件</h4>
 <p>提交sitemap，上面使用的是百度特有的sitemap，Google识别不了，所以使用通用sitemap生成器hexo-generator-sitemap：<a href="https://github.com/hexojs/hexo-generator-sitemap" target="_blank" rel="noopener">https://github.com/hexojs/hexo-generator-sitemap</a></p>
-<pre><code class="language-bash">npm install hexo-generator-sitemap --save
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
 <h4 id="配置-config-yml">配置<code>_config.yml</code></h4>
-<pre><code class="language-yml">sitemap:
-    path: sitemap.xml
-</code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sitemap:</span></span><br><span class="line"><span class="attr">    path:</span> <span class="string">sitemap.xml</span></span><br></pre></td></tr></table></figure>
 <p>重新生成，会在根目录下生成<code>sitemap.xml</code>文件，发布后，就可以在google控制台提交这个sitemap了。</p>
 <h3 id="效果-v2">效果</h3>
 <p><img src="http://bucket836.oss-cn-shenzhen.aliyuncs.com/image-1573540242297.png" alt="file"></p>

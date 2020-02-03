@@ -197,6 +197,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	        
 				<li><a href="/photos">相册</a></li>
 	        
+				<li><a href="/tags">标签</a></li>
+	        
+				<li><a href="/message-board">留言墙</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -298,6 +302,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -318,13 +326,17 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/categories">分类</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories">分类</a></li>
 		        
-					<li style="width: 25%"><a href="/archives">归档</a></li>
+					<li style="width: 16.666666666666668%"><a href="/archives">归档</a></li>
 		        
-					<li style="width: 25%"><a href="/photos">相册</a></li>
+					<li style="width: 16.666666666666668%"><a href="/photos">相册</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/tags">标签</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/message-board">留言墙</a></li>
 		        
 				</ul>
 			</nav>
@@ -417,18 +429,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <h2 id="三-安装hexo-并初始化">三、安装hexo，并初始化</h2>
 <p>参考官网教程：<a href="https://hexo.io/zh-cn/index.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/index.html</a></p>
 <p>在你需要安装hexo的地方打开git命令行工具，运行一下命令（注：#开头为注释）</p>
-<pre><code class="language-bash"># 全局安装hexo
-# 并初始化一个文件夹Hexo作为hexo的根目录（可自定义，命令格式为`hexo init &lt;folder&gt;`）
-# 进入Hexo文件夹
-# npm install：Hexo 将会在指定文件夹中新建所需要的文件。
-# hexo server：部署在本地，会提醒可通过`http://localhost:4000`访问，`Ctrl+C`可停止
-
-npm install hexo-cli -g	
-hexo init Hexo
-cd Hexo
-npm install
-hexo server
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 全局安装hexo</span></span><br><span class="line"><span class="comment"># 并初始化一个文件夹Hexo作为hexo的根目录（可自定义，命令格式为`hexo init &lt;folder&gt;`）</span></span><br><span class="line"><span class="comment"># 进入Hexo文件夹</span></span><br><span class="line"><span class="comment"># npm install：Hexo 将会在指定文件夹中新建所需要的文件。</span></span><br><span class="line"><span class="comment"># hexo server：部署在本地，会提醒可通过`http://localhost:4000`访问，`Ctrl+C`可停止</span></span><br><span class="line"></span><br><span class="line">npm install hexo-cli -g	</span><br><span class="line">hexo init Hexo</span><br><span class="line"><span class="built_in">cd</span> Hexo</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 <p><img src="https://s2.ax1x.com/2019/07/25/eZEIaj.jpg" alt="eZEIaj.jpg"></p>
 <h2 id="四-更换主题">四、更换主题</h2>
 <h3 id="4-1-主题介绍">4.1 主题介绍</h3>
@@ -461,121 +462,66 @@ github（已停更）: <a href="https://github.com/MOxFIVE/hexo-theme-yelee" tar
 <p>（如果你的不是该主题，仅供参考。）<br>
 注意：一般默认都是在博客根目录打开git命令行，运行这些代码。</p>
 <h4 id="安装">安装</h4>
-<pre><code class="language-bash">$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br></pre></td></tr></table></figure>
 <h4 id="配置">配置</h4>
 <p>修改hexo根目录下的 <code>_config.yml</code> ： <code>theme: yilia</code></p>
 <p><font color="red">注意：（强制）部署这类格式的配置时，冒号后面要加英文空格；（推荐）如果文件中有添加中文注释，统一改文件格式为UTF-8</font>。</p>
 <h4 id="更新">更新</h4>
 <p>该主题好像已经很久没有更新了，最近的一次更新好像是2017年的。</p>
-<pre><code class="language-bash">cd themes/yilia
-git pull
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/yilia</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
 <h4 id="部署：">部署：</h4>
-<pre><code class="language-bash">hexo clean
-hexo generate
-hexo server
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 <p>浏览器访问：<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>，注意访问期间不能按停止命令<code>Ctrl+C</code>,不然会停止服务，页面404。</p>
 <p>效果图：<img src="https://s2.ax1x.com/2019/07/25/eZEoIs.jpg" alt="eZEoIs.jpg"></p>
 <h2 id="五-将hexo部署到github上面-实现双分支部署">五、将hexo部署到github上面，实现双分支部署</h2>
 <p>引用master分支中<code>README.md</code>中的有关双分支的部署说明：</p>
-<pre><code>yansheng836.github.io
--- master  部署分支：主要存放生成的静态文件，用于部署到github pages
--- blog    写作分支：主要存放hexo环境配置、博客（md）
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yansheng836.github.io</span><br><span class="line">-- master  部署分支：主要存放生成的静态文件，用于部署到github pages</span><br><span class="line">-- blog    写作分支：主要存放hexo环境配置、博客（md）</span><br></pre></td></tr></table></figure>
 <h3 id="1-部署master分支">1. 部署master分支</h3>
 <h4 id="1-1-指定hexo部署的方式-仓库-分支">1.1 指定hexo部署的方式、仓库、分支</h4>
 <p>修改hexo根目录下的 <code>_config.yml</code></p>
-<pre><code class="language-yml">#部署到github的仓库
-#Deployment
-#Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repository: https://github.com/yansheng836/yansheng836.github.io.git
-  branch: master
-</code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#部署到github的仓库</span></span><br><span class="line"><span class="comment">#Deployment</span></span><br><span class="line"><span class="comment">#Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repository:</span> <span class="attr">https://github.com/yansheng836/yansheng836.github.io.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
 <h4 id="1-2-为项目添加说明readme-md">1.2  <a href="http://xn--README-vy7ii41abt9bxtq9pwlv1dl97a.md" target="_blank" rel="noopener">为项目添加说明README.md</a></h4>
 <p>你可以把<code>README.md</code>,<code>LICENSE</code>（许可证）等文件放在/source/目录下，该目录的文件可以上传到github根目录；之前提过<code>hexo g</code>是将/source/<em>/</em>.md所有文件渲染成html文件（如果没有设置跳过渲染的话），然后放到对应的/public/目录下；而对于其他文件，直接复制到对应文件夹下。</p>
 <p><a href="http://xn--README-hf5m143bry1btzzavcfq9f.md" target="_blank" rel="noopener">设置跳过渲染README.md</a>，需要修改hexo根目录下的 <code>_config.yml</code></p>
-<pre><code class="language-yml">#hexo g 会默认将所有md文件转换成（渲染成）HTML文件放到public文件夹中；加上这句话的意思就是告诉hexo的解析器，跳过渲染(skip_render)README.md文件
-skip_render: 
- - 'README.md'
-</code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#hexo g 会默认将所有md文件转换成（渲染成）HTML文件放到public文件夹中；加上这句话的意思就是告诉hexo的解析器，跳过渲染(skip_render)README.md文件</span></span><br><span class="line"><span class="attr">skip_render:</span> </span><br><span class="line"><span class="bullet"> -</span> <span class="string">'README.md'</span></span><br></pre></td></tr></table></figure>
 <p>如果不设置该属性，README.md文件会被装换成README.html文件，同理你可以通过该配置跳过渲染你不希望hexo渲染的md文件。</p>
 <h4 id="1-3-把master分支部署到github的master分支">1.3 把master分支部署到github的master分支</h4>
 <p>如果有修改配置文件，最好都进行重新编译。</p>
-<pre><code class="language-bash">hexo clean
-hexo g
-hexo d
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 <p>如果出现类似错误：</p>
-<pre><code class="language-bash">ERROR Deployer not found: git
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></table></figure>
 <p>需要添加git依赖：</p>
-<pre><code class="language-bash">npm install hexo-deployer-git --save
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 <h3 id="2-部署blog分支">2. 部署blog分支</h3>
 <p>注意：该分支名可自定义。</p>
 <h4 id="2-1-在hexo根目录打开git命令行-初始化一个仓库">2.1 在Hexo根目录打开git命令行，初始化一个仓库</h4>
 <p>在hexo根目录下新建仓库，用于管理写作分支（之前的部署到github的为部署分支）</p>
-<pre><code class="language-bash">git init
-git remote add origin https://github.com/yansheng836/yansheng836.github.io.git
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin https://github.com/yansheng836/yansheng836.github.io.git</span><br></pre></td></tr></table></figure>
 <h4 id="2-2-忽略一些不需要备份的文件">2.2 忽略一些不需要备份的文件</h4>
 <p>修改跟目录下的<code>.gitignore</code>，.gitignore的原内容：</p>
-<pre><code class="language-gitignore">.DS_Store
-Thumbs.db
-db.json
-*.log
-node_modules/
-public/
-.deploy*/
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br></pre></td></tr></table></figure>
 <p>在后面增加以下内容，用来忽略原来的主题文件：</p>
-<pre><code>#ignored the useless themes
-/themes/landscape/
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#ignored the useless themes</span><br><span class="line">/themes/landscape/</span><br></pre></td></tr></table></figure>
 <h4 id="2-3-删除-themes-yilia-git文件夹">2.3 删除<code>/themes/yilia/.git</code>文件夹。</h4>
 <p>为方便将yilia的主题配置进行同步（其实该主题已经很久没更新了……），但是之前我们使用github克隆的yilia，也就是话说：/themes/yilia/里面也有一个仓库，这涉及到git仓库下的子仓库的问题，默认情况下是不将该子仓库介入到外层仓库的，但是我们需要备份yilia主题的配置文件，所以需要删除该子仓库，即删除<code>/themes/yilia/.git</code>文件夹。</p>
 <h4 id="2-4-创建blog分支">2.4 创建blog分支。</h4>
 <p>创建一个分支存放写作内容，方便同步到同一仓库的不同分支，先提交一次，不然会报</p>
-<pre><code>fatal: Not a valid object name: 'master'
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fatal: Not a valid object name: &apos;master&apos;</span><br></pre></td></tr></table></figure>
 <p>添加、提交</p>
-<pre><code class="language-bash">git add .
-git commit -m &quot;init the blog&quot;
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"init the blog"</span></span><br></pre></td></tr></table></figure>
 <p>创建分支，并同步到github的blog分支</p>
-<pre><code class="language-bash">git branch blog
-git checkout blog
-git push origin blog
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch blog</span><br><span class="line">git checkout blog</span><br><span class="line">git push origin blog</span><br></pre></td></tr></table></figure>
 <h4 id="2-5-github上把blog分支设置为默认分支">2.5 github上把blog分支设置为默认分支</h4>
 <p>可设置该分支为默认分支<code>Settings--&gt;branches--&gt;Default branch:master设置为blog--&gt;update</code>，这样以后仓库主页显示就是blog分支，而且拉取（或者克隆）的时候拉取的就是blog分支，而不是原来默认的master分支。</p>
 <h4 id="2-6-实现双分支部署">2.6 实现双分支部署</h4>
 <p>每次写完博客要同时同步到该仓库的不同分支上，以实现真正的同步(备份)。</p>
-<pre><code class="language-bash">#Writing
-# 同步到master分支
-hexo clean
-hexo generate
-hexo deploy
-
-# 手动同步到blog分支上
-git add. 
-git commit -m &quot;提交信息&quot;
-git push origin blog #如果设置了blog为默认分支，可以直接git push
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Writing</span></span><br><span class="line"><span class="comment"># 同步到master分支</span></span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br><span class="line"></span><br><span class="line"><span class="comment"># 手动同步到blog分支上</span></span><br><span class="line">git add. </span><br><span class="line">git commit -m <span class="string">"提交信息"</span></span><br><span class="line">git push origin blog <span class="comment">#如果设置了blog为默认分支，可以直接git push</span></span><br></pre></td></tr></table></figure>
 <h3 id="五-发布到github-pages">五、发布到github pages</h3>
 <p>设置master分支为主页，步骤<code>Settings--&gt;options--&gt;GitHub Pages:设置master分支--&gt;update</code>，成功后会刷新，显示则可通过<code>&lt;https://yansheng836.github.io/&gt;</code>访问。</p>
 <p>如果有购买域名，可设置对应域名，之前要设置域名解析（这个好像有点啰嗦不细讲），或者直接在hexo根目录的/source/文件夹下添加<code>CNAME</code>文件(注意：该文件没有后缀)，内容为域名，如：</p>
-<pre><code>www.yansheng.xyz
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www.yansheng.xyz</span><br></pre></td></tr></table></figure>
 <p>然后发布到github上</p>
-<pre><code class="language-bash">hexo clean
-hexo generate
-hexo deploy
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
 <p>成功后在setting中会显示可通过域名访问，而不是原来的路径。</p>
 <hr>
 <p>hexo(yilia)+GitHub Pages搭建个人博客系列文章：<br>

@@ -193,6 +193,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	        
 				<li><a href="/photos">相册</a></li>
 	        
+				<li><a href="/tags">标签</a></li>
+	        
+				<li><a href="/message-board">留言墙</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -294,6 +298,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -314,13 +322,17 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/categories">分类</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories">分类</a></li>
 		        
-					<li style="width: 25%"><a href="/archives">归档</a></li>
+					<li style="width: 16.666666666666668%"><a href="/archives">归档</a></li>
 		        
-					<li style="width: 25%"><a href="/photos">相册</a></li>
+					<li style="width: 16.666666666666668%"><a href="/photos">相册</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/tags">标签</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/message-board">留言墙</a></li>
 		        
 				</ul>
 			</nav>
@@ -373,7 +385,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
        <i class="icon-statistics"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">851字</span>
+        <span class="post-count">826字</span>
       </span>
     </span>
 
@@ -407,49 +419,16 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <a id="more"></a>
 <h3 id="第一种方式：">第一种方式：</h3>
 <p>打开_config.yml配置文件，找到permalink</p>
-<pre><code class="language-yml">#permalink: :year/:month/:day/:title/ 注释掉
-# 改为下面这样
-permalink:   /article/:title.html
-</code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#permalink: :year/:month/:day/:title/ 注释掉</span></span><br><span class="line"><span class="comment"># 改为下面这样</span></span><br><span class="line"><span class="attr">permalink:</span>   <span class="string">/article/:title.html</span></span><br></pre></td></tr></table></figure>
 <p>上面这种方式是去掉了年月日，保持网站最多三层。</p>
 <h3 id="第二种方式：-推荐">第二种方式：(推荐)</h3>
 <p>安装 <code>hexo-abbrlink</code>插件：</p>
-<pre><code class="language-bash">npm install hexo-abbrlink --save
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
 <p>配置<code>_config.yml</code>，查找<code>permalink</code>，修改成这样：</p>
-<pre><code class="language-yml"># permalink: :title/  将之前的注释掉
-permalink: article/:abbrlink.html
-abbrlink:
-  alg: crc32  # 算法：crc16(default) and crc32
-  rep: hex    # 进制：dec(default) and hex
-</code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># permalink: :title/  将之前的注释掉</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">article/:abbrlink.html</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line"><span class="attr">  alg:</span> <span class="string">crc32</span>  <span class="comment"># 算法：crc16(default) and crc32</span></span><br><span class="line"><span class="attr">  rep:</span> <span class="string">hex</span>    <span class="comment"># 进制：dec(default) and hex</span></span><br></pre></td></tr></table></figure>
 <p>安装后的网址：<a href="http://localhost:4000/article/c5f6d65b.html" target="_blank" rel="noopener">http://localhost:4000/article/c5f6d65b.html</a></p>
 <p>注意：配置成功需要重新生成文件<code>hexo clean,hexo g</code>，不然会出现<code>undefined</code>的问题，如下：</p>
-<pre><code class="language-bash">$ npm install hexo-abbrlink --save
-npm WARN babel-eslint@10.0.2 requires a peer of eslint@&gt;= 4.12.1 but none is installed. You must install peer dependencies yourself.
-npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules\fsevents):
-npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted {&quot;os&quot;:&quot;darwin&quot;,&quot;arch&quot;:&quot;any&quot;} (current: {&quot;os&quot;:&quot;win32&quot;,&quot;arch&quot;:&quot;x64&quot;})
-
-+ hexo-abbrlink@2.0.5
-added 15 packages from 13 contributors and audited 26333 packages in 27.509s
-found 21 vulnerabilities (8 low, 6 moderate, 6 high, 1 critical)
-  run `npm audit fix` to fix them, or `npm audit` for details
-
-yansheng@MECHREVO MINGW64 /h/Hexo (blog)
-$ hexo s
-(node:1612) [DEP0061] DeprecationWarning: fs.SyncWriteStream is deprecated.
-INFO  Start processing
-INFO  Generating Baidu urls for last 100 posts
-INFO  Posts urls generated in baidu_urls.txt
-https://yansheng836.github.io/archives/undefined.html
-https://yansheng836.github.io/archives/undefined.html
-https://yansheng836.github.io/archives/undefined.html
-https://yansheng836.github.io/archives/undefined.html
-https://yansheng836.github.io/archives/undefined.html
-https://yansheng836.github.io/archives/undefined.html
-
-INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-abbrlink --save</span><br><span class="line">npm WARN babel-eslint@10.0.2 requires a peer of eslint@&gt;= 4.12.1 but none is installed. You must install peer dependencies yourself.</span><br><span class="line">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules\fsevents):</span><br><span class="line">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform <span class="keyword">for</span> fsevents@1.2.9: wanted &#123;<span class="string">"os"</span>:<span class="string">"darwin"</span>,<span class="string">"arch"</span>:<span class="string">"any"</span>&#125; (current: &#123;<span class="string">"os"</span>:<span class="string">"win32"</span>,<span class="string">"arch"</span>:<span class="string">"x64"</span>&#125;)</span><br><span class="line"></span><br><span class="line">+ hexo-abbrlink@2.0.5</span><br><span class="line">added 15 packages from 13 contributors and audited 26333 packages <span class="keyword">in</span> 27.509s</span><br><span class="line">found 21 vulnerabilities (8 low, 6 moderate, 6 high, 1 critical)</span><br><span class="line">  run `npm audit fix` to fix them, or `npm audit` <span class="keyword">for</span> details</span><br><span class="line"></span><br><span class="line">yansheng@MECHREVO MINGW64 /h/Hexo (blog)</span><br><span class="line">$ hexo s</span><br><span class="line">(node:1612) [DEP0061] DeprecationWarning: fs.SyncWriteStream is deprecated.</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Generating Baidu urls <span class="keyword">for</span> last 100 posts</span><br><span class="line">INFO  Posts urls generated <span class="keyword">in</span> baidu_urls.txt</span><br><span class="line">https://yansheng836.github.io/archives/undefined.html</span><br><span class="line">https://yansheng836.github.io/archives/undefined.html</span><br><span class="line">https://yansheng836.github.io/archives/undefined.html</span><br><span class="line">https://yansheng836.github.io/archives/undefined.html</span><br><span class="line">https://yansheng836.github.io/archives/undefined.html</span><br><span class="line">https://yansheng836.github.io/archives/undefined.html</span><br><span class="line"></span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
 <h3 id="弊端">弊端</h3>
 <p>其实使用这个也有弊端：</p>
 <ul>
@@ -462,13 +441,7 @@ INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.
 <p>截个图：<br>
 <a href="https://user-images.githubusercontent.com/45334066/68354504-89893d80-0147-11ea-8bc4-cf90c2531475.png" target="_blank" rel="noopener"><img src="https://user-images.githubusercontent.com/45334066/68354504-89893d80-0147-11ea-8bc4-cf90c2531475.png" alt="image"></a></p>
 <p>站点的配置文件有<code>category_map</code>和<code>tag_map</code>配置，即分类和标签的别名（映射），举个例子：</p>
-<pre><code class="language-yml"># Category &amp; Tag
-default_category: uncategorized
-category_map:
-    编程: programming
-tag_map:
-    生活: life
-</code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Category &amp; Tag</span></span><br><span class="line"><span class="attr">default_category:</span> <span class="string">uncategorized</span></span><br><span class="line"><span class="attr">category_map:</span></span><br><span class="line">    <span class="string">编程:</span> <span class="string">programming</span></span><br><span class="line"><span class="attr">tag_map:</span></span><br><span class="line">    <span class="string">生活:</span> <span class="string">life</span></span><br></pre></td></tr></table></figure>
 <p>这样标签<code>生活</code>的访问网址为：<a href="http://localhost:4000/tags/life/" target="_blank" rel="noopener">http://localhost:4000/tags/life/</a>，分类同理。</p>
 <p>参考：<a href="https://yq.aliyun.com/articles/8607?spm=0.0.0.0.TP5ICj" target="_blank" rel="noopener">https://yq.aliyun.com/articles/8607?spm=0.0.0.0.TP5ICj</a></p>
 

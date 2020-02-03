@@ -190,6 +190,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	        
 				<li><a href="/photos">相册</a></li>
 	        
+				<li><a href="/tags">标签</a></li>
+	        
+				<li><a href="/message-board">留言墙</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -291,6 +295,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -311,13 +319,17 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/categories">分类</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories">分类</a></li>
 		        
-					<li style="width: 25%"><a href="/archives">归档</a></li>
+					<li style="width: 16.666666666666668%"><a href="/archives">归档</a></li>
 		        
-					<li style="width: 25%"><a href="/photos">相册</a></li>
+					<li style="width: 16.666666666666668%"><a href="/photos">相册</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/tags">标签</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/message-board">留言墙</a></li>
 		        
 				</ul>
 			</nav>
@@ -370,7 +382,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
        <i class="icon-statistics"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">495字</span>
+        <span class="post-count">494字</span>
       </span>
     </span>
 
@@ -407,48 +419,17 @@ Hexo默认是采用<code>hexo-renderer-marked</code>,这个渲染器不支持插
 <li>更换渲染器<br>
 进入blog跟目录，执行如下命令</li>
 </ul>
-<pre><code>npm un hexo-renderer-marked --save
-npm i hexo-renderer-markdown-it --save
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm un hexo-renderer-marked --save</span><br><span class="line">npm i hexo-renderer-markdown-it --save</span><br></pre></td></tr></table></figure>
 <ul>
 <li>安装emoji插件，执行如下命令</li>
 </ul>
-<pre><code>npm install markdown-it-emoji --save
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install markdown-it-emoji --save</span><br></pre></td></tr></table></figure>
 <ul>
 <li>编辑站点配置文件<br>
 就是编辑根目录的_config.yml文件，添加如下内容</li>
 </ul>
 <p>配置<code>H:\Hexo\_config.yml</code>：</p>
-<pre><code class="language-yml"># Markdown-it config
-## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
-markdown:
-  render:
-    html: true          # 是否对HTML标签进行解析，false时HTML将按照原样输出
-    xhtmlOut: false     # 是否需要满足严格的XHTML格式，换行为&lt;br /&gt;
-    breaks: true
-    linkify: true
-    typographer: true
-    quotes: '“”‘’'
-  plugins:
-    - markdown-it-abbr
-    - markdown-it-footnote
-    - markdown-it-ins
-    - markdown-it-sub
-    - markdown-it-sup
-    - markdown-it-emoji  # add emoji
-  anchors:
-    # Minimum level for ID creation. (Ex. h2 to h6)
-    level: 2
-    # A suffix that is prepended to the number given if the ID is repeated.
-    collisionSuffix: 'v'
-    # If `true`, creates an anchor tag with a permalink besides the heading.
-    permalink: false
-    # Class used for the permalink anchor tag.
-    permalinkClass: header-anchor
-    # The symbol used to make the permalink
-    permalinkSymbol: ¶
-</code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Markdown-it config</span></span><br><span class="line"><span class="comment">## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki</span></span><br><span class="line"><span class="attr">markdown:</span></span><br><span class="line"><span class="attr">  render:</span></span><br><span class="line"><span class="attr">    html:</span> <span class="literal">true</span>          <span class="comment"># 是否对HTML标签进行解析，false时HTML将按照原样输出</span></span><br><span class="line"><span class="attr">    xhtmlOut:</span> <span class="literal">false</span>     <span class="comment"># 是否需要满足严格的XHTML格式，换行为&lt;br /&gt;</span></span><br><span class="line"><span class="attr">    breaks:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    linkify:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    typographer:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    quotes:</span> <span class="string">'“”‘’'</span></span><br><span class="line"><span class="attr">  plugins:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">markdown-it-abbr</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">markdown-it-footnote</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">markdown-it-ins</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">markdown-it-sub</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">markdown-it-sup</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">markdown-it-emoji</span>  <span class="comment"># add emoji</span></span><br><span class="line"><span class="attr">  anchors:</span></span><br><span class="line">    <span class="comment"># Minimum level for ID creation. (Ex. h2 to h6)</span></span><br><span class="line"><span class="attr">    level:</span> <span class="number">2</span></span><br><span class="line">    <span class="comment"># A suffix that is prepended to the number given if the ID is repeated.</span></span><br><span class="line"><span class="attr">    collisionSuffix:</span> <span class="string">'v'</span></span><br><span class="line">    <span class="comment"># If `true`, creates an anchor tag with a permalink besides the heading.</span></span><br><span class="line"><span class="attr">    permalink:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment"># Class used for the permalink anchor tag.</span></span><br><span class="line"><span class="attr">    permalinkClass:</span> <span class="string">header-anchor</span></span><br><span class="line">    <span class="comment"># The symbol used to make the permalink</span></span><br><span class="line"><span class="attr">    permalinkSymbol:</span> <span class="string">¶</span></span><br></pre></td></tr></table></figure>
 <h3 id="更近一步">更近一步</h3>
 <ul>
 <li>Hexo Markdown 拓展:<a href="https://maqingbo.github.io/2019/03/12/Hexo%20Markdown%20%E6%8B%93%E5%B1%95/" target="_blank" rel="noopener">https://maqingbo.github.io/2019/03/12/Hexo Markdown 拓展/</a></li>

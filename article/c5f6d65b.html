@@ -195,6 +195,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	        
 				<li><a href="/photos">相册</a></li>
 	        
+				<li><a href="/tags">标签</a></li>
+	        
+				<li><a href="/message-board">留言墙</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -296,6 +300,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -316,13 +324,17 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/categories">分类</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories">分类</a></li>
 		        
-					<li style="width: 25%"><a href="/archives">归档</a></li>
+					<li style="width: 16.666666666666668%"><a href="/archives">归档</a></li>
 		        
-					<li style="width: 25%"><a href="/photos">相册</a></li>
+					<li style="width: 16.666666666666668%"><a href="/photos">相册</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/tags">标签</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/message-board">留言墙</a></li>
 		        
 				</ul>
 			</nav>
@@ -469,14 +481,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>安装utterances应用，网址 <a href="https://github.com/apps/utterances" target="_blank" rel="noopener">https://github.com/apps/utterances</a> ，设置指定仓库即可。</p>
 <h4 id="2-配置基本参数">2.配置基本参数</h4>
 <p>官方（主页）其实自带教程，配置相关参数，生成脚本如下：</p>
-<pre><code class="language-html">&lt;script src=&quot;https://utteranc.es/client.js&quot;
-        repo=&quot;yansheng836/yansheng836.github.io&quot;
-        issue-term=&quot;title&quot;
-        theme=&quot;github-light&quot;
-        crossorigin=&quot;anonymous&quot;
-        async&gt;
-&lt;/script&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://utteranc.es/client.js"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">repo</span>=<span class="string">"yansheng836/yansheng836.github.io"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">issue-term</span>=<span class="string">"title"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">theme</span>=<span class="string">"github-light"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">async</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>解释一下主要参数：</p>
 <ul>
 <li>repo：存放评论的issues的仓库名（即步骤1指定访问的仓库），可以和博客相同，也可以不同。</li>
@@ -497,51 +502,13 @@ github-dark<br>
 <h4 id="3-hexo-yilia配置">3.hexo+yilia配置</h4>
 <h5 id="直接嵌入">直接嵌入</h5>
 <p>修改：<code>H:\Hexo\themes\yilia\layout\_partial\article.ejs</code>，在博客评论系统代码附近，添加如下代码：</p>
-<pre><code class="language-html">&lt;!-- 《utteranc评论：基于github issue的评论系统 --&gt;
-&lt;div&gt;
-    &lt;section id=&quot;comments&quot; class=&quot;comments&quot;&gt;
-      &lt;style&gt;
-        .utterances{max-width: 100%;}
-      &lt;/style&gt;
-        &lt;script src=&quot;https://utteranc.es/client.js&quot;
-                repo=&quot;yansheng836/yansheng836.github.io&quot;
-                issue-term=&quot;title&quot;
-                theme=&quot;github-light&quot;
-                crossorigin=&quot;anonymous&quot;
-                async&gt;
-        &lt;/script&gt;
-  &lt;/section&gt;
-&lt;/div&gt;
-&lt;!-- utteranc评论》 --&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 《utteranc评论：基于github issue的评论系统 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">id</span>=<span class="string">"comments"</span> <span class="attr">class</span>=<span class="string">"comments"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.utterances</span>&#123;<span class="attribute">max-width</span>: <span class="number">100%</span>;&#125;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://utteranc.es/client.js"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">repo</span>=<span class="string">"yansheng836/yansheng836.github.io"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">issue-term</span>=<span class="string">"title"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">theme</span>=<span class="string">"github-light"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">async</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- utteranc评论》 --&gt;</span></span><br></pre></td></tr></table></figure>
 <p>在官网也有介绍到:<code>Customize the layout using the</code>.utterances<code>and</code>.utterances-frame<code>selectors.</code>，如果需要控制样式，可以通过这两个选择器。因为指定了<code>.utterances{max-width: 750px;}</code>，我试了下，在yilia主题下，宽度不能充满评论区域，所以进行了调整。</p>
 <h5 id="灵活嵌入">灵活嵌入</h5>
 <p>可主题的配置文件中进行配置</p>
-<pre><code class="language-yml">#7.utteranc评论： https://utteranc.es (参数配置详见主页)
-utterance:
-  enable: true
-  repo: 'yansheng836/yansheng836.github.io'     #仓库名字,格式：你的用户ID/仓库名称，如：blog/utterance_repo
-  issue_term: 'title'            #映射配置
-  theme: 'github-light'          #主题
-</code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#7.utteranc评论： https://utteranc.es (参数配置详见主页)</span></span><br><span class="line"><span class="attr">utterance:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="string">'yansheng836/yansheng836.github.io'</span>     <span class="comment">#仓库名字,格式：你的用户ID/仓库名称，如：blog/utterance_repo</span></span><br><span class="line"><span class="attr">  issue_term:</span> <span class="string">'title'</span>            <span class="comment">#映射配置</span></span><br><span class="line"><span class="attr">  theme:</span> <span class="string">'github-light'</span>          <span class="comment">#主题</span></span><br></pre></td></tr></table></figure>
 <p>修改：<code>H:\Hexo\themes\yilia\layout\_partial\article.ejs</code>，在博客评论系统代码附近，添加如下代码：</p>
-<pre><code class="language-html">&lt;!-- 《utteranc评论：基于github issue的评论系统 --&gt;
-&lt;% if (theme.utterance &amp;&amp; theme.utterance.enable){ %&gt;
-    &lt;section id=&quot;comments&quot; class=&quot;comments&quot;&gt;
-      &lt;style&gt;
-        .utterances{max-width: 100%;}
-      &lt;/style&gt;
-        &lt;script src=&quot;https://utteranc.es/client.js&quot;
-                repo=&quot;&lt;%= theme.utterance.repo %&gt;&quot;
-                issue-term=&quot;&lt;%= theme.utterance.issue_term %&gt;&quot;
-                theme=&quot;&lt;%= theme.utterance.theme %&gt;&quot;
-                crossorigin=&quot;anonymous&quot;
-                async&gt;
-        &lt;/script&gt;
-  &lt;/section&gt;
-&lt;% } %&gt;
-&lt;!-- utteranc评论》 --&gt;
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 《utteranc评论：基于github issue的评论系统 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">theme.utterance</span> &amp;&amp; <span class="attr">theme.utterance.enable</span>)&#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">id</span>=<span class="string">"comments"</span> <span class="attr">class</span>=<span class="string">"comments"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.utterances</span>&#123;<span class="attribute">max-width</span>: <span class="number">100%</span>;&#125;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://utteranc.es/client.js"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">repo</span>=<span class="string">"&lt;%= theme.utterance.repo %&gt;"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">issue-term</span>=<span class="string">"&lt;%= theme.utterance.issue_term %&gt;"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">theme</span>=<span class="string">"&lt;%= theme.utterance.theme %&gt;"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">async</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- utteranc评论》 --&gt;</span></span><br></pre></td></tr></table></figure>
 
       
 

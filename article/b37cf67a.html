@@ -192,6 +192,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	        
 				<li><a href="/photos">相册</a></li>
 	        
+				<li><a href="/tags">标签</a></li>
+	        
+				<li><a href="/message-board">留言墙</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -293,6 +297,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -313,13 +321,17 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/categories">分类</a></li>
+					<li style="width: 16.666666666666668%"><a href="/categories">分类</a></li>
 		        
-					<li style="width: 25%"><a href="/archives">归档</a></li>
+					<li style="width: 16.666666666666668%"><a href="/archives">归档</a></li>
 		        
-					<li style="width: 25%"><a href="/photos">相册</a></li>
+					<li style="width: 16.666666666666668%"><a href="/photos">相册</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/tags">标签</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/message-board">留言墙</a></li>
 		        
 				</ul>
 			</nav>
@@ -372,7 +384,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
        <i class="icon-statistics"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">578字</span>
+        <span class="post-count">580字</span>
       </span>
     </span>
 
@@ -404,39 +416,15 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <a id="more"></a>
 <h2 id="一-主要信息配置：hexo-config-yml配置">一、主要信息配置：<code>Hexo/_config.yml</code>配置</h2>
 <p>一般需要设置一下内容</p>
-<pre><code>site,url,jsonContent(标签不能正常显示的问题)
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">site,url,jsonContent(标签不能正常显示的问题)</span><br></pre></td></tr></table></figure>
 <p>注意：标签不能正常显示的问题</p>
-<pre><code class="language-yml">#标签不能正常显示的问题
-jsonContent:
-  meta: false
-  pages: false
-  posts:
-    title: true
-    date: true
-    path: true
-    text: false
-    raw: false
-    content: false
-    slug: false
-    updated: false
-    comments: false
-    link: false
-    permalink: false
-    excerpt: false
-    categories: true
-    tags: true
-</code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#标签不能正常显示的问题</span></span><br><span class="line"><span class="attr">jsonContent:</span></span><br><span class="line"><span class="attr">  meta:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  pages:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  posts:</span></span><br><span class="line"><span class="attr">    title:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    date:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    path:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    text:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    raw:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    content:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    slug:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    updated:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    comments:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    link:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    permalink:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    excerpt:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    categories:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    tags:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p>jsonContent(标签不能正常显示的问题)，该功能需要添加依赖：</p>
-<pre><code class="language-bash">npm i hexo-generator-json-content --save
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-generator-json-content --save</span><br></pre></td></tr></table></figure>
 <h2 id="二-主题配置hexo-themes-yilia-config-yml配置">二、主题配置<code>Hexo/themes/yilia/_config.yml</code>配置</h2>
-<pre><code>menu;subnav;favicon(设置网站图标);avatar(头像);friends(社交)
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">menu;subnav;favicon(设置网站图标);avatar(头像);friends(社交)</span><br></pre></td></tr></table></figure>
 <p>注意：favicon设置网站图标，用自己的图标替换<code>H:\Hexo\source\assets\img\favicon.ico</code>，然后修改<code>H:\Hexo\themes\yilia\_config.yml</code>里面的图标链接</p>
-<pre><code class="language-yml">#设置网站图标
-favicon: /assets/img/favicon.ico
-</code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#设置网站图标</span></span><br><span class="line"><span class="attr">favicon:</span> <span class="string">/assets/img/favicon.ico</span></span><br></pre></td></tr></table></figure>
 <p>图标介绍及制作可参考：<a href="http://www.faviconico.org/" target="_blank" rel="noopener">http://www.faviconico.org/</a></p>
 <p><font color="red">推荐原因：可以预览图标，就是你制作后图标后，点击预览，它会将当前网页图标设置成你的图标。</font></p>
 <blockquote>
