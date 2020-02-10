@@ -87,23 +87,44 @@
 
 
 /*《分类页面，标签页面样式*/
- .category-count {
+/*标题*/
+.category-count {
     text-align:center;
     line-height:3;
-    font-size:30px;
-    /* font-weight: 700; */
+    font-size:50px;
+    font-weight: bold;
     font-family: STCaiyun, STXingkai;
+    display: block;
+    /*渐变背景*/
+    background-image: -webkit-linear-gradient(left, #3498db, #f47920 10%, #d71345 20%, #f7acbc 30%, #ffd400 40%, #3498db 50%, #f47920 60%, #d71345 70%, #f7acbc 80%, #ffd400 90%, #3498db);
+    color: transparent;
+    /*文字填充色为透明*/
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    /*背景剪裁为文字，只将文字显示为背景*/
+    background-size: 200% 100%;
+    /*背景图片向水平方向扩大一倍，这样background-position才有移动与变化的空间*/
+    /* 动画 */
+    animation: masked-animation 4s infinite linear;
+}
+@keyframes masked-animation {
+    0% {
+        background-position: 0 0;
+        /*background-position 属性设置背景图像的起始位置。*/
+    }
+    100% {
+        background-position: -100% 0;
+    }
 }
 /* 手机端CSS代码 */
  @media screen and (max-width: 960px) {
     .category-count {
         text-align:center;
         line-height:3;
-        font-size:25px;
-        /* font-weight: 700; */
-        font-family: STCaiyun, STXingkai;
+        font-size:32px;
     }
 }
+/* 分类 */
 .category-list {
     text-align:center;
     padding:20px
@@ -112,12 +133,69 @@
     display:inline-block;
     margin:0 1em .5em 0;
     padding:4px;
-    border:1px solid #aaaaaa;
+    /* border:1px solid #aaaaaa; */
     font-size:1.2rem
 }
-.category-list li.category-list-item:hover {
-    background:rgba(204, 204, 204, 0.3)
+.category-list li.category-list-item a{
+    text-decoration: none;
 }
+.category-list li.category-list-item:hover {
+    color:#ffffff;
+}
+/* .category-list li.category-list-item:hover {
+    background:rgba(204, 204, 204, 0.3)
+} */
+
+/* https://github.com/IanLunn/Hover,
+https://ianlunn.github.io/Hover/ */
+/* Rectangle In */
+.hvr-rectangle-in {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0.5em;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  background: #2098D1;
+  border-radius: 10px;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+.hvr-rectangle-in:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #e1e1e1;
+  border-radius: 10px;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-rectangle-in:hover, .hvr-rectangle-in:focus, .hvr-rectangle-in:active {
+  color: white;
+}
+.hvr-rectangle-in:hover:before, .hvr-rectangle-in:focus:before, .hvr-rectangle-in:active:before {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+/* 分类和标签的分界面 */
+.category-hr-tag {
+}
+
+/* 标签 */
 .tag-cloud {
     text-align:center;
     padding:20px
@@ -3824,10 +3902,11 @@ a.pswp__share--download:hover {
     }
 }
 
-/* valine的背景颜色 */
+/* 设置valine评论的背景颜色，边框 */
 #vcomment{
 	/* background:#fff */
 	background: rgba(255,255,255,.9);
+	padding: 10px;
 }
 
 /* 设置valine占位符的颜色 */
@@ -3844,3 +3923,14 @@ a.pswp__share--download:hover {
 	color: #979292;
 }
 /* 评论框》 */
+
+/* Dplayer视频播放器 */
+/* 当为Dplayer设置宽高时，会将该属性设置行内样式，级别很高；
+移动端，仍会显示PC端的尺寸，因此这里需要设置最大宽高，数据按照不设置宽高时进行设置。 */
+@media screen and (max-width: 800px) {
+   .dplayer {
+		max-width:394.4px;
+		max-height:221.6px;
+    }
+}
+/* Dplayer视频播放器 */

@@ -189,9 +189,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	        
 				<li><a href="/photos">相册</a></li>
 	        
-				<li><a href="/tags">标签</a></li>
-	        
-				<li><a href="/message-board">留言墙</a></li>
+				<li><a href="/message-wall">留言墙</a></li>
 	        
 			</ul>
 		</nav>
@@ -296,8 +294,6 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -318,17 +314,15 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
+					<li style="width: 20%"><a href="/">主页</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/categories">分类</a></li>
+					<li style="width: 20%"><a href="/categories">分类</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/archives">归档</a></li>
+					<li style="width: 20%"><a href="/archives">归档</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/photos">相册</a></li>
+					<li style="width: 20%"><a href="/photos">相册</a></li>
 		        
-					<li style="width: 16.666666666666668%"><a href="/tags">标签</a></li>
-		        
-					<li style="width: 16.666666666666668%"><a href="/message-board">留言墙</a></li>
+					<li style="width: 20%"><a href="/message-wall">留言墙</a></li>
 		        
 				</ul>
 			</nav>
@@ -344,6 +338,132 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-hexo-yilia添加背景特效" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <!-- 文章正文 -->
+    <div class="article-inner">
+    
+      <!-- 文章头部 -->
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/article/cf9c6a5e.html">hexo+yilia添加背景特效</a>
+    </h1>
+  
+
+        
+        <!--引入不蒜子并添加文章访问量(开始) -->
+
+<!--引入不蒜子并添加文章访问量(结束) -->
+
+<a href="/article/cf9c6a5e.html" class="archive-article-date">
+  	<time datetime="2019-11-10T09:06:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-10</time>
+</a>
+        
+
+        <!-- 《开始添加字数统计-->
+         
+          
+
+
+         
+        <!-- 添加字数统计完成》 -->
+
+      </header>
+    
+
+    <!-- 文章主要内容（入口、条目） -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>添加多种页面背景特效，参考：<a href="https://blog.csdn.net/qq_36759224/article/details/85420403" target="_blank" rel="noopener">Hexo 博客优化之博客美化系列（持续更新）</a>，需要注意的是：添加背景特效是很消耗浏览器内容的，建议只选择其中的一两个。</p>
+<h2 id="特效目录">特效目录</h2>
+<ul>
+<li><a href="#%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E5%87%BA%E7%8E%B0%E7%88%B1%E5%BF%83%E7%89%B9%E6%95%88">鼠标点击出现爱心特效</a></li>
+<li><a href="#%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E6%98%BE%E7%A4%BA%E6%96%87%E5%AD%97--%E9%9C%80%E8%A6%81%E5%BC%95%E5%85%A5jquery">鼠标点击显示文字–需要引入jQuery</a></li>
+<li><a href="#%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E7%83%9F%E8%8A%B1%E7%88%86%E7%82%B8%E6%95%88%E6%9E%9C">鼠标点击烟花爆炸效果</a></li>
+<li><a href="#%E5%8A%A8%E6%80%81%E7%BA%BF%E6%9D%A1%E8%83%8C%E6%99%AF">动态线条背景</a></li>
+<li><a href="#%E9%9B%AA%E8%8A%B1%E7%89%B9%E6%95%882%E5%A4%A7%E9%9B%AA%E8%8A%B1%E6%9C%89%E9%BD%BF%E8%BD%AE">雪花特效2.大雪花(有齿轮)</a></li>
+<li><a href="#%E9%9B%AA%E8%8A%B1%E7%89%B9%E6%95%883%E5%B0%8F%E9%9B%AA%E8%8A%B1%E6%97%A0%E9%BD%BF%E8%BD%AE">雪花特效3.小雪花(无齿轮)</a></li>
+<li><a href="#%E5%BD%A9%E5%B8%A61%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E8%87%AA%E5%8A%A8%E6%9B%BF%E6%8D%A2%E5%BD%A9%E5%B8%A6">彩带1.鼠标点击自动替换彩带</a></li>
+<li><a href="#%E5%BD%A9%E5%B8%A62%E8%87%AA%E5%8A%A8%E9%A3%98%E5%8A%A8">彩带2.自动飘动</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81%E9%9B%A8">代码雨</a></li>
+</ul>
+        
+          <a class="article-more-a" href="/article/cf9c6a5e.html#more">more >></a>
+        
+      
+
+        <!-- 《添加版权声明 -->
+        
+            <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+        
+        <!-- 添加版权声明》 -->
+
+      
+    </div>
+
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/cf9c6a5e.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+<!-- 评论系统 -->
+
+
   
     <article id="post-hexo-yilia添加背景图片" class="article article-type-post  article-index" itemscope itemprop="blogPost">
     <!-- 文章正文 -->
@@ -1355,121 +1475,6 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
       
         <p class="article-more-link">
           <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/3d67529f.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-<!-- 评论系统 -->
-
-
-  
-    <article id="post-hexo-yilia添加背景音乐" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <!-- 文章正文 -->
-    <div class="article-inner">
-    
-      <!-- 文章头部 -->
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/5c52aefe.html">hexo+yilia添加背景音乐</a>
-    </h1>
-  
-
-        
-        <!--引入不蒜子并添加文章访问量(开始) -->
-
-<!--引入不蒜子并添加文章访问量(结束) -->
-
-<a href="/article/5c52aefe.html" class="archive-article-date">
-  	<time datetime="2019-11-10T09:04:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-10</time>
-</a>
-        
-
-        <!-- 《开始添加字数统计-->
-         
-          
-
-
-         
-        <!-- 添加字数统计完成》 -->
-
-      </header>
-    
-
-    <!-- 文章主要内容（入口、条目） -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>添加背景音乐（截图为APlayer播放器）<br>
-<img src="http://bucket836.oss-cn-shenzhen.aliyuncs.com/image-1573392916217.png" alt="file"></p>
-        
-          <a class="article-more-a" href="/article/5c52aefe.html#more">more >></a>
-        
-      
-
-        <!-- 《添加版权声明 -->
-        
-            <!-- 《添加版权声明 -->
-<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
-
-
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <div class="declare" hidden="hidden"></div>
-
-<!-- 添加版权声明》 -->
-
-        
-        <!-- 添加版权声明》 -->
-
-      
-    </div>
-
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/5c52aefe.html">展开全文 >></a>
         </p>
       
 

@@ -2,9 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.yansheng.xyz/message-board/index.html</loc>
+    <loc>https://www.yansheng.xyz/message-wall/index.html</loc>
     
-    <lastmod>2020-02-02T17:19:13.232Z</lastmod>
+    <lastmod>2020-02-10T15:17:19.598Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yansheng.xyz/categories/index.html</loc>
+    
+    <lastmod>2020-02-10T12:37:47.090Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yansheng.xyz/friend-links/index.html</loc>
+    
+    <lastmod>2020-02-09T12:02:04.417Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yansheng.xyz/article/252051e3.html</loc>
+    
+    <lastmod>2020-02-09T07:15:21.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yansheng.xyz/message-wall/index-%E5%89%AF%E6%9C%AC-%E8%A7%86%E9%A2%91.html</loc>
+    
+    <lastmod>2020-02-07T14:49:12.269Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yansheng.xyz/message-wall/index-%E5%89%AF%E6%9C%AC-%E8%AF%972.html</loc>
+    
+    <lastmod>2020-02-07T14:35:28.719Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yansheng.xyz/message-wall/index-%E5%89%AF%E6%9C%AC-%E8%AF%97.html</loc>
+    
+    <lastmod>2020-02-04T16:17:27.555Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yansheng.xyz/message-wall/index-%E5%89%AF%E6%9C%AC-%E5%86%85%E5%AE%B9.html</loc>
+    
+    <lastmod>2020-02-04T13:49:10.705Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yansheng.xyz/links/index.html</loc>
+    
+    <lastmod>2020-02-04T13:06:56.250Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yansheng.xyz/friend-links/index%20-%20%E5%89%AF%E6%9C%AC.html</loc>
+    
+    <lastmod>2020-02-04T12:46:32.609Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.yansheng.xyz/links/index%20-%20%E5%89%AF%E6%9C%AC.html</loc>
+    
+    <lastmod>2020-02-04T12:46:32.609Z</lastmod>
     
   </url>
   
@@ -313,13 +383,6 @@
     <loc>https://www.yansheng.xyz/google4cc750c2e2103b7c.html</loc>
     
     <lastmod>2019-10-30T11:42:12.317Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.yansheng.xyz/categories/index.html</loc>
-    
-    <lastmod>2019-10-17T07:28:33.541Z</lastmod>
     
   </url>
   
