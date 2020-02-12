@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://www.yansheng.xyz">
   <title>Category: categorie1 | 荷塘月色的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一枚广东的计算机专业的在读大学生、预备码农，主要研究方向为Java后台技术。生活不止漫无天日的工作，还有诗和远方。">
+  <meta name="description" content="生活不止漫无天日的代码和bug，还有诗和远方。">
 <meta name="keywords" content="开发者,程序猿,编程,代码,开源,IT网站,Java,JavaWeb,Java常用框架,MyBatis,Java爬虫：Jsoup,数据库,MySQL,开发工具,Git,GitHub,(My)Eclipse, Hexo,Linux,Maven,Python,前端基础知识,HTML,CSS,JavaScript,工具&#x2F;资源,C&#x2F;C++,C语言,C语言常用算法,蓝桥杯算法练习题,C++,CMD,Developer,Programmer,Coder">
 <meta property="og:type" content="website">
 <meta property="og:title" content="荷塘月色的博客">
 <meta property="og:url" content="https://www.yansheng.xyz/categories/categorie1/index.html">
 <meta property="og:site_name" content="荷塘月色的博客">
-<meta property="og:description" content="一枚广东的计算机专业的在读大学生、预备码农，主要研究方向为Java后台技术。生活不止漫无天日的工作，还有诗和远方。">
+<meta property="og:description" content="生活不止漫无天日的代码和bug，还有诗和远方。">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="荷塘月色的博客">
-<meta name="twitter:description" content="一枚广东的计算机专业的在读大学生、预备码农，主要研究方向为Java后台技术。生活不止漫无天日的工作，还有诗和远方。">
+<meta name="twitter:description" content="生活不止漫无天日的代码和bug，还有诗和远方。">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -169,7 +169,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="https://s2.ax1x.com/2019/07/22/eP6NFI.jpg" class="js-avatar">
+			<img src="https://myblog12.qiniu.yansheng.xyz/head.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">荷塘月色</a></h1>
@@ -193,21 +193,33 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	        
 			</ul>
 		</nav>
+
+        <!-- 智能菜单 -->
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+                    <!-- 如果该项是友链，直接跳转链接，不适用侧滑效果 -->
+    			    
+    			          <a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+                    
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
+                    <!-- 如果该项是友链，直接跳转链接，不适用侧滑效果 -->
+    			    
+    			          <a class="links" href="/links/index.html" target="_blank" >友链</a>
+                    
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+                    <!-- 如果该项是友链，直接跳转链接，不适用侧滑效果 -->
+    			    
+    			          <a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+                    
     			
             
 		</nav>
+
 		<nav class="header-nav">
 			<div class="social">
 				
@@ -274,7 +286,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://s2.ax1x.com/2019/07/22/eP6NFI.jpg" class="js-avatar">
+				<img src="https://myblog12.qiniu.yansheng.xyz/head.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">荷塘月色</h1>
@@ -545,7 +557,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'links')"><a href="javascript:void(0)" q-class="active:links">友链</a></li>
       
         
       
@@ -656,34 +668,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="https://www.ifxiang.club/blog" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>一分夕阳的博客</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://cqh-i.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>cqh-i的博客</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://jzfblog.com/blog" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>蒋振飞的博客</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://tinypng.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Tinypng图片压缩</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://imgchr.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>路过图床</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     

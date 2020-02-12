@@ -2087,7 +2087,7 @@ pre .css~* .id, pre .id {
 	/* 取消标题的默认颜色 */
     /* color:#696969; */
     margin-left:0;
-    font-weight:300;
+    /* font-weight:300; */
     line-height:35px;
     margin-bottom:20px;
     font-size:26px;
@@ -2249,9 +2249,16 @@ pre .css~* .id, pre .id {
 .article-inner h1:first-child, .article-inner h2:first-child, .article-inner h3:first-child, .article-inner h4:first-child, .article-inner h5:first-child, .article-inner h6:first-child {
     margin-top:0
 }
+/* 具体文章内的标题样式 */
 .article-inner h1:first-child {
     margin-bottom:10px;
-    display:inline
+    display:inline;
+	transition:color .5s;
+}
+.article-inner h1:first-child:hover{
+	transition:color .5s;
+    /* color:red; */
+	color:rgba(255, 20, 0, 0.8);
 }
 .article-entry {
     line-height:1.8em;
@@ -3094,7 +3101,7 @@ pre .css~* .id, pre .id {
     }
     .article .article-inner h1.article-title, .article .article-title {
         font-size:18px;
-        font-weight:300;
+        /* font-weight:300; */
         display:block;
         margin:0
     }
@@ -3934,3 +3941,18 @@ a.pswp__share--download:hover {
     }
 }
 /* Dplayer视频播放器 */
+
+details{
+  /* margin: 0 30px;
+  background: #ffffff;
+  padding-left:5px; */
+}
+summary{
+  padding-left:5px;
+	background: #ffffff;
+	text-align:center;
+}
+summary:hover{
+  padding-left:5px;
+	background: #a9f5e8;
+}
