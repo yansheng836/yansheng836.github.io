@@ -121,7 +121,7 @@
     .category-count {
         text-align:center;
         line-height:3;
-        font-size:32px;
+        font-size:27px;
     }
 }
 /* 分类 */
@@ -3935,9 +3935,9 @@ a.pswp__share--download:hover {
 /* 当为Dplayer设置宽高时，会将该属性设置行内样式，级别很高；
 移动端，仍会显示PC端的尺寸，因此这里需要设置最大宽高，数据按照不设置宽高时进行设置。 */
 @media screen and (max-width: 800px) {
-   .dplayer {
-		max-width:394.4px;
-		max-height:221.6px;
+    .dplayer {
+        max-width: 345.4px;
+        max-height: 193.6px;
     }
 }
 /* Dplayer视频播放器 */
