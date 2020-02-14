@@ -3936,23 +3936,25 @@ a.pswp__share--download:hover {
 移动端，仍会显示PC端的尺寸，因此这里需要设置最大宽高，数据按照不设置宽高时进行设置。 */
 @media screen and (max-width: 800px) {
     .dplayer {
-        max-width: 345.4px;
-        max-height: 193.6px;
+        max-width: 340px;
+        max-height: 191.1px;
     }
 }
 /* Dplayer视频播放器 */
 
-details{
-  /* margin: 0 30px;
+/* 缩放框样式 */
+details {
+    /* margin: 0 30px;
   background: #ffffff;
   padding-left:5px; */
 }
-summary{
-  padding-left:5px;
-	background: #ffffff;
-	text-align:center;
+summary {
+    padding-left:5px;
+    background: #ffffff;
+    text-align:center;
 }
-summary:hover{
-  padding-left:5px;
-	background: #a9f5e8;
+summary:hover {
+    padding-left:5px;
+    background: #a9f5e8;
 }
+/* 缩放框样式 */
