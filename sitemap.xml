@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.yansheng.xyz/links/index.html</loc>
+    
+    <lastmod>2020-03-27T09:04:55.033Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.yansheng.xyz/categories/index.html</loc>
     
     <lastmod>2020-03-25T16:19:20.214Z</lastmod>
@@ -26,20 +33,6 @@
     <loc>https://www.yansheng.xyz/article/ef6b6c25.html</loc>
     
     <lastmod>2020-03-25T15:52:12.489Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.yansheng.xyz/clustrmaps/index.html</loc>
-    
-    <lastmod>2020-03-25T09:58:35.596Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.yansheng.xyz/links/index.html</loc>
-    
-    <lastmod>2020-03-25T09:45:47.503Z</lastmod>
     
   </url>
   
