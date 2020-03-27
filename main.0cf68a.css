@@ -2268,7 +2268,9 @@ pre .css~* .id, pre .id {
 .article-entry p {
     margin-top: 10px;
 	word-wrap: break-word;
+	/*text-indent:2em*/
 }
+
 /* 行内代码块``的样式，参考csdn的
     color: #c7254e;
     background-color: #f9f2f4;
