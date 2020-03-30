@@ -1291,9 +1291,9 @@ pre .css~* .id, pre .id {
 }
 
 /* 代码块复制按钮 */
+/* 方便copy代码按钮（btn-copy）的定位 */
  .highlight {
-    /* 方便copy代码按钮（btn-copy）的定位 */
-    position: relative;
+    /* position: relative; */
 }
 .btn-copy {
     display: inline-block;
