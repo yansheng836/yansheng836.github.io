@@ -488,14 +488,7 @@ html {
     -ms-text-size-adjust:100%;
     -webkit-text-size-adjust:100%;
     -webkit-tap-highlight-color:transparent;
-    height:100%;
-	/* 把全局设置成灰白色 */
-	-webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    filter: grayscale(100%)!important;
-    filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+    height:100%
 }
 body {
     margin:0;
@@ -505,9 +498,8 @@ body {
     color:#333;
     /* background-color:#fff; */
     min-height:100%;
-/* 'https://oss.yansheng.xyz/wallpaper/qinshimingyue.jpg' */
 	background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
-		url('https://myblog12.qiniu.yansheng.xyz/picgo/蜡烛.jpg') no-repeat 0% 0%/ cover;
+		url('https://oss.yansheng.xyz/wallpaper/qinshimingyue.jpg') no-repeat 0% 0%/ cover;
 	/* 设置鼠标的图标 */
 	cursor:url('https://oss.yansheng.xyz/ico/cursor.ico'), default;
 }
@@ -2954,8 +2946,7 @@ pre .css~* .id, pre .id {
 }
 @media screen and (max-width:800px) {
     body {
-/* https://oss.yansheng.xyz/wallpaper/your-name-phone2ys.jpg */
-		background: url('https://myblog12.qiniu.yansheng.xyz/picgo/2020-4-4-1.jpg') no-repeat fixed top;
+		background: url('https://oss.yansheng.xyz/wallpaper/your-name-phone2ys.jpg') no-repeat fixed top;
 		/* background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.5)), 
 		url('https://oss.yansheng.xyz/wallpaper/your-name-phone2ys.jpg') no-repeat fixed top; */
     }
