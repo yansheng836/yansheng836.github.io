@@ -5,6 +5,7 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-language" content="zh-CN">
   <link rel="dns-prefetch" href="https://www.yansheng.xyz">
   <title>相册 | 荷塘月色的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -25,6 +26,8 @@
     <link rel="icon" href="/assets/img/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/./search.css">
+
 
     <!--添加网页关键字-->
     <!-- 
@@ -108,6 +111,36 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </head>
 </html>
 <body>
+
+<!-- 《添加--APlayer音乐播放器,详见: https://aplayer.js.org/#/zh-Hans/ -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+
+    <div id="aplayer" style="text-align:left;z-index: 10;"></div>
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"></script>
+
+    <!-- 为方便修改，添加一个配置文件，修改时直接修改配置文件即可。 -->
+    <script type="text/javascript" src="/js/APlayer_config.js"></script>
+
+    <!-- 根据封面自适应主题色，主要是作用于进度条 -->
+    <script type="text/javascript">
+          const colorThief = new ColorThief();
+          const setTheme = (index) => {
+            if (!ap.list.audios[index].theme) {
+              colorThief.getColorAsync(ap.list.audios[index].cover, function(color) {
+                ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
+              });
+            }
+          };
+          setTheme(ap.list.index);
+          ap.on('listswitch', (data) => {
+            setTheme(data.index);
+          });
+    </script>
+
+<!-- 添加--APlayer音乐播放器》 -->
+
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
 
@@ -177,7 +210,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			<img src="https://myblog12.qiniu.yansheng.xyz/head.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">荷塘月色</a></h1>
+		  <div class="header-author"><a href="/">荷塘月色</a></div>
 		</hgroup>
 		
 		<p class="header-subtitle">每天进步一点点</p>
@@ -232,7 +265,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		        
 					<a class="csdn" target="_blank" href="https://blog.csdn.net/weixin_41287260" title="csdn"><i class="icon-csdn"></i></a>
 		        
-					<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
+					<a class="rss" target="_blank" href="/rss2.xml" title="rss"><i class="icon-rss"></i></a>
 		        
 					<a class="mail" target="_blank" href="mailto:sheng.yan836@gmail.com" title="mail"><i class="icon-mail"></i></a>
 		        
@@ -245,31 +278,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 
             <!-- 《左侧边栏添加--APlayer音乐播放器：详见：https://aplayer.js.org/#/zh-Hans/ -->
-            
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
-
-                <div id="aplayer" style="text-align:left"></div>
-                <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"></script>
-
-                <!-- 为方便修改，添加一个配置文件，修改时直接修改配置文件即可。 -->
-                <script type="text/javascript" src="/js/APlayer_config.js"></script>
-
-                <!-- 根据封面自适应主题色，主要是作用于进度条 -->
-                <script type="text/javascript">
-                      const colorThief = new ColorThief();
-                      const setTheme = (index) => {
-                        if (!ap.list.audios[index].theme) {
-                          colorThief.getColorAsync(ap.list.audios[index].cover, function(color) {
-                            ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
-                          });
-                        }
-                      };
-                      setTheme(ap.list.index);
-                      ap.on('listswitch', (data) => {
-                        setTheme(data.index);
-                      });       
-                </script>
+            <!-- 注：不再在左侧边栏添加，因为这样在手机端会被隐藏；改在layout.js中添加，这样手机端就可以显示音乐播放器。 -->
             
             <!-- 左侧边栏添加--APlayer音乐播放器》 -->
 
@@ -320,7 +329,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			        
 						<a class="csdn" target="_blank" href="https://blog.csdn.net/weixin_41287260" title="csdn"><i class="icon-csdn"></i></a>
 			        
-						<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
+						<a class="rss" target="_blank" href="/rss2.xml" title="rss"><i class="icon-rss"></i></a>
 			        
 						<a class="mail" target="_blank" href="mailto:sheng.yan836@gmail.com" title="mail"><i class="icon-mail"></i></a>
 			        
@@ -347,6 +356,62 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	</div>
 	<div class="mobile-mask" style="display:none" q-show="isShow"></div>
 </nav>
+
+
+    
+    <div class="page-header" style="">
+        
+        <span>🍻  
+            <span id="jinrishici-sentence" title="今日诗词">正在加载今日诗词....</span>
+        </span>
+        <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+        
+        <script type="text/javascript" src="/js/search.js"></script>
+        <span id="local-search" class="local-search local-search-plugin" style="">
+          <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+          <i id="local-search-icon-search" class="icon" aria-hidden="true" title="站内搜索">🔍</i>
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </span>
+
+        <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script>
+            // 移动设备侦测
+            var isMobile = {
+              Android: function () {
+                return navigator.userAgent.match(/Android/i);
+              },
+              BlackBerry: function () {
+                return navigator.userAgent.match(/BlackBerry/i);
+              },
+              iOS: function () {
+                return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+              },
+              Opera: function () {
+                return navigator.userAgent.match(/Opera Mini/i);
+              },
+              Windows: function () {
+                return navigator.userAgent.match(/IEMobile/i);
+              },
+              any: function () {
+                return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+              }
+            };
+
+            if(isMobile.any()){
+                //手机端取消搜索功能
+                $('.local-search').css("display","none");
+            }
+
+            if ($('.local-search').size() && !isMobile.any()) {
+              $.getScript('/js/search.js', function() {
+                searchFunc("/search.xml", 'local-search-input', 'local-search-result');
+              });
+            }
+        </script>
+        
+    </div>
+    
 
       <div id="wrapper" class="body-wrap">
         <div class="menu-l">
@@ -824,19 +889,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">软件破解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">软件破解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -967,7 +1032,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
   </div>
 
 <!-- 代码块复制功能。因为clipboard_use.js中需要用到jQuery，而yilia没有引入jQuery，故需要引入先引入jqurey。-->
-<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
 <script type="text/javascript" src="/js/clipboard_use2.js"></script>
 

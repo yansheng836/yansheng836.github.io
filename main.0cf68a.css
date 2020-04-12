@@ -2071,7 +2071,7 @@ pre .css~* .id, pre .id {
 }
 
 .article {
-    margin: 30px;
+    margin: 20px 30px 30px 30px;
     border: 1px solid #ddd;
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
@@ -2203,7 +2203,7 @@ pre .css~* .id, pre .id {
     margin:-30px 0 20px 7.6923%
 }
 .article-inner p {
-    margin:0 0 1.75em
+    margin:0 0 1.25em
 }
 .article-inner {
     border-color:#d1d1d1
@@ -3933,6 +3933,17 @@ a.pswp__share--download:hover {
 }
 /* 评论框》 */
 
+/* 《APlayer音频播放器样式 */
+#aplayer{
+	/* opacity:0.5; */
+}
+@media screen and (max-width: 800px) {
+    .aplayer {
+        opacity:0.8;
+    }
+}
+/* APlayer音频播放器样式》 */
+
 /* Dplayer视频播放器 */
 /* 当为Dplayer设置宽高时，会将该属性设置行内样式，级别很高；
 移动端，仍会显示PC端的尺寸，因此这里需要设置最大宽高，数据按照不设置宽高时进行设置。 */
@@ -3960,3 +3971,45 @@ summary:hover {
     background: #a9f5e8;
 }
 /* 缩放框样式 */
+
+/* 页面头部：包含‘今日诗词’，站内搜索 */
+.page-header {
+    position: relative;
+    border: 1px solid #fff;
+    margin: 5px 30px 4px 30px;
+    background: #fff;
+    -webkit-transition: all 0.2s ease-in;
+    height:45px;
+    font-family: '微软雅黑';
+    border-radius:5px;
+	padding-left:10px;
+}
+
+/* 今日诗词 */
+#jinrishici-sentence{
+  color:#27d7a1;
+  padding-left: 10px;
+  line-height: 45px;
+  font-size: 15px;
+}
+
+@media screen and (max-width:800px) {
+    .page-header {
+        position: relative;
+        border: 1px solid #fff;
+        /* margin: 5px 30px 4px 30px; */
+        background: #fff;
+        -webkit-transition: all 0.2s ease-in;
+        height: 35px;
+        font-family:'微软雅黑';
+        border-radius: 5px;
+        padding-left: 5px;
+    }
+    #jinrishici-sentence {
+        color:#27d7a1;
+        padding-left: 10px;
+        line-height: 35px;
+        font-size: 15px;
+        /*   vertical-align:middle; */
+    }
+}

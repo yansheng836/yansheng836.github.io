@@ -5,6 +5,7 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-language" content="zh-CN">
   <link rel="dns-prefetch" href="https://www.yansheng.xyz">
   <title>hexo-yilia添加Dplayer视频播放插件 | 荷塘月色的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -28,6 +29,8 @@
     <link rel="icon" href="/assets/img/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/./search.css">
+
 
     <!--添加网页关键字-->
     <!-- 
@@ -108,9 +111,39 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     </script>
 
 
-<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"></script></head>
+<script src="/assets/js/DPlayer.min.js"></script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"></head>
 </html>
 <body>
+
+<!-- 《添加--APlayer音乐播放器,详见: https://aplayer.js.org/#/zh-Hans/ -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+
+    <div id="aplayer" style="text-align:left;z-index: 10;"></div>
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"></script>
+
+    <!-- 为方便修改，添加一个配置文件，修改时直接修改配置文件即可。 -->
+    <script type="text/javascript" src="/js/APlayer_config.js"></script>
+
+    <!-- 根据封面自适应主题色，主要是作用于进度条 -->
+    <script type="text/javascript">
+          const colorThief = new ColorThief();
+          const setTheme = (index) => {
+            if (!ap.list.audios[index].theme) {
+              colorThief.getColorAsync(ap.list.audios[index].cover, function(color) {
+                ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
+              });
+            }
+          };
+          setTheme(ap.list.index);
+          ap.on('listswitch', (data) => {
+            setTheme(data.index);
+          });
+    </script>
+
+<!-- 添加--APlayer音乐播放器》 -->
+
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
 
@@ -180,7 +213,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			<img src="https://myblog12.qiniu.yansheng.xyz/head.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">荷塘月色</a></h1>
+		  <div class="header-author"><a href="/">荷塘月色</a></div>
 		</hgroup>
 		
 		<p class="header-subtitle">每天进步一点点</p>
@@ -235,7 +268,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		        
 					<a class="csdn" target="_blank" href="https://blog.csdn.net/weixin_41287260" title="csdn"><i class="icon-csdn"></i></a>
 		        
-					<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
+					<a class="rss" target="_blank" href="/rss2.xml" title="rss"><i class="icon-rss"></i></a>
 		        
 					<a class="mail" target="_blank" href="mailto:sheng.yan836@gmail.com" title="mail"><i class="icon-mail"></i></a>
 		        
@@ -248,31 +281,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 
             <!-- 《左侧边栏添加--APlayer音乐播放器：详见：https://aplayer.js.org/#/zh-Hans/ -->
-            
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
-
-                <div id="aplayer" style="text-align:left"></div>
-                <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"></script>
-
-                <!-- 为方便修改，添加一个配置文件，修改时直接修改配置文件即可。 -->
-                <script type="text/javascript" src="/js/APlayer_config.js"></script>
-
-                <!-- 根据封面自适应主题色，主要是作用于进度条 -->
-                <script type="text/javascript">
-                      const colorThief = new ColorThief();
-                      const setTheme = (index) => {
-                        if (!ap.list.audios[index].theme) {
-                          colorThief.getColorAsync(ap.list.audios[index].cover, function(color) {
-                            ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
-                          });
-                        }
-                      };
-                      setTheme(ap.list.index);
-                      ap.on('listswitch', (data) => {
-                        setTheme(data.index);
-                      });       
-                </script>
+            <!-- 注：不再在左侧边栏添加，因为这样在手机端会被隐藏；改在layout.js中添加，这样手机端就可以显示音乐播放器。 -->
             
             <!-- 左侧边栏添加--APlayer音乐播放器》 -->
 
@@ -323,7 +332,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			        
 						<a class="csdn" target="_blank" href="https://blog.csdn.net/weixin_41287260" title="csdn"><i class="icon-csdn"></i></a>
 			        
-						<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
+						<a class="rss" target="_blank" href="/rss2.xml" title="rss"><i class="icon-rss"></i></a>
 			        
 						<a class="mail" target="_blank" href="mailto:sheng.yan836@gmail.com" title="mail"><i class="icon-mail"></i></a>
 			        
@@ -350,6 +359,62 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	</div>
 	<div class="mobile-mask" style="display:none" q-show="isShow"></div>
 </nav>
+
+
+    
+    <div class="page-header" style="">
+        
+        <span>🍻  
+            <span id="jinrishici-sentence" title="今日诗词">正在加载今日诗词....</span>
+        </span>
+        <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+        
+        <script type="text/javascript" src="/js/search.js"></script>
+        <span id="local-search" class="local-search local-search-plugin" style="">
+          <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+          <i id="local-search-icon-search" class="icon" aria-hidden="true" title="站内搜索">🔍</i>
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </span>
+
+        <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script>
+            // 移动设备侦测
+            var isMobile = {
+              Android: function () {
+                return navigator.userAgent.match(/Android/i);
+              },
+              BlackBerry: function () {
+                return navigator.userAgent.match(/BlackBerry/i);
+              },
+              iOS: function () {
+                return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+              },
+              Opera: function () {
+                return navigator.userAgent.match(/Opera Mini/i);
+              },
+              Windows: function () {
+                return navigator.userAgent.match(/IEMobile/i);
+              },
+              any: function () {
+                return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+              }
+            };
+
+            if(isMobile.any()){
+                //手机端取消搜索功能
+                $('.local-search').css("display","none");
+            }
+
+            if ($('.local-search').size() && !isMobile.any()) {
+              $.getScript('/js/search.js', function() {
+                searchFunc("/search.xml", 'local-search-input', 'local-search-result');
+              });
+            }
+        </script>
+        
+    </div>
+    
 
       <div id="wrapper" class="body-wrap">
         <div class="menu-l">
@@ -448,10 +513,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <h3 id="1-简单模式">1.简单模式</h3>
 <p>【J.Fla】J.Fla最新翻唱《Let Her Go》（中英字幕）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% dplayer &quot;url=https://oss.yansheng.xyz/video/Let%20Her%20Go-J.Fla.mp4&quot; </span><br><span class="line">&quot;loop=yes&quot; &quot;theme=#FADFA3&quot; &quot;autoplay=false&quot;%&#125;</span><br></pre></td></tr></table></figure>
-<div id="dplayer1" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer1"),"theme":"#FADFA3","loop":true,"video":{"url":"https://oss.yansheng.xyz/video/Let%20Her%20Go-J.Fla.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
+<div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"theme":"#FADFA3","loop":true,"video":{"url":"https://oss.yansheng.xyz/video/Let%20Her%20Go-J.Fla.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
 <h3 id="2-设置大小">2.设置大小</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% dplayer &quot;url=https://oss.yansheng.xyz/video/Let%20Her%20Go-J.Fla.mp4&quot; </span><br><span class="line">&quot;loop=yes&quot; &quot;theme=#FADFA3&quot; &quot;autoplay=false&quot; &quot;width=854px&quot; &quot;height=480px&quot; %&#125;</span><br></pre></td></tr></table></figure>
-<div id="dplayer2" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px; width:854px; height:480px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer2"),"theme":"#FADFA3","loop":true,"video":{"url":"https://oss.yansheng.xyz/video/Let%20Her%20Go-J.Fla.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
+<div id="dplayer1" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px; width:854px; height:480px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer1"),"theme":"#FADFA3","loop":true,"video":{"url":"https://oss.yansheng.xyz/video/Let%20Her%20Go-J.Fla.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
 <h3 id="3-各视频网站测试">3.各视频网站测试</h3>
 <p>注：获取网站视频链接的方法</p>
 <ol>
@@ -469,7 +534,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% dplayer &quot;url=https://ip3909677239.mobgslb.tbcache.com/697527F075E4271B3854E35FD/03000801005D16BE6A7657C5ACCC9273FC634F-4FE4-42BD-9058-BDD737033AD6.mp4?ccode=0501&amp;duration=209&amp;expire=18000&amp;psid=d4651e02fe8648bae7ba5eb90e634aee&amp;ups_client_netip=78efecb2&amp;ups_ts=1580803578&amp;ups_userid=&amp;utid=5dEkFu7TTAoCAaOOg8%2Fdh%2Bzg&amp;vid=XNDEzMTQ2Mzc2OA&amp;vkey=Ae25465c34a3e1d5a0008c52dbd954ac2&amp;bc=2&amp;dre=u21&amp;si=42&amp;ali_redirect_domain=ykugc.cp31.ott.cibntv.net&amp;ali_redirect_ex_ftag=6bb8c51a31829f123b81d2f8f31d62ad1de1e72da5be49b4&amp;ali_redirect_ex_tmining_ts=1580803613&amp;ali_redirect_ex_tmining_expire=3600&amp;ali_redirect_ex_hot=100&quot;</span><br><span class="line">&quot;loop=yes&quot; &quot;theme=#FADFA3&quot; &quot;autoplay=false&quot; &quot;width=854px&quot; &quot;height=480px&quot; %&#125;</span><br></pre></td></tr></table></figure>
 <center>
     <div class="video-container">
-<div id="dplayer3" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px; width:854px; height:480px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer3"),"theme":"#FADFA3","loop":true,"video":{"url":"https://ip3909677239.mobgslb.tbcache.com/697527F075E4271B3854E35FD/03000801005D16BE6A7657C5ACCC9273FC634F-4FE4-42BD-9058-BDD737033AD6.mp4?ccode=0501&duration=209&expire=18000&psid=d4651e02fe8648bae7ba5eb90e634aee&ups_client_netip=78efecb2&ups_ts=1580803578&ups_userid=&utid=5dEkFu7TTAoCAaOOg8%2Fdh%2Bzg&vid=XNDEzMTQ2Mzc2OA&vkey=Ae25465c34a3e1d5a0008c52dbd954ac2&bc=2&dre=u21&si=42&ali_redirect_domain=ykugc.cp31.ott.cibntv.net&ali_redirect_ex_ftag=6bb8c51a31829f123b81d2f8f31d62ad1de1e72da5be49b4&ali_redirect_ex_tmining_ts=1580803613&ali_redirect_ex_tmining_expire=3600&ali_redirect_ex_hot=100"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
+<div id="dplayer2" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px; width:854px; height:480px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer2"),"theme":"#FADFA3","loop":true,"video":{"url":"https://ip3909677239.mobgslb.tbcache.com/697527F075E4271B3854E35FD/03000801005D16BE6A7657C5ACCC9273FC634F-4FE4-42BD-9058-BDD737033AD6.mp4?ccode=0501&duration=209&expire=18000&psid=d4651e02fe8648bae7ba5eb90e634aee&ups_client_netip=78efecb2&ups_ts=1580803578&ups_userid=&utid=5dEkFu7TTAoCAaOOg8%2Fdh%2Bzg&vid=XNDEzMTQ2Mzc2OA&vkey=Ae25465c34a3e1d5a0008c52dbd954ac2&bc=2&dre=u21&si=42&ali_redirect_domain=ykugc.cp31.ott.cibntv.net&ali_redirect_ex_ftag=6bb8c51a31829f123b81d2f8f31d62ad1de1e72da5be49b4&ali_redirect_ex_tmining_ts=1580803613&ali_redirect_ex_tmining_expire=3600&ali_redirect_ex_hot=100"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
 </div>
 </center>
 <h4 id="爱奇艺-blob-http">爱奇艺-blob:http</h4>
@@ -480,7 +545,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% dplayer &quot;url=https://apd-269733cd84807e39d1c4e3453c172928.v.smtcdns.com/om.tc.qq.com/AUBPmiNNTAT3He9k_05J1HRAM1yZVGlQ-hDZtg0epZFQ/uwMROfz2r57IIaQXGdGnC2ddDmZUA-P9pUvDyp7Vcj06VB05/shg_57576174_50001_208137e9f2843cf7850adcc2052bdd4a.f622.mp4?sdtfrom=v1010&amp;guid=7ae1df42357b9bcea3195ca549ce5531&amp;vkey=4B6DB7E072CA38A41C053A938FA7D1B91D1783ACF46A1356E88C71B8160881DEC88D761C281209C12C1DAB9772F55FB572EA0D675ACA209A621B3BC4789A2D91FEA05680B9EA477C282FC1B4A32BCB1E5EEF5DFCC65AA2A4B2BCB2AB51E54FABD0E1122171184A171FFE7C84CFB1295C720E320BFCE4648EF92358A0BFDAC7FB&quot;</span><br><span class="line">&quot;loop=yes&quot; &quot;theme=#FADFA3&quot; &quot;autoplay=false&quot; &quot;width=854px&quot; &quot;height=480px&quot; %&#125;</span><br></pre></td></tr></table></figure>
 <center>
     <div class="video-container">
-<div id="dplayer4" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px; width:854px; height:480px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer4"),"theme":"#FADFA3","loop":true,"video":{"url":"https://apd-269733cd84807e39d1c4e3453c172928.v.smtcdns.com/om.tc.qq.com/AUBPmiNNTAT3He9k_05J1HRAM1yZVGlQ-hDZtg0epZFQ/uwMROfz2r57IIaQXGdGnC2ddDmZUA-P9pUvDyp7Vcj06VB05/shg_57576174_50001_208137e9f2843cf7850adcc2052bdd4a.f622.mp4?sdtfrom=v1010&guid=7ae1df42357b9bcea3195ca549ce5531&vkey=4B6DB7E072CA38A41C053A938FA7D1B91D1783ACF46A1356E88C71B8160881DEC88D761C281209C12C1DAB9772F55FB572EA0D675ACA209A621B3BC4789A2D91FEA05680B9EA477C282FC1B4A32BCB1E5EEF5DFCC65AA2A4B2BCB2AB51E54FABD0E1122171184A171FFE7C84CFB1295C720E320BFCE4648EF92358A0BFDAC7FB"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
+<div id="dplayer3" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px; width:854px; height:480px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer3"),"theme":"#FADFA3","loop":true,"video":{"url":"https://apd-269733cd84807e39d1c4e3453c172928.v.smtcdns.com/om.tc.qq.com/AUBPmiNNTAT3He9k_05J1HRAM1yZVGlQ-hDZtg0epZFQ/uwMROfz2r57IIaQXGdGnC2ddDmZUA-P9pUvDyp7Vcj06VB05/shg_57576174_50001_208137e9f2843cf7850adcc2052bdd4a.f622.mp4?sdtfrom=v1010&guid=7ae1df42357b9bcea3195ca549ce5531&vkey=4B6DB7E072CA38A41C053A938FA7D1B91D1783ACF46A1356E88C71B8160881DEC88D761C281209C12C1DAB9772F55FB572EA0D675ACA209A621B3BC4789A2D91FEA05680B9EA477C282FC1B4A32BCB1E5EEF5DFCC65AA2A4B2BCB2AB51E54FABD0E1122171184A171FFE7C84CFB1295C720E320BFCE4648EF92358A0BFDAC7FB"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
 </div>
 </center>
 <h4 id="b站-blob-http">B站-blob:http</h4>
@@ -488,7 +553,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% dplayer &quot;url=https://cn-jxnc-cmcc-bcache-07.bilivideo.com/upgcxcode/97/06/37010697/37010697-1-6.mp4?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&amp;uipk=5&amp;nbs=1&amp;deadline=1580811360&amp;gen=playurl&amp;os=bcache&amp;oi=2028989618&amp;trid=49761c7626084b8b8b97074e119e8a41h&amp;platform=html5&amp;upsig=d5272df25514a59fbdb296cefefcb96c&amp;uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&amp;mid=91203456&amp;origin_cdn=ks3&quot; </span><br><span class="line">&quot;loop=yes&quot; &quot;theme=#FADFA3&quot; &quot;autoplay=false&quot; &quot;width=854px&quot; &quot;height=480px&quot; %&#125;</span><br></pre></td></tr></table></figure>
 <center>
     <div class="video-container">
-<div id="dplayer5" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px; width:854px; height:480px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer5"),"theme":"#FADFA3","loop":true,"video":{"url":"https://cn-jxnc-cmcc-bcache-07.bilivideo.com/upgcxcode/97/06/37010697/37010697-1-6.mp4?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&uipk=5&nbs=1&deadline=1580811360&gen=playurl&os=bcache&oi=2028989618&trid=49761c7626084b8b8b97074e119e8a41h&platform=html5&upsig=d5272df25514a59fbdb296cefefcb96c&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&mid=91203456&origin_cdn=ks3"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
+<div id="dplayer4" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px; width:854px; height:480px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer4"),"theme":"#FADFA3","loop":true,"video":{"url":"https://cn-jxnc-cmcc-bcache-07.bilivideo.com/upgcxcode/97/06/37010697/37010697-1-6.mp4?e=ig8euxZM2rNcNbdlhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&uipk=5&nbs=1&deadline=1580811360&gen=playurl&os=bcache&oi=2028989618&trid=49761c7626084b8b8b97074e119e8a41h&platform=html5&upsig=d5272df25514a59fbdb296cefefcb96c&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,platform&mid=91203456&origin_cdn=ks3"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
 </div>
 </center>
 <h4 id="酷狗音乐mv">酷狗音乐MV</h4>
@@ -499,7 +564,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% dplayer &quot;url=http://vodkgeyttp8.vod.126.net/cloudmusic/1182/core/91d9/071e7736fb284fe4d7d020a3cf693362.mp4?wsSecret=ff87443a41aebf38eaafd4385b736940&amp;wsTime=1580818343&quot; </span><br><span class="line">&quot;loop=yes&quot; &quot;theme=#FADFA3&quot; &quot;autoplay=false&quot; &quot;width=854px&quot; &quot;height=480px&quot; %&#125;</span><br></pre></td></tr></table></figure>
 <center>
     <div class="video-container">
-<div id="dplayer6" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px; width:854px; height:480px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer6"),"theme":"#FADFA3","loop":true,"video":{"url":"http://vodkgeyttp8.vod.126.net/cloudmusic/1182/core/91d9/071e7736fb284fe4d7d020a3cf693362.mp4?wsSecret=ff87443a41aebf38eaafd4385b736940&wsTime=1580818343"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
+<div id="dplayer5" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px; width:854px; height:480px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer5"),"theme":"#FADFA3","loop":true,"video":{"url":"http://vodkgeyttp8.vod.126.net/cloudmusic/1182/core/91d9/071e7736fb284fe4d7d020a3cf693362.mp4?wsSecret=ff87443a41aebf38eaafd4385b736940&wsTime=1580818343"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
 </div>
 </center>
 <h2 id="bug🐛">bug🐛</h2>
@@ -962,19 +1027,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">软件破解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">软件破解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1105,7 +1170,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
   </div>
 
 <!-- 代码块复制功能。因为clipboard_use.js中需要用到jQuery，而yilia没有引入jQuery，故需要引入先引入jqurey。-->
-<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
 <script type="text/javascript" src="/js/clipboard_use2.js"></script>
 

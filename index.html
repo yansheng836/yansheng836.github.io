@@ -5,6 +5,7 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-language" content="zh-CN">
   <link rel="dns-prefetch" href="https://www.yansheng.xyz">
   <title>荷塘月色的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -24,6 +25,8 @@
     <link rel="icon" href="/assets/img/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/./search.css">
+
 
     <!--添加网页关键字-->
     <!-- 
@@ -107,6 +110,36 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </head>
 </html>
 <body>
+
+<!-- 《添加--APlayer音乐播放器,详见: https://aplayer.js.org/#/zh-Hans/ -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+
+    <div id="aplayer" style="text-align:left;z-index: 10;"></div>
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"></script>
+
+    <!-- 为方便修改，添加一个配置文件，修改时直接修改配置文件即可。 -->
+    <script type="text/javascript" src="/js/APlayer_config.js"></script>
+
+    <!-- 根据封面自适应主题色，主要是作用于进度条 -->
+    <script type="text/javascript">
+          const colorThief = new ColorThief();
+          const setTheme = (index) => {
+            if (!ap.list.audios[index].theme) {
+              colorThief.getColorAsync(ap.list.audios[index].cover, function(color) {
+                ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
+              });
+            }
+          };
+          setTheme(ap.list.index);
+          ap.on('listswitch', (data) => {
+            setTheme(data.index);
+          });
+    </script>
+
+<!-- 添加--APlayer音乐播放器》 -->
+
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
 
@@ -176,7 +209,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			<img src="https://myblog12.qiniu.yansheng.xyz/head.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">荷塘月色</a></h1>
+		  <div class="header-author"><a href="/">荷塘月色</a></div>
 		</hgroup>
 		
 		<p class="header-subtitle">每天进步一点点</p>
@@ -231,7 +264,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		        
 					<a class="csdn" target="_blank" href="https://blog.csdn.net/weixin_41287260" title="csdn"><i class="icon-csdn"></i></a>
 		        
-					<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
+					<a class="rss" target="_blank" href="/rss2.xml" title="rss"><i class="icon-rss"></i></a>
 		        
 					<a class="mail" target="_blank" href="mailto:sheng.yan836@gmail.com" title="mail"><i class="icon-mail"></i></a>
 		        
@@ -244,31 +277,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 
             <!-- 《左侧边栏添加--APlayer音乐播放器：详见：https://aplayer.js.org/#/zh-Hans/ -->
-            
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
-
-                <div id="aplayer" style="text-align:left"></div>
-                <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"></script>
-
-                <!-- 为方便修改，添加一个配置文件，修改时直接修改配置文件即可。 -->
-                <script type="text/javascript" src="/js/APlayer_config.js"></script>
-
-                <!-- 根据封面自适应主题色，主要是作用于进度条 -->
-                <script type="text/javascript">
-                      const colorThief = new ColorThief();
-                      const setTheme = (index) => {
-                        if (!ap.list.audios[index].theme) {
-                          colorThief.getColorAsync(ap.list.audios[index].cover, function(color) {
-                            ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
-                          });
-                        }
-                      };
-                      setTheme(ap.list.index);
-                      ap.on('listswitch', (data) => {
-                        setTheme(data.index);
-                      });       
-                </script>
+            <!-- 注：不再在左侧边栏添加，因为这样在手机端会被隐藏；改在layout.js中添加，这样手机端就可以显示音乐播放器。 -->
             
             <!-- 左侧边栏添加--APlayer音乐播放器》 -->
 
@@ -319,7 +328,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			        
 						<a class="csdn" target="_blank" href="https://blog.csdn.net/weixin_41287260" title="csdn"><i class="icon-csdn"></i></a>
 			        
-						<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
+						<a class="rss" target="_blank" href="/rss2.xml" title="rss"><i class="icon-rss"></i></a>
 			        
 						<a class="mail" target="_blank" href="mailto:sheng.yan836@gmail.com" title="mail"><i class="icon-mail"></i></a>
 			        
@@ -347,6 +356,62 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	<div class="mobile-mask" style="display:none" q-show="isShow"></div>
 </nav>
 
+
+    
+    <div class="page-header" style="">
+        
+        <span>🍻  
+            <span id="jinrishici-sentence" title="今日诗词">正在加载今日诗词....</span>
+        </span>
+        <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+        
+        <script type="text/javascript" src="/js/search.js"></script>
+        <span id="local-search" class="local-search local-search-plugin" style="">
+          <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+          <i id="local-search-icon-search" class="icon" aria-hidden="true" title="站内搜索">🔍</i>
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </span>
+
+        <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script>
+            // 移动设备侦测
+            var isMobile = {
+              Android: function () {
+                return navigator.userAgent.match(/Android/i);
+              },
+              BlackBerry: function () {
+                return navigator.userAgent.match(/BlackBerry/i);
+              },
+              iOS: function () {
+                return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+              },
+              Opera: function () {
+                return navigator.userAgent.match(/Opera Mini/i);
+              },
+              Windows: function () {
+                return navigator.userAgent.match(/IEMobile/i);
+              },
+              any: function () {
+                return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+              }
+            };
+
+            if(isMobile.any()){
+                //手机端取消搜索功能
+                $('.local-search').css("display","none");
+            }
+
+            if ($('.local-search').size() && !isMobile.any()) {
+              $.getScript('/js/search.js', function() {
+                searchFunc("/search.xml", 'local-search-input', 'local-search-result');
+              });
+            }
+        </script>
+        
+    </div>
+    
+
       <div id="wrapper" class="body-wrap">
         <div class="menu-l">
           <div class="canvas-wrap">
@@ -354,6 +419,122 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-hexo-yilia添加APlayer音乐播放器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <!-- 文章正文 -->
+    <div class="article-inner">
+    
+      <!-- 文章头部 -->
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/article/bf60dd05.html">hexo+yilia添加APlayer音乐播放器</a>
+    </h1>
+  
+
+        
+        <!--引入不蒜子并添加文章访问量(开始) -->
+
+<!--引入不蒜子并添加文章访问量(结束) -->
+
+<a href="/article/bf60dd05.html" class="archive-article-date">
+  	<time datetime="2020-04-05T15:26:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-05</time>
+</a>
+        
+
+        <!-- 《开始添加字数统计-->
+         
+          
+
+
+         
+        <!-- 添加字数统计完成》 -->
+
+      </header>
+    
+
+    <!-- 文章主要内容（入口、条目） -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>之前写过一篇文章，是将APlayer音乐播放器放到左侧的（详见：<a href="/article/5c52aefe.html">hexo+yilia添加背景音乐</a>），但是在手机端时，因为左侧边栏会被隐藏，因此也就会将播放器给隐藏掉。也就会是说手机端不能显示该播放器。</p>
+<p>这里换一种方式，直接添加到整个页面中，使其在手机端也能使用。<br>
+<img src="https://myblog12.qiniu.yansheng.xyz/picgo/20200406000912.jpg" alt></p>
+        
+          <a class="article-more-a" href="/article/bf60dd05.html#more">more >></a>
+        
+      
+
+        <!-- 《添加版权声明 -->
+        
+            <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+        
+        <!-- 添加版权声明》 -->
+
+      
+    </div>
+
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/bf60dd05.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+<!-- 评论系统 -->
+
+
   
     <article id="post-2020年清明节" class="article article-type-post  article-index" itemscope itemprop="blogPost">
     <!-- 文章正文 -->
@@ -1399,119 +1580,6 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 
   
-    <article id="post-抑郁症" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <!-- 文章正文 -->
-    <div class="article-inner">
-    
-      <!-- 文章头部 -->
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/57f89578.html">抑郁症</a>
-    </h1>
-  
-
-        
-        <!--引入不蒜子并添加文章访问量(开始) -->
-
-<!--引入不蒜子并添加文章访问量(结束) -->
-
-<a href="/article/57f89578.html" class="archive-article-date">
-  	<time datetime="2019-11-25T15:43:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-25</time>
-</a>
-        
-
-        <!-- 《开始添加字数统计-->
-         
-          
-
-
-         
-        <!-- 添加字数统计完成》 -->
-
-      </header>
-    
-
-    <!-- 文章主要内容（入口、条目） -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>抑郁症，一种心病。这是我的定义，但是有时候我甚至怀疑这能不能被称作一种病、怀疑它是否真的存在……然而，现实如此残酷，这种病真实存在，而且发病时间和后果可能让人无法预料。我们不时听到某某明星因为抑郁而自杀的新闻，在叹息的同时，却又不禁在想：又有多少普通人抑郁而终？</p>
-<p>抑郁，亦有轻重，诱发因素或大或小。艾滋病患者多死于肿瘤，艾滋病毒破坏病人的免疫系统，也许一个小小的炎症，可能就会致命；在我看来，抑郁是类似的，它破坏病人的“心情系统”，也许一点点的不愉快可能就会变成诱因，让人走向极端。</p>
-<p>​												——记于2019年国考（2019年11月24日）的后一天</p>
-<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20190503/5b2a4ecc0a724b25967493c34d0a4f7f.jpeg" alt></p>
-        
-          <a class="article-more-a" href="/article/57f89578.html#more">more >></a>
-        
-      
-
-        <!-- 《添加版权声明 -->
-        
-            <!-- 《添加版权声明 -->
-<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
-
-
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <div class="declare" hidden="hidden"></div>
-
-<!-- 添加版权声明》 -->
-
-        
-        <!-- 添加版权声明》 -->
-
-      
-    </div>
-
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">生活</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/57f89578.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-<!-- 评论系统 -->
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1694,19 +1762,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">软件破解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">软件破解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1837,7 +1905,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
   </div>
 
 <!-- 代码块复制功能。因为clipboard_use.js中需要用到jQuery，而yilia没有引入jQuery，故需要引入先引入jqurey。-->
-<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
 <script type="text/javascript" src="/js/clipboard_use2.js"></script>
 

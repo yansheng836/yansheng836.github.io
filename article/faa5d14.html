@@ -5,29 +5,32 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-language" content="zh-CN">
   <link rel="dns-prefetch" href="https://www.yansheng.xyz">
   <title>hexo+yilia添加URL持久化 | 荷塘月色的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="URL持久化 参考：你的Hexo博客SEO优化了吗？ 我们可以发现hexo默认生成的文章地址路径是 【网站名称／年／月／日／文章名称】。比如这篇博客： http://localhost:4000/2019/11/10/hexo+yilia添加URL持久化 这种链接对搜索爬虫是很不友好的，第一它的url结构超过了三层，太深了。第二使用了中文路径。这样会导致一个问题，在某些聊天工具或分享链接的时候会造">
+  <meta name="description" content="URL持久化 参考：你的Hexo博客SEO优化了吗？ 我们可以发现hexo默认生成的文章地址路径是 【网站名称／年／月／日／文章名称】。比如这篇博客原来的测试页面链接：http://localhost:4000/2019/11/10/hexo+yilia添加URL持久化 这种链接对搜索爬虫是很不友好的，第一它的url结构超过了三层，太深了。第二使用了中文路径。这样会导致一个问题，在某些聊天工具或分">
 <meta name="keywords" content="hexo,yilia">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo+yilia添加URL持久化">
 <meta property="og:url" content="https://www.yansheng.xyz/article/faa5d14.html">
 <meta property="og:site_name" content="荷塘月色的博客">
-<meta property="og:description" content="URL持久化 参考：你的Hexo博客SEO优化了吗？ 我们可以发现hexo默认生成的文章地址路径是 【网站名称／年／月／日／文章名称】。比如这篇博客： http://localhost:4000/2019/11/10/hexo+yilia添加URL持久化 这种链接对搜索爬虫是很不友好的，第一它的url结构超过了三层，太深了。第二使用了中文路径。这样会导致一个问题，在某些聊天工具或分享链接的时候会造">
+<meta property="og:description" content="URL持久化 参考：你的Hexo博客SEO优化了吗？ 我们可以发现hexo默认生成的文章地址路径是 【网站名称／年／月／日／文章名称】。比如这篇博客原来的测试页面链接：http://localhost:4000/2019/11/10/hexo+yilia添加URL持久化 这种链接对搜索爬虫是很不友好的，第一它的url结构超过了三层，太深了。第二使用了中文路径。这样会导致一个问题，在某些聊天工具或分">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://bucket836.oss-cn-shenzhen.aliyuncs.com/image-1573058824364.png">
-<meta property="og:image" content="https://user-images.githubusercontent.com/45334066/68354504-89893d80-0147-11ea-8bc4-cf90c2531475.png">
-<meta property="og:updated_time" content="2019-11-12T07:44:01.575Z">
+<meta property="og:image" content="https://oss.yansheng.xyz/picgo/20200410213114.png">
+<meta property="og:updated_time" content="2020-04-10T13:24:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+yilia添加URL持久化">
-<meta name="twitter:description" content="URL持久化 参考：你的Hexo博客SEO优化了吗？ 我们可以发现hexo默认生成的文章地址路径是 【网站名称／年／月／日／文章名称】。比如这篇博客： http://localhost:4000/2019/11/10/hexo+yilia添加URL持久化 这种链接对搜索爬虫是很不友好的，第一它的url结构超过了三层，太深了。第二使用了中文路径。这样会导致一个问题，在某些聊天工具或分享链接的时候会造">
+<meta name="twitter:description" content="URL持久化 参考：你的Hexo博客SEO优化了吗？ 我们可以发现hexo默认生成的文章地址路径是 【网站名称／年／月／日／文章名称】。比如这篇博客原来的测试页面链接：http://localhost:4000/2019/11/10/hexo+yilia添加URL持久化 这种链接对搜索爬虫是很不友好的，第一它的url结构超过了三层，太深了。第二使用了中文路径。这样会导致一个问题，在某些聊天工具或分">
 <meta name="twitter:image" content="http://bucket836.oss-cn-shenzhen.aliyuncs.com/image-1573058824364.png">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
+<link rel="stylesheet" type="text/css" href="/./search.css">
+
 
     <!--添加网页关键字-->
     <!-- 
@@ -111,6 +114,36 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </head>
 </html>
 <body>
+
+<!-- 《添加--APlayer音乐播放器,详见: https://aplayer.js.org/#/zh-Hans/ -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+
+    <div id="aplayer" style="text-align:left;z-index: 10;"></div>
+    <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"></script>
+
+    <!-- 为方便修改，添加一个配置文件，修改时直接修改配置文件即可。 -->
+    <script type="text/javascript" src="/js/APlayer_config.js"></script>
+
+    <!-- 根据封面自适应主题色，主要是作用于进度条 -->
+    <script type="text/javascript">
+          const colorThief = new ColorThief();
+          const setTheme = (index) => {
+            if (!ap.list.audios[index].theme) {
+              colorThief.getColorAsync(ap.list.audios[index].cover, function(color) {
+                ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
+              });
+            }
+          };
+          setTheme(ap.list.index);
+          ap.on('listswitch', (data) => {
+            setTheme(data.index);
+          });
+    </script>
+
+<!-- 添加--APlayer音乐播放器》 -->
+
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
 
@@ -180,7 +213,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			<img src="https://myblog12.qiniu.yansheng.xyz/head.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">荷塘月色</a></h1>
+		  <div class="header-author"><a href="/">荷塘月色</a></div>
 		</hgroup>
 		
 		<p class="header-subtitle">每天进步一点点</p>
@@ -235,7 +268,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		        
 					<a class="csdn" target="_blank" href="https://blog.csdn.net/weixin_41287260" title="csdn"><i class="icon-csdn"></i></a>
 		        
-					<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
+					<a class="rss" target="_blank" href="/rss2.xml" title="rss"><i class="icon-rss"></i></a>
 		        
 					<a class="mail" target="_blank" href="mailto:sheng.yan836@gmail.com" title="mail"><i class="icon-mail"></i></a>
 		        
@@ -248,31 +281,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 
             <!-- 《左侧边栏添加--APlayer音乐播放器：详见：https://aplayer.js.org/#/zh-Hans/ -->
-            
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
-
-                <div id="aplayer" style="text-align:left"></div>
-                <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"></script>
-
-                <!-- 为方便修改，添加一个配置文件，修改时直接修改配置文件即可。 -->
-                <script type="text/javascript" src="/js/APlayer_config.js"></script>
-
-                <!-- 根据封面自适应主题色，主要是作用于进度条 -->
-                <script type="text/javascript">
-                      const colorThief = new ColorThief();
-                      const setTheme = (index) => {
-                        if (!ap.list.audios[index].theme) {
-                          colorThief.getColorAsync(ap.list.audios[index].cover, function(color) {
-                            ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
-                          });
-                        }
-                      };
-                      setTheme(ap.list.index);
-                      ap.on('listswitch', (data) => {
-                        setTheme(data.index);
-                      });       
-                </script>
+            <!-- 注：不再在左侧边栏添加，因为这样在手机端会被隐藏；改在layout.js中添加，这样手机端就可以显示音乐播放器。 -->
             
             <!-- 左侧边栏添加--APlayer音乐播放器》 -->
 
@@ -323,7 +332,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 			        
 						<a class="csdn" target="_blank" href="https://blog.csdn.net/weixin_41287260" title="csdn"><i class="icon-csdn"></i></a>
 			        
-						<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
+						<a class="rss" target="_blank" href="/rss2.xml" title="rss"><i class="icon-rss"></i></a>
 			        
 						<a class="mail" target="_blank" href="mailto:sheng.yan836@gmail.com" title="mail"><i class="icon-mail"></i></a>
 			        
@@ -350,6 +359,62 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	</div>
 	<div class="mobile-mask" style="display:none" q-show="isShow"></div>
 </nav>
+
+
+    
+    <div class="page-header" style="">
+        
+        <span>🍻  
+            <span id="jinrishici-sentence" title="今日诗词">正在加载今日诗词....</span>
+        </span>
+        <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+        
+        <script type="text/javascript" src="/js/search.js"></script>
+        <span id="local-search" class="local-search local-search-plugin" style="">
+          <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+          <i id="local-search-icon-search" class="icon" aria-hidden="true" title="站内搜索">🔍</i>
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </span>
+
+        <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script>
+            // 移动设备侦测
+            var isMobile = {
+              Android: function () {
+                return navigator.userAgent.match(/Android/i);
+              },
+              BlackBerry: function () {
+                return navigator.userAgent.match(/BlackBerry/i);
+              },
+              iOS: function () {
+                return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+              },
+              Opera: function () {
+                return navigator.userAgent.match(/Opera Mini/i);
+              },
+              Windows: function () {
+                return navigator.userAgent.match(/IEMobile/i);
+              },
+              any: function () {
+                return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+              }
+            };
+
+            if(isMobile.any()){
+                //手机端取消搜索功能
+                $('.local-search').css("display","none");
+            }
+
+            if ($('.local-search').size() && !isMobile.any()) {
+              $.getScript('/js/search.js', function() {
+                searchFunc("/search.xml", 'local-search-input', 'local-search-result');
+              });
+            }
+        </script>
+        
+    </div>
+    
 
       <div id="wrapper" class="body-wrap">
         <div class="menu-l">
@@ -395,7 +460,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
        <i class="icon-statistics"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">826字</span>
+        <span class="post-count">838字</span>
       </span>
     </span>
 
@@ -422,38 +487,39 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
       
         <h2 id="url持久化">URL持久化</h2>
 <p>参考：<a href="http://www.apkbus.com/blog-889706-76401.html" target="_blank" rel="noopener">你的Hexo博客SEO优化了吗？</a></p>
-<p>我们可以发现hexo默认生成的文章地址路径是 【网站名称／年／月／日／文章名称】。比如这篇博客：<br>
-<a href="http://localhost:4000/2019/11/10/hexo+yilia%E6%B7%BB%E5%8A%A0URL%E6%8C%81%E4%B9%85%E5%8C%96" target="_blank" rel="noopener">http://localhost:4000/2019/11/10/hexo+yilia添加URL持久化</a><br>
+<p>我们可以发现hexo默认生成的文章地址路径是 【网站名称／年／月／日／文章名称】。比如这篇博客原来的测试页面链接：<a href="http://localhost:4000/2019/11/10/hexo+yilia%E6%B7%BB%E5%8A%A0URL%E6%8C%81%E4%B9%85%E5%8C%96" target="_blank" rel="noopener">http://localhost:4000/2019/11/10/hexo+yilia添加URL持久化</a><br>
 这种链接对搜索爬虫是很不友好的，第一它的url结构超过了三层，太深了。第二使用了中文路径。这样会导致一个问题，在某些聊天工具或分享链接的时候会造成url转码变成很长一串难以读写的链接。而且如果你的页面之前被收录或被转载后，当你再次编辑过后可能会造成之前的url失效带来不必要的404, 比如下面这样：<br>
 <a href="http://localhost:4000/article/faa5d14.html" target="_blank" rel="noopener">http://localhost:4000/article/faa5d14</a>。别担心，我们有好办法来解决它。</p>
 <a id="more"></a>
 <h3 id="第一种方式：">第一种方式：</h3>
-<p>打开_config.yml配置文件，找到permalink</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#permalink: :year/:month/:day/:title/ 注释掉</span></span><br><span class="line"><span class="comment"># 改为下面这样</span></span><br><span class="line"><span class="attr">permalink:</span>   <span class="string">/article/:title.html</span></span><br></pre></td></tr></table></figure>
+<p>打开hexo的配置文件：<code>H:\Hexo\_config.yml</code>，找到<code>permalink</code></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#permalink: :year/:month/:day/:title/ </span></span><br><span class="line"><span class="comment">#注释上行的原配置，改为下面这样</span></span><br><span class="line"><span class="attr">permalink:</span>   <span class="string">/article/:title.html</span></span><br></pre></td></tr></table></figure>
 <p>上面这种方式是去掉了年月日，保持网站最多三层。</p>
 <h3 id="第二种方式：-推荐">第二种方式：(推荐)</h3>
 <p>安装 <code>hexo-abbrlink</code>插件：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
-<p>配置<code>_config.yml</code>，查找<code>permalink</code>，修改成这样：</p>
+<p>配置<code>H:\Hexo\_config.yml</code>，查找<code>permalink</code>，修改成这样：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># permalink: :title/  将之前的注释掉</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">article/:abbrlink.html</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line"><span class="attr">  alg:</span> <span class="string">crc32</span>  <span class="comment"># 算法：crc16(default) and crc32</span></span><br><span class="line"><span class="attr">  rep:</span> <span class="string">hex</span>    <span class="comment"># 进制：dec(default) and hex</span></span><br></pre></td></tr></table></figure>
-<p>安装后的网址：<a href="http://localhost:4000/article/c5f6d65b.html" target="_blank" rel="noopener">http://localhost:4000/article/c5f6d65b.html</a></p>
-<p>注意：配置成功需要重新生成文件<code>hexo clean,hexo g</code>，不然会出现<code>undefined</code>的问题，如下：</p>
+<p>安装后的网址形如：<a href="http://localhost:4000/article/c5f6d65b.html" target="_blank" rel="noopener">http://localhost:4000/article/c5f6d65b.html</a></p>
+<p><strong>注意</strong>：配置成功需要重新生成文件<code>hexo clean,hexo g</code>，不然会出现<code>undefined</code>的问题，如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-abbrlink --save</span><br><span class="line">npm WARN babel-eslint@10.0.2 requires a peer of eslint@&gt;= 4.12.1 but none is installed. You must install peer dependencies yourself.</span><br><span class="line">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules\fsevents):</span><br><span class="line">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform <span class="keyword">for</span> fsevents@1.2.9: wanted &#123;<span class="string">"os"</span>:<span class="string">"darwin"</span>,<span class="string">"arch"</span>:<span class="string">"any"</span>&#125; (current: &#123;<span class="string">"os"</span>:<span class="string">"win32"</span>,<span class="string">"arch"</span>:<span class="string">"x64"</span>&#125;)</span><br><span class="line"></span><br><span class="line">+ hexo-abbrlink@2.0.5</span><br><span class="line">added 15 packages from 13 contributors and audited 26333 packages <span class="keyword">in</span> 27.509s</span><br><span class="line">found 21 vulnerabilities (8 low, 6 moderate, 6 high, 1 critical)</span><br><span class="line">  run `npm audit fix` to fix them, or `npm audit` <span class="keyword">for</span> details</span><br><span class="line"></span><br><span class="line">yansheng@MECHREVO MINGW64 /h/Hexo (blog)</span><br><span class="line">$ hexo s</span><br><span class="line">(node:1612) [DEP0061] DeprecationWarning: fs.SyncWriteStream is deprecated.</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Generating Baidu urls <span class="keyword">for</span> last 100 posts</span><br><span class="line">INFO  Posts urls generated <span class="keyword">in</span> baidu_urls.txt</span><br><span class="line">https://yansheng836.github.io/archives/undefined.html</span><br><span class="line">https://yansheng836.github.io/archives/undefined.html</span><br><span class="line">https://yansheng836.github.io/archives/undefined.html</span><br><span class="line">https://yansheng836.github.io/archives/undefined.html</span><br><span class="line">https://yansheng836.github.io/archives/undefined.html</span><br><span class="line">https://yansheng836.github.io/archives/undefined.html</span><br><span class="line"></span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
 <h3 id="弊端">弊端</h3>
 <p>其实使用这个也有弊端：</p>
 <ul>
-<li>按照原格式，发布后，在github仓库中你能很清楚的看到你写博客的日期，因为是按照网址分文件夹的。使用该插件后就看不到了。<br>
+<li>按照原格式，发布后，在github仓库中你能很清楚地看到你写博客的日期，因为是按照网址分文件夹的。使用该插件后就看不到了。<br>
 <img src="http://bucket836.oss-cn-shenzhen.aliyuncs.com/image-1573058824364.png" alt="file"></li>
 </ul>
 <h3 id="分类和标签路径名英文化">分类和标签路径名英文化</h3>
 <p>上面我们已经实现将文章的URL简短化和英文化了，但是如果我们的标签和分类有中文，这个插件是控制不了的，</p>
-<p>如有个生活的标签，该标签下的所有文章汇总如下：<a href="http://localhost:4000/tags/%E7%94%9F%E6%B4%BB/" target="_blank" rel="noopener">http://localhost:4000/tags/生活/</a>，还是会出现中文，其实这个问题hexo官方自带解决方法，详见：<a href="https://hexo.io/zh-cn/docs/configuration.html#%E5%88%86%E7%B1%BB-amp-%E6%A0%87%E7%AD%BE" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/configuration.html#%E5%88%86%E7%B1%BB-amp-%E6%A0%87%E7%AD%BE</a></p>
+<p>比如有个<strong>生活</strong>的标签，该标签下的所有文章汇总如下：<a href="http://localhost:4000/tags/%E7%94%9F%E6%B4%BB/" target="_blank" rel="noopener">http://localhost:4000/tags/生活/</a>，还是会出现中文，其实这个问题hexo官方自带解决方法，详见：<a href="https://hexo.io/zh-cn/docs/configuration.html#%E5%88%86%E7%B1%BB-amp-%E6%A0%87%E7%AD%BE" target="_blank" rel="noopener">hexo-configuration：分类-amp-标签</a></p>
 <p>截个图：<br>
-<a href="https://user-images.githubusercontent.com/45334066/68354504-89893d80-0147-11ea-8bc4-cf90c2531475.png" target="_blank" rel="noopener"><img src="https://user-images.githubusercontent.com/45334066/68354504-89893d80-0147-11ea-8bc4-cf90c2531475.png" alt="image"></a></p>
-<p>站点的配置文件有<code>category_map</code>和<code>tag_map</code>配置，即分类和标签的别名（映射），举个例子：</p>
+<img src="https://oss.yansheng.xyz/picgo/20200410213114.png" alt></p>
+<p>站点的配置文件<code>H:\Hexo\_config.yml</code>有<code>category_map</code>和<code>tag_map</code>配置，即分类和标签的别名（映射），举个例子：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Category &amp; Tag</span></span><br><span class="line"><span class="attr">default_category:</span> <span class="string">uncategorized</span></span><br><span class="line"><span class="attr">category_map:</span></span><br><span class="line">    <span class="string">编程:</span> <span class="string">programming</span></span><br><span class="line"><span class="attr">tag_map:</span></span><br><span class="line">    <span class="string">生活:</span> <span class="string">life</span></span><br></pre></td></tr></table></figure>
 <p>这样标签<code>生活</code>的访问网址为：<a href="http://localhost:4000/tags/life/" target="_blank" rel="noopener">http://localhost:4000/tags/life/</a>，分类同理。</p>
+<blockquote>
 <p>参考：<a href="https://yq.aliyun.com/articles/8607?spm=0.0.0.0.TP5ICj" target="_blank" rel="noopener">https://yq.aliyun.com/articles/8607?spm=0.0.0.0.TP5ICj</a></p>
+</blockquote>
 
       
 
@@ -475,7 +541,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     2019-11-10
     <br>
     <strong class="update-time">最后更新：</strong>
-    2019-11-12
+    2020-04-10
     <br>
     <strong class="article-titles">本文标题：</strong>
     <a href="https://www.yansheng.xyz/article/faa5d14.html" title="hexo+yilia添加URL持久化" target="_blank">hexo+yilia添加URL持久化</a>
@@ -898,19 +964,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">软件破解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">软件破解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1041,7 +1107,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
   </div>
 
 <!-- 代码块复制功能。因为clipboard_use.js中需要用到jQuery，而yilia没有引入jQuery，故需要引入先引入jqurey。-->
-<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
 <script type="text/javascript" src="/js/clipboard_use2.js"></script>
 
