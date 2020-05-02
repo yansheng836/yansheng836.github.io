@@ -3939,7 +3939,7 @@ a.pswp__share--download:hover {
 }
 @media screen and (max-width: 800px) {
     .aplayer {
-        opacity:0.8;
+        opacity:0.9;
     }
 }
 /* APlayer音频播放器样式》 */
@@ -3997,7 +3997,7 @@ summary:hover {
     .page-header {
         position: relative;
         border: 1px solid #fff;
-        /* margin: 5px 30px 4px 30px; */
+        margin: 5px 15px;
         background: #fff;
         -webkit-transition: all 0.2s ease-in;
         height: 35px;
@@ -4007,7 +4007,7 @@ summary:hover {
     }
     #jinrishici-sentence {
         color:#27d7a1;
-        padding-left: 10px;
+        padding-left: 0px;
         line-height: 35px;
         font-size: 15px;
         /*   vertical-align:middle; */
