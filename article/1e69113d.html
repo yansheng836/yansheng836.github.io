@@ -7,20 +7,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="content-language" content="zh-CN">
   <link rel="dns-prefetch" href="https://www.yansheng.xyz">
-  <title>tags | 荷塘月色的博客</title>
+  <title>hexo+yilia添加标签页标题切换功能 | 荷塘月色的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="生活不止漫无天日的代码和bug，还有诗和远方。">
-<meta name="keywords" content="荷塘月色,开发者,程序猿,Java,Spring,SpringMVC,MyBatis,MySQL数据库,开发工具,Git,GitHub,Hexo,yilia,Linux,Python,前端,资源">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="https://www.yansheng.xyz/tags/index.html">
+  <meta name="description" content="从网站页面切换到另一个页面时：  返回网站页面时：">
+<meta name="keywords" content="hexo,yilia">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo+yilia添加标签页标题切换功能">
+<meta property="og:url" content="https://www.yansheng.xyz/article/1e69113d.html">
 <meta property="og:site_name" content="荷塘月色的博客">
-<meta property="og:description" content="生活不止漫无天日的代码和bug，还有诗和远方。">
+<meta property="og:description" content="从网站页面切换到另一个页面时：  返回网站页面时：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-02T12:50:32.089Z">
+<meta property="og:image" content="https://oss.yansheng.xyz/picgo/20200604090653.png">
+<meta property="og:image" content="https://oss.yansheng.xyz/picgo/20200604090723.png">
+<meta property="og:updated_time" content="2020-06-04T01:18:48.911Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="生活不止漫无天日的代码和bug，还有诗和远方。">
+<meta name="twitter:title" content="hexo+yilia添加标签页标题切换功能">
+<meta name="twitter:description" content="从网站页面切换到另一个页面时：  返回网站页面时：">
+<meta name="twitter:image" content="https://oss.yansheng.xyz/picgo/20200604090653.png">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -421,7 +424,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-hexo-yilia添加标签页标题切换功能" class="article article-type-post " itemscope itemprop="blogPost">
     <!-- 文章正文 -->
     <div class="article-inner">
     
@@ -430,7 +433,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
   
     <h1 class="article-title" itemprop="name">
-      tags
+      hexo+yilia添加标签页标题切换功能
     </h1>
   
 
@@ -444,8 +447,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 <!--引入不蒜子并添加文章访问量(结束) -->
 
-<a href="/tags/index.html" class="archive-article-date">
-  	<time datetime="2019-07-30T02:11:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-30</time>
+<a href="/article/1e69113d.html" class="archive-article-date">
+  	<time datetime="2020-06-04T00:59:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-04</time>
 </a>
         
 
@@ -459,7 +462,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
        <i class="icon-statistics"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">0字</span>
+        <span class="post-count">204字</span>
       </span>
     </span>
 
@@ -484,7 +487,24 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     <!-- 文章主要内容（入口、条目） -->
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>从网站页面切换到另一个页面时：</p>
+<p><img src="https://oss.yansheng.xyz/picgo/20200604090653.png" alt></p>
+<p>返回网站页面时：</p>
+<p><img src="https://oss.yansheng.xyz/picgo/20200604090723.png" alt></p>
+<a id="more"></a>
+<h2 id="原理">原理</h2>
+<p>使用JS修改标题内容，几秒后恢复。</p>
+<p>详见：<a href="https://github.com/yansheng836/yansheng836.github.io/commit/a6bc543a3ede337e091423eb9e8931f92485034e" target="_blank" rel="noopener">https://github.com/yansheng836/yansheng836.github.io/commit/a6bc543a3ede337e091423eb9e8931f92485034e</a></p>
+<h2 id="步骤">步骤</h2>
+<h3 id="1-添加配置">1.添加配置</h3>
+<p><code>themes/yilia/_config.yml</code></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Tab Title Change | 标签页标题切换</span></span><br><span class="line"><span class="attr">tab_title_change:</span> </span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  left_tab_title:</span> <span class="string">'(つェ⊂) 我藏好了哦~ '</span></span><br><span class="line"><span class="attr">  return_tab_title:</span> <span class="string">'(*´∇｀*) 被你发现啦~ '</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-新建脚本文件">2.新建脚本文件</h3>
+<p><code>themes/yilia/layout/_partial/tab-title-change.ejs</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/* 标签页标题切换 */</span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">theme.tab_title_change</span> &amp;&amp; <span class="attr">theme.tab_title_change.enable</span>) &#123; %&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> originTitle = <span class="built_in">document</span>.title;</span></span><br><span class="line"><span class="actionscript">  <span class="keyword">var</span> titleTime;</span></span><br><span class="line"><span class="javascript">  <span class="built_in">document</span>.addEventListener(<span class="string">"visibilitychange"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">if</span> (<span class="built_in">document</span>.hidden) &#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">document</span>.title = <span class="string">"&lt;%- theme.tab_title_change.left_tab_title %&gt;"</span> + originTitle;</span></span><br><span class="line">      clearTimeout(titleTime);</span><br><span class="line"><span class="actionscript">    &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">document</span>.title = <span class="string">"&lt;%- theme.tab_title_change.return_tab_title %&gt;"</span> + originTitle;</span></span><br><span class="line"><span class="actionscript">      titleTime = setTimeout(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.title = originTitle;</span></span><br><span class="line">      &#125;, 2000);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-引入脚本文件">3.引入脚本文件</h3>
+<p><code>themes/yilia/layout/_partial/after-footer.ejs</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/* 标签页标题切换 */</span><br><span class="line"><span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">tab-title-change</span>') %&gt;</span></span><br></pre></td></tr></table></figure>
       
 
         <!-- 《添加版权声明 -->
@@ -495,7 +515,33 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 <!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
 
-  <div class="declare" hidden="hidden"></div>
+  <div class="declare">
+    <strong class="author">本文作者：</strong>
+    
+      荷塘月色
+    
+    <br>
+    <strong class="create-time">发布时间：</strong>
+    2020-06-04
+    <br>
+    <strong class="update-time">最后更新：</strong>
+    2020-06-04
+    <br>
+    <strong class="article-titles">本文标题：</strong>
+    <a href="https://www.yansheng.xyz/article/1e69113d.html" title="hexo+yilia添加标签页标题切换功能" target="_blank">hexo+yilia添加标签页标题切换功能</a>
+    <br>
+    <strong class="article-url">本文链接：</strong>
+    <a href="https://www.yansheng.xyz/article/1e69113d.html" title="hexo+yilia添加标签页标题切换功能" target="_blank">https://www.yansheng.xyz/article/1e69113d.html</a>
+    <br>
+    <strong class="copyright">版权声明：</strong>
+    本作品采用
+    <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" title="知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议">CC BY-NC-SA 4.0</a>
+    许可协议进行许可。转载请注明出处！
+    
+      <br>
+      <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://myblog12.qiniu.yansheng.xyz/picgo/by-nc-sa-4.0-88x31.png"/></a>
+    
+  </div>
 
 <!-- 添加版权声明》 -->
 
@@ -529,6 +575,21 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -579,7 +640,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://qr.liantu.com/api.php?text=https://www.yansheng.xyz/tags/" alt="微信分享二维码">
+      <img src="http://qr.liantu.com/api.php?text=https://www.yansheng.xyz/article/1e69113d.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -591,6 +652,25 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/article/19b653c7.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          王者荣耀每日壁纸
+        
+      </div>
+    </a>
+  
+  
+    <a href="/article/bf60dd05.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo+yilia添加APlayer音乐播放器</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -612,7 +692,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#原理"><span class="toc-number">1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#步骤"><span class="toc-number">2.</span> <span class="toc-text">步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-添加配置"><span class="toc-number">2.1.</span> <span class="toc-text">1.添加配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-新建脚本文件"><span class="toc-number">2.2.</span> <span class="toc-text">2.新建脚本文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-引入脚本文件"><span class="toc-number">2.3.</span> <span class="toc-text">3.引入脚本文件</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -623,6 +703,74 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 
 <!-- 评论系统 -->
+
+
+<!-- 《utteranc评论：基于github issue的评论系统 -->
+
+    <section id="comments" class="comments">
+      <style>
+        .utterances{max-width: 100%;}
+      </style>
+        <script src="https://utteranc.es/client.js"
+                repo="yansheng836/yansheng836.github.io"
+                issue-term="title"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+  </section>
+
+<!-- utteranc评论》 -->
+
+<!-- 《valine评论 -->
+
+    <section id="comments" class="comments">
+
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'true' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "e0wHRLzR2W4jQiydYamXSgyk-gzGzoHsz",
+            app_key: "rH599gMNkG2Dy68onUdeyqvr",
+            placeholder: "😉看了这么久，有啥想说的吗？🤔",
+            avatar:"retro"
+        });
+    }
+</script>
+  </section>
+
+<!-- valine评论》 -->
+
+
+<!-- 《多说评论 -->
+  
+<!-- 多说评论》 -->
+
+<!-- 《网易云评论 -->
+  
+<!-- 网易云评论》 -->
+
+<!-- 《畅言评论 -->
+  
+<!-- 畅言评论》 -->
+
+<!-- 《disqus评论 -->
+  
+<!-- disqus评论》 -->
+
+<!-- 《Gitment评论，是基于 GitHub Issues 的评论系统 -->
+  
+<!-- Gitment评论》 -->
+
+
+<!-- 下面这个是评论框的结束标志 -->
 
 
           </div>
@@ -678,7 +826,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

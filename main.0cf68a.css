@@ -11,9 +11,9 @@
     -moz-transition: width 0.5s ease;
     transition: width 0.5s ease;
     z-index: 11;
-	margin:0px;
+    margin:0px;
     padding:0px;
-	border-radius: 10px;
+    border-radius: 10px;
 }
 :root {
     --font-color: #000;
@@ -498,15 +498,15 @@ body {
     color:#333;
     /* background-color:#fff; */
     min-height:100%;
-	background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
-		url('https://oss.yansheng.xyz/wallpaper/qinshimingyue.jpg') no-repeat 0% 0%/ cover;
-	/* 设置鼠标的图标 */
-	cursor:url('https://oss.yansheng.xyz/ico/cursor.ico'), default;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
+        url('https://oss.yansheng.xyz/wallpaper/qinshimingyue.jpg') no-repeat 0% 0%/ cover;
+    /* 设置鼠标的图标 */
+    cursor:url('https://oss.yansheng.xyz/ico/cursor.ico'), default;
 }
 
 /* 因为超链接默认情况下是：cursor: pointer; 显示为手，这里进行设置 */
 a {
-	cursor:url('https://oss.yansheng.xyz/ico/cursor.ico'), default;
+    cursor:url('https://oss.yansheng.xyz/ico/cursor.ico'), default;
 }
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
     display:block
@@ -528,9 +528,9 @@ a {
     background:transparent;
     text-decoration:none;
     color:#08c;
-	/* 如果超长，自动截断 */
-	word-wrap:break-word;
-	word-break:break-all;
+    /* 如果超长，自动截断 */
+    word-wrap:break-word;
+    word-break:break-all;
 }
 /* 文章中的超链接,鼠标悬浮特效
 参考：https://css.30secondsofcode.org/snippet/hover-underline-animation
@@ -544,9 +544,9 @@ a {
 
 .article-entry  a,#article-nav a,h1[itemprop="name"] a{
     display: inline-block;
-	position: relative;
-	color: #0087ca;
-	font-family: lucida console;/* 这种字体的英文比较好看（像代码样式） */
+    position: relative;
+    color: #0087ca;
+    font-family: lucida console;/* 这种字体的英文比较好看（像代码样式） */
 }
 /* 鼠标悬浮时，变色 */
 .article-entry a:hover,#article-nav a:hover,h1[itemprop="name"] a:hover{
@@ -957,8 +957,8 @@ body {
     background:hsla(0, 0%, 100%, .3)
 }
 .left-col {
-	background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
-	url('https://oss.yansheng.xyz/wallpaper/381535373.jpeg') no-repeat 0% 20%/ cover;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
+    url('https://oss.yansheng.xyz/wallpaper/381535373.jpeg') no-repeat 0% 20%/ cover;
     width:300px;
     position:fixed;
     opacity:1;
@@ -1139,7 +1139,7 @@ body {
     /* background:#eee;
     padding:0 .3em;
     border:none */
-	color: #c7254e;
+    color: #c7254e;
     background-color: rgba(249,242,244,.7);
     border-radius: 2px;
     padding: 2px 4px;
@@ -1425,17 +1425,17 @@ pre .css~* .id, pre .id {
 /* 日期栏（如果是文章还包含卜算子的页面访问量） */
 .archive-article-date {
     /* color:#0087ca; */
-	color:#4b4949;
+    color:#4b4949;
     margin-right:7.6923%;
     float:right
 }
 /* 日期 */
 .archive-article-date time{
-	color:#4b4949;
+    color:#4b4949;
 }
 /* 日期同一行的文章阅读数量 */
 .archive-article-date[id=busuanzi_container_page_pv] {
-	color:#4b4949;
+    color:#4b4949;
 }
 .archive-article-date .icon {
     margin:5px 5px 5px 0
@@ -1709,7 +1709,7 @@ pre .css~* .id, pre .id {
     padding-right:60px;
     border-bottom:1px solid #eee;
     /* background:#fff */
-	background: rgba(255,255,255,.5);
+    background: rgba(255,255,255,.5);
 }
 .archives-wrap:first-child {
     margin-top:30px
@@ -2075,7 +2075,7 @@ pre .css~* .id, pre .id {
     border: 1px solid #ddd;
     border-top: 1px solid #fff;
     border-bottom: 1px solid #fff;
-	/* 设置背景为透明  */
+    /* 设置背景为透明  */
     background: rgba(255,255,255,.5);
     transition: all .2s ease-in
 }
@@ -2084,7 +2084,7 @@ pre .css~* .id, pre .id {
     max-width:100%
 }
 .article-inner h1.article-title, .article-title {
-	/* 取消标题的默认颜色 */
+    /* 取消标题的默认颜色 */
     /* color:#696969; */
     margin-left:0;
     /* font-weight:300; */
@@ -2110,7 +2110,7 @@ pre .css~* .id, pre .id {
 }
 .article-meta time {
     /* color:#aaa */
-	color: #2f2d2a;
+    color: #2f2d2a;
 }
 .article-meta time .icon-clock {
     margin-right:8px;
@@ -2147,7 +2147,7 @@ pre .css~* .id, pre .id {
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     position: relative;
-	/* 在鼠标悬浮时为：蓝色 */
+    /* 在鼠标悬浮时为：蓝色 */
     background: #2098D1;
     -webkit-transition-property: color;
     transition-property: color;
@@ -2162,7 +2162,7 @@ pre .css~* .id, pre .id {
     bottom: 0;
     left: 0;
     right: 0;
-	/* 在默认情况下为：灰褐色 */
+    /* 在默认情况下为：灰褐色 */
     background: #4d4d4d;
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
@@ -2253,12 +2253,12 @@ pre .css~* .id, pre .id {
 .article-inner h1:first-child {
     margin-bottom:10px;
     display:inline;
-	transition:color .5s;
+    transition:color .5s;
 }
 .article-inner h1:first-child:hover{
-	transition:color .5s;
+    transition:color .5s;
     /* color:red; */
-	color:rgba(255, 20, 0, 0.8);
+    color:rgba(255, 20, 0, 0.8);
 }
 .article-entry {
     line-height:1.8em;
@@ -2267,20 +2267,20 @@ pre .css~* .id, pre .id {
 }
 .article-entry p {
     margin-top: 10px;
-	word-wrap: break-word;
-	/*text-indent:2em*/
+    word-wrap: break-word;
+    /*text-indent:2em*/
 }
 
 /* 行内代码块``的样式，参考csdn的
     color: #c7254e;
     background-color: #f9f2f4;
     border-radius: 2px;
-	padding: 2px 4px;
+    padding: 2px 4px;
 */
  .article-entry li code, .article-entry p code {
     color: #c7254e;
     /* background-color: #f9f2f4; */
-	background-color: rgba(249, 242, 244, .7);
+    background-color: rgba(249, 242, 244, .7);
     border-radius: 2px;
     padding:2px 4px;
     margin:0 3px;
@@ -2297,10 +2297,10 @@ pre .css~* .id, pre .id {
     margin-top:10px;
     border-left:5px solid #657b83;
     /* background:#f6f6f6; */
-	background: rgba(246, 246, 246, .7);
-	/* 如果超长，自动截断 */
-	word-wrap:break-word;
-	word-break:break-all;
+    background: rgba(246, 246, 246, .7);
+    /* 如果超长，自动截断 */
+    word-wrap:break-word;
+    word-break:break-all;
 }
 .article-entry blockquote p {
     /* margin-top:0;
@@ -2406,12 +2406,12 @@ pre .css~* .id, pre .id {
     background: none
 }
 .article-entry table tbody tr:hover {
-	/* background:#efefef */
+    /* background:#efefef */
     background: #c0ddea
 }
 .article-entry table td, .article-entry table th {
     /* border:1px solid #dedede; */
-	border: 2px solid #bbbbbb;
+    border: 2px solid #bbbbbb;
     padding:0 10px
 }
 .article-entry figure table {
@@ -2576,7 +2576,7 @@ pre .css~* .id, pre .id {
 }
 .page-reward .page-reward-btn:active, .page-reward .page-reward-btn:hover {
     box-shadow:0 6px 12px rgba(0, 0, 0, .2), 0 4px 15px rgba(0, 0, 0, .2);
-	/* text-decoration:none; */
+    /* text-decoration:none; */
 }
 .page-reward .page-reward-btn .tooltip-item {
     display:block;
@@ -2931,7 +2931,7 @@ pre .css~* .id, pre .id {
     position:absolute;
     bottom:30px;
     /* opacity:.6; */
-	opacity:.8;
+    opacity:.8;
     width:100%;
     text-align:center
 }
@@ -2946,14 +2946,14 @@ pre .css~* .id, pre .id {
 }
 @media screen and (max-width:800px) {
     body {
-		background: url('https://oss.yansheng.xyz/wallpaper/your-name-phone2ys.jpg') no-repeat fixed top;
-		/* background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.5)), 
-		url('https://oss.yansheng.xyz/wallpaper/your-name-phone2ys.jpg') no-repeat fixed top; */
+        background: url('https://oss.yansheng.xyz/wallpaper/your-name-phone2ys.jpg') no-repeat fixed top;
+        /* background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.5)), 
+        url('https://oss.yansheng.xyz/wallpaper/your-name-phone2ys.jpg') no-repeat fixed top; */
     }
-	/* 手机界面：缩小代码块的行数的边距 */
-	.article-entry .highlight .gutter pre {
-		padding: 3px;
-	}	
+    /* 手机界面：缩小代码块的行数的边距 */
+    .article-entry .highlight .gutter pre {
+        padding: 3px;
+    }    
     #container, body, html {
         height:auto;
         overflow-x:hidden;
@@ -3092,8 +3092,8 @@ pre .css~* .id, pre .id {
         border:0;
         font-size:16px;
         color:#555;
-		/* 设置背景为透明，手机端设为不那么透明  */
-		background: rgba(255,255,255,.7);
+        /* 设置背景为透明，手机端设为不那么透明  */
+        background: rgba(255,255,255,.7);
     }
     .article .article-more-link {
         margin:0
@@ -3242,10 +3242,10 @@ pre .css~* .id, pre .id {
         position:absolute;
         width:100%;
         z-index:2;
-		 /* 渐变：浅绿色变淡蓝色 */
-		background-image: linear-gradient(#8fecc5,#0badf7);
-		/* 浏览器不支持渐变时显示默认颜色 */
-		background-color: #4d4d4d;
+         /* 渐变：浅绿色变淡蓝色 */
+        background-image: linear-gradient(#8fecc5,#0badf7);
+        /* 浏览器不支持渐变时显示默认颜色 */
+        background-color: #4d4d4d;
     }
     #mobile-nav #header {
         padding:10px 0 0
@@ -3311,7 +3311,7 @@ pre .css~* .id, pre .id {
         white-space:nowrap;
         display:block;
         color:#a0a0a0;
-		transform: scaleX(1);
+        transform: scaleX(1);
     }
     .header-menu li a.active {
         color:#eaeaea;
@@ -3344,7 +3344,7 @@ pre .css~* .id, pre .id {
     .header-subtitle {
         text-align:center;
         color:#999;
-		/* color:#673ab7; */
+        /* color:#673ab7; */
         font-size:14px;
         line-height:25px;
         overflow:hidden;
@@ -3900,42 +3900,42 @@ a.pswp__share--download:hover {
     margin:30px;
     padding:10px;
     /* background:#fff */
-	background: rgba(255,255,255,.5);
+    background: rgba(255,255,255,.5);
 }
 @media screen and (max-width:800px) {
     .comments {
         margin:auto;
         padding:10px;
         /* background:#fff */
-		background: rgba(255,255,255,.5);
+        background: rgba(255,255,255,.5);
     }
 }
 
 /* 设置valine评论的背景颜色，边框 */
 #vcomment{
-	/* background:#fff */
-	background: rgba(255,255,255,.9);
-	padding: 10px;
+    /* background:#fff */
+    background: rgba(255,255,255,.9);
+    padding: 10px;
 }
 
 /* 设置valine占位符的颜色 */
 #vcomment :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-	color: #979292; 
+    color: #979292; 
 }
 #vcomment ::-moz-placeholder { /* Mozilla Firefox 19+ */
-	color: #979292;
+    color: #979292;
 }
 #vcomment input:-ms-input-placeholder, #vcomment textarea:-ms-input-placeholder {
-	color: #979292;
+    color: #979292;
 }
 #vcomment input::-webkit-input-placeholder,#vcomment textarea::-webkit-input-placeholder {
-	color: #979292;
+    color: #979292;
 }
 /* 评论框》 */
 
 /* 《APlayer音频播放器样式 */
 #aplayer{
-	/* opacity:0.5; */
+    /* opacity:0.5; */
 }
 @media screen and (max-width: 800px) {
     .aplayer {
@@ -3982,7 +3982,7 @@ summary:hover {
     height:45px;
     font-family: '微软雅黑';
     border-radius:5px;
-	padding-left:10px;
+    padding-left:10px;
 }
 
 /* 今日诗词 */
@@ -4012,4 +4012,10 @@ summary:hover {
         font-size: 15px;
         /*   vertical-align:middle; */
     }
+}
+
+/* 暂时不显示‘不蒜子计数’: 
+匹配id以busuanzi_开头的元素（class^="-test"匹配class以-test结尾的元素）*/
+#footer span [id^="busuanzi_"]{
+  display: none;
 }

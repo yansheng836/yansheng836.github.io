@@ -1,5 +1,69 @@
+# robots生成工具：http://tool.chinaz.com/robots/
+
+# 禁用某些浏览器爬虫
+# Scrapy|Curl|HttpClient|PostmanRuntime
+# 说明：python request/urllib,今日头条Bytespider,node,java HttpClient,C#爬虫WinHttp、HtmlAgilityPack,php:phpspider
+# python-requests|Python-urllib|Bytespider|node-superagent|Java|HttpClient|WinHttp|HtmlAgilityPack|phpspider|^$
+User-agent: Scrapy
+Disallow: /
+User-agent: curl
+Disallow: /
+User-agent: HttpClient
+Disallow: /
+User-agent: PostmanRuntime
+Disallow: /
+User-agent: python-requests
+Disallow: /
+User-agent: Python-urllib
+Disallow: /
+User-agent: Bytespider
+Disallow: /
+User-agent: node-superagent
+Disallow: /
+User-agent: Java
+Disallow: /
+User-agent: HttpClient
+Disallow: /
+User-agent: WinHttp
+Disallow: /
+User-agent: HtmlAgilityPack
+Disallow: /
+User-agent: phpspider
+Disallow: /
+
+# 网站(https://www.yansheng.xyz/)已发现的不需要的爬虫
+# Barkrowler|SeznamBot|Go-http-client|Nimbostratus-Bot|MauiBot|serpstatbot
+# BLEXBot|DotBot|AhrefsBot|HTTP Banner Detection|Apache-HttpClient|Wappalyzer
+User-agent: Barkrowler
+Disallow: /
+User-agent: SeznamBot
+Disallow: /
+User-agent: Go-http-client
+Disallow: /
+User-agent: Nimbostratus-Bot
+Disallow: /
+User-agent: MauiBot
+Disallow: /
+User-agent: serpstatbot
+Disallow: /
+User-agent: BLEXBot
+Disallow: /
+User-agent: DotBot
+Disallow: /
+User-agent: AhrefsBot
+Disallow: /
+User-agent: HTTP Banner Detection
+Disallow: /
+User-agent: Apache-HttpClient
+Disallow: /
+User-agent: Wappalyzer
+Disallow: /
+
 # 允许所有用户代理的浏览器爬虫进行访问（爬取数据）
 User-agent: *
+
+# 检索间隔（秒）
+Crawl-delay: 10
 
 # 允许访问的内容
 Allow: /
@@ -9,24 +73,23 @@ Allow: /categories/
 Allow: /page/
 Allow: /photos/
 Allow: /tags/
+Allow: /links/
+Allow: /message-wall/
+Allow: /music/index.html
 
 # 不允许访问的内容
 Disallow: /assets/
 Disallow: /fonts/
 Disallow: /img/
 Disallow: /js/
-Disallow: /music/
 Disallow: /css/
+Disallow: /music/lrc/
 
 Disallow: /*.js
 Disallow: /*.css
+Disallow: /content.json
 
 # 网站地图Sitemap
-Sitemap: http://yansheng.xyz/sitemap.xml
-Sitemap: http://yansheng.xyz/baidusitemap.xml
-Sitemap: https://yansheng.xyz/sitemap.xml
-Sitemap: http://yansheng.xyz/baidusitemap.xml
-
 Sitemap: http://www.yansheng.xyz/sitemap.xml
 Sitemap: http://www.yansheng.xyz/baidusitemap.xml
 Sitemap: https://www.yansheng.xyz/sitemap.xml
@@ -37,6 +100,3 @@ Sitemap: https://yansheng836.github.io/baidusitemap.xml
 
 Sitemap: https://yansheng0083.gitee.io/sitemap.xml
 Sitemap: https://yansheng0083.gitee.io/baidusitemap.xml
-
-Sitemap: http://yansheng836.coding.me/sitemap.xml
-Sitemap: http://yansheng836.coding.me/baidusitemap.xml
