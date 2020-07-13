@@ -2925,7 +2925,7 @@ pre .css~* .id, pre .id {
     margin-left:-10px
 }
 #footer {
-    font-size:12px;
+    font-size:14px;
     font-family:Menlo, Monaco, Andale Mono, lucida console, Courier New, monospace;
     text-shadow:0 1px #fff;
     position:absolute;
@@ -4016,6 +4016,12 @@ summary:hover {
 
 /* 暂时不显示‘不蒜子计数’: 
 匹配id以busuanzi_开头的元素（class^="-test"匹配class以-test结尾的元素）*/
+/*
 #footer span [id^="busuanzi_"]{
   display: none;
+}
+*/
+
+#busuanzi_container_site{
+    display: none;
 }
