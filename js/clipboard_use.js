@@ -1,18 +1,3 @@
-$(".highlight").wrap("<div class='code-wrapper' style='position:relative'></div>");
-/*页面载入完成后，创建复制按钮*/
-!function (e, t, a) { 
-/* code */
-var initCopyCode = function(){
-    var copyHtml = '';
-    copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-    copyHtml += '  <i class="fa fa-globe"></i><span>copy</span>';
-    copyHtml += '</button>';
-    $(".highlight .code pre").before(copyHtml);
-    new ClipboardJS('.btn-copy', {
-        target: function(trigger) {
-            return trigger.nextElementSibling;
-        }
-    });
-}
-initCopyCode();
-}(window, document);
+// build time:Fri Jul 17 2020 23:03:27 GMT+0800 (GMT+08:00)
+$(".highlight").wrap("<div class='code-wrapper' style='position:relative'></div>");!function(t,n,i){var e=function(){var t="";t+='<button class="btn-copy" data-clipboard-snippet="">';t+='  <i class="fa fa-globe"></i><span>copy</span>';t+="</button>";$(".highlight .code pre").before(t);new ClipboardJS(".btn-copy",{target:function(t){return t.nextElementSibling}})};e()}(window,document);
+//rebuild by neat 

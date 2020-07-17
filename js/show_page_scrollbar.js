@@ -1,25 +1,3 @@
-// 当页面滚动超过一屏时，在顶部显示页面滚动条
-window.onscroll=function(){
-	// clientWidth * 进度% = 宽度
-	var clientWidth = document.body.clientWidth;
-	var scrollWidth = document.body.scrollWidth;
-	var clientHeight = document.body.clientHeight;
-	var scrollHeight = document.body.scrollHeight;
-	var scrollTop = document.body.scrollTop;
-
-	// 先算出高度比例，然后显示在顶部的宽度上
-	var rate = scrollTop/(scrollHeight-clientHeight);
-	var scroll_width = scrollWidth * rate;
-
-	var scrollbar = document.getElementById("scrollbar-top");
-	/*
-	scrollbar.style.width =  scroll_width+'px';
-	console.log("clientWidth:"+clientWidth);
-	console.log("scrollWidth:"+scrollWidth);
-	console.log("clientHeight:"+clientHeight);
-	console.log("scrollHeight:"+scrollHeight);
-	console.log("scrollTop:"+scrollTop);
-
-	console.log("scroll_width:"+scroll_width+"\n");
-	*/
-}
+// build time:Fri Jul 17 2020 23:03:27 GMT+0800 (GMT+08:00)
+window.onscroll=function(){var o=document.body.clientWidth;var t=document.body.scrollWidth;var d=document.body.clientHeight;var c=document.body.scrollHeight;var r=document.body.scrollTop;var e=r/(c-d);var l=t*e;var n=document.getElementById("scrollbar-top")};
+//rebuild by neat 
