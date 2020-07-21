@@ -1,3 +1,70 @@
-// build time:Fri Jul 17 2020 23:03:27 GMT+0800 (GMT+08:00)
-var snow={info:{top:0,left:0,zIndex:500,number:70},down:function(){var n=window.innerWidth;var r=window.innerHeight;var o=document.createElement("canvas");o.style.position="fixed";o.style.pointerEvents="none";o.style.top=snow.info.top+"px";o.style.left=snow.info.left+"px";o.style.zIndex=snow.info.zIndex;o.width=n;o.height=r;document.body.appendChild(o);var t=[];for(var a=0;a<snow.info.number;a++){t.push({x:Math.random()*n,y:Math.random()*r,r:Math.random()*4+1,n:Math.random()*70})}var e=o.getContext("2d");var i=0;setInterval(function(){e.clearRect(0,0,n,r);e.fillStyle="rgba(255, 255, 255, 0.6)";e.shadowBlur=5;e.shadowColor="rgba(255, 255, 255, 0.9)";e.beginPath();for(var o=0;o<70;o++){var a=t[o];e.moveTo(a.x,a.y);e.arc(a.x,a.y,a.r,0,Math.PI*2,0)}e.fill();i+=.01;for(var o=0;o<70;o++){var a=t[o];a.y+=Math.cos(i+a.n)+a.r/2;a.x+=Math.sin(i)*2;if(a.x>n+5||a.x<-5||a.y>r){t[o]=o%3>0?{x:Math.random()*n,y:-10,r:a.r,n:a.n}:Math.sin(i)>0?{x:-5,y:Math.random()*r,r:a.r,n:a.n}:{x:n+5,y:Math.random()*r,r:a.r,n:a.n}}}},15)}};
-//rebuild by neat 
+var snow = {
+	info: {
+		top: 0,
+		left: 0,
+		zIndex: 500,
+		number: 70
+	},
+	down: function() {
+		var f = window.innerWidth;
+		var g = window.innerHeight;
+		var d = document.createElement("canvas");
+		d.style.position = "fixed";
+		d.style.pointerEvents = "none";
+		d.style.top = snow.info.top + "px";
+		d.style.left = snow.info.left + "px";
+		d.style.zIndex = snow.info.zIndex;
+		d.width = f;
+		d.height = g;
+		document.body.appendChild(d);
+		var c = [];
+		for (var a = 0; a < snow.info.number; a++) {
+			c.push({
+				x: Math.random() * f,
+				y: Math.random() * g,
+				r: Math.random() * 4 + 1,
+				n: Math.random() * 70
+			})
+		}
+		var b = d.getContext("2d");
+		var e = 0;
+		setInterval(function() {
+			b.clearRect(0, 0, f, g);
+			b.fillStyle = "rgba(255, 255, 255, 0.6)";
+			b.shadowBlur = 5;
+			b.shadowColor = "rgba(255, 255, 255, 0.9)";
+			b.beginPath();
+			for (var j = 0; j < 70; j++) {
+				var h = c[j];
+				b.moveTo(h.x, h.y);
+				b.arc(h.x, h.y, h.r, 0, Math.PI * 2, 0)
+			}
+			b.fill();
+			e += 0.01;
+			for (var j = 0; j < 70; j++) {
+				var h = c[j];
+				h.y += Math.cos(e + h.n) + h.r / 2;
+				h.x += Math.sin(e) * 2;
+				if (h.x > f + 5 || h.x < -5 || h.y > g) {
+					c[j] = j % 3 > 0 ? {
+						x: Math.random() * f,
+						y: -10,
+						r: h.r,
+						n: h.n
+					}: Math.sin(e) > 0 ? {
+						x: -5,
+						y: Math.random() * g,
+						r: h.r,
+						n: h.n
+					}: {
+						x: f + 5,
+						y: Math.random() * g,
+						r: h.r,
+						n: h.n
+					}
+				}
+			}
+		},
+		15)
+	}
+}; 

@@ -1,3 +1,146 @@
-// build time:Fri Jul 17 2020 23:03:27 GMT+0800 (GMT+08:00)
-var searchFunc=function(e,c,t){"use strict";var l="<i id='local-search-close'>x</i>";$.ajax({url:e,dataType:"xml",success:function(e){var a=$("entry",e).map(function(){return{title:$("title",this).text(),content:$("content",this).text(),url:$("url",this).text()}}).get();var r=document.getElementById(c);var i=document.getElementById(t);r.addEventListener("input",function(){var e='<ul class="search-result-list">';var c=this.value.trim().toLowerCase().split(/[\s\-]+/);i.innerHTML="";if(this.value.trim().length<=0){return}a.forEach(function(t){var l=true;var a=[];if(!t.title||t.title.trim()===""){t.title="Untitled"}var r=t.title.trim().toLowerCase();var i=t.content.trim().replace(/<[^>]+>/g,"").toLowerCase();var s=t.url;var n=-1;var o=-1;var h=-1;if(i!==""){c.forEach(function(e,c){n=r.indexOf(e);o=i.indexOf(e);if(n<0&&o<0){l=false}else{if(o<0){o=0}if(c==0){h=o}}})}else{l=false}if(l){e+="<li><a href='"+s+"' class='search-result-title'>"+r+"</a>";var u=t.content.trim().replace(/<[^>]+>/g,"");if(h>=0){var f=h-20;var v=h+80;if(f<0){f=0}if(f==0){v=100}if(v>u.length){v=u.length}var m=u.substr(f,v);c.forEach(function(e){var c=new RegExp(e,"gi");m=m.replace(c,'<em class="search-keyword">'+e+"</em>")});e+='<p class="search-result">'+m+"...</p>"}e+="</li>"}});e+="</ul>";if(e.indexOf("<li>")===-1){return i.innerHTML=l+"<ul><span class='local-search-empty'>没有找到内容，更换下搜索词试试吧~<span></ul>"}i.innerHTML=l+e})}});$(document).on("click","#local-search-close",function(){$("#local-search-input").val("");$("#local-search-result").html("");$("#local-search-icon-close").html("🔍");$("#local-search-icon-close").attr("id","local-search-icon-search")});$(document).on("focus","#local-search",function(){$("#local-search-icon-search").html("❌");$("#local-search-icon-search").attr("id","local-search-icon-close")});$(document).on("click","#local-search-icon-close",function(){$("#local-search-input").val("");$("#local-search-result").html("");$("#local-search-icon-close").html("🔍");$("#local-search-icon-close").attr("id","local-search-icon-search")})};
-//rebuild by neat 
+// A local search script with the help of hexo-generator-search
+// Copyright (C) 2015 
+// Joseph Pan <http://github.com/wzpan>
+// Shuhao Mao <http://github.com/maoshuhao>
+// This library is free software; you can redistribute it and/or modify
+// it under the terms of the GNU Lesser General Public License as
+// published by the Free Software Foundation; either version 2.1 of the
+// License, or (at your option) any later version.
+// 
+// This library is distributed in the hope that it will be useful, but
+// WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// Lesser General Public License for more details.
+// 
+// You should have received a copy of the GNU Lesser General Public
+// License along with this library; if not, write to the Free Software
+// Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+// 02110-1301 USA
+// 
+
+var searchFunc = function (path, search_id, content_id) {
+    'use strict';
+    var BTN = "<i id='local-search-close'>x</i>";
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+            // get the contents from search data
+            var datas = $("entry", xmlResponse).map(function () {
+                return {
+                    title: $("title", this).text(),
+                    content: $("content", this).text(),
+                    url: $("url", this).text()
+                };
+            }).get();
+
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+
+            $input.addEventListener('input', function () {
+                var str = '<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length <= 0) {
+                    return;
+                }
+                // perform local searching
+                datas.forEach(function (data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    if (!data.title || data.title.trim() === '') {
+                        data.title = "Untitled";
+                    }
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty contents
+                    if (data_content !== '') {
+                        keywords.forEach(function (keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+
+                            if (index_title < 0 && index_content < 0) {
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                                // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                            }
+                        });
+                    } else {
+                        isMatch = false;
+                    }
+                    // show search results
+                    if (isMatch) {
+                        str += "<li><a href='" + data_url +
+                            "' class='search-result-title'>" + data_title + "</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g, "");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+
+                            if (start < 0) {
+                                start = 0;
+                            }
+
+                            if (start == 0) {
+                                end = 100;
+                            }
+
+                            if (end > content.length) {
+                                end = content.length;
+                            }
+
+                            var match_content = content.substr(start, end);
+
+                            // highlight all keywords
+                            keywords.forEach(function (keyword) {
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS,
+                                    "<em class=\"search-keyword\">" +
+                                    keyword + "</em>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +
+                                "...</p>"
+                        }
+                        str += "</li>";
+                    }
+                });
+                str += "</ul>";
+                if (str.indexOf('<li>') === -1) {
+                    return $resultContent.innerHTML = BTN +
+                        "<ul><span class='local-search-empty'>没有找到内容，更换下搜索词试试吧~<span></ul>";
+                }
+                $resultContent.innerHTML = BTN + str;
+            });
+        }
+    });
+    $(document).on('click', '#local-search-close', function () {
+        $('#local-search-input').val('');
+        $('#local-search-result').html('');
+        $('#local-search-icon-close').html('🔍');
+        $('#local-search-icon-close').attr('id', 'local-search-icon-search');
+    });
+    $(document).on('focus', '#local-search', function () {
+        $('#local-search-icon-search').html('❌');
+        $('#local-search-icon-search').attr('id', 'local-search-icon-close');
+        //console.log("66666");
+    });
+    $(document).on('click', '#local-search-icon-close', function () {
+        $('#local-search-input').val('');
+        $('#local-search-result').html('');
+        $('#local-search-icon-close').html('🔍');
+        $('#local-search-icon-close').attr('id', 'local-search-icon-search');
+        //console.log("1111");
+    });
+}

@@ -1,3 +1,32 @@
-// build time:Fri Jul 17 2020 23:03:27 GMT+0800 (GMT+08:00)
-$(".highlight").wrap("<div class='code-wrapper' style='position:relative'></div>");!function(n,e,i){var a=function(){var n="";n+='<button class="btn-copy" data-clipboard-snippet="">';n+='  <i class="fa fa-clipboard"></i><span>复制</span>';n+="</button>";$(".highlight .code").before(n);var e=new ClipboardJS(".btn-copy",{target:function(n){return n.nextElementSibling}});e.on("success",function(n){n.trigger.innerHTML="<i class='fa fa-check' style='color:green'></i><span style='color:green'>复制成功</span>";setTimeout(function(){n.trigger.innerHTML="<i class='fa fa-clipboard'></i><span>复制</span>"},1e3);n.clearSelection()});e.on("error",function(n){n.trigger.innerHTML="<i class='fa fa-exclamation' style='color:red'></i><span style='color:red'>复制失败</span>";setTimeout(function(){n.trigger.innerHTML="<i class='fa fa-clipboard'></i><span>复制</span>"},1e3);n.clearSelection()})};a()}(window,document);
-//rebuild by neat 
+$(".highlight").wrap("<div class='code-wrapper' style='position:relative'></div>");
+/*页面载入完成后，创建复制按钮*/
+!function (e, t, a) {
+    /* code */
+    var initCopyCode = function () {
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '  <i class="fa fa-clipboard"></i><span>复制</span>';
+        copyHtml += '</button>';
+        $(".highlight .code").before(copyHtml);
+        var clipboard = new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+                return trigger.nextElementSibling;
+            }
+        });
+        clipboard.on('success', function (e) {
+            e.trigger.innerHTML = "<i class='fa fa-check' style='color:green'></i><span style='color:green'>复制成功</span>"
+            setTimeout(function () {
+                e.trigger.innerHTML = "<i class='fa fa-clipboard'></i><span>复制</span>"
+            }, 1000)
+            e.clearSelection();
+        });
+        clipboard.on('error', function (e) {
+            e.trigger.innerHTML = "<i class='fa fa-exclamation' style='color:red'></i><span style='color:red'>复制失败</span>"
+            setTimeout(function () {
+                e.trigger.innerHTML = "<i class='fa fa-clipboard'></i><span>复制</span>"
+            }, 1000)
+            e.clearSelection();
+        });
+    }
+    initCopyCode();
+}(window, document);
