@@ -58,6 +58,20 @@ User-agent: Apache-HttpClient
 Disallow: /
 User-agent: Wappalyzer
 Disallow: /
+User-agent: Nmap Scripting Engine
+Disallow: /
+User-agent: centuryb
+Disallow: /
+User-agent: NetcraftSurveyAgent
+Disallow: /
+User-agent: Adsbot
+Disallow: /
+User-agent: ltx71
+Disallow: /
+User-agent: CensysInspect
+Disallow: /
+User-agent: Dataprovider.com
+Disallow: /
 
 # 允许所有用户代理的浏览器爬虫进行访问（爬取数据）
 User-agent: *
