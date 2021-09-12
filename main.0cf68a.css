@@ -4041,4 +4041,5 @@ body > a{
 .left-col div.blog-counter{
     font-family: Helvetica Neue,Helvetica,STHeiTi,Arial,sans-serif;
     /*color: #673ab7;*/
+    display:none;
 }

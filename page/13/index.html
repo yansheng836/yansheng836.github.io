@@ -169,39 +169,33 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <!-- 《添加“心知天气”-->
 
 <div id="tp-weather-widget"></div>
-<script>
-    (function(a, h, g, f, e, d, c, b) {
-        b = function() {
-            d = h.createElement(g);
-            c = h.getElementsByTagName(g)[0];
-            d.src = e;
-            d.charset = "utf-8";
-            d.async = 1;
-            c.parentNode.insertBefore(d, c)
-        };
-        a["SeniverseWeatherWidgetObject"] = f;
-        a[f] || (a[f] = function() {
-            (a[f].q = a[f].q || []).push(arguments)
-        });
-        a[f].l = +new Date();
-        if (a.attachEvent) {
-            a.attachEvent("onload", b)
-        } else {
-            a.addEventListener("load", b, false)
-        }
-    }(window, document, "script", "SeniverseWeatherWidget", "//cdn.sencdn.com/widget2/static/js/bundle.js?t=" + parseInt((new Date().getTime() / 100000000).toString(), 10)));
+  <script>
+    (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
     window.SeniverseWeatherWidget('show', {
-        flavor: "bubble",
-        location: "WS07NB3R6P5J",
-        geolocation: true,
-        language: "zh-Hans",
-        unit: "c",
-        theme: "auto",
-        token: "a579c7ea-507d-41d7-b578-3537882d20c2",
-        hover: "enabled",
-        container: "tp-weather-widget"
+      flavor: "bubble",
+      location: "WS0E9D8WN298",
+      geolocation: true,
+      language: "zh-Hans",
+      unit: "c",
+      theme: "auto",
+      token: "a579c7ea-507d-41d7-b578-3537882d20c2",
+      hover: "enabled",
+      container: "tp-weather-widget"
     })
+  </script>
+<script>
+// <iframe src="https://weather.seniverse.com/?token=a579c7ea-507d-41d7-b578-3537882d20c2"></iframe>
+
+var elm = document.getElementById('tp-weather-widget');
+  //elm.style.color = 'black';
+   //elm.setAttribute('style','z-index:20');
+var elm2 = document.getElementsByClassName('eOZYiU');
+   //elm2[0].setAttribute('style','z-index:20');
+   //elm2[0].style.z-index = 20;
+   /**/
 </script>
+
+
 
 <!-- 添加“心知天气”》-->
 
@@ -235,7 +229,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         </nav>
 
         <div class="blog-counter">
-            <span>总文章数 238</span>
+            <span>总文章数 301</span>
         </div>
 
         <!-- 智能菜单 -->
@@ -428,7 +422,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-csdn/Java替换文件名字符串中的特殊字符，避免创建文件失败" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-hexo-yilia添加RSS订阅功能" class="article article-type-post  article-index" itemscope itemprop="blogPost">
     <!-- 文章正文 -->
     <div class="article-inner">
     
@@ -437,7 +431,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/article/dc818308.html">Java替换文件名字符串中的特殊字符，避免创建文件失败</a>
+      <a class="article-title" href="/article/91e4f23f.html">hexo+yilia添加RSS订阅功能</a>
     </h1>
   
 
@@ -446,8 +440,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 <!--引入不蒜子并添加文章访问量(结束) -->
 
-<a href="/article/dc818308.html" class="archive-article-date">
-  	<time datetime="2019-08-12T04:35:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-12</time>
+<a href="/article/91e4f23f.html" class="archive-article-date">
+  	<time datetime="2019-11-10T09:05:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-10</time>
 </a>
         
 
@@ -461,7 +455,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
        <i class="icon-statistics"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">495字</span>
+        <span class="post-count">190字</span>
       </span>
     </span>
 
@@ -486,9 +480,11 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     <!-- 文章主要内容（入口、条目） -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在java中，创建一个文件其实很简单，但是你知道文件名中能含有哪些字符吗？如果不了解，也许你该看看这篇文章。文章主要内容：1.文件名中不能有哪些字符？2.创建文件时，如何进行判断？3.如何替换文件名’字符串中的特殊字符？</p>
+        <p>使用<strong>hexo-generator-feed</strong>插件生成RSS文件<code>atom.xml</code>，实现RSS订阅功能。<br>
+插件github网址：<a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="noopener">https://github.com/hexojs/hexo-generator-feed</a>。<br>
+使用详见：<a href="https://www.jianshu.com/p/2aaac7a19736" target="_blank" rel="noopener">https://www.jianshu.com/p/2aaac7a19736</a>，<a href="https://wxnacy.com/2018/12/12/hexo-add-rss/" target="_blank" rel="noopener">https://wxnacy.com/2018/12/12/hexo-add-rss/</a>。</p>
         
-          <a class="article-more-a" href="/article/dc818308.html#more">more >></a>
+          <a class="article-more-a" href="/article/91e4f23f.html#more">more >></a>
         
       
 
@@ -518,11 +514,19 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">工具/资源</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Java基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hexo插件</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">RSS</a>
         		</li>
       		
 		</ul>
@@ -532,7 +536,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
       
         <p class="article-more-link">
-          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/dc818308.html">展开全文 >></a>
+          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/91e4f23f.html">展开全文 >></a>
         </p>
       
 
@@ -563,7 +567,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 
   
-    <article id="post-csdn/HTTP常见状态码汇总，如404,500等" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-hexo-yilia添加版权声明" class="article article-type-post  article-index" itemscope itemprop="blogPost">
     <!-- 文章正文 -->
     <div class="article-inner">
     
@@ -572,7 +576,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/article/df3ea309.html">HTTP常见状态码汇总，如404,500等</a>
+      <a class="article-title" href="/article/3d67529f.html">hexo+yilia添加版权声明</a>
     </h1>
   
 
@@ -581,8 +585,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 <!--引入不蒜子并添加文章访问量(结束) -->
 
-<a href="/article/df3ea309.html" class="archive-article-date">
-  	<time datetime="2019-08-11T18:24:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-12</time>
+<a href="/article/3d67529f.html" class="archive-article-date">
+  	<time datetime="2019-11-10T09:04:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-10</time>
 </a>
         
 
@@ -596,7 +600,287 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
        <i class="icon-statistics"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">1.5k字</span>
+        <span class="post-count">1.3k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+         
+        <i class="icon-book icon"></i>
+        <span class="post-meta-item-text"> 阅读时长≈</span>
+        <span class="post-count">6分</span>
+      </span>
+    </span>
+</div>
+
+
+         
+        <!-- 添加字数统计完成》 -->
+
+      </header>
+    
+
+    <!-- 文章主要内容（入口、条目） -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>添加版权声明，效果图：<br>
+<img src="http://bucket836.oss-cn-shenzhen.aliyuncs.com/image-1573110209160.png" alt="file"></p>
+        
+          <a class="article-more-a" href="/article/3d67529f.html#more">more >></a>
+        
+      
+
+        <!-- 《添加版权声明 -->
+        
+            <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+        
+        <!-- 添加版权声明》 -->
+
+      
+    </div>
+
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">版权声明</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/3d67529f.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+<!-- 评论系统 -->
+
+
+  
+    <article id="post-hexo-yilia添加背景音乐" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <!-- 文章正文 -->
+    <div class="article-inner">
+    
+      <!-- 文章头部 -->
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/article/5c52aefe.html">hexo+yilia添加背景音乐</a>
+    </h1>
+  
+
+        
+        <!--引入不蒜子并添加文章访问量(开始) -->
+
+<!--引入不蒜子并添加文章访问量(结束) -->
+
+<a href="/article/5c52aefe.html" class="archive-article-date">
+  	<time datetime="2019-11-10T09:04:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-10</time>
+</a>
+        
+
+        <!-- 《开始添加字数统计-->
+         
+          
+
+<div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        
+       <i class="icon-statistics"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">1.6k字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+         
+        <i class="icon-book icon"></i>
+        <span class="post-meta-item-text"> 阅读时长≈</span>
+        <span class="post-count">7分</span>
+      </span>
+    </span>
+</div>
+
+
+         
+        <!-- 添加字数统计完成》 -->
+
+      </header>
+    
+
+    <!-- 文章主要内容（入口、条目） -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>添加背景音乐（截图为APlayer播放器）<br>
+<img src="http://bucket836.oss-cn-shenzhen.aliyuncs.com/image-1573392916217.png" alt="file"></p>
+        
+          <a class="article-more-a" href="/article/5c52aefe.html#more">more >></a>
+        
+      
+
+        <!-- 《添加版权声明 -->
+        
+            <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+        
+        <!-- 添加版权声明》 -->
+
+      
+    </div>
+
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">音乐</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/5c52aefe.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+<!-- 评论系统 -->
+
+
+  
+    <article id="post-hexo-yilia添加相册视屏功能" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <!-- 文章正文 -->
+    <div class="article-inner">
+    
+      <!-- 文章头部 -->
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/article/d0ba4c3d.html">hexo+yilia添加相册视频功能</a>
+    </h1>
+  
+
+        
+        <!--引入不蒜子并添加文章访问量(开始) -->
+
+<!--引入不蒜子并添加文章访问量(结束) -->
+
+<a href="/article/d0ba4c3d.html" class="archive-article-date">
+  	<time datetime="2019-11-10T09:04:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-10</time>
+</a>
+        
+
+        <!-- 《开始添加字数统计-->
+         
+          
+
+<div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        
+       <i class="icon-statistics"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">1.1k字</span>
       </span>
     </span>
 
@@ -621,10 +905,11 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     <!-- 文章主要内容（入口、条目） -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>我们在写Java Web程序时，可能会经常会与HTTP状态码(HTTP Status Code)打交道，比如：200表示成功响应请求，我们常用这个作为判断条件。最常见的报错状态码，莫过于404（页面不存在，或者路径错误），路径写错时就会报这个错误；403 (禁止，服务器拒绝请求)爬虫被禁IP就返回这个；500 (服务器内部错误) 服务器遇到错误，无法完成请求后台（servlet等）程序有问题就会返回这个状态码。</p>
-<p>下面是我转发的一篇介绍“比较常见的状态码的说明”（内容、排版等略有修改），留作备份，以备不时之需。</p>
+        <p>主要是添加相册和视频功能，参考<a href="http://lawlite.me/2017/04/13/Hexo-Github%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/" target="_blank" rel="noopener">Hexo-Github实现相册功能</a> ，csdn博客：<a href="https://blog.csdn.net/u013082989/article/details/70162293" target="_blank" rel="noopener">Hexo+Github实现相册功能</a>，我看到网上好多人都是按照这个模板来实现的。</p>
+<p>效果图：<br>
+<img src="https://s2.ax1x.com/2019/08/15/mV0P56.jpg" alt="mV0P56.jpg"></p>
         
-          <a class="article-more-a" href="/article/df3ea309.html#more">more >></a>
+          <a class="article-more-a" href="/article/d0ba4c3d.html#more">more >></a>
         
       
 
@@ -654,19 +939,19 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JavaWeb</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTTP</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">视频</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">状态码</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">相册</a>
         		</li>
       		
 		</ul>
@@ -676,7 +961,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
       
         <p class="article-more-link">
-          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/df3ea309.html">展开全文 >></a>
+          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/d0ba4c3d.html">展开全文 >></a>
         </p>
       
 
@@ -707,7 +992,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 
   
-    <article id="post-csdn/在文件名中千万不要使用这些字符！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-hexo-yilia添加百度统计和Google统计" class="article article-type-post  article-index" itemscope itemprop="blogPost">
     <!-- 文章正文 -->
     <div class="article-inner">
     
@@ -716,7 +1001,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/article/57c17be4.html">在文件名中千万不要使用这些字符！</a>
+      <a class="article-title" href="/article/eda67a25.html">hexo+yilia添加百度统计和Google统计</a>
     </h1>
   
 
@@ -725,8 +1010,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 <!--引入不蒜子并添加文章访问量(结束) -->
 
-<a href="/article/57c17be4.html" class="archive-article-date">
-  	<time datetime="2019-08-11T17:38:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-12</time>
+<a href="/article/eda67a25.html" class="archive-article-date">
+  	<time datetime="2019-11-10T09:04:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-10</time>
 </a>
         
 
@@ -740,7 +1025,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
        <i class="icon-statistics"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">673字</span>
+        <span class="post-count">909字</span>
       </span>
     </span>
 
@@ -750,7 +1035,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
          
         <i class="icon-book icon"></i>
         <span class="post-meta-item-text"> 阅读时长≈</span>
-        <span class="post-count">2分</span>
+        <span class="post-count">4分</span>
       </span>
     </span>
 </div>
@@ -765,9 +1050,16 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     <!-- 文章主要内容（入口、条目） -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>主流的操作系统都有文件的概述，文件存放数据的最根本单位。为了访问，每个文件都有唯一一个文件名用于标记文件。在程序设计，我们经常有创建文件的操作。在创建文件时，需要给新创建的文件起一个名子，这时候要特别小心，如果你的文件名没起好，以后一定会带来新的坑。</p>
+        <h3 id="简介">简介</h3>
+<p>百度统计和Google统计主要用于分析网站数据：流量、访客量等。<br>
+<img src="http://bucket836.oss-cn-shenzhen.aliyuncs.com/image-1573478431897.png" alt="file"></p>
+<p>需要注册账号，然后将代码（脚本）嵌入到网站中，然后在后台就会生成对应数据，然后进行分析。</p>
+<ul>
+<li>百度统计网址：<a href="https://tongji.baidu.com" target="_blank" rel="noopener">https://tongji.baidu.com</a></li>
+<li>Google统计网址：<a href="https://analytics.google.com/analytics/web/" target="_blank" rel="noopener">https://analytics.google.com/analytics/web/</a></li>
+</ul>
         
-          <a class="article-more-a" href="/article/57c17be4.html#more">more >></a>
+          <a class="article-more-a" href="/article/eda67a25.html#more">more >></a>
         
       
 
@@ -797,19 +1089,19 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">工具/资源</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Java基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">百度统计</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">文件名</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Google统计</a>
         		</li>
       		
 		</ul>
@@ -819,7 +1111,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
       
         <p class="article-more-link">
-          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/57c17be4.html">展开全文 >></a>
+          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/eda67a25.html">展开全文 >></a>
         </p>
       
 
@@ -850,7 +1142,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 
   
-    <article id="post-csdn/收集的几个自定义的404页面的模板" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-hexo-yilia进行SEO优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
     <!-- 文章正文 -->
     <div class="article-inner">
     
@@ -859,7 +1151,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/article/94e8a003.html">收集的几个自定义的404页面的模板</a>
+      <a class="article-title" href="/article/c1217b1d.html">hexo+yilia进行SEO优化</a>
     </h1>
   
 
@@ -868,8 +1160,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 <!--引入不蒜子并添加文章访问量(结束) -->
 
-<a href="/article/94e8a003.html" class="archive-article-date">
-  	<time datetime="2019-08-11T15:07:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-11</time>
+<a href="/article/c1217b1d.html" class="archive-article-date">
+  	<time datetime="2019-11-10T09:04:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-10</time>
 </a>
         
 
@@ -883,7 +1175,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
        <i class="icon-statistics"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">701字</span>
+        <span class="post-count">2k字</span>
       </span>
     </span>
 
@@ -893,7 +1185,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
          
         <i class="icon-book icon"></i>
         <span class="post-meta-item-text"> 阅读时长≈</span>
-        <span class="post-count">2分</span>
+        <span class="post-count">7分</span>
       </span>
     </span>
 </div>
@@ -908,11 +1200,14 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     <!-- 文章主要内容（入口、条目） -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>该项目收集了几个404的页面模板，可用于替换原生的404页面。已经整理好，上传到github了。可根据测试地址自行选择一个喜欢的模板，可直接使用，也可自行进行修改。</p>
-<h2 id="404pages-http-status-404-not-found">404pages : HTTP Status 404 – Not Found</h2>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMi5heDF4LmNvbS8yMDE5LzA3LzE3L1pMUVYwZy5qcGc" alt="404pages"></p>
+        <h2 id="介绍">介绍</h2>
+<h3 id="seo优化">SEO优化</h3>
+<p>推广是一个烦人的事情，特别是对于我们搞技术的来说，可能就不擅长推广，那么怎么才能让别人知道我们呢，我们就要想办法让别人通过搜索就可以搜索到你博客的内容，给我们带来自然流量，这就需要seo优化,让我们的站点变得对搜索引擎友好。</p>
+<blockquote>
+<p>SEO是由英文Search Engine Optimization缩写而来， 中文意译为“搜索引擎优化”。SEO是指通过站内优化比如网站结构调整、网站内容建设、网站代码优化等以及站外优化。</p>
+</blockquote>
         
-          <a class="article-more-a" href="/article/94e8a003.html#more">more >></a>
+          <a class="article-more-a" href="/article/c1217b1d.html#more">more >></a>
         
       
 
@@ -942,19 +1237,19 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hexo插件</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">404</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SEO</a>
         		</li>
       		
 		</ul>
@@ -964,7 +1259,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
       
         <p class="article-more-link">
-          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/94e8a003.html">展开全文 >></a>
+          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/c1217b1d.html">展开全文 >></a>
         </p>
       
 
@@ -995,7 +1290,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 
   
-    <article id="post-csdn/用Jsoup爬取CSDN博客的一些信息" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-hexo-yilia添加URL持久化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
     <!-- 文章正文 -->
     <div class="article-inner">
     
@@ -1004,7 +1299,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/article/386b471d.html">用Jsoup爬取CSDN博客的一些信息</a>
+      <a class="article-title" href="/article/faa5d14.html">hexo+yilia添加URL持久化</a>
     </h1>
   
 
@@ -1013,8 +1308,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 <!--引入不蒜子并添加文章访问量(结束) -->
 
-<a href="/article/386b471d.html" class="archive-article-date">
-  	<time datetime="2019-08-11T14:37:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-11</time>
+<a href="/article/faa5d14.html" class="archive-article-date">
+  	<time datetime="2019-11-10T09:04:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-10</time>
 </a>
         
 
@@ -1028,7 +1323,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
        <i class="icon-statistics"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">2.9k字</span>
+        <span class="post-count">838字</span>
       </span>
     </span>
 
@@ -1038,7 +1333,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
          
         <i class="icon-book icon"></i>
         <span class="post-meta-item-text"> 阅读时长≈</span>
-        <span class="post-count">13分</span>
+        <span class="post-count">3分</span>
       </span>
     </span>
 </div>
@@ -1053,9 +1348,13 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     <!-- 文章主要内容（入口、条目） -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>逛CSDN时，总会发现有些博客因为年代比较久远，而造成博客图片的丢失，阅读博客的体验极差；于是我突然想将csdn博客中的图片下载下来，然后进行备份：保存到本地、上传百度云、上传图床等，然后这个项目就诞生了。</p>
+        <h2 id="url持久化">URL持久化</h2>
+<p>参考：<a href="http://www.apkbus.com/blog-889706-76401.html" target="_blank" rel="noopener">你的Hexo博客SEO优化了吗？</a></p>
+<p>我们可以发现hexo默认生成的文章地址路径是 【网站名称／年／月／日／文章名称】。比如这篇博客原来的测试页面链接：<a href="http://localhost:4000/2019/11/10/hexo+yilia%E6%B7%BB%E5%8A%A0URL%E6%8C%81%E4%B9%85%E5%8C%96" target="_blank" rel="noopener">http://localhost:4000/2019/11/10/hexo+yilia添加URL持久化</a><br>
+这种链接对搜索爬虫是很不友好的，第一它的url结构超过了三层，太深了。第二使用了中文路径。这样会导致一个问题，在某些聊天工具或分享链接的时候会造成url转码变成很长一串难以读写的链接。而且如果你的页面之前被收录或被转载后，当你再次编辑过后可能会造成之前的url失效带来不必要的404, 比如下面这样：<br>
+<a href="http://localhost:4000/article/faa5d14.html" target="_blank" rel="noopener">http://localhost:4000/article/faa5d14</a> 。别担心，我们有好办法来解决它。</p>
         
-          <a class="article-more-a" href="/article/386b471d.html#more">more >></a>
+          <a class="article-more-a" href="/article/faa5d14.html#more">more >></a>
         
       
 
@@ -1085,19 +1384,15 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Java爬虫</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Jsoup</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">CSDN</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hexo插件</a>
         		</li>
       		
 		</ul>
@@ -1107,7 +1402,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
       
         <p class="article-more-link">
-          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/386b471d.html">展开全文 >></a>
+          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/faa5d14.html">展开全文 >></a>
         </p>
       
 
@@ -1138,7 +1433,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 
   
-    <article id="post-csdn/Java的try-with-resource使用时遇到的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-建站日志" class="article article-type-post  article-index" itemscope itemprop="blogPost">
     <!-- 文章正文 -->
     <div class="article-inner">
     
@@ -1147,7 +1442,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/article/20283a1c.html">Java的try-with-resource使用时遇到的问题</a>
+      <a class="article-title" href="/article/e62c38c4.html">建站日志</a>
     </h1>
   
 
@@ -1156,8 +1451,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 <!--引入不蒜子并添加文章访问量(结束) -->
 
-<a href="/article/20283a1c.html" class="archive-article-date">
-  	<time datetime="2019-08-10T19:22:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-11</time>
+<a href="/article/e62c38c4.html" class="archive-article-date">
+  	<time datetime="2019-11-09T16:15:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-10</time>
 </a>
         
 
@@ -1171,7 +1466,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
        <i class="icon-statistics"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">342字</span>
+        <span class="post-count">1.6k字</span>
       </span>
     </span>
 
@@ -1181,7 +1476,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
          
         <i class="icon-book icon"></i>
         <span class="post-meta-item-text"> 阅读时长≈</span>
-        <span class="post-count">1分</span>
+        <span class="post-count">6分</span>
       </span>
     </span>
 </div>
@@ -1196,140 +1491,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     <!-- 文章主要内容（入口、条目） -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>java 1.7之后，增加了 try-wit-resource的语法糖，大概的用法就是在try中声明一个或者多个的流，会在try块代码执行完成后自动关闭流，不用再写finally进行手都关闭。但是你知道，里面声明的资源其实是被final修饰的！</p>
+        <p>记录hexo+yilia博客建立过程</p>
+<p><img src="https://oss.yansheng.xyz/img/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A1%B5%E6%88%AA%E5%9B%BE-20191112160122.jpg" alt="博客截图"></p>
         
-          <a class="article-more-a" href="/article/20283a1c.html#more">more >></a>
-        
-      
-
-        <!-- 《添加版权声明 -->
-        
-            <!-- 《添加版权声明 -->
-<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
-
-
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <div class="declare" hidden="hidden"></div>
-
-<!-- 添加版权声明》 -->
-
-        
-        <!-- 添加版权声明》 -->
-
-      
-    </div>
-
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Java基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/20283a1c.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-<!-- 评论系统 -->
-
-
-  
-    <article id="post-csdn/Jsoup选择有空格的class" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <!-- 文章正文 -->
-    <div class="article-inner">
-    
-      <!-- 文章头部 -->
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/fc63adb1.html">Jsoup选择有空格的class</a>
-    </h1>
-  
-
-        
-        <!--引入不蒜子并添加文章访问量(开始) -->
-
-<!--引入不蒜子并添加文章访问量(结束) -->
-
-<a href="/article/fc63adb1.html" class="archive-article-date">
-  	<time datetime="2019-08-10T13:58:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-10</time>
-</a>
-        
-
-        <!-- 《开始添加字数统计-->
-         
-          
-
-<div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        
-       <i class="icon-statistics"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">196字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-         
-        <i class="icon-book icon"></i>
-        <span class="post-meta-item-text"> 阅读时长≈</span>
-        <span class="post-count">1分</span>
-      </span>
-    </span>
-</div>
-
-
-         
-        <!-- 添加字数统计完成》 -->
-
-      </header>
-    
-
-    <!-- 文章主要内容（入口、条目） -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>遇到有多个空格的的class，其实我们可以把空格前后的各当成一个class，也就是多个class的情况进行处理。</p>
-        
-          <a class="article-more-a" href="/article/fc63adb1.html#more">more >></a>
+          <a class="article-more-a" href="/article/e62c38c4.html#more">more >></a>
         
       
 
@@ -1359,11 +1524,11 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Java爬虫</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Jsoup</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
         		</li>
       		
 		</ul>
@@ -1373,7 +1538,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
       
         <p class="article-more-link">
-          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/fc63adb1.html">展开全文 >></a>
+          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/e62c38c4.html">展开全文 >></a>
         </p>
       
 
@@ -1404,7 +1569,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 
   
-    <article id="post-csdn/解决MyEclipse中Mybatis的xml配置文件无代码提示问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-hexo-yilia的标签和分类的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
     <!-- 文章正文 -->
     <div class="article-inner">
     
@@ -1413,7 +1578,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/article/cf320820.html">解决MyEclipse中Mybatis的xml配置文件无代码提示问题</a>
+      <a class="article-title" href="/article/5026011a.html">hexo+yilia的标签和分类的区别</a>
     </h1>
   
 
@@ -1422,8 +1587,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 <!--引入不蒜子并添加文章访问量(结束) -->
 
-<a href="/article/cf320820.html" class="archive-article-date">
-  	<time datetime="2019-08-10T08:05:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-10</time>
+<a href="/article/5026011a.html" class="archive-article-date">
+  	<time datetime="2019-11-08T12:41:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
 </a>
         
 
@@ -1437,7 +1602,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
        <i class="icon-statistics"></i>
         <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">433字</span>
+        <span class="post-count">274字</span>
       </span>
     </span>
 
@@ -1462,9 +1627,9 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     <!-- 文章主要内容（入口、条目） -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>对于初学者而言，编写Mybatis的xml配置文件还是有点困难的，但是如果有代码提示功能就会方便很多。这篇文章就是教你如何设置代码提示的功能的。</p>
+        <p>测试标签和分类的区别</p>
         
-          <a class="article-more-a" href="/article/cf320820.html#more">more >></a>
+          <a class="article-more-a" href="/article/5026011a.html#more">more >></a>
         
       
 
@@ -1494,21 +1659,40 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">(My)Eclipse</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">MyBatis</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/categorie1/" class="article-tag-list-link color1">categorie1</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/categorie1/categorie11/" class="article-tag-list-link color2">categorie11</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/categorie21/" class="article-tag-list-link color2">categorie21</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/cf320820.html">展开全文 >></a>
+          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/5026011a.html">展开全文 >></a>
         </p>
       
 
@@ -1539,7 +1723,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 
   
-    <article id="post-csdn/如何使用Git克隆GitHub仓库的所有分支" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-hexo-yilia集成utteranc评论系统" class="article article-type-post  article-index" itemscope itemprop="blogPost">
     <!-- 文章正文 -->
     <div class="article-inner">
     
@@ -1548,7 +1732,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/article/c656bdef.html">如何使用Git克隆GitHub仓库的所有分支</a>
+      <a class="article-title" href="/article/c5f6d65b.html">hexo+yilia集成utteranc评论系统</a>
     </h1>
   
 
@@ -1557,8 +1741,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 <!--引入不蒜子并添加文章访问量(结束) -->
 
-<a href="/article/c656bdef.html" class="archive-article-date">
-  	<time datetime="2019-08-09T15:06:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-09</time>
+<a href="/article/c5f6d65b.html" class="archive-article-date">
+  	<time datetime="2019-11-05T08:46:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-05</time>
 </a>
         
 
@@ -1597,146 +1781,11 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     <!-- 文章主要内容（入口、条目） -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>git clone默认只克隆github上面设置的默认分支，（如果没有修改，默认就是master分支），那如果需要把所有分支都克隆下来该怎么办呢？这里介绍两种方法实现该功能。</p>
+        <h2 id="hexo-yilia集成utteranc评论系统">hexo+yilia集成utteranc评论系统</h2>
+<p>utteranc评论系统是基于GitHub issues的，类似Gitment/Git talk。</p>
+<p><img src="http://bucket836.oss-cn-shenzhen.aliyuncs.com/image-1572960972843.png" alt="file"></p>
         
-          <a class="article-more-a" href="/article/c656bdef.html#more">more >></a>
-        
-      
-
-        <!-- 《添加版权声明 -->
-        
-            <!-- 《添加版权声明 -->
-<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
-
-
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <div class="declare" hidden="hidden"></div>
-
-<!-- 添加版权声明》 -->
-
-        
-        <!-- 添加版权声明》 -->
-
-      
-    </div>
-
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/c656bdef.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-<!-- 评论系统 -->
-
-
-  
-    <article id="post-文件对比软件-Beyond-Compare-4-破解方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <!-- 文章正文 -->
-    <div class="article-inner">
-    
-      <!-- 文章头部 -->
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/660ecf00.html">文件对比软件Beyond Compare 4破解方法</a>
-    </h1>
-  
-
-        
-        <!--引入不蒜子并添加文章访问量(开始) -->
-
-<!--引入不蒜子并添加文章访问量(结束) -->
-
-<a href="/article/660ecf00.html" class="archive-article-date">
-  	<time datetime="2019-07-30T13:55:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-30</time>
-</a>
-        
-
-        <!-- 《开始添加字数统计-->
-         
-          
-
-<div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        
-       <i class="icon-statistics"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">844字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-         
-        <i class="icon-book icon"></i>
-        <span class="post-meta-item-text"> 阅读时长≈</span>
-        <span class="post-count">3分</span>
-      </span>
-    </span>
-</div>
-
-
-         
-        <!-- 添加字数统计完成》 -->
-
-      </header>
-    
-
-    <!-- 文章主要内容（入口、条目） -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Beyond Compare允许您快速轻松地比较文件和文件夹。通过使用简单，强大的命令，您可以专注于您感兴趣的差异，并忽略那些您不感兴趣的差异。然后，您可以合并更改，同步文件并生成记录报告。<br>
-很强大的一个文本比较工具（、文件夹……好像啥都行），用过就会爱不释手。<br>
-<img src="http://bucket836.oss-cn-shenzhen.aliyuncs.com/image-1573545469353.png" alt="file"></p>
-        
-          <a class="article-more-a" href="/article/660ecf00.html#more">more >></a>
+          <a class="article-more-a" href="/article/c5f6d65b.html#more">more >></a>
         
       
 
@@ -1766,15 +1815,19 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">工具软件</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">软件破解</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Beyond Compare 4</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">评论系统</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">utteranc</a>
         		</li>
       		
 		</ul>
@@ -1784,7 +1837,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
       
         <p class="article-more-link">
-          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/660ecf00.html">展开全文 >></a>
+          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/c5f6d65b.html">展开全文 >></a>
         </p>
       
 
@@ -1817,7 +1870,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/12/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/14/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/12/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/14/">Next &raquo;</a>
     </nav>
   
 
@@ -1991,6 +2044,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
@@ -2019,11 +2080,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2047,6 +2104,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">DPlayer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">视频</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">RSS</a>
               </li>
              
@@ -2067,6 +2132,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">复制功能</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">robots</a>
               </li>
              
@@ -2083,23 +2152,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">相册</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">视频</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ICP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color3">相册</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">背景图片</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">背景特效</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2108,6 +2181,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">GitHub Pages</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">hexo主题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2147,31 +2224,55 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">记忆</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DPlayer</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">复制功能</a>
+                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">背景图片</a>
+                <a href="javascript:void(0)" class="js-tag color1">工具/资源</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
+                <a href="javascript:void(0)" class="js-tag color5">Notepad++</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hexo主题</a>
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Python基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SQL Server</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2179,7 +2280,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">工具/资源</a>
+                <a href="javascript:void(0)" class="js-tag color3">Java爬虫：Jsoup</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">阿里云</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2191,11 +2300,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+                <a href="javascript:void(0)" class="js-tag color3">JavaWeb</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2211,19 +2316,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SQL Server</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">阿里云</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2232,10 +2329,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2259,14 +2352,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JavaWeb</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
@@ -2275,7 +2360,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+                <a href="javascript:void(0)" class="js-tag color5">List</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Swing</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2284,10 +2373,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">压缩</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">List</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2307,6 +2392,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">豆瓣电影</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hadoop</a>
               </li>
              
@@ -2316,10 +2409,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2335,19 +2424,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Python基础</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">PyCharm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Notepad++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2359,10 +2436,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">pip</a>
               </li>
              
@@ -2371,11 +2444,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Travis-CI</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">CI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">lambda表达式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2403,6 +2484,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">CSDN资源</a>
               </li>
              
@@ -2419,27 +2508,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">EditPlus</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">文件名</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SSL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2455,11 +2528,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Python工具</a>
+                <a href="javascript:void(0)" class="js-tag color4">SSL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSDN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Python工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Enhanced GitHub</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2491,27 +2576,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swing</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">lambda表达式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Enhanced GitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">(My)Eclipse插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">豆瓣电影</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">背景特效</a>
               </li>
             
             <div class="clearfix"></div>
