@@ -99,8 +99,8 @@
 		  
 		  // 修改blog12为myblog12，修改photos为raw_photos
 
-		  var minSrc = 'http://myblog12.qiniu.yansheng.xyz/min_photos/'+data.link[i];
-		  var src = 'http://myblog12.qiniu.yansheng.xyz/photos/' + data.link[i];
+		  var minSrc = 'http://oss.yansheng.xyz/min_photos/'+data.link[i];
+		  var src = 'http://oss.yansheng.xyz/photos/' + data.link[i];
           var type = data.type[i];
           var target = src + (type === 'video' ? '.mp4' : '.jpg');
           src += '';
