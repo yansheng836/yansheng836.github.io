@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="content-language" content="zh-CN">
-  <link rel="dns-prefetch" href="https://yansheng836.github.io">
+  <link rel="dns-prefetch" href="https://www.yansheng.fun">
   <title>hexo+yilia添加URL持久化 | 荷塘月色的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="URL持久化 参考：你的Hexo博客SEO优化了吗？ 我们可以发现hexo默认生成的文章地址路径是 【网站名称／年／月／日／文章名称】。比如这篇博客原来的测试页面链接：http://localhost:4000/2019/11/10/hexo+yilia添加URL持久化 这种链接对搜索爬虫是很不友好的，第一它的url结构超过了三层，太深了。第二使用了中文路径。这样会导致一个问题，在某些聊天工具或分">
 <meta name="keywords" content="hexo,yilia,URL持久化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo+yilia添加URL持久化">
-<meta property="og:url" content="https://yansheng836.github.io/article/faa5d14.html">
+<meta property="og:url" content="https://www.yansheng.fun/article/faa5d14.html">
 <meta property="og:site_name" content="荷塘月色的博客">
 <meta property="og:description" content="URL持久化 参考：你的Hexo博客SEO优化了吗？ 我们可以发现hexo默认生成的文章地址路径是 【网站名称／年／月／日／文章名称】。比如这篇博客原来的测试页面链接：http://localhost:4000/2019/11/10/hexo+yilia添加URL持久化 这种链接对搜索爬虫是很不友好的，第一它的url结构超过了三层，太深了。第二使用了中文路径。这样会导致一个问题，在某些聊天工具或分">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://bucket836.oss-cn-shenzhen.aliyuncs.com/image-1573058824364.png">
-<meta property="og:image" content="https://oss.yansheng.xyz/picgo/20200410213114.png">
+<meta property="og:image" content="https://oss.yansheng.fun/picgo/20200410213114.png">
 <meta property="og:updated_time" content="2020-04-10T13:24:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+yilia添加URL持久化">
@@ -182,7 +182,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/" class="profilepic">
-            <img src="https://oss.yansheng.xyz/head.jpg" class="js-avatar">
+            <img src="https://oss.yansheng.fun/head.jpg" class="js-avatar">
         </a>
         <hgroup>
           <div class="header-author"><a href="/">荷塘月色</a></div>
@@ -208,7 +208,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
         </nav>
 
         <div class="blog-counter">
-            <span>总文章数 301</span>
+            <span>总文章数 302</span>
         </div>
 
         <!-- 智能菜单 -->
@@ -279,7 +279,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://oss.yansheng.xyz/head.jpg" class="js-avatar">
+				<img src="https://oss.yansheng.fun/head.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <div class="header-author js-header-author">荷塘月色</div>
@@ -490,7 +490,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <p>上面我们已经实现将文章的URL简短化和英文化了，但是如果我们的标签和分类有中文，这个插件是控制不了的，</p>
 <p>比如有个<strong>生活</strong>的标签，该标签下的所有文章汇总如下：<a href="http://localhost:4000/tags/%E7%94%9F%E6%B4%BB/" target="_blank" rel="noopener">http://localhost:4000/tags/生活/</a>，还是会出现中文，其实这个问题hexo官方自带解决方法，详见：<a href="https://hexo.io/zh-cn/docs/configuration.html#%E5%88%86%E7%B1%BB-amp-%E6%A0%87%E7%AD%BE" target="_blank" rel="noopener">hexo-configuration：分类-amp-标签</a></p>
 <p>截个图：<br>
-<img src="https://oss.yansheng.xyz/picgo/20200410213114.png" alt></p>
+<img src="https://oss.yansheng.fun/picgo/20200410213114.png" alt></p>
 <p>站点的配置文件<code>H:\Hexo\_config.yml</code>有<code>category_map</code>和<code>tag_map</code>配置，即分类和标签的别名（映射），举个例子：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Category &amp; Tag</span></span><br><span class="line"><span class="attr">default_category:</span> <span class="string">uncategorized</span></span><br><span class="line"><span class="attr">category_map:</span></span><br><span class="line">    <span class="string">编程:</span> <span class="string">programming</span></span><br><span class="line"><span class="attr">tag_map:</span></span><br><span class="line">    <span class="string">生活:</span> <span class="string">life</span></span><br></pre></td></tr></table></figure>
 <p>这样标签<code>生活</code>的访问网址为：<a href="http://localhost:4000/tags/life/" target="_blank" rel="noopener">http://localhost:4000/tags/life/</a>，分类同理。</p>
@@ -521,10 +521,10 @@ var elm2 = document.getElementsByClassName('eOZYiU');
     2020-04-10
     <br>
     <strong class="article-titles">本文标题：</strong>
-    <a href="https://yansheng836.github.io/article/faa5d14.html" title="hexo+yilia添加URL持久化" target="_blank">hexo+yilia添加URL持久化</a>
+    <a href="https://www.yansheng.fun/article/faa5d14.html" title="hexo+yilia添加URL持久化" target="_blank">hexo+yilia添加URL持久化</a>
     <br>
     <strong class="article-url">本文链接：</strong>
-    <a href="https://yansheng836.github.io/article/faa5d14.html" title="hexo+yilia添加URL持久化" target="_blank">https://yansheng836.github.io/article/faa5d14.html</a>
+    <a href="https://www.yansheng.fun/article/faa5d14.html" title="hexo+yilia添加URL持久化" target="_blank">https://www.yansheng.fun/article/faa5d14.html</a>
     <br>
     <strong class="copyright">版权声明：</strong>
     本作品采用
@@ -532,7 +532,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
     许可协议进行许可。转载请注明出处！
     
       <br>
-      <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://oss.yansheng.xyz/picgo/by-nc-sa-4.0-88x31.png"/></a>
+      <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://oss.yansheng.fun/picgo/by-nc-sa-4.0-88x31.png"/></a>
     
   </div>
 
@@ -647,7 +647,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://qr.liantu.com/api.php?text=https://yansheng836.github.io/article/faa5d14.html" alt="微信分享二维码">
+      <img src="http://qr.liantu.com/api.php?text=https://www.yansheng.fun/article/faa5d14.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -802,7 +802,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 
 
     <div class="BeiAn-info">
-        <img src="https://oss.yansheng.xyz/picgo/guowei.png" title="备案管理系统" alt="备案管理系统图标">
+        <img src="https://oss.yansheng.fun/picgo/guowei.png" title="备案管理系统" alt="备案管理系统图标">
         <a href="http://beian.miit.gov.cn/" style="color:#f72b07" target="_blank" title="备案号">粤ICP备19131798号</a>
     </div>
 
@@ -945,19 +945,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">新冠肺炎</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">新冠肺炎</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -969,11 +965,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">IT</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStrom</a>
+                <a href="javascript:void(0)" class="js-tag color3">IT</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -985,7 +981,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">测试</a>
+                <a href="javascript:void(0)" class="js-tag color4">WebStrom</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -997,7 +997,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color3">测试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1041,7 +1041,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">robots</a>
+                <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1053,15 +1053,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">相册</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ICP</a>
+                <a href="javascript:void(0)" class="js-tag color2">robots</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1069,11 +1061,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ICP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">相册</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">背景特效</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1101,6 +1101,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">毕业季</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
               </li>
              
@@ -1110,10 +1114,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Beyond Compare 4</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">毕业季</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1129,15 +1129,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记忆</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+                <a href="javascript:void(0)" class="js-tag color3">记忆</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1149,15 +1145,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Notepad++</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color5">Notepad++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1185,15 +1185,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Java爬虫：Jsoup</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JavaWeb</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Java爬虫：Jsoup</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1217,15 +1217,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Code:blocks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1273,15 +1273,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Swing</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">List</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">序列化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swing</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1337,10 +1337,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Python爬虫</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">pip</a>
               </li>
              
@@ -1350,6 +1346,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Python爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1449,11 +1449,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
+                <a href="javascript:void(0)" class="js-tag color1">Enhanced GitHub</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Enhanced GitHub</a>
+                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
               </li>
              
               <li class="article-tag-list-item">

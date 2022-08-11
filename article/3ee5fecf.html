@@ -6,27 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="content-language" content="zh-CN">
-  <link rel="dns-prefetch" href="https://yansheng836.github.io">
+  <link rel="dns-prefetch" href="https://www.yansheng.fun">
   <title>MapReduce流程简单解析 | 荷塘月色的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="目录：1、MapReduce简介。2、MapReduce主要步骤叙述。3、MapReduce的输入输出。4、MapReduce的具体处理流程。">
 <meta name="keywords" content="Hadoop,MapReduce">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MapReduce流程简单解析">
-<meta property="og:url" content="https://yansheng836.github.io/article/3ee5fecf.html">
+<meta property="og:url" content="https://www.yansheng.fun/article/3ee5fecf.html">
 <meta property="og:site_name" content="荷塘月色的博客">
 <meta property="og:description" content="目录：1、MapReduce简介。2、MapReduce主要步骤叙述。3、MapReduce的输入输出。4、MapReduce的具体处理流程。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://oss.yansheng.xyz/picgo/20160613082954954.jpg">
-<meta property="og:image" content="https://oss.yansheng.xyz/picgo/20160522185731734.jpg">
-<meta property="og:image" content="https://oss.yansheng.xyz/picgo/20160522185734375.jpg">
-<meta property="og:image" content="https://oss.yansheng.xyz/picgo/20160522185738243.jpg">
-<meta property="og:image" content="https://oss.yansheng.xyz/picgo/20160522185741165.jpg">
+<meta property="og:image" content="https://oss.yansheng.fun/picgo/20160613082954954.jpg">
+<meta property="og:image" content="https://oss.yansheng.fun/picgo/20160522185731734.jpg">
+<meta property="og:image" content="https://oss.yansheng.fun/picgo/20160522185734375.jpg">
+<meta property="og:image" content="https://oss.yansheng.fun/picgo/20160522185738243.jpg">
+<meta property="og:image" content="https://oss.yansheng.fun/picgo/20160522185741165.jpg">
 <meta property="og:updated_time" content="2019-09-30T15:37:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MapReduce流程简单解析">
 <meta name="twitter:description" content="目录：1、MapReduce简介。2、MapReduce主要步骤叙述。3、MapReduce的输入输出。4、MapReduce的具体处理流程。">
-<meta name="twitter:image" content="https://oss.yansheng.xyz/picgo/20160613082954954.jpg">
+<meta name="twitter:image" content="https://oss.yansheng.fun/picgo/20160613082954954.jpg">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -185,7 +185,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/" class="profilepic">
-            <img src="https://oss.yansheng.xyz/head.jpg" class="js-avatar">
+            <img src="https://oss.yansheng.fun/head.jpg" class="js-avatar">
         </a>
         <hgroup>
           <div class="header-author"><a href="/">荷塘月色</a></div>
@@ -211,7 +211,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
         </nav>
 
         <div class="blog-counter">
-            <span>总文章数 301</span>
+            <span>总文章数 302</span>
         </div>
 
         <!-- 智能菜单 -->
@@ -282,7 +282,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://oss.yansheng.xyz/head.jpg" class="js-avatar">
+				<img src="https://oss.yansheng.fun/head.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <div class="header-author js-header-author">荷塘月色</div>
@@ -469,7 +469,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <a id="more"></a>
 <h2 id="1-mapreduce简介">1、MapReduce简介</h2>
 <p>源自于google的MapReduce论文，发表于2004年12月，HadoopMapReduce是google MapReduce 克隆版。MapReduce是一种计算模型，用以进行大数据量的计算。其中Map对数据集上的独立元素进行指定的操作，生成键-值对形式中间结果。Reduce则对中间结果中相同“键”的所有“值”进行规约，以得到最终结果。MapReduce这样的功能划分，非常适合在大量计算机组成的分布式并行环境里进行数据处理。</p>
-<p><img src="https://oss.yansheng.xyz/picgo/20160613082954954.jpg" alt="MapReduce工作流程图"></p>
+<p><img src="https://oss.yansheng.fun/picgo/20160613082954954.jpg" alt="MapReduce工作流程图"></p>
 <p>MapReduce工作流程图</p>
 <h2 id="2-mapreduce主要步骤叙述">2、MapReduce主要步骤叙述</h2>
 <h3 id="map阶段：">Map阶段：</h3>
@@ -485,15 +485,15 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <h2 id="3-mapreduce的输入输出">3、MapReduce的输入输出</h2>
 <p>从第2点MapReduce的处理流程步骤可以看出，MapReduce框架运转在&lt;key,value&gt;键值对上。也就是说作业的输入输出都是&lt;keey,value&gt;键值对，中间的各种处理也都是对键值对进行处理。</p>
 <p>一个MapReduce作业的输入和输出类型如下图所示：可以看出在整个流程中，会有三种不同的&lt;key,value&gt;键值对类型的存在。</p>
-<p><img src="https://oss.yansheng.xyz/picgo/20160522185731734.jpg" alt></p>
+<p><img src="https://oss.yansheng.fun/picgo/20160522185731734.jpg" alt></p>
 <h2 id="4-mapreduce的具体处理流程">4、MapReduce的具体处理流程</h2>
 <p>以最经典的WordCount单词计数为例来介绍Map/Reduce阶段具体的处理步骤。</p>
 <p>WordCount：统计所有文件中每个单词出现的次数，效果如下图</p>
-<p><img src="https://oss.yansheng.xyz/picgo/20160522185734375.jpg" alt></p>
+<p><img src="https://oss.yansheng.fun/picgo/20160522185734375.jpg" alt></p>
 <p>(1)    Map任务处理：本次处理中有两个Map任务，以其中一个为例</p>
-<p><img src="https://oss.yansheng.xyz/picgo/20160522185738243.jpg" alt></p>
+<p><img src="https://oss.yansheng.fun/picgo/20160522185738243.jpg" alt></p>
 <p>(2)   Reduce任务处理</p>
-<p><img src="https://oss.yansheng.xyz/picgo/20160522185741165.jpg" alt></p>
+<p><img src="https://oss.yansheng.fun/picgo/20160522185741165.jpg" alt></p>
 <hr>
 <p>转自：<a href="https://blog.csdn.net/yuzhuzhong/article/details/51476353" target="_blank" rel="noopener">https://blog.csdn.net/yuzhuzhong/article/details/51476353</a></p>
 
@@ -616,7 +616,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://qr.liantu.com/api.php?text=https://yansheng836.github.io/article/3ee5fecf.html" alt="微信分享二维码">
+      <img src="http://qr.liantu.com/api.php?text=https://www.yansheng.fun/article/3ee5fecf.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -771,7 +771,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 
 
     <div class="BeiAn-info">
-        <img src="https://oss.yansheng.xyz/picgo/guowei.png" title="备案管理系统" alt="备案管理系统图标">
+        <img src="https://oss.yansheng.fun/picgo/guowei.png" title="备案管理系统" alt="备案管理系统图标">
         <a href="http://beian.miit.gov.cn/" style="color:#f72b07" target="_blank" title="备案号">粤ICP备19131798号</a>
     </div>
 
@@ -914,19 +914,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">新冠肺炎</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">新冠肺炎</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -938,11 +934,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">IT</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStrom</a>
+                <a href="javascript:void(0)" class="js-tag color3">IT</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -954,7 +950,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">测试</a>
+                <a href="javascript:void(0)" class="js-tag color4">WebStrom</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -966,7 +966,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color3">测试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1010,7 +1010,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">robots</a>
+                <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1022,15 +1022,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">相册</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ICP</a>
+                <a href="javascript:void(0)" class="js-tag color2">robots</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1038,11 +1030,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ICP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">相册</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">背景特效</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1070,6 +1070,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">毕业季</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
               </li>
              
@@ -1079,10 +1083,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Beyond Compare 4</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">毕业季</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1098,15 +1098,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记忆</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+                <a href="javascript:void(0)" class="js-tag color3">记忆</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1118,15 +1114,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Notepad++</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color5">Notepad++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1154,15 +1154,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Java爬虫：Jsoup</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JavaWeb</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Java爬虫：Jsoup</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1186,15 +1186,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Code:blocks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1242,15 +1242,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Swing</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">List</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">序列化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swing</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1306,10 +1306,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Python爬虫</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">pip</a>
               </li>
              
@@ -1319,6 +1315,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Python爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1418,11 +1418,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
+                <a href="javascript:void(0)" class="js-tag color1">Enhanced GitHub</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Enhanced GitHub</a>
+                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
               </li>
              
               <li class="article-tag-list-item">

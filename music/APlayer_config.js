@@ -150,7 +150,7 @@ const ap1 = new APlayer({
             name: '风起时',
             artist: '胡歌',
             lrc: 'https://cdn.jsdelivr.net/gh/yansheng836/blog-files/music/lrc/风起时 - 胡歌.lrc',
-            cover: 'https://oss.yansheng.xyz/%E9%A3%8E%E8%B5%B7%E6%97%B6-%E8%83%A1%E6%AD%8C.jpg',
+            cover: 'https://oss.yansheng.fun/%E9%A3%8E%E8%B5%B7%E6%97%B6-%E8%83%A1%E6%AD%8C.jpg',
             url: 'https://cdn.jsdelivr.net/gh/yansheng836/blog-files/music/mp3/%E9%A3%8E%E8%B5%B7%E6%97%B6%20-%20%E8%83%A1%E6%AD%8C.mp3'
                   },
         {
@@ -178,7 +178,7 @@ const ap1 = new APlayer({
             name: 'Rage your dream',
             artist: 'm.o.v.e',
             lrc: 'https://cdn.jsdelivr.net/gh/yansheng836/blog-files/music/lrc/Rage your dream - m.o.v.e.lrc',
-            cover: 'https://oss.yansheng.xyz/Rage%20your%20dream%20-%20m.o.v.e.jpg',
+            cover: 'https://oss.yansheng.fun/Rage%20your%20dream%20-%20m.o.v.e.jpg',
             url: 'https://cdn.jsdelivr.net/gh/yansheng836/blog-files/music/mp3/Rage%20your%20dream%20-%20m.o.v.e.mp3'
                   },
         {

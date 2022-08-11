@@ -6,14 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="content-language" content="zh-CN">
-  <link rel="dns-prefetch" href="https://yansheng836.github.io">
+  <link rel="dns-prefetch" href="https://www.yansheng.fun">
   <title>荷塘月色的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="生活不止漫无天日的代码和bug，还有诗和远方。">
 <meta name="keywords" content="荷塘月色,开发者,程序猿,Java,Spring,SpringMVC,MyBatis,MySQL数据库,开发工具,Git,GitHub,Hexo,yilia,Linux,Python,前端,资源">
 <meta property="og:type" content="website">
 <meta property="og:title" content="荷塘月色的博客">
-<meta property="og:url" content="https://yansheng836.github.io/page/9/index.html">
+<meta property="og:url" content="https://www.yansheng.fun/page/9/index.html">
 <meta property="og:site_name" content="荷塘月色的博客">
 <meta property="og:description" content="生活不止漫无天日的代码和bug，还有诗和远方。">
 <meta property="og:locale" content="zh-CN">
@@ -178,7 +178,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/" class="profilepic">
-            <img src="https://oss.yansheng.xyz/head.jpg" class="js-avatar">
+            <img src="https://oss.yansheng.fun/head.jpg" class="js-avatar">
         </a>
         <hgroup>
           <div class="header-author"><a href="/">荷塘月色</a></div>
@@ -204,7 +204,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
         </nav>
 
         <div class="blog-counter">
-            <span>总文章数 301</span>
+            <span>总文章数 302</span>
         </div>
 
         <!-- 智能菜单 -->
@@ -275,7 +275,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://oss.yansheng.xyz/head.jpg" class="js-avatar">
+				<img src="https://oss.yansheng.fun/head.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <div class="header-author js-header-author">荷塘月色</div>
@@ -396,6 +396,138 @@ var elm2 = document.getElementsByClassName('eOZYiU');
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-Consider-defining-a-bean-named-‘entityManagerFactory‘-in-your-configuration出现的解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <!-- 文章正文 -->
+    <div class="article-inner">
+    
+      <!-- 文章头部 -->
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/article/f0f8e61.html">Consider defining a bean named ‘entityManagerFactory‘ in your configuration出现的解决方法</a>
+    </h1>
+  
+
+        
+        <!--引入不蒜子并添加文章访问量(开始) -->
+
+<!--引入不蒜子并添加文章访问量(结束) -->
+
+<a href="/article/f0f8e61.html" class="archive-article-date">
+  	<time datetime="2020-08-01T14:53:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-01</time>
+</a>
+        
+
+        <!-- 《开始添加字数统计-->
+         
+          
+
+<div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        
+       <i class="icon-statistics"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">135字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+         
+        <i class="icon-book icon"></i>
+        <span class="post-meta-item-text"> 阅读时长≈</span>
+        <span class="post-count">1分</span>
+      </span>
+    </span>
+</div>
+
+
+         
+        <!-- 添加字数统计完成》 -->
+
+      </header>
+    
+
+    <!-- 文章主要内容（入口、条目） -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>开始学习spring boot的时候，出现了 <code>Consider defining a bean named ‘entityManagerFactory’ in your configuration</code> 这个问题，于是上网查了好多，发现网上大多说是版本的问题，在pom.xml中把版本去掉就行了，但问题我压根没写版本。。。<br>
+<img src="https://img-blog.csdnimg.cn/20200801225354315.png" alt="这里写图片描述"></p>
+<p>于是我又百度这有百度那的终于解决了这个问题，其实相当的简单，只要删除 <code>C:\Users\hanfuqingshi.m2\repository\org\hibernate\hibernate-core</code>目录，然后再updata project就行了！</p>
+<p>希望能帮助到跟我遇到同样问题的人！</p>
+
+      
+
+        <!-- 《添加版权声明 -->
+        
+            <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+        
+        <!-- 添加版权声明》 -->
+
+      
+    </div>
+
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/f0f8e61.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+<!-- 评论系统 -->
+
+
   
     <article id="post-redis启动出错Creating-Server-TCP-listening-socket-6379-bind-No-such-file-or-directory" class="article article-type-post  article-index" itemscope itemprop="blogPost">
     <!-- 文章正文 -->
@@ -589,7 +721,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="跃入人海-各有风雨灿烂">跃入人海，各有风雨灿烂</h2>
-<p><img src="https://oss.yansheng.xyz/picgo/20210227162039.png" alt></p>
+<p><img src="https://oss.yansheng.fun/picgo/20210227162039.png" alt></p>
 <p>每年毕业季，校园里总会弥漫着离别、伤感的气息，我们怀揣着对未来的憧憬，还带着迷茫，与未知的不安，将要重新出发到人生另一段旅途，跃入「人海」。</p>
 <p>当我们还沉浸在《后浪》中无法自拔的时候，B站和毛不易带着「 跃入人海，各有风雨灿烂 」的祝福，送给即将或已经毕业的人们，推出新歌《入海》。</p>
 <p>“毕业”是一个符号，象征着一个人独立面对着社会、人生和未来。每个人都会经历这一刻，这是我们共通的部分。B站联合毛不易发布《入海》，献给即将或已经毕业的人们，跃入人海，各有风雨灿烂。</p>
@@ -732,7 +864,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="后浪">后浪</h2>
-<p><img src="https://oss.yansheng.xyz/picgo/20210227160310.png" alt></p>
+<p><img src="https://oss.yansheng.fun/picgo/20210227160310.png" alt></p>
 <p>请查收，B站献给新一代的青年宣言片。</p>
 <p>国家一级演员何冰走上舞台，以青年宣言《后浪》为词，认可、赞美与寄语年轻一代。</p>
 <p>在UP主们的青春混剪中，属于年轻人的光芒正在闪耀。</p>
@@ -1018,9 +1150,9 @@ API说明详见：<a href="http://wzry.yansheng.xyz/swagger-ui.html" target="_bl
     <div class="article-entry" itemprop="articleBody">
       
         <p>从网站页面切换到另一个页面时：</p>
-<p><img src="https://oss.yansheng.xyz/picgo/20200604090653.png" alt></p>
+<p><img src="https://oss.yansheng.fun/picgo/20200604090653.png" alt></p>
 <p>返回网站页面时：</p>
-<p><img src="https://oss.yansheng.xyz/picgo/20200604090723.png" alt></p>
+<p><img src="https://oss.yansheng.fun/picgo/20200604090723.png" alt></p>
         
           <a class="article-more-a" href="/article/1e69113d.html#more">more >></a>
         
@@ -1156,7 +1288,7 @@ API说明详见：<a href="http://wzry.yansheng.xyz/swagger-ui.html" target="_bl
     <div class="article-entry" itemprop="articleBody">
       
         <p>默认情况下，使用Notepad++编辑文件是不会显示字数的，但是我们可以通过触发来统计字数，这里介绍两种方法。</p>
-<p><img src="https://oss.yansheng.xyz/picgo/20200701000411.png" alt></p>
+<p><img src="https://oss.yansheng.fun/picgo/20200701000411.png" alt></p>
         
           <a class="article-more-a" href="/article/9bd056e7.html#more">more >></a>
         
@@ -1571,7 +1703,7 @@ API说明详见：<a href="http://wzry.yansheng.xyz/swagger-ui.html" target="_bl
       
         <p>之前写过一篇文章，是将APlayer音乐播放器放到左侧的（详见：<a href="/article/5c52aefe.html">hexo+yilia添加背景音乐</a>），但是在手机端时，因为左侧边栏会被隐藏，因此也就会将播放器给隐藏掉。也就会是说手机端不能显示该播放器。</p>
 <p>这里换一种方式，直接添加到整个页面中，使其在手机端也能使用。<br>
-<img src="https://oss.yansheng.xyz/picgo/20200406000912.jpg" alt></p>
+<img src="https://oss.yansheng.fun/picgo/20200406000912.jpg" alt></p>
         
           <a class="article-more-a" href="/article/bf60dd05.html#more">more >></a>
         
@@ -1660,142 +1792,6 @@ API说明详见：<a href="http://wzry.yansheng.xyz/swagger-ui.html" target="_bl
 
 
   
-    <article id="post-csdn/curl (3) Illegal characters found in URL" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <!-- 文章正文 -->
-    <div class="article-inner">
-    
-      <!-- 文章头部 -->
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/8e4f6844.html">curl (3) Illegal characters found in URL</a>
-    </h1>
-  
-
-        
-        <!--引入不蒜子并添加文章访问量(开始) -->
-
-<!--引入不蒜子并添加文章访问量(结束) -->
-
-<a href="/article/8e4f6844.html" class="archive-article-date">
-  	<time datetime="2020-04-05T07:40:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-05</time>
-</a>
-        
-
-        <!-- 《开始添加字数统计-->
-         
-          
-
-<div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        
-       <i class="icon-statistics"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">546字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-         
-        <i class="icon-book icon"></i>
-        <span class="post-meta-item-text"> 阅读时长≈</span>
-        <span class="post-count">2分</span>
-      </span>
-    </span>
-</div>
-
-
-         
-        <!-- 添加字数统计完成》 -->
-
-      </header>
-    
-
-    <!-- 文章主要内容（入口、条目） -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="摘要">摘要</h2>
-<p>在windows 中编辑的文件上传到 Linux 后，使用 curl 等工具调用时会报一个<code>curl: (3) Illegal characters found in URL</code> 的错误，这是因为 Linux 与 Windows 在文本文件中添加的换行符不一样。Linux 在每行只会添加一个<code>\n</code>,Windows系统会在每行后加入<code>\r\n</code>, 所以在 Windows 下的文件放到 Linux上时就会出现这个问题，即多了一个<code>\r</code>。</p>
-        
-          <a class="article-more-a" href="/article/8e4f6844.html#more">more >></a>
-        
-      
-
-        <!-- 《添加版权声明 -->
-        
-            <!-- 《添加版权声明 -->
-<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
-
-
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <div class="declare" hidden="hidden"></div>
-
-<!-- 添加版权声明》 -->
-
-        
-        <!-- 添加版权声明》 -->
-
-      
-    </div>
-
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Ubuntu</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/8e4f6844.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-<!-- 评论系统 -->
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
@@ -1825,7 +1821,7 @@ API说明详见：<a href="http://wzry.yansheng.xyz/swagger-ui.html" target="_bl
 
 
     <div class="BeiAn-info">
-        <img src="https://oss.yansheng.xyz/picgo/guowei.png" title="备案管理系统" alt="备案管理系统图标">
+        <img src="https://oss.yansheng.fun/picgo/guowei.png" title="备案管理系统" alt="备案管理系统图标">
         <a href="http://beian.miit.gov.cn/" style="color:#f72b07" target="_blank" title="备案号">粤ICP备19131798号</a>
     </div>
 
@@ -1968,19 +1964,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">新冠肺炎</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">新冠肺炎</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1992,11 +1984,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">IT</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStrom</a>
+                <a href="javascript:void(0)" class="js-tag color3">IT</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2008,7 +2000,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">测试</a>
+                <a href="javascript:void(0)" class="js-tag color4">WebStrom</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2020,7 +2016,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color3">测试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2064,7 +2060,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">robots</a>
+                <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2076,15 +2072,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">相册</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ICP</a>
+                <a href="javascript:void(0)" class="js-tag color2">robots</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2092,11 +2080,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ICP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">相册</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">背景特效</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2124,6 +2120,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">毕业季</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
               </li>
              
@@ -2133,10 +2133,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Beyond Compare 4</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">毕业季</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2152,15 +2148,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记忆</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+                <a href="javascript:void(0)" class="js-tag color3">记忆</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2172,15 +2164,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Notepad++</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color5">Notepad++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2208,15 +2204,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Java爬虫：Jsoup</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JavaWeb</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Java爬虫：Jsoup</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2240,15 +2236,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Code:blocks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2296,15 +2292,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Swing</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">List</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">序列化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swing</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2360,10 +2356,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Python爬虫</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">pip</a>
               </li>
              
@@ -2373,6 +2365,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Python爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2472,11 +2468,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
+                <a href="javascript:void(0)" class="js-tag color1">Enhanced GitHub</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Enhanced GitHub</a>
+                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
               </li>
              
               <li class="article-tag-list-item">

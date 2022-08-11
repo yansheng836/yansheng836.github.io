@@ -507,14 +507,14 @@ body {
     /* background-color:#fff; */
     min-height:100%;
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
-        url('https://oss.yansheng.xyz/wallpaper/qinshimingyue.jpg') no-repeat 0% 0%/ cover;
+        url('https://oss.yansheng.fun/wallpaper/qinshimingyue.jpg') no-repeat 0% 0%/ cover;
     /* 设置鼠标的图标 */
-    cursor:url('https://oss.yansheng.xyz/ico/cursor.ico'), default;
+    cursor:url('https://oss.yansheng.fun/ico/cursor.ico'), default;
 }
 
 /* 因为超链接默认情况下是：cursor: pointer; 显示为手，这里进行设置 */
 a {
-    cursor:url('https://oss.yansheng.xyz/ico/cursor.ico'), default;
+    cursor:url('https://oss.yansheng.fun/ico/cursor.ico'), default;
 }
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
     display:block
@@ -966,7 +966,7 @@ body {
 }
 .left-col {
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
-    url('https://oss.yansheng.xyz/wallpaper/381535373.jpeg') no-repeat 0% 20%/ cover;
+    url('https://oss.yansheng.fun/wallpaper/381535373.jpeg') no-repeat 0% 20%/ cover;
     width:300px;
     position:fixed;
     opacity:1;
@@ -2954,9 +2954,9 @@ pre .css~* .id, pre .id {
 }
 @media screen and (max-width:800px) {
     body {
-        background: url('https://oss.yansheng.xyz/wallpaper/your-name-phone2ys.jpg') no-repeat fixed top;
+        background: url('https://oss.yansheng.fun/wallpaper/your-name-phone2ys.jpg') no-repeat fixed top;
         /* background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.5)), 
-        url('https://oss.yansheng.xyz/wallpaper/your-name-phone2ys.jpg') no-repeat fixed top; */
+        url('https://oss.yansheng.fun/wallpaper/your-name-phone2ys.jpg') no-repeat fixed top; */
     }
     /* 手机界面：缩小代码块的行数的边距 */
     .article-entry .highlight .gutter pre {

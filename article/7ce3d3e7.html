@@ -6,29 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="content-language" content="zh-CN">
-  <link rel="dns-prefetch" href="https://yansheng836.github.io">
+  <link rel="dns-prefetch" href="https://www.yansheng.fun">
   <title>执行Maven install或Maven test命令时控制台输出乱码的解决办法 | 荷塘月色的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="这篇文章针对“执行Maven install或Maven test命令时控制台输出乱码”的问题进行了分析，并且给出了2种解决方法。">
 <meta name="keywords" content="(My)Eclipse,Maven">
 <meta property="og:type" content="article">
 <meta property="og:title" content="执行Maven install或Maven test命令时控制台输出乱码的解决办法">
-<meta property="og:url" content="https://yansheng836.github.io/article/7ce3d3e7.html">
+<meta property="og:url" content="https://www.yansheng.fun/article/7ce3d3e7.html">
 <meta property="og:site_name" content="荷塘月色的博客">
 <meta property="og:description" content="这篇文章针对“执行Maven install或Maven test命令时控制台输出乱码”的问题进行了分析，并且给出了2种解决方法。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://oss.yansheng.xyz/picgo/20180423085431813.jpg">
-<meta property="og:image" content="https://oss.yansheng.xyz/picgo/20180423085600852.jpg">
-<meta property="og:image" content="https://oss.yansheng.xyz/picgo/20180423085749545.jpg">
-<meta property="og:image" content="https://oss.yansheng.xyz/picgo/20180423085904635.jpg">
-<meta property="og:image" content="https://oss.yansheng.xyz/picgo/20180423085920649.jpg">
-<meta property="og:image" content="https://oss.yansheng.xyz/picgo/20180423085933264.jpg">
-<meta property="og:image" content="https://oss.yansheng.xyz/picgo/20180423085943959.jpg">
+<meta property="og:image" content="https://oss.yansheng.fun/picgo/20180423085431813.jpg">
+<meta property="og:image" content="https://oss.yansheng.fun/picgo/20180423085600852.jpg">
+<meta property="og:image" content="https://oss.yansheng.fun/picgo/20180423085749545.jpg">
+<meta property="og:image" content="https://oss.yansheng.fun/picgo/20180423085904635.jpg">
+<meta property="og:image" content="https://oss.yansheng.fun/picgo/20180423085920649.jpg">
+<meta property="og:image" content="https://oss.yansheng.fun/picgo/20180423085933264.jpg">
+<meta property="og:image" content="https://oss.yansheng.fun/picgo/20180423085943959.jpg">
 <meta property="og:updated_time" content="2019-09-21T02:57:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="执行Maven install或Maven test命令时控制台输出乱码的解决办法">
 <meta name="twitter:description" content="这篇文章针对“执行Maven install或Maven test命令时控制台输出乱码”的问题进行了分析，并且给出了2种解决方法。">
-<meta name="twitter:image" content="https://oss.yansheng.xyz/picgo/20180423085431813.jpg">
+<meta name="twitter:image" content="https://oss.yansheng.fun/picgo/20180423085431813.jpg">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -187,7 +187,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/" class="profilepic">
-            <img src="https://oss.yansheng.xyz/head.jpg" class="js-avatar">
+            <img src="https://oss.yansheng.fun/head.jpg" class="js-avatar">
         </a>
         <hgroup>
           <div class="header-author"><a href="/">荷塘月色</a></div>
@@ -213,7 +213,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
         </nav>
 
         <div class="blog-counter">
-            <span>总文章数 301</span>
+            <span>总文章数 302</span>
         </div>
 
         <!-- 智能菜单 -->
@@ -284,7 +284,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://oss.yansheng.xyz/head.jpg" class="js-avatar">
+				<img src="https://oss.yansheng.fun/head.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <div class="header-author js-header-author">荷塘月色</div>
@@ -471,7 +471,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <a id="more"></a>
 <h2 id="问题描述">问题描述</h2>
 <p>执行Maven install或Maven test命令时控制台输出乱码，如下图</p>
-<p><img src="https://oss.yansheng.xyz/picgo/20180423085431813.jpg" alt></p>
+<p><img src="https://oss.yansheng.fun/picgo/20180423085431813.jpg" alt></p>
 <h3 id="原因1：可能时没有指定编译的插件">原因1：可能时没有指定编译的插件</h3>
 <h3 id="解决办法">解决办法</h3>
 <h4 id="解决方案一">【解决方案一】</h4>
@@ -481,20 +481,20 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <p>在Maven的pom.xml文件中增加如下代码：（本人亲测成功）</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-surefire-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.16<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">forkMode</span>&gt;</span>once<span class="tag">&lt;/<span class="name">forkMode</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">argLine</span>&gt;</span>-Dfile.encoding=UTF-8<span class="tag">&lt;/<span class="name">argLine</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>如下图：<br>
-<img src="https://oss.yansheng.xyz/picgo/20180423085600852.jpg" alt></p>
+<img src="https://oss.yansheng.fun/picgo/20180423085600852.jpg" alt></p>
 <h3 id="原因2：可能项目的编码格式不是utf-8">原因2：可能项目的编码格式不是UTF-8</h3>
 <h3 id="解决办法-v2">解决办法</h3>
 <p>把项目或者myeclipse的编码格式设置为UTF-8。</p>
 <p>1、在myeclipse中选择window—Preference<br>
-<img src="https://oss.yansheng.xyz/picgo/20180423085749545.jpg" alt></p>
+<img src="https://oss.yansheng.fun/picgo/20180423085749545.jpg" alt></p>
 <p>2、在preferences界面中选择General下面的Editors的子节点Text Editor下的Spelling选项<br>
-<img src="https://oss.yansheng.xyz/picgo/20180423085904635.jpg" alt></p>
+<img src="https://oss.yansheng.fun/picgo/20180423085904635.jpg" alt></p>
 <p>3、将encoding选项中的defalut设置为utf-8<br>
-<img src="https://oss.yansheng.xyz/picgo/20180423085920649.jpg" alt></p>
+<img src="https://oss.yansheng.fun/picgo/20180423085920649.jpg" alt></p>
 <p>4、不仅仅要设置spelling还要设置wrokspace，在general下的workspace选项<br>
-<img src="https://oss.yansheng.xyz/picgo/20180423085933264.jpg" alt></p>
+<img src="https://oss.yansheng.fun/picgo/20180423085933264.jpg" alt></p>
 <p>5、将workspace选项中的encoding内容设置为utf-8即可<br>
-<img src="https://oss.yansheng.xyz/picgo/20180423085943959.jpg" alt></p>
+<img src="https://oss.yansheng.fun/picgo/20180423085943959.jpg" alt></p>
 <hr>
 <p>转自：<a href="https://blog.csdn.net/qq_39999478/article/details/80045624" target="_blank" rel="noopener">https://blog.csdn.net/qq_39999478/article/details/80045624</a></p>
 <p>重新排版。</p>
@@ -618,7 +618,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://qr.liantu.com/api.php?text=https://yansheng836.github.io/article/7ce3d3e7.html" alt="微信分享二维码">
+      <img src="http://qr.liantu.com/api.php?text=https://www.yansheng.fun/article/7ce3d3e7.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -773,7 +773,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 
 
     <div class="BeiAn-info">
-        <img src="https://oss.yansheng.xyz/picgo/guowei.png" title="备案管理系统" alt="备案管理系统图标">
+        <img src="https://oss.yansheng.fun/picgo/guowei.png" title="备案管理系统" alt="备案管理系统图标">
         <a href="http://beian.miit.gov.cn/" style="color:#f72b07" target="_blank" title="备案号">粤ICP备19131798号</a>
     </div>
 
@@ -916,19 +916,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">新冠肺炎</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">新冠肺炎</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -940,11 +936,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">IT</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStrom</a>
+                <a href="javascript:void(0)" class="js-tag color3">IT</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -956,7 +952,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">测试</a>
+                <a href="javascript:void(0)" class="js-tag color4">WebStrom</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -968,7 +968,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color3">测试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1012,7 +1012,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">robots</a>
+                <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1024,15 +1024,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">相册</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ICP</a>
+                <a href="javascript:void(0)" class="js-tag color2">robots</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1040,11 +1032,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ICP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">相册</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">背景特效</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1072,6 +1072,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">毕业季</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
               </li>
              
@@ -1081,10 +1085,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Beyond Compare 4</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">毕业季</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1100,15 +1100,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记忆</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+                <a href="javascript:void(0)" class="js-tag color3">记忆</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1120,15 +1116,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Notepad++</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color5">Notepad++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1156,15 +1156,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Java爬虫：Jsoup</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JavaWeb</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Java爬虫：Jsoup</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1188,15 +1188,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Code:blocks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1244,15 +1244,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Swing</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">List</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">序列化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swing</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1308,10 +1308,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Python爬虫</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">pip</a>
               </li>
              
@@ -1321,6 +1317,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Python爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1420,11 +1420,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
+                <a href="javascript:void(0)" class="js-tag color1">Enhanced GitHub</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Enhanced GitHub</a>
+                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
               </li>
              
               <li class="article-tag-list-item">

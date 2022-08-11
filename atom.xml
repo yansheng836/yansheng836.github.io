@@ -5,9 +5,9 @@
   <subtitle>每天进步一点点</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://yansheng836.github.io/"/>
-  <updated>2021-09-12T10:19:54.292Z</updated>
-  <id>https://yansheng836.github.io/</id>
+  <link href="https://www.yansheng.fun/"/>
+  <updated>2022-08-11T15:34:10.111Z</updated>
+  <id>https://www.yansheng.fun/</id>
   
   <author>
     <name>荷塘月色</name>
@@ -17,9 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>PostgreSQL视图和物化视图</title>
+    <link href="https://www.yansheng.fun/article/43e9ecd8.html"/>
+    <id>https://www.yansheng.fun/article/43e9ecd8.html</id>
+    <published>2022-05-01T06:47:24.000Z</published>
+    <updated>2022-08-11T15:34:10.111Z</updated>
+    
+    <content type="html"><![CDATA[<p>我们常用说的视图一般是指 view，即普通视图；而物化视图则是materialized  view（materialized 使物质化，使具体化（materialize 的过去式和过去分词））。两者都是视图，但是名称不一样，说明两者还有有所差异的。下面就来简单介绍一下PostgreSQL中的视图和物化视图的差异。</p><a id="more"></a><h2 id="1-视图">1.视图</h2><p>对标实体表，视图其实是个虚拟的表，实际上一个SQL拼接而成的虚拟表（假表），可能是有一个表或者多个表、视图关联而成的复杂的SQL，而这个SQL一般都是select语句（当然也可能是 update、delete 等的语句，但是可能会有诸多限制，而且用视图进行这些操作也不安全，一般也不会这么用，这些不在本文讨论范围内。）。而视图的用途常常用于展示一些用户需要的信息，隐藏一些敏感或者是不重要的数据，汇总一些关键数据展示给用户。</p><p>操作：可以像表一样查询视图的字段，也可以当做一个表进行关联查询。<br>查询底层实现：通过创建视图的语句进行查询，就是每次实时查询底层的表，数据都是实时的。<br>索引：走表的索引。</p><h2 id="2-物化视图">2.物化视图</h2><p>基本功能和视图类型。对标实体表和普通视图，会比普通视图更像一个表。上面说到视图是一个虚拟的表，这个物化视图其实是一个物理表，它可以用自己的索引。</p><p>操作：可以像表一样查询视图的字段，也可以当做一个表进行关联查询。可以创建索引。<br>查询底层实现：创建后就真的被当做是表了，即结果都物化（固化）成了一个表，假如创建语句的底层表数据有变化，也不会影响到这个物化视图的数据，除非手动进行刷新。就是每次查询的都是固化的数据，不是实时的数据。<br>索引：走自己的索引，可以创建索引。</p><h2 id="3-视图和物化视图的对比">3.视图和物化视图的对比</h2><table><thead><tr><th>类型\对比项</th><th>物理结构</th><th>时效性</th><th>有无索引</th></tr></thead><tbody><tr><td>视图</td><td>虚拟表</td><td>实时</td><td>无索引</td></tr><tr><td>物化视图</td><td>物理表</td><td>非实时</td><td>可以创建索引</td></tr></tbody></table><h2 id="4-示例：查询系统的用户表">4.示例：查询系统的用户表</h2><p>基础查询如下，后面我们会使用这个SQL来构造视图和物化视图。<br>（简单介绍下pg_class ：pgsql里面的一个内置系统表，是一个统计或者说是汇总的数据表。class就是类、对象，即pgsql里面的对象都会在这里面记录，比如实体表、视图、物化视图、索引、toast表等，详细信息可以查看官方文档。）</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> pg_class <span class="keyword">where</span> relnamespace != <span class="string">'11'</span> <span class="keyword">and</span> relnamespace != <span class="string">'13887'</span>  <span class="keyword">and</span> relkind = <span class="string">'r'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 创建一个表，备用</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Sheet4(</span><br><span class="line"><span class="keyword">id</span> <span class="built_in">int8</span>,</span><br><span class="line"><span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">100</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 查询该表的基础信息（元数据信息）</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> pg_class <span class="keyword">where</span> relnamespace != <span class="string">'11'</span> <span class="keyword">and</span> relnamespace != <span class="string">'13887'</span>  <span class="keyword">and</span> relkind = <span class="string">'r'</span> <span class="keyword">and</span>  relname = <span class="string">'Sheet4'</span>;</span><br></pre></td></tr></table></figure><p><img src="assets/baea60992c074e12b16883a688a38e63.png" alt="在这里插入图片描述"></p><h3 id="4-1-视图">4.1 视图</h3><h4 id="4-1-1-创建视图">4.1.1 创建视图</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> <span class="string">"public"</span>.<span class="string">"v_user_tab"</span></span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> pg_class <span class="keyword">where</span> relnamespace != <span class="string">'11'</span> <span class="keyword">and</span> relnamespace != <span class="string">'13887'</span>  <span class="keyword">and</span> relkind = <span class="string">'r'</span>;</span><br></pre></td></tr></table></figure><h4 id="4-1-2-使用视图">4.1.2 使用视图</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 普通查询</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> v_user_tab;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> v_user_tab <span class="keyword">where</span> relname = <span class="string">'Sheet4'</span>;</span><br></pre></td></tr></table></figure><p><img src="assets/baea60992c074e12b16883a688a38e63.png" alt="在这里插入图片描述"></p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 关联查询，找命名空间是啥（public默认的）</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> pg_namespace;</span><br><span class="line"><span class="keyword">select</span> ns.nspname,vt.* <span class="keyword">from</span> v_user_tab vt <span class="keyword">left</span> <span class="keyword">join</span>  pg_namespace ns <span class="keyword">on</span> vt.relnamespace = ns.oid;</span><br><span class="line"><span class="keyword">select</span> ns.nspname,vt.* <span class="keyword">from</span> v_user_tab vt <span class="keyword">left</span> <span class="keyword">join</span>  pg_namespace ns <span class="keyword">on</span> vt.relnamespace = ns.oid <span class="keyword">where</span> relname = <span class="string">'Sheet4'</span>;</span><br></pre></td></tr></table></figure><p><img src="assets/4ded55ea13214de9b7d15531224c12c3.png" alt="在这里插入图片描述"></p><h4 id="4-1-3-查看视图的执行计划">4.1.3 查看视图的执行计划</h4><p>查看索引使用情况：上面提到了，实际上走的是底层的查询，索引走的也是原来基础表上的索引。下面我们来看下是不是。（注意一下，因为pgsql规则器有自己的考量，有时候即使有索引也不一定会走，和具体的表记录和查询语句有关系。因此可能explain结果和本文可能会有点不一致。）</p><p>通过计划可以看到这个表名的简单SQL，使用了系统表 pg_class  上的索引 pg_class_relname_nsp_index 。</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">explain</span> <span class="keyword">select</span> * <span class="keyword">from</span> v_user_tab <span class="keyword">where</span> relname = <span class="string">'Sheet4'</span>;</span><br><span class="line"></span><br><span class="line">Index Scan using pg_class_relname_nsp_index on pg_class  (cost=0.28..8.31 rows=1 width=271)</span><br><span class="line">  Index Cond: (relname = 'Sheet4'::name)</span><br><span class="line">  Filter: ((relnamespace &lt;&gt; '11'::oid) AND (relnamespace &lt;&gt; '13887'::oid) AND (relkind = 'r'::"char"))</span><br></pre></td></tr></table></figure><p>下面这个使用了，两个索引：pg_class.pg_class_relname_nsp_index 和pg_namespace.pg_namespace_oid_index 。</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">explain</span> <span class="keyword">select</span> ns.nspname,vt.* <span class="keyword">from</span> v_user_tab vt <span class="keyword">left</span> <span class="keyword">join</span>  pg_namespace ns <span class="keyword">on</span> vt.relnamespace = ns.oid <span class="keyword">where</span> relname = <span class="string">'Sheet4'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">Merge</span> <span class="keyword">Left</span> <span class="keyword">Join</span>  (<span class="keyword">cost</span>=<span class="number">0.43</span>.<span class="number">.12</span><span class="number">.02</span> <span class="keyword">rows</span>=<span class="number">1</span> width=<span class="number">335</span>)</span><br><span class="line">  <span class="keyword">Merge</span> Cond: (pg_class.relnamespace = ns.oid)</span><br><span class="line">  -&gt;  <span class="keyword">Index</span> <span class="keyword">Scan</span> <span class="keyword">using</span> pg_class_relname_nsp_index <span class="keyword">on</span> pg_class  (<span class="keyword">cost</span>=<span class="number">0.28</span>.<span class="number">.8</span><span class="number">.31</span> <span class="keyword">rows</span>=<span class="number">1</span> width=<span class="number">271</span>)</span><br><span class="line">        <span class="keyword">Index</span> Cond: (relname = <span class="string">'Sheet4'</span>::<span class="keyword">name</span>)</span><br><span class="line">        Filter: ((relnamespace &lt;&gt; <span class="string">'11'</span>::<span class="keyword">oid</span>) <span class="keyword">AND</span> (relnamespace &lt;&gt; <span class="string">'13887'</span>::<span class="keyword">oid</span>) <span class="keyword">AND</span> (relkind = <span class="string">'r'</span>::<span class="string">"char"</span>))</span><br><span class="line">  -&gt;  <span class="keyword">Index</span> <span class="keyword">Scan</span> <span class="keyword">using</span> pg_namespace_oid_index <span class="keyword">on</span> pg_namespace ns  (<span class="keyword">cost</span>=<span class="number">0.14</span>.<span class="number">.18</span><span class="number">.81</span> <span class="keyword">rows</span>=<span class="number">244</span> width=<span class="number">68</span>)</span><br></pre></td></tr></table></figure><h4 id="4-1-4-视图的时效性">4.1.4 视图的时效性</h4><p>创建一个表，看能不能在这个视图里面查到。</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> testv1(</span><br><span class="line"><span class="keyword">id</span> <span class="built_in">int8</span>,</span><br><span class="line"><span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">100</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 有数据，说明数据是实时的。</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> v_user_tab <span class="keyword">where</span> relname = <span class="string">'testv1'</span>;</span><br></pre></td></tr></table></figure><h4 id="4-1-5-尝试为视图创建索引">4.1.5 尝试为视图创建索引</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> idx_v_user_tab_relname <span class="keyword">on</span> v_user_tab <span class="keyword">using</span> btree (relname);</span><br><span class="line"><span class="comment">-- 会报错：&gt; 错误:  "v_user_tab" 不是一个表或物化视图</span></span><br></pre></td></tr></table></figure><h4 id="4-1-6-删除视图">4.1.6 删除视图</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">view</span> v_user_tab;</span><br></pre></td></tr></table></figure><h3 id="4-2-物化视图">4.2 物化视图</h3><h4 id="4-2-1-创建物化视图">4.2.1 创建物化视图</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">MATERIALIZED</span> <span class="keyword">VIEW</span> <span class="string">"public"</span>.<span class="string">"mv_user_tab"</span></span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> pg_class <span class="keyword">where</span> relnamespace != <span class="string">'11'</span> <span class="keyword">and</span> relnamespace != <span class="string">'13887'</span>  <span class="keyword">and</span> relkind = <span class="string">'r'</span>;</span><br></pre></td></tr></table></figure><h4 id="4-2-2-使用物化视图">4.2.2 使用物化视图</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 普通查询</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> mv_user_tab;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> mv_user_tab <span class="keyword">where</span> relname = <span class="string">'Sheet4'</span>;</span><br></pre></td></tr></table></figure><p><img src="assets/baea60992c074e12b16883a688a38e63.png" alt="在这里插入图片描述"></p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 关联查询</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> pg_namespace;</span><br><span class="line"><span class="keyword">select</span> ns.nspname,vt.* <span class="keyword">from</span> mv_user_tab vt <span class="keyword">left</span> <span class="keyword">join</span>  pg_namespace ns <span class="keyword">on</span> vt.relnamespace = ns.oid;</span><br><span class="line"><span class="keyword">select</span> ns.nspname,vt.* <span class="keyword">from</span> mv_user_tab vt <span class="keyword">left</span> <span class="keyword">join</span>  pg_namespace ns <span class="keyword">on</span> vt.relnamespace = ns.oid <span class="keyword">where</span> relname = <span class="string">'Sheet4'</span>;</span><br></pre></td></tr></table></figure><p><img src="assets/4ded55ea13214de9b7d15531224c12c3.png" alt="在这里插入图片描述"><br>基础使用，到目前为止好像都没有差异。</p><h4 id="4-2-3-查看物化视图的执行计划">4.2.3 查看物化视图的执行计划</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">explain</span> <span class="keyword">select</span> * <span class="keyword">from</span> mv_user_tab <span class="keyword">where</span> relname = <span class="string">'Sheet4'</span>;</span><br><span class="line"></span><br><span class="line">Seq Scan on mv_user_tab  (cost=0.00..55.53 rows=1 width=260)</span><br><span class="line">  Filter: (relname = 'Sheet4'::name)</span><br></pre></td></tr></table></figure><p>没有走索引，根据上面的查询我们可以知道其实 pg_class.relname 是有索引的，但是这里没有用到。<br>其实不是这样的，这里和视图就有点不一样，当它创建后，我们应该把物化视图当做一个独立的个体（独立的表），它有索引，它只走自己的索引（等下我们尝试为这个字段创建索引）。</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">explain</span> <span class="keyword">select</span> ns.nspname,vt.* <span class="keyword">from</span> mv_user_tab vt <span class="keyword">left</span> <span class="keyword">join</span>  pg_namespace ns <span class="keyword">on</span> vt.relnamespace = ns.oid <span class="keyword">where</span> relname = <span class="string">'Sheet4'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">Merge</span> <span class="keyword">Right</span> <span class="keyword">Join</span>  (<span class="keyword">cost</span>=<span class="number">55.76</span>.<span class="number">.55</span><span class="number">.86</span> <span class="keyword">rows</span>=<span class="number">1</span> width=<span class="number">324</span>)</span><br><span class="line">  <span class="keyword">Merge</span> Cond: (ns.oid = vt.relnamespace)</span><br><span class="line">  -&gt;  <span class="keyword">Index</span> <span class="keyword">Scan</span> <span class="keyword">using</span> pg_namespace_oid_index <span class="keyword">on</span> pg_namespace ns  (<span class="keyword">cost</span>=<span class="number">0.14</span>.<span class="number">.18</span><span class="number">.81</span> <span class="keyword">rows</span>=<span class="number">244</span> width=<span class="number">68</span>)</span><br><span class="line">  -&gt;  <span class="keyword">Sort</span>  (<span class="keyword">cost</span>=<span class="number">55.54</span>.<span class="number">.55</span><span class="number">.54</span> <span class="keyword">rows</span>=<span class="number">1</span> width=<span class="number">260</span>)</span><br><span class="line">        <span class="keyword">Sort</span> <span class="keyword">Key</span>: vt.relnamespace</span><br><span class="line">        -&gt;  Seq <span class="keyword">Scan</span> <span class="keyword">on</span> mv_user_tab vt  (<span class="keyword">cost</span>=<span class="number">0.00</span>.<span class="number">.55</span><span class="number">.53</span> <span class="keyword">rows</span>=<span class="number">1</span> width=<span class="number">260</span>)</span><br><span class="line">              Filter: (relname = <span class="string">'Sheet4'</span>::<span class="keyword">name</span>)</span><br></pre></td></tr></table></figure><p>这个也没有走索引，使用的是全表扫描。</p><h4 id="4-2-4-视图的时效性">4.2.4 视图的时效性</h4><p>创建一个表，看能不能在这个物化视图里面查到。</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> testv2(</span><br><span class="line"><span class="keyword">id</span> <span class="built_in">int8</span>,</span><br><span class="line"><span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">100</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 没有数据，说明数据不是实时的。</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> mv_user_tab <span class="keyword">where</span> relname = <span class="string">'testv2'</span>;</span><br></pre></td></tr></table></figure><p>我们刷新一下物化视图</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">refresh materialized view  mv_user_tab;</span><br></pre></td></tr></table></figure><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 刷新后，我们就可以查到刚才那个表了</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> mv_user_tab <span class="keyword">where</span> relname = <span class="string">'testv2'</span>;</span><br></pre></td></tr></table></figure><h4 id="4-2-5-尝试为物化视图创建索引">4.2.5 尝试为物化视图创建索引</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> idx_mv_user_tab_relname <span class="keyword">on</span> mv_user_tab <span class="keyword">using</span> btree (relname);</span><br></pre></td></tr></table></figure><p>这里我们再执行这个语句，发现是可以走索引的。</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">explain</span> <span class="keyword">select</span> * <span class="keyword">from</span> mv_user_tab <span class="keyword">where</span> relname = <span class="string">'Sheet4'</span>;</span><br><span class="line"></span><br><span class="line">Index Scan using idx_mv_user_tab_relname on mv_user_tab  (cost=0.28..8.29 rows=1 width=260)</span><br><span class="line">  Index Cond: (relname = 'Sheet4'::name)</span><br><span class="line"></span><br><span class="line"><span class="comment">--删除索引</span></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">index</span> idx_mv_user_tab_relname;</span><br></pre></td></tr></table></figure><h4 id="4-2-6-删除物化视图">4.2.6 删除物化视图</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">materialized</span> <span class="keyword">view</span> mv_user_tab;</span><br></pre></td></tr></table></figure><p>注意删除物化视图会同步删除对应的索引（和删除表会删除表对应的索引是一样的道理），但是刷新物化视图不会。</p><h3 id="4-3-物化视图延伸">4.3.物化视图延伸</h3><h4 id="4-3-1并发刷新物化视图">4.3.1并发刷新物化视图</h4><p>refresh (全量刷新)默认会为视图加上排它锁，会阻塞查询。</p><p>生产上，我们为了安全，我们一般采用“并发的方式”刷新物化视图。并发刷新的意思就是我刷新的时候，你还可以查询对应的数据。（注意：如果逻辑表复制、数据比较多，并发刷新可能需要时间比较长，而且只能同时刷新一个物化视图，但是整理来说不影响。）</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 比如这样</span></span><br><span class="line">refresh materialized view concurrently mv_user_tab;</span><br><span class="line">&gt; 错误:  不能同时刷新物化视图 "public.mv_user_tab"</span><br><span class="line">&gt; HINT:  在物化视图的一个或多个列上创建不带WHERE子句的唯一索引.</span><br></pre></td></tr></table></figure><p>（因为还没研究过对应文档）个人理解，并发刷新就是根据唯一索引判断是新增还是更新数据到物化视图里面，因此需要先有唯一索引。</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 创建唯一索引</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">unique</span> <span class="keyword">index</span> idx_mv_user_tab_oid <span class="keyword">on</span> mv_user_tab <span class="keyword">using</span> btree (<span class="keyword">oid</span>);</span><br><span class="line"><span class="comment">-- 再次尝试并发刷新</span></span><br><span class="line">refresh materialized view concurrently mv_user_tab;</span><br></pre></td></tr></table></figure><h4 id="4-3-2尝试修改物化视图的数据">4.3.2尝试修改物化视图的数据</h4><p>尝试删除数据</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> mv_user_tab <span class="keyword">where</span> relname = <span class="string">'testv2'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">from</span> mv_user_tab <span class="keyword">where</span> relname = <span class="string">'testv2'</span>;</span><br><span class="line"></span><br><span class="line">&gt; 错误:  不能改变物化视图 "mv_user_tab"</span><br></pre></td></tr></table></figure><p>尝试更新物化视图</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span>  mv_user_tab <span class="keyword">set</span> relname = <span class="string">'testv21'</span> <span class="keyword">where</span> relname = <span class="string">'testv2'</span>;</span><br><span class="line"></span><br><span class="line">&gt; 错误:  不能改变物化视图 "mv_user_tab"</span><br></pre></td></tr></table></figure><p>经过尝试：发现除了刷新操作外，物化视图的数据是不能进行修改和删除所在的。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们常用说的视图一般是指 view，即普通视图；而物化视图则是materialized  view（materialized 使物质化，使具体化（materialize 的过去式和过去分词））。两者都是视图，但是名称不一样，说明两者还有有所差异的。下面就来简单介绍一下PostgreSQL中的视图和物化视图的差异。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="PostgreSQL" scheme="https://www.yansheng.fun/tags/PostgreSQL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>fastjson序列化保持字段顺序</title>
-    <link href="https://yansheng836.github.io/article/ec768f3c.html"/>
-    <id>https://yansheng836.github.io/article/ec768f3c.html</id>
+    <link href="https://www.yansheng.fun/article/ec768f3c.html"/>
+    <id>https://www.yansheng.fun/article/ec768f3c.html</id>
     <published>2021-09-04T12:38:04.000Z</published>
     <updated>2021-09-12T10:19:54.292Z</updated>
     
@@ -34,16 +55,16 @@
     
     
     
-      <category term="工具/资源" scheme="https://yansheng836.github.io/tags/tool-resource/"/>
+      <category term="工具/资源" scheme="https://www.yansheng.fun/tags/tool-resource/"/>
     
-      <category term="Java工具" scheme="https://yansheng836.github.io/tags/java-tool/"/>
+      <category term="Java工具" scheme="https://www.yansheng.fun/tags/java-tool/"/>
     
   </entry>
   
   <entry>
     <title>记一次CSDN的资源加载失败的问题的解决方法</title>
-    <link href="https://yansheng836.github.io/article/461b977e.html"/>
-    <id>https://yansheng836.github.io/article/461b977e.html</id>
+    <link href="https://www.yansheng.fun/article/461b977e.html"/>
+    <id>https://www.yansheng.fun/article/461b977e.html</id>
     <published>2021-09-03T14:53:32.000Z</published>
     <updated>2021-09-12T10:08:34.274Z</updated>
     
@@ -59,16 +80,16 @@
     
     
     
-      <category term="工具/资源" scheme="https://yansheng836.github.io/tags/tool-resource/"/>
+      <category term="工具/资源" scheme="https://www.yansheng.fun/tags/tool-resource/"/>
     
-      <category term="CMD" scheme="https://yansheng836.github.io/tags/cmd/"/>
+      <category term="CMD" scheme="https://www.yansheng.fun/tags/cmd/"/>
     
   </entry>
   
   <entry>
     <title>git log 日期格式</title>
-    <link href="https://yansheng836.github.io/article/7342a5e.html"/>
-    <id>https://yansheng836.github.io/article/7342a5e.html</id>
+    <link href="https://www.yansheng.fun/article/7342a5e.html"/>
+    <id>https://www.yansheng.fun/article/7342a5e.html</id>
     <published>2021-08-27T08:05:07.000Z</published>
     <updated>2021-09-12T09:58:44.919Z</updated>
     
@@ -88,14 +109,14 @@
     
     
     
-      <category term="Git" scheme="https://yansheng836.github.io/tags/git/"/>
+      <category term="Git" scheme="https://www.yansheng.fun/tags/git/"/>
     
   </entry>
   
   <entry>
     <title>curl使用指南</title>
-    <link href="https://yansheng836.github.io/article/fce3cbe9.html"/>
-    <id>https://yansheng836.github.io/article/fce3cbe9.html</id>
+    <link href="https://www.yansheng.fun/article/fce3cbe9.html"/>
+    <id>https://www.yansheng.fun/article/fce3cbe9.html</id>
     <published>2021-08-22T04:28:14.000Z</published>
     <updated>2021-09-12T10:20:11.829Z</updated>
     
@@ -109,14 +130,14 @@
     
     
     
-      <category term="Linux" scheme="https://yansheng836.github.io/tags/linux/"/>
+      <category term="Linux" scheme="https://www.yansheng.fun/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>推荐几个无版权图片库，可免费使用</title>
-    <link href="https://yansheng836.github.io/article/e6b97faf.html"/>
-    <id>https://yansheng836.github.io/article/e6b97faf.html</id>
+    <link href="https://www.yansheng.fun/article/e6b97faf.html"/>
+    <id>https://www.yansheng.fun/article/e6b97faf.html</id>
     <published>2021-08-21T12:54:52.000Z</published>
     <updated>2021-09-12T10:07:18.281Z</updated>
     
@@ -134,14 +155,14 @@
     
     
     
-      <category term="工具/资源" scheme="https://yansheng836.github.io/tags/tool-resource/"/>
+      <category term="工具/资源" scheme="https://www.yansheng.fun/tags/tool-resource/"/>
     
   </entry>
   
   <entry>
     <title>Postgres开启慢查询日志</title>
-    <link href="https://yansheng836.github.io/article/44ebf4a.html"/>
-    <id>https://yansheng836.github.io/article/44ebf4a.html</id>
+    <link href="https://www.yansheng.fun/article/44ebf4a.html"/>
+    <id>https://www.yansheng.fun/article/44ebf4a.html</id>
     <published>2021-08-15T12:50:32.000Z</published>
     <updated>2021-09-12T10:12:55.220Z</updated>
     
@@ -161,14 +182,14 @@
     
     
     
-      <category term="PostgreSQL" scheme="https://yansheng836.github.io/tags/PostgreSQL/"/>
+      <category term="PostgreSQL" scheme="https://www.yansheng.fun/tags/PostgreSQL/"/>
     
   </entry>
   
   <entry>
     <title>Python函数默认参数设置</title>
-    <link href="https://yansheng836.github.io/article/a08e791c.html"/>
-    <id>https://yansheng836.github.io/article/a08e791c.html</id>
+    <link href="https://www.yansheng.fun/article/a08e791c.html"/>
+    <id>https://www.yansheng.fun/article/a08e791c.html</id>
     <published>2021-08-08T13:37:51.000Z</published>
     <updated>2021-09-12T10:11:36.785Z</updated>
     
@@ -182,14 +203,14 @@
     
     
     
-      <category term="Python基础" scheme="https://yansheng836.github.io/tags/python-basic/"/>
+      <category term="Python基础" scheme="https://www.yansheng.fun/tags/python-basic/"/>
     
   </entry>
   
   <entry>
     <title>PyCharm中目录directory与包package的区别</title>
-    <link href="https://yansheng836.github.io/article/d065b111.html"/>
-    <id>https://yansheng836.github.io/article/d065b111.html</id>
+    <link href="https://www.yansheng.fun/article/d065b111.html"/>
+    <id>https://www.yansheng.fun/article/d065b111.html</id>
     <published>2021-08-07T15:27:16.000Z</published>
     <updated>2021-09-12T10:12:11.846Z</updated>
     
@@ -205,14 +226,14 @@
     
     
     
-      <category term="工具/资源" scheme="https://yansheng836.github.io/tags/tool-resource/"/>
+      <category term="工具/资源" scheme="https://www.yansheng.fun/tags/tool-resource/"/>
     
   </entry>
   
   <entry>
     <title>Python读写CSV文件</title>
-    <link href="https://yansheng836.github.io/article/f4ec56db.html"/>
-    <id>https://yansheng836.github.io/article/f4ec56db.html</id>
+    <link href="https://www.yansheng.fun/article/f4ec56db.html"/>
+    <id>https://www.yansheng.fun/article/f4ec56db.html</id>
     <published>2021-08-07T05:13:14.000Z</published>
     <updated>2021-09-12T10:29:34.616Z</updated>
     
@@ -233,14 +254,14 @@
     
     
     
-      <category term="Python基础" scheme="https://yansheng836.github.io/tags/python-basic/"/>
+      <category term="Python基础" scheme="https://www.yansheng.fun/tags/python-basic/"/>
     
   </entry>
   
   <entry>
     <title>PyCharm常用配置大杂烩--让IDE更懂你</title>
-    <link href="https://yansheng836.github.io/article/550bc7dd.html"/>
-    <id>https://yansheng836.github.io/article/550bc7dd.html</id>
+    <link href="https://www.yansheng.fun/article/550bc7dd.html"/>
+    <id>https://www.yansheng.fun/article/550bc7dd.html</id>
     <published>2021-08-06T12:45:25.000Z</published>
     <updated>2021-09-12T10:12:25.341Z</updated>
     
@@ -254,18 +275,18 @@
     
     
     
-      <category term="工具/资源" scheme="https://yansheng836.github.io/tags/tool-resource/"/>
+      <category term="工具/资源" scheme="https://www.yansheng.fun/tags/tool-resource/"/>
     
-      <category term="Python基础" scheme="https://yansheng836.github.io/tags/python-basic/"/>
+      <category term="Python基础" scheme="https://www.yansheng.fun/tags/python-basic/"/>
     
-      <category term="开发工具" scheme="https://yansheng836.github.io/tags/development-tool/"/>
+      <category term="开发工具" scheme="https://www.yansheng.fun/tags/development-tool/"/>
     
   </entry>
   
   <entry>
     <title>Linux查询本机的内网IP和外网IP</title>
-    <link href="https://yansheng836.github.io/article/7e1807e.html"/>
-    <id>https://yansheng836.github.io/article/7e1807e.html</id>
+    <link href="https://www.yansheng.fun/article/7e1807e.html"/>
+    <id>https://www.yansheng.fun/article/7e1807e.html</id>
     <published>2021-08-05T05:23:30.000Z</published>
     <updated>2021-09-12T10:17:43.671Z</updated>
     
@@ -281,14 +302,14 @@
     
     
     
-      <category term="Linux" scheme="https://yansheng836.github.io/tags/linux/"/>
+      <category term="Linux" scheme="https://www.yansheng.fun/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>Navicat 的连接配置</title>
-    <link href="https://yansheng836.github.io/article/1aa5e00d.html"/>
-    <id>https://yansheng836.github.io/article/1aa5e00d.html</id>
+    <link href="https://www.yansheng.fun/article/1aa5e00d.html"/>
+    <id>https://www.yansheng.fun/article/1aa5e00d.html</id>
     <published>2021-08-04T10:43:10.000Z</published>
     <updated>2021-09-12T10:17:06.583Z</updated>
     
@@ -307,14 +328,14 @@
     
     
     
-      <category term="工具/资源" scheme="https://yansheng836.github.io/tags/tool-resource/"/>
+      <category term="工具/资源" scheme="https://www.yansheng.fun/tags/tool-resource/"/>
     
   </entry>
   
   <entry>
     <title>博客gravatar头像访问失效问题处理</title>
-    <link href="https://yansheng836.github.io/article/33cfeef5.html"/>
-    <id>https://yansheng836.github.io/article/33cfeef5.html</id>
+    <link href="https://www.yansheng.fun/article/33cfeef5.html"/>
+    <id>https://www.yansheng.fun/article/33cfeef5.html</id>
     <published>2021-08-03T05:29:27.000Z</published>
     <updated>2021-09-12T10:08:59.425Z</updated>
     
@@ -330,16 +351,16 @@
     
     
     
-      <category term="工具/资源" scheme="https://yansheng836.github.io/tags/tool-resource/"/>
+      <category term="工具/资源" scheme="https://www.yansheng.fun/tags/tool-resource/"/>
     
-      <category term="Hexo" scheme="https://yansheng836.github.io/tags/hexo/"/>
+      <category term="Hexo" scheme="https://www.yansheng.fun/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>Python中字符串String去除出换行符(\n,\r)和空格的问题</title>
-    <link href="https://yansheng836.github.io/article/5759927c.html"/>
-    <id>https://yansheng836.github.io/article/5759927c.html</id>
+    <link href="https://www.yansheng.fun/article/5759927c.html"/>
+    <id>https://www.yansheng.fun/article/5759927c.html</id>
     <published>2021-08-01T14:15:50.000Z</published>
     <updated>2021-09-12T10:11:19.143Z</updated>
     
@@ -354,14 +375,14 @@
     
     
     
-      <category term="Python基础" scheme="https://yansheng836.github.io/tags/python-basic/"/>
+      <category term="Python基础" scheme="https://www.yansheng.fun/tags/python-basic/"/>
     
   </entry>
   
   <entry>
     <title>Notepad++格式化JSON</title>
-    <link href="https://yansheng836.github.io/article/9a173e5b.html"/>
-    <id>https://yansheng836.github.io/article/9a173e5b.html</id>
+    <link href="https://www.yansheng.fun/article/9a173e5b.html"/>
+    <id>https://www.yansheng.fun/article/9a173e5b.html</id>
     <published>2021-07-31T10:15:31.000Z</published>
     <updated>2021-09-12T10:16:32.448Z</updated>
     
@@ -375,14 +396,14 @@
     
     
     
-      <category term="Notepad++" scheme="https://yansheng836.github.io/tags/notepad/"/>
+      <category term="Notepad++" scheme="https://www.yansheng.fun/tags/notepad/"/>
     
   </entry>
   
   <entry>
     <title>NPM相关问题</title>
-    <link href="https://yansheng836.github.io/article/3703e674.html"/>
-    <id>https://yansheng836.github.io/article/3703e674.html</id>
+    <link href="https://www.yansheng.fun/article/3703e674.html"/>
+    <id>https://www.yansheng.fun/article/3703e674.html</id>
     <published>2021-07-31T10:10:11.000Z</published>
     <updated>2021-09-12T10:15:20.904Z</updated>
     
@@ -398,14 +419,14 @@
     
     
     
-      <category term="Node.js" scheme="https://yansheng836.github.io/tags/node-js/"/>
+      <category term="Node.js" scheme="https://www.yansheng.fun/tags/node-js/"/>
     
   </entry>
   
   <entry>
     <title>npm 通过package.json来安装第三方包</title>
-    <link href="https://yansheng836.github.io/article/bf58ba05.html"/>
-    <id>https://yansheng836.github.io/article/bf58ba05.html</id>
+    <link href="https://www.yansheng.fun/article/bf58ba05.html"/>
+    <id>https://www.yansheng.fun/article/bf58ba05.html</id>
     <published>2021-07-31T10:05:44.000Z</published>
     <updated>2021-09-12T09:05:22.074Z</updated>
     
@@ -422,14 +443,14 @@
     
     
     
-      <category term="Node.js" scheme="https://yansheng836.github.io/tags/node-js/"/>
+      <category term="Node.js" scheme="https://www.yansheng.fun/tags/node-js/"/>
     
   </entry>
   
   <entry>
     <title>npm 常用命令详解</title>
-    <link href="https://yansheng836.github.io/article/75bb359.html"/>
-    <id>https://yansheng836.github.io/article/75bb359.html</id>
+    <link href="https://www.yansheng.fun/article/75bb359.html"/>
+    <id>https://www.yansheng.fun/article/75bb359.html</id>
     <published>2021-07-31T09:50:52.000Z</published>
     <updated>2021-09-12T10:15:35.203Z</updated>
     
@@ -444,14 +465,14 @@
     
     
     
-      <category term="Node.js" scheme="https://yansheng836.github.io/tags/node-js/"/>
+      <category term="Node.js" scheme="https://www.yansheng.fun/tags/node-js/"/>
     
   </entry>
   
   <entry>
     <title>2021年【CSDN毎周小结】</title>
-    <link href="https://yansheng836.github.io/article/d8d10d6.html"/>
-    <id>https://yansheng836.github.io/article/d8d10d6.html</id>
+    <link href="https://www.yansheng.fun/article/d8d10d6.html"/>
+    <id>https://www.yansheng.fun/article/d8d10d6.html</id>
     <published>2021-07-18T07:49:54.000Z</published>
     <updated>2021-09-12T10:20:48.916Z</updated>
     
@@ -470,36 +491,7 @@
     
     
     
-      <category term="工具/资源" scheme="https://yansheng836.github.io/tags/tool-resource/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Windows10出现‘telnet‘ 不是内部或外部命令，也不是可运行的程序或批处理文件</title>
-    <link href="https://yansheng836.github.io/article/a9a2fa9.html"/>
-    <id>https://yansheng836.github.io/article/a9a2fa9.html</id>
-    <published>2021-07-17T15:31:08.000Z</published>
-    <updated>2021-09-12T10:10:06.559Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="windows10出现-telnet-不是内部或外部命令-也不是可运行的程序或批处理文件">Windows10出现’telnet’ 不是内部或外部命令，也不是可运行的程序或批处理文件</h2><p><strong>博客说明</strong></p><blockquote><p>文章所涉及的资料来自互联网整理和个人总结，意在于个人学习和经验汇总，如有什么地方侵权，请联系本人删除，谢谢！</p></blockquote><h4 id="问题截图">问题截图</h4><p><img src="https://img-blog.csdnimg.cn/20200319111051671.png" alt="在这里插入图片描述"></p><h4 id="问题原因">问题原因</h4><p>出现这个问题是因为我们的系统默认把telnet的功能关闭了，需要我们手动去打开</p><a id="more"></a><h4 id="解决办法">解决办法</h4><p>首先我们进入控制面板</p><p>如果不知道怎么找，在下面的搜索控制面板就行了</p><p><img src="https://img-blog.csdnimg.cn/2020031911131265.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTYzMTIy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><p>进去之后我们打开程序管理</p><p><img src="https://img-blog.csdnimg.cn/20200319111410964.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTYzMTIy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><p>找到启动或关闭Window功能，然后找到我们的telnet，将它勾选上就好啦</p><h4 id="测试">测试</h4><p>再次执行telnet命令就好啦</p><p><img src="https://img-blog.csdnimg.cn/20200319111653156.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1MTYzMTIy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><p><strong>感谢</strong></p><blockquote><p>万能的网络</p><p>以及勤劳的自己</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;windows10出现-telnet-不是内部或外部命令-也不是可运行的程序或批处理文件&quot;&gt;Windows10出现’telnet’ 不是内部或外部命令，也不是可运行的程序或批处理文件&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;博客说明&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;文章所涉及的资料来自互联网整理和个人总结，意在于个人学习和经验汇总，如有什么地方侵权，请联系本人删除，谢谢！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&quot;问题截图&quot;&gt;问题截图&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;https://img-blog.csdnimg.cn/20200319111051671.png&quot; alt=&quot;在这里插入图片描述&quot;&gt;&lt;/p&gt;
-&lt;h4 id=&quot;问题原因&quot;&gt;问题原因&lt;/h4&gt;
-&lt;p&gt;出现这个问题是因为我们的系统默认把telnet的功能关闭了，需要我们手动去打开&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="工具/资源" scheme="https://yansheng836.github.io/tags/tool-resource/"/>
+      <category term="工具/资源" scheme="https://www.yansheng.fun/tags/tool-resource/"/>
     
   </entry>
   

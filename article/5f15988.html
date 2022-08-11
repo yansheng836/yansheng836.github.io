@@ -6,23 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="content-language" content="zh-CN">
-  <link rel="dns-prefetch" href="https://yansheng836.github.io">
+  <link rel="dns-prefetch" href="https://www.yansheng.fun">
   <title>HTML表单提交问题 | 荷塘月色的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="如何验证表单？验证成功与否、是否提交？看完这篇文章也许你就会明白了。">
 <meta name="keywords" content="JavaScript,HTML">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML表单提交问题">
-<meta property="og:url" content="https://yansheng836.github.io/article/5f15988.html">
+<meta property="og:url" content="https://www.yansheng.fun/article/5f15988.html">
 <meta property="og:site_name" content="荷塘月色的博客">
 <meta property="og:description" content="如何验证表单？验证成功与否、是否提交？看完这篇文章也许你就会明白了。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://oss.yansheng.xyz/picgo/20181015185437981.jpg">
+<meta property="og:image" content="https://oss.yansheng.fun/picgo/20181015185437981.jpg">
 <meta property="og:updated_time" content="2018-10-15T11:34:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML表单提交问题">
 <meta name="twitter:description" content="如何验证表单？验证成功与否、是否提交？看完这篇文章也许你就会明白了。">
-<meta name="twitter:image" content="https://oss.yansheng.xyz/picgo/20181015185437981.jpg">
+<meta name="twitter:image" content="https://oss.yansheng.fun/picgo/20181015185437981.jpg">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -181,7 +181,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <div class="intrude-less">
     <header id="header" class="inner">
         <a href="/" class="profilepic">
-            <img src="https://oss.yansheng.xyz/head.jpg" class="js-avatar">
+            <img src="https://oss.yansheng.fun/head.jpg" class="js-avatar">
         </a>
         <hgroup>
           <div class="header-author"><a href="/">荷塘月色</a></div>
@@ -207,7 +207,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
         </nav>
 
         <div class="blog-counter">
-            <span>总文章数 301</span>
+            <span>总文章数 302</span>
         </div>
 
         <!-- 智能菜单 -->
@@ -278,7 +278,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://oss.yansheng.xyz/head.jpg" class="js-avatar">
+				<img src="https://oss.yansheng.fun/head.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <div class="header-author js-header-author">荷塘月色</div>
@@ -467,7 +467,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <p>一开始学HTML时，不会就经常百度、谷歌，这次的遇到的表单验证及提交问题我也搜过了，各路大神各显神通，答案各异，试过很多种方法，各种问题也层出不穷……现在我想写点我的想法，希望能给有需要的人一些帮助。</p>
 <p>现在进入主题：<strong>如何验证表单？验证成功与否、是否提交？</strong>先声明，这里我把重点放在后面那个问题上，前面就简单验证。</p>
 <p>废话不多说，直接上代码：（注：这个代码是可以运行的，可以自己试试，把重点放在js和表单里面！）</p>
-<p><img src="https://oss.yansheng.xyz/picgo/20181015185437981.jpg" alt></p>
+<p><img src="https://oss.yansheng.fun/picgo/20181015185437981.jpg" alt></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>表单验证之submit提交.html<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"keyword1,keyword2,keyword3"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"this is my page"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"content-type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!--&lt;link rel="stylesheet" type="text/css" href="./styles.css"&gt;--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">    form&#123;</span><br><span class="line"><span class="css">			<span class="selector-tag">width</span>: 340<span class="selector-tag">px</span>;					<span class="comment">/*设置宽度，方便使其居中*/</span></span></span><br><span class="line"><span class="css">			<span class="selector-tag">margin</span>: 40<span class="selector-tag">px</span> <span class="selector-tag">auto</span> <span class="selector-tag">auto</span> <span class="selector-tag">auto</span>;	<span class="comment">/*上右下左*/</span></span></span><br><span class="line">			font-size: 35px;</span><br><span class="line">	&#125;</span><br><span class="line">	input&#123;</span><br><span class="line">			margin-top: 5px;</span><br><span class="line">			height: 30px;</span><br><span class="line">			width: 12em;</span><br><span class="line">			margin-bottom: 5px;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="css">	<span class="selector-id">#login</span>&#123;</span></span><br><span class="line">			font-family: 微软雅黑;</span><br><span class="line">			font-size: 40px;</span><br><span class="line">			text-align: center;</span><br><span class="line">			margin-top: 200px;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="css">	<span class="selector-tag">input</span><span class="selector-attr">[type="submit"]</span>,<span class="selector-tag">input</span><span class="selector-attr">[type="reset"]</span> &#123;</span></span><br><span class="line">			height: 25px;</span><br><span class="line">			width: 5em;</span><br><span class="line">			margin-left: 7px;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="actionscript">  <span class="function"><span class="keyword">function</span> <span class="title">isSubmit</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"> </span><br><span class="line"><span class="javascript">  	<span class="keyword">var</span> username = <span class="built_in">document</span>.getElementById(<span class="string">"username"</span>).value;</span></span><br><span class="line"><span class="javascript">  	<span class="keyword">var</span> password = <span class="built_in">document</span>.getElementById(<span class="string">"password"</span>).value;</span></span><br><span class="line">  	</span><br><span class="line"><span class="actionscript">  	<span class="comment">//简单判断，如果账号密码都不为空串，返回true</span></span></span><br><span class="line"><span class="actionscript">  	<span class="comment">//并添加console.log()，在控制台查看if里面判断语句的返回结果</span></span></span><br><span class="line"><span class="actionscript">  	<span class="keyword">if</span> (username!=<span class="string">""</span> &amp;&amp; password!=<span class="string">""</span>) &#123;</span></span><br><span class="line"><span class="javascript">  		<span class="built_in">console</span>.log(username!=<span class="string">""</span> &amp;&amp; password!=<span class="string">""</span>);</span></span><br><span class="line"><span class="actionscript">		<span class="keyword">return</span> <span class="literal">true</span>;</span></span><br><span class="line"><span class="actionscript">	&#125;<span class="keyword">else</span>&#123;</span></span><br><span class="line"><span class="javascript">		<span class="built_in">console</span>.log(username!=<span class="string">""</span> &amp;&amp; password!=<span class="string">""</span>);</span></span><br><span class="line"><span class="actionscript">		confirm(<span class="string">"账号或密码为空，请填写完整"</span>);</span></span><br><span class="line"><span class="actionscript">		<span class="keyword">return</span> <span class="literal">false</span>;</span></span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span> &gt;</span></span><br><span class="line">  	 <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"login"</span>&gt;</span>用户登录:<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	 <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"http://www.w3school.com.cn/"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">onsubmit</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>用户名：<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"username"</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">onblur</span>=<span class="string">""</span>/&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>密 &amp;nbsp;&amp;nbsp;码：<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">id</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">onblur</span>=<span class="string">""</span>/&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"登录"</span> <span class="attr">onclick</span>=<span class="string">"return isSubmit()"</span>/&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"reset"</span> <span class="attr">value</span>=<span class="string">"取消"</span>/&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>我这里只是验证账号密码是否有填写，如果都有填写返回true，反之返回false并给出提示。中间还用了一个小技巧,使用了console.log()方法，该方法输出的数据可在按F12后的控制台那里看到，方便分析。其它就不详解。</p>
 <p>接下来我们来分析下：</p>
@@ -511,10 +511,10 @@ var elm2 = document.getElementsByClassName('eOZYiU');
     2018-10-15
     <br>
     <strong class="article-titles">本文标题：</strong>
-    <a href="https://yansheng836.github.io/article/5f15988.html" title="HTML表单提交问题" target="_blank">HTML表单提交问题</a>
+    <a href="https://www.yansheng.fun/article/5f15988.html" title="HTML表单提交问题" target="_blank">HTML表单提交问题</a>
     <br>
     <strong class="article-url">本文链接：</strong>
-    <a href="https://yansheng836.github.io/article/5f15988.html" title="HTML表单提交问题" target="_blank">https://yansheng836.github.io/article/5f15988.html</a>
+    <a href="https://www.yansheng.fun/article/5f15988.html" title="HTML表单提交问题" target="_blank">https://www.yansheng.fun/article/5f15988.html</a>
     <br>
     <strong class="copyright">版权声明：</strong>
     本作品采用
@@ -522,7 +522,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
     许可协议进行许可。转载请注明出处！
     
       <br>
-      <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://oss.yansheng.xyz/picgo/by-nc-sa-4.0-88x31.png"/></a>
+      <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://oss.yansheng.fun/picgo/by-nc-sa-4.0-88x31.png"/></a>
     
   </div>
 
@@ -633,7 +633,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://qr.liantu.com/api.php?text=https://yansheng836.github.io/article/5f15988.html" alt="微信分享二维码">
+      <img src="http://qr.liantu.com/api.php?text=https://www.yansheng.fun/article/5f15988.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -788,7 +788,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 
 
     <div class="BeiAn-info">
-        <img src="https://oss.yansheng.xyz/picgo/guowei.png" title="备案管理系统" alt="备案管理系统图标">
+        <img src="https://oss.yansheng.fun/picgo/guowei.png" title="备案管理系统" alt="备案管理系统图标">
         <a href="http://beian.miit.gov.cn/" style="color:#f72b07" target="_blank" title="备案号">粤ICP备19131798号</a>
     </div>
 
@@ -931,19 +931,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">新冠肺炎</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">新冠肺炎</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -955,11 +951,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">IT</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">WebStrom</a>
+                <a href="javascript:void(0)" class="js-tag color3">IT</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -971,7 +967,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">测试</a>
+                <a href="javascript:void(0)" class="js-tag color4">WebStrom</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -983,7 +983,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color3">测试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1027,7 +1027,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">robots</a>
+                <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1039,15 +1039,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">版权声明</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">相册</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ICP</a>
+                <a href="javascript:void(0)" class="js-tag color2">robots</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1055,11 +1047,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">ICP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">相册</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">背景特效</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1087,6 +1087,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">毕业季</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
               </li>
              
@@ -1096,10 +1100,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Beyond Compare 4</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">毕业季</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1115,15 +1115,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记忆</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+                <a href="javascript:void(0)" class="js-tag color3">记忆</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1135,15 +1131,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Notepad++</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color5">Notepad++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1171,15 +1171,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Java爬虫：Jsoup</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">JavaWeb</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Java爬虫：Jsoup</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1203,15 +1203,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Code:blocks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1259,15 +1259,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Swing</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">List</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">序列化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swing</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1323,10 +1323,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Python爬虫</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">pip</a>
               </li>
              
@@ -1336,6 +1332,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Python爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1435,11 +1435,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
+                <a href="javascript:void(0)" class="js-tag color1">Enhanced GitHub</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Enhanced GitHub</a>
+                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
               </li>
              
               <li class="article-tag-list-item">

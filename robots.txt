@@ -31,7 +31,7 @@ Disallow: /
 User-agent: phpspider
 Disallow: /
 
-# 网站(https://www.yansheng.xyz/)已发现的不需要的爬虫
+# 网站(https://www.yansheng.fun/)已发现的不需要的爬虫
 # Barkrowler|SeznamBot|Go-http-client|Nimbostratus-Bot|MauiBot|serpstatbot
 # BLEXBot|DotBot|AhrefsBot|HTTP Banner Detection|Apache-HttpClient|Wappalyzer
 User-agent: Barkrowler
@@ -104,10 +104,10 @@ Disallow: /*.css
 Disallow: /content.json
 
 # 网站地图Sitemap
-Sitemap: http://www.yansheng.xyz/sitemap.xml
-Sitemap: http://www.yansheng.xyz/baidusitemap.xml
-Sitemap: https://www.yansheng.xyz/sitemap.xml
-Sitemap: https://www.yansheng.xyz/baidusitemap.xml
+Sitemap: http://www.yansheng.fun/sitemap.xml
+Sitemap: http://www.yansheng.fun/baidusitemap.xml
+Sitemap: https://www.yansheng.fun/sitemap.xml
+Sitemap: https://www.yansheng.fun/baidusitemap.xml
 
 Sitemap: https://yansheng836.github.io/sitemap.xml
 Sitemap: https://yansheng836.github.io/baidusitemap.xml
