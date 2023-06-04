@@ -17,24 +17,24 @@
 <meta property="og:site_name" content="荷塘月色的博客">
 <meta property="og:description" content="文章以MyEclipse2017 CI为例，介绍用MyEclipse创建基于Maven的Web项目的过程中可能会出现的三个问题及处理方法：1.自带后缀：Maven Webapp处理方法。 2.删除项目时报错。3.目录不规范。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190924130659300.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190924130800872.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190924130432149.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_29,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190924130928788.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190924125303424.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190924130043247.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190924143132599.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190924141542547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190924142317762.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190924142649680.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190924145627805.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190924145829490.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190924151211642.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924130659300.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924130800872.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924130432149.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_29,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924130928788.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924125303424.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924130043247.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924143132599.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924141542547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924142317762.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924142649680.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924145627805.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924145829490.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924151211642.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
 <meta property="og:updated_time" content="2019-09-24T05:47:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MyEclipse创建基于Maven的Web项目的问题汇总">
 <meta name="twitter:description" content="文章以MyEclipse2017 CI为例，介绍用MyEclipse创建基于Maven的Web项目的过程中可能会出现的三个问题及处理方法：1.自带后缀：Maven Webapp处理方法。 2.删除项目时报错。3.目录不规范。">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190924130659300.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924130659300.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -478,17 +478,17 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <h2 id="一-myeclipse创建基于maven的web项目步骤">一、MyEclipse创建基于Maven的Web项目步骤</h2>
 <p>MyEclipse创建基于Maven的Web项目步骤：<code>File--&gt;New--&gt;Maven Project--&gt;(Select project name and location)Next--&gt;(Select an Archetype) 选择有“webapp”的（好像一般都是最后一个）--&gt;(Specify Archetype parameters)填写Group Id：一般填公司名，Artifact Id ：一般填项目名 ，Finish</code>，按照这个步骤可以新建Maven项目，但是会有问题，下面具体分析。</p>
 <p>下面是新建项目的主要截图：</p>
-<p><img src="https://img-blog.csdnimg.cn/20190924130659300.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="Select an Archetype"></p>
-<p><img src="https://img-blog.csdnimg.cn/20190924130800872.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="Specify Archetype parameters"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924130659300.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="Select an Archetype"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924130800872.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="Specify Archetype parameters"></p>
 <h2 id="二-可能出现的问题及处理方法">二、可能出现的问题及处理方法</h2>
 <h3 id="1-自带后缀：maven-webapp">1.自带后缀：Maven Webapp</h3>
 <p>按照上面的方法新建后，发现项目名会自带后缀&quot;Maven Webapp&quot;，我猜测是为了区分不同类型项目的一个默认的标识；项目名自带后缀，也就是说项目的文件夹也会自带这个后缀，注意中间是空格间隔，这个有可能会造成不可预料的后果！！！虽然有些软件安装时默认的安装目录可能会有空格，但是我还是不建议你使用空格，就像不要把编程类软件安装到中文的文件夹中一样。有些问题可能会直接报错，有些可能会在后期使用过程中发生问题；对于这种不确定、不可控的问题，我们还是提前避免的好！<br>
-<img src="https://img-blog.csdnimg.cn/20190924130432149.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_29,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924130432149.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_29,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p>还有小插曲就是，虽然这个项目会自动加后缀，但是你部署到Tomcat后，访问时却不需要加后缀，如我的这个项目访问地址为：<a href="http://localhost:8080/maven-project" target="_blank" rel="noopener">http://localhost:8080/maven-project</a>。</p>
 <h3 id="处理方法">处理方法</h3>
 <h4 id="1-创建不带后缀的项目">(1).创建不带后缀的项目</h4>
 <p>在创建时，到[Select an Archetype]这步时，选择<code>Name template</code>(项目名模板)为<code>Artifact Id</code>，这样创建的项目名就是你的<code>Artifact Id</code>，而不再自动加上默认后缀&quot;Maven Webapp&quot;。</p>
-<p><img src="https://img-blog.csdnimg.cn/20190924130928788.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924130928788.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h4 id="2-重命名项目">(2).重命名项目</h4>
 <ul>
 <li>方法1：选中项目–&gt;按F2–&gt;重命名。</li>
@@ -496,26 +496,26 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 </ul>
 <h3 id="2-删除项目时报错">2.删除项目时报错</h3>
 <p>如出现问题1，需要删除项目，然后新建；但是你删除时可能也会出现问题，如下图所示：</p>
-<p><img src="https://img-blog.csdnimg.cn/20190924125303424.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924125303424.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h3 id="处理方法-v2">处理方法</h3>
 <h4 id="先保存没有保存的文件-然后删除">先保存没有保存的文件，然后删除</h4>
 <p>看提示我们可以知道：有个文件没有保存导致删除项目失败？！请注意，我们之前只是新建项目，而没有去动里面的文件的。看了下，原来是配置文件，用意是想让我们一创建项目就去修改配置文件吗？知道原因就好办了，根据路径去找到该文件，保存后即可进行删除操作。</p>
-<p><img src="https://img-blog.csdnimg.cn/20190924130043247.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924130043247.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h3 id="3-目录不规范">3.目录不规范</h3>
 <p>Maven构建项目是需要一定规则的，它的目录需要满足一定的规范：比较标准的应该是这样的,转自：官方文档 <a href="https://maven.apache.org/guides/getting-started/index.html#How_do_I_make_my_first_Maven_project" target="_blank" rel="noopener">How_do_I_make_my_first_Maven_project</a>， -groupId=com.mycompany.app，artifactId=my-app：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">my-app</span><br><span class="line">|-- pom.xml</span><br><span class="line">`-- src</span><br><span class="line">    |-- main</span><br><span class="line">    |   `-- java</span><br><span class="line">    |       `-- com</span><br><span class="line">    |           `-- mycompany</span><br><span class="line">    |               `-- app</span><br><span class="line">    |                   `-- App.java</span><br><span class="line">    `-- test</span><br><span class="line">        `-- java</span><br><span class="line">            `-- com</span><br><span class="line">                `-- mycompany</span><br><span class="line">                    `-- app</span><br><span class="line">                        `-- AppTest.java</span><br></pre></td></tr></table></figure>
 <p>简单点应该是这样的</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">my-app</span><br><span class="line">|-- src/main/java</span><br><span class="line">|	|--com.mycompany.app</span><br><span class="line">|		`--App.java</span><br><span class="line">|-- src/main/resources</span><br><span class="line">|</span><br><span class="line">|-- src/test/java</span><br><span class="line">|	|--com.mycompany.app</span><br><span class="line">|		`--AppTest.java</span><br><span class="line">|-- src/test/resources</span><br><span class="line">|-- pom.xml</span><br></pre></td></tr></table></figure>
 <p>而我去看了下 <code>pom.xml</code> 文件，发现了下面这段代码：</p>
-<p><img src="https://img-blog.csdnimg.cn/20190924143132599.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924143132599.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">sourceDirectory</span>&gt;</span>G:\Workspaces\MyEclipse2017\maven-project Maven Webapp\src\main\java<span class="tag">&lt;/<span class="name">sourceDirectory</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">scriptSourceDirectory</span>&gt;</span>G:\Workspaces\MyEclipse2017\maven-project Maven Webapp\src\main\scripts<span class="tag">&lt;/<span class="name">scriptSourceDirectory</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">testSourceDirectory</span>&gt;</span>G:\Workspaces\MyEclipse2017\maven-project Maven Webapp\src\test\java<span class="tag">&lt;/<span class="name">testSourceDirectory</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">outputDirectory</span>&gt;</span>G:\Workspaces\MyEclipse2017\maven-project Maven Webapp\target\classes<span class="tag">&lt;/<span class="name">outputDirectory</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">testOutputDirectory</span>&gt;</span>G:\Workspaces\MyEclipse2017\maven-project Maven Webapp\target\test-classes<span class="tag">&lt;/<span class="name">testOutputDirectory</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">directory</span>&gt;</span>G:\Workspaces\MyEclipse2017\maven-project Maven Webapp\src\main\resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>确实是需要一定规范的！?</p>
 <p>而从下图中，我们可以发现：新建后，只有 <code>src/main/resources</code> 这个源文件夹，而没有其他的，我一直很奇怪：为什么IDE集成的Maven项目的结构会不规范？</p>
-<p><img src="https://img-blog.csdnimg.cn/20190924141542547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924141542547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p>既然改变不了它的默认设置，只能后期修改了。去新建源文件夹（source folder）?已存在，感觉你是在骗我！！！刚刚都看了，明明没有，上图为证！！</p>
-<p><img src="https://img-blog.csdnimg.cn/20190924142317762.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924142317762.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p>为了让自己死心，我又去本地看了下，确实是没有啊！！出这么大事了，也不报个错什么的？突然感觉有点喜欢<strong>Error/Exception</strong>了，因为起码出bug了会报错，让你知道哪里出错了，提醒你去改；而最让人恶心的就是这种出bug却不报错的，会让你无从下手！！就像是相比会叫的狗，你更害怕不会叫的！</p>
-<p><img src="https://img-blog.csdnimg.cn/20190924142649680.png" alt="在这里插入图片描述"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924142649680.png" alt="在这里插入图片描述"></p>
 <p>??刷新了一下，好像没什么用；删除项目（不删除源），重新导入，果然还是没什么用，想想也是本地都没有文件，怎么可能突然就好了呢？?。</p>
 <p>感觉有点棘手了，但是有问题还是得解决不是？</p>
 <h3 id="处理方法-v3">处理方法</h3>
@@ -523,12 +523,12 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <p>??放大招，按照以往经验:<code>Properties</code>总会<strong>让人惊艳</strong>。</p>
 <p>步骤：项目右键–&gt;(最下名)Properties</p>
 <p>??看到错误，我竟然笑了<br>
-<img src="https://img-blog.csdnimg.cn/20190924145627805.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924145627805.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p>missing是个什么鬼，missing也不报错？?感觉差不多要换IDEA了……</p>
 <p>发现这个页面删除不了文件夹，转到source删除这两个不存在的（/占着maokeng不lashi）文件夹。<br>
-<img src="https://img-blog.csdnimg.cn/20190924145829490.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924145829490.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p>然后，可以直接在这个页面，新建文件夹；或者回到项目主页，右键项目，创建源文件夹（source folder）：<code>src/main/java</code>，<code>src/test/java</code>，OK，感觉还行，还是先用着吧? !</p>
-<p><img src="https://img-blog.csdnimg.cn/20190924151211642.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190924151211642.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 
       
 
@@ -981,6 +981,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -989,15 +997,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1049,11 +1049,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Live2D</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+                <a href="javascript:void(0)" class="js-tag color5">心知天气</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1062,10 +1066,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">评论系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">心知天气</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1093,6 +1093,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">背景图片</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ICP</a>
               </li>
              
@@ -1101,19 +1105,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">背景图片</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
+                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
+                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1129,6 +1129,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
               </li>
              
@@ -1138,10 +1142,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Beyond Compare 4</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1169,7 +1169,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">阿里云</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CMD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1185,11 +1193,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CMD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1202,10 +1206,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Code:blocks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1305,15 +1305,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">MapReduce</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1349,7 +1349,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color4">pip</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1357,11 +1361,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1405,14 +1405,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">CSDN资源</a>
               </li>
              
@@ -1429,19 +1421,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">EditPlus</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">文件名</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SSL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1457,6 +1449,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SSL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSDN</a>
               </li>
              
@@ -1469,15 +1469,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">304状态码</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">截图</a>
+                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1486,6 +1482,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GIF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">截图</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1517,14 +1517,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Grafana</a>
               </li>
              
@@ -1533,7 +1525,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
             
             <div class="clearfix"></div>

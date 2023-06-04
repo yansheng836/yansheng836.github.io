@@ -17,14 +17,14 @@
 <meta property="og:site_name" content="荷塘月色的博客">
 <meta property="og:description" content="简介 PostgreSQL是“世界上最先进的开源关系型数据库”。因为出现较晚，所以客户人群基数较MySQL少，但是发展势头很猛，最大优势是完全开源。 MySQL是“世界上最流行的开源关系型数据库”。当前客户基数大，随着被Oracle收购，开源程度减小，尤其是近期单独拉了免费的MariaDB分支，更表明MySQL有闭源的倾向； 至于两者孰优孰劣，不是本文要讨论的重点，在一般的使用中，没什么大的差别，">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190614190941426.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pBVkE1Mjg0MTYwMzc=,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2019061419114039.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190614191209870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pBVkE1Mjg0MTYwMzc=,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2023-04-01T16:42:52.190Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190614190941426.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pBVkE1Mjg0MTYwMzc=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/2019061419114039.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190614191209870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pBVkE1Mjg0MTYwMzc=,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2023-06-04T18:07:57.014Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【转载】PostgreSQL执行计划">
 <meta name="twitter:description" content="简介 PostgreSQL是“世界上最先进的开源关系型数据库”。因为出现较晚，所以客户人群基数较MySQL少，但是发展势头很猛，最大优势是完全开源。 MySQL是“世界上最流行的开源关系型数据库”。当前客户基数大，随着被Oracle收购，开源程度减小，尤其是近期单独拉了免费的MariaDB分支，更表明MySQL有闭源的倾向； 至于两者孰优孰劣，不是本文要讨论的重点，在一般的使用中，没什么大的差别，">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190614190941426.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pBVkE1Mjg0MTYwMzc=,size_16,color_FFFFFF,t_70">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190614190941426.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pBVkE1Mjg0MTYwMzc=,size_16,color_FFFFFF,t_70">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -470,15 +470,15 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <a id="more"></a>
 <p><strong>执行计划</strong></p>
 <p>pg在查询规划路径过程中，查询请求的不同执行方案是通过建立不同的路径来表达的，在生成较多符合条件的路径之后，要从中选择出代价最小的路径，把它转化为一个执行计划，传递给执行器执行。那么如何生成最小代价的计划呢？基于统计信息估计计划中各个节点的成本，其中与之相关的参数如下所示：</p>
-<p><img src="https://img-blog.csdnimg.cn/20190614190941426.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pBVkE1Mjg0MTYwMzc=,size_16,color_FFFFFF,t_70" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190614190941426.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pBVkE1Mjg0MTYwMzc=,size_16,color_FFFFFF,t_70" alt="img"></p>
 <p>计算代价：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 估算代价：</span></span><br><span class="line">total_cost = seq_page_cost * relpages + cpu_tuple_cost *  reltuples</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="comment"># 有时我们不想用系统默认的执行计划，这时可以通过禁止/开启某种运算的语法来强制控制执行计划：</span></span><br><span class="line">enable_bitmapscan = on</span><br><span class="line">enable_hashagg = on</span><br><span class="line">enable_hashjoin = on</span><br><span class="line">enable_indexscan = on <span class="comment">#索引扫描</span></span><br><span class="line">enable_indexonlyscan = on <span class="comment">#只读索引扫描</span></span><br><span class="line">enable_material = on <span class="comment">#物化视图</span></span><br><span class="line">enable_mergejoin = on</span><br><span class="line">enable_nestloop = on</span><br><span class="line">enable_seqscan = on</span><br><span class="line">enable_sort = on</span><br><span class="line">enable_tidscan = on</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 按照上面扫描方式并过滤代价：</span></span><br><span class="line">Cost = seq_page_cost * relpages + cpu_tuple_cost *  reltuples + cpu_operation_cost * reltuples</span><br></pre></td></tr></table></figure>
 <p>每个SQL语句都会有自己的执行计划，我们可以使用explain指令获取执行计划，语法如下：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">nsc=<span class="comment"># \h explain;</span></span><br><span class="line">Command:     <span class="keyword">EXPLAIN</span></span><br><span class="line">Description: <span class="keyword">show</span> the execution plan <span class="keyword">of</span> a <span class="keyword">statement</span></span><br><span class="line">Syntax:</span><br><span class="line"><span class="keyword">EXPLAIN</span> [ ( <span class="keyword">option</span> [, ...] ) ] <span class="keyword">statement</span></span><br><span class="line"><span class="keyword">EXPLAIN</span> [ <span class="keyword">ANALYZE</span> ] [ VERBOSE ] <span class="keyword">statement</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">where</span> <span class="keyword">option</span> can be one <span class="keyword">of</span>:</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">ANALYZE</span> [ <span class="built_in">boolean</span> ]  <span class="comment">-- 是否真正执行，默认false</span></span><br><span class="line">    VERBOSE [ <span class="built_in">boolean</span> ]  <span class="comment">-- 是否显示详细信息，默认false</span></span><br><span class="line">    COSTS [ <span class="built_in">boolean</span> ]    <span class="comment">-- 是否显示代价信息，默认true</span></span><br><span class="line">    BUFFERS [ <span class="built_in">boolean</span> ]  <span class="comment">-- 是否显示缓存信息，默认false，前置事件是analyze</span></span><br><span class="line">    TIMING [ <span class="built_in">boolean</span> ]   <span class="comment">-- 是否显示时间信息</span></span><br><span class="line">    <span class="keyword">FORMAT</span> &#123; <span class="built_in">TEXT</span> | <span class="keyword">XML</span> | <span class="keyword">JSON</span> | YAML &#125;  <span class="comment">-- 输格式，默认为text</span></span><br></pre></td></tr></table></figure>
 <p>如下图所示，cost是比较重要的指标，cost=1000.00…1205.30，执行sql代价，分为两个部分，前一部分表示启动时间(startup)是1000ms，执行到返回第一行时需要的cost值，后一部分表示总时间(total)是1205.30ms，执行整个SQL的cost。rows表示预测的行数，与实际的记录数可能有出入，数据库经常vacuum或analyze，该值越接近实际值。width表示查询结果的所有字段的总宽度为285个字节。</p>
-<p><img src="https://img-blog.csdnimg.cn/2019061419114039.png" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/2019061419114039.png" alt="img"></p>
 <p>可以在explain后添加analyze关键字来通过执行这个SQL获得真实的执行计划和执行时间，actual time中的第一个数字表示返回第一行需要的时间，第二个数字表示执行整个sql花费的时间。loops为该节点循环次数，当loops大于1时，总成本为：actual time * loops</p>
-<p><img src="https://img-blog.csdnimg.cn/20190614191209870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pBVkE1Mjg0MTYwMzc=,size_16,color_FFFFFF,t_70" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190614191209870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pBVkE1Mjg0MTYwMzc=,size_16,color_FFFFFF,t_70" alt="img"></p>
 <p><strong>执行计划节点类型</strong></p>
 <p>在PostgreSQL的执行计划中，是自上而下阅读的，通常执行计划会有相关的索引来表示不同的计划节点，其中计划节点类型分为四类：控制节点（Control Node），扫描节点（Scan Node），物化节点（Materialization Node），连接节点（Join Node）。</p>
 <p><strong>控制节点</strong>：append，组织多个字表或子查询的执行节点，主要用于union操作。</p>
@@ -1051,6 +1051,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -1059,15 +1067,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1119,11 +1119,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Live2D</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+                <a href="javascript:void(0)" class="js-tag color5">心知天气</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1132,10 +1136,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">评论系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">心知天气</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1163,6 +1163,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">背景图片</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ICP</a>
               </li>
              
@@ -1171,19 +1175,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">背景图片</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
+                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
+                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1199,6 +1199,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
               </li>
              
@@ -1208,10 +1212,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Beyond Compare 4</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1239,7 +1239,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">阿里云</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CMD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1255,11 +1263,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CMD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1272,10 +1276,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Code:blocks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1375,15 +1375,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">MapReduce</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1419,7 +1419,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color4">pip</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1427,11 +1431,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1475,14 +1475,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">CSDN资源</a>
               </li>
              
@@ -1499,19 +1491,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">EditPlus</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">文件名</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SSL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1527,6 +1519,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SSL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSDN</a>
               </li>
              
@@ -1539,15 +1539,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">304状态码</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">截图</a>
+                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1556,6 +1552,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GIF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">截图</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1587,14 +1587,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Grafana</a>
               </li>
              
@@ -1603,7 +1595,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
             
             <div class="clearfix"></div>

@@ -17,23 +17,23 @@
 <meta property="og:site_name" content="荷塘月色的博客">
 <meta property="og:description" content="求真 其实本来这个问题没有什么好说的，今天优化的时候遇到一个SQL语句，因为比较有意思，所以我截取、简化了SQL语句，演示给大家看，如下所示： 12345678declare @bamboo_Code varchar(3); set @bamboo_Code=&apos;-01&apos;;SELECT DISTINCT yarn_lotFROM   dbo.rsjob WITH ( nolock )WHERE  R">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/35aeeff1662ef7bcbaf2d00937334e34.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/419db5e4d9453827d7375e9a06fd4168.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/bc7399b45e13f09649d5779879dc1d3f.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/c3ff878d69cb29273ab19d5249ea1c7d.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/84716e38ed6dd62e4e526cff77afd378.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/904d6f7595a4055629a74d6efa0149d9.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/7ec1229772ff479db19bd99ce19f2ff2.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/3fb01173faf2a85f6482c9e81f244652.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/35c0ee4b22155ebeb02fe9f31a12f6ea.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/561380435ff21b8a9521ba9e077c3f6d.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/01f046bd16d0b11e5a624849a39be543.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/48da98a84d5b51f4078cdf2e8952aa4e.png">
-<meta property="og:updated_time" content="2023-04-01T16:42:52.206Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/35aeeff1662ef7bcbaf2d00937334e34.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/419db5e4d9453827d7375e9a06fd4168.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/bc7399b45e13f09649d5779879dc1d3f.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/c3ff878d69cb29273ab19d5249ea1c7d.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/84716e38ed6dd62e4e526cff77afd378.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/904d6f7595a4055629a74d6efa0149d9.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/7ec1229772ff479db19bd99ce19f2ff2.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/3fb01173faf2a85f6482c9e81f244652.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/35c0ee4b22155ebeb02fe9f31a12f6ea.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/561380435ff21b8a9521ba9e077c3f6d.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/01f046bd16d0b11e5a624849a39be543.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/48da98a84d5b51f4078cdf2e8952aa4e.png">
+<meta property="og:updated_time" content="2023-06-04T18:07:57.054Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQL Server 中is null 和 is not null 将会导致索引失效吗？">
 <meta name="twitter:description" content="求真 其实本来这个问题没有什么好说的，今天优化的时候遇到一个SQL语句，因为比较有意思，所以我截取、简化了SQL语句，演示给大家看，如下所示： 12345678declare @bamboo_Code varchar(3); set @bamboo_Code=&apos;-01&apos;;SELECT DISTINCT yarn_lotFROM   dbo.rsjob WITH ( nolock )WHERE  R">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/img_convert/35aeeff1662ef7bcbaf2d00937334e34.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/35aeeff1662ef7bcbaf2d00937334e34.png">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -479,45 +479,45 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <p>如上所示，SQL中对列yarn_log 使用了Isnull(yarn_lot, ‘’) &lt;&gt; ''这种写法，我估计书写该SQL语句的人应该是深信了“is null 和 is not null 将会导致索引失效”这条网上流传的教条， 至于这个建议是从哪里流传开来，已经无法考证。 那么我们通过实践来验证一下is null 或 is not null 是否会导致索引失效。</p>
 <p>表rsjob是一个堆表，在列yarn_lot上建有索引yarn_lot.那么我们通过实验来验证吧</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> yarn_lot</span><br><span class="line"><span class="keyword">FROM</span>   dbo.rsjob <span class="keyword">WITH</span>(nolock)</span><br><span class="line"><span class="keyword">WHERE</span>  yarn_lot <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> yarn_lot</span><br><span class="line"><span class="keyword">FROM</span>   dbo.rsjob <span class="keyword">WITH</span>(nolock)</span><br><span class="line"><span class="keyword">WHERE</span>  yarn_lot <span class="keyword">IS</span> <span class="literal">NULL</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/35aeeff1662ef7bcbaf2d00937334e34.png" alt="clipboard"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/35aeeff1662ef7bcbaf2d00937334e34.png" alt="clipboard"></p>
 <p>如上所示，不管是IS NULL 或IS NOT NULL都走了索引查找。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">declare</span> @bamboo_Code <span class="built_in">varchar</span>(<span class="number">3</span>);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">set</span> @bamboo_Code=<span class="string">'-01'</span>;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> yarn_lot</span><br><span class="line"><span class="keyword">FROM</span>   dbo.rsjob <span class="keyword">WITH</span> ( nolock )</span><br><span class="line"><span class="keyword">WHERE</span>  <span class="keyword">RIGHT</span>(ges_no, <span class="number">3</span>) = @bamboo_Code</span><br><span class="line">       <span class="keyword">AND</span> <span class="keyword">Isnull</span>(yarn_lot, <span class="string">''</span>) &lt;&gt; <span class="string">''</span>; </span><br><span class="line">       </span><br><span class="line">       </span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> yarn_lot</span><br><span class="line"><span class="keyword">FROM</span>   dbo.rsjob <span class="keyword">WITH</span> ( nolock )</span><br><span class="line"><span class="keyword">WHERE</span>  <span class="keyword">RIGHT</span>(ges_no, <span class="number">3</span>) = @bamboo_Code</span><br><span class="line">       <span class="keyword">AND</span> yarn_lot <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
 <p>另外我们来看看这两个原始SQL执行计划的开销比值为52:48， 也就是说使用IS NOT NULL性能更好，第一个SQL语句由于做了转换，导致其走索引扫描，而使用IS NOT NULL则走索引查找。</p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/419db5e4d9453827d7375e9a06fd4168.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/419db5e4d9453827d7375e9a06fd4168.png" alt></p>
 <h2 id="探索">探索</h2>
 <p>“is null 和 is not null 将会导致索引失效”这种坑人教条直接被推翻了。所以还在信奉这个教条的人真应该自己动手验证一下。</p>
 <p>下面我们可以通过实验验证一下，考虑到在真实环境中，可能情况比较复杂。我们可以构建下面几个场景。其实真实环境中情况还会复杂一些。但是基本上大致有如下一些场景：</p>
 <h3 id="情况1：堆表-谓词上单独索引列">情况1：堆表 谓词上单独索引列</h3>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">USE</span> <span class="keyword">Test</span>;</span><br><span class="line">GO</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="keyword">TEST</span>;</span><br><span class="line">GO</span><br><span class="line">  </span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">TEST</span> (OBJECT_ID  <span class="built_in">INT</span>, <span class="keyword">NAME</span> <span class="built_in">VARCHAR</span>(<span class="number">12</span>));</span><br><span class="line"> </span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> PK_TEST <span class="keyword">ON</span> <span class="keyword">TEST</span>(OBJECT_ID) <span class="keyword">INCLUDE</span>(<span class="keyword">NAME</span>);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">DECLARE</span> @<span class="keyword">Index</span> <span class="built_in">INT</span> =<span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line">WHILE @Index &lt; 10000</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">    <span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">TEST</span></span><br><span class="line">    <span class="keyword">SELECT</span> @<span class="keyword">Index</span>, <span class="string">'kerry'</span>+ <span class="keyword">CAST</span>(@<span class="keyword">Index</span> <span class="keyword">AS</span> <span class="built_in">VARCHAR</span>);</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">SET</span> @<span class="keyword">Index</span> = @<span class="keyword">Index</span> +<span class="number">1</span>;</span><br><span class="line"><span class="keyword">END</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">TEST</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="literal">NULL</span>, <span class="string">'only test1'</span> <span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="literal">NULL</span>, <span class="string">'only test2'</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">UPDATE</span> <span class="keyword">STATISTICS</span> <span class="keyword">TEST</span> <span class="keyword">WITH</span> FULLSCAN;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">TEST</span> <span class="keyword">WHERE</span> OBJECT_ID <span class="keyword">IS</span> <span class="literal">NULL</span>;</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">TEST</span> <span class="keyword">WHERE</span>  OBJECT_ID <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/bc7399b45e13f09649d5779879dc1d3f.png" alt="clipboard1"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/bc7399b45e13f09649d5779879dc1d3f.png" alt="clipboard1"></p>
 <p>删除索引，建立如下索引。如下所示</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">INDEX</span> PK_TEST <span class="keyword">ON</span> <span class="keyword">TEST</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> PK_TEST <span class="keyword">ON</span> <span class="keyword">TEST</span>(OBJECT_ID)</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/c3ff878d69cb29273ab19d5249ea1c7d.png" alt="clipboard2"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/c3ff878d69cb29273ab19d5249ea1c7d.png" alt="clipboard2"></p>
 <p>由此可见IS NULL 或IS NOT NULL的执行计划即与索引有关系，还跟数据分布有一定关系。</p>
 <h3 id="情况2：堆表-谓词上无索引">情况2：堆表 谓词上无索引</h3>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">USE</span> <span class="keyword">Test</span>;</span><br><span class="line">GO</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="keyword">TEST</span>;</span><br><span class="line">GO</span><br><span class="line"> </span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">TEST</span> (OBJECT_ID  <span class="built_in">INT</span>, <span class="keyword">NAME</span> <span class="built_in">VARCHAR</span>(<span class="number">12</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">DECLARE</span> @<span class="keyword">Index</span> <span class="built_in">INT</span> =<span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line">WHILE @Index &lt; 10000</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">    <span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">TEST</span></span><br><span class="line">    <span class="keyword">SELECT</span> @<span class="keyword">Index</span>, <span class="string">'kerry'</span>+ <span class="keyword">CAST</span>(@<span class="keyword">Index</span> <span class="keyword">AS</span> <span class="built_in">VARCHAR</span>);</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">SET</span> @<span class="keyword">Index</span> = @<span class="keyword">Index</span> +<span class="number">1</span>;</span><br><span class="line"><span class="keyword">END</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">TEST</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="literal">NULL</span>, <span class="string">'only test1'</span> <span class="keyword">UNION</span> <span class="keyword">ALL</span> </span><br><span class="line"><span class="keyword">SELECT</span> <span class="literal">NULL</span>, <span class="string">'only test2'</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">UPDATE</span> <span class="keyword">STATISTICS</span> <span class="keyword">TEST</span> <span class="keyword">WITH</span> FULLSCAN;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">TEST</span> <span class="keyword">WHERE</span> OBJECT_ID <span class="keyword">IS</span> <span class="literal">NULL</span>;</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">TEST</span> <span class="keyword">WHERE</span>  OBJECT_ID <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/84716e38ed6dd62e4e526cff77afd378.png" alt="clipboard3"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/84716e38ed6dd62e4e526cff77afd378.png" alt="clipboard3"></p>
 <p>如上所示，如果一个堆表没有建立任何索引，那么使用IS NULL 或IS NOT NULL肯定要走全表扫描，不过这不在我们的讨论范围之内。然后我们看看将索引建立在其它字段上（主要是为了与聚集索引表对比），它依然全表扫描。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> PK_TEST <span class="keyword">ON</span> <span class="keyword">TEST</span>(OBJECT_ID) <span class="keyword">INCLUDE</span>(<span class="keyword">NAME</span>);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">TEST</span></span><br><span class="line"> <span class="keyword">SELECT</span> <span class="number">10000</span>, <span class="literal">NULL</span> <span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line"> <span class="keyword">SELECT</span> <span class="number">10001</span>, <span class="literal">NULL</span> ;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">TEST</span> <span class="keyword">WHERE</span> <span class="keyword">NAME</span>  <span class="keyword">IS</span> <span class="literal">NULL</span>;</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">TEST</span> <span class="keyword">WHERE</span>  <span class="keyword">NAME</span> <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/904d6f7595a4055629a74d6efa0149d9.png" alt="clipboard4"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/904d6f7595a4055629a74d6efa0149d9.png" alt="clipboard4"></p>
 <h3 id="情况3：堆表-联合索引列">情况3：堆表 联合索引列</h3>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">USE</span> <span class="keyword">Test</span>;</span><br><span class="line">GO</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="keyword">TEST</span>;</span><br><span class="line">GO</span><br><span class="line">   </span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">TEST</span> (OBJECT_ID  <span class="built_in">INT</span>, <span class="keyword">NAME</span> <span class="built_in">VARCHAR</span>(<span class="number">12</span>), AGE <span class="built_in">INT</span>);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> IDX_TEST_N1 <span class="keyword">ON</span> <span class="keyword">TEST</span>(<span class="keyword">NAME</span>, AGE);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">DECLARE</span> @<span class="keyword">Index</span> <span class="built_in">INT</span> =<span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line">WHILE @Index &lt; 10000</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">    <span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">TEST</span></span><br><span class="line">    <span class="keyword">SELECT</span> @<span class="keyword">Index</span>, <span class="string">'kerry'</span>+ <span class="keyword">CAST</span>(@<span class="keyword">Index</span> <span class="keyword">AS</span> <span class="built_in">VARCHAR</span>), <span class="keyword">floor</span>(<span class="keyword">rand</span>()*<span class="number">100</span>) ;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">SET</span> @<span class="keyword">Index</span> = @<span class="keyword">Index</span> +<span class="number">1</span>;</span><br><span class="line"><span class="keyword">END</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">TEST</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="literal">NULL</span>, <span class="string">'only test1'</span>, <span class="number">12</span> <span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="literal">NULL</span>, <span class="string">'only test2'</span>,<span class="number">24</span></span><br><span class="line"><span class="keyword">UPDATE</span> <span class="keyword">STATISTICS</span> <span class="keyword">TEST</span> <span class="keyword">WITH</span> FULLSCAN;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">TEST</span> <span class="keyword">WHERE</span> <span class="keyword">NAME</span> <span class="keyword">IS</span> <span class="literal">NULL</span>;</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">TEST</span> <span class="keyword">WHERE</span>  <span class="keyword">NAME</span> <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/7ec1229772ff479db19bd99ce19f2ff2.png" alt="clipboard5"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/7ec1229772ff479db19bd99ce19f2ff2.png" alt="clipboard5"></p>
 <p>如果联合索引中，谓词位于联合索引的第二或更后位置，那么又是什么情况？ 从下面我们可以看到，SQL走全表扫描了。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">INDEX</span> IDX_TEST_N1 <span class="keyword">ON</span> <span class="keyword">TEST</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> IDX_TEST_N1 <span class="keyword">ON</span> <span class="keyword">TEST</span>( AGE,<span class="keyword">NAME</span>);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">UPDATE</span> <span class="keyword">STATISTICS</span> <span class="keyword">TEST</span> <span class="keyword">WITH</span> FULLSCAN;</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/3fb01173faf2a85f6482c9e81f244652.png" alt="clipboard6"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/3fb01173faf2a85f6482c9e81f244652.png" alt="clipboard6"></p>
 <h3 id="情况4：聚集索引表-单独索引列">情况4：聚集索引表 单独索引列</h3>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">USE</span> <span class="keyword">Test</span>;</span><br><span class="line">GO</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="keyword">TEST</span>;</span><br><span class="line">GO</span><br><span class="line">   </span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">TEST</span> (OBJECT_ID  <span class="built_in">INT</span>, <span class="keyword">NAME</span> <span class="built_in">VARCHAR</span>(<span class="number">12</span>));</span><br><span class="line"> </span><br><span class="line"><span class="keyword">CREATE</span> CLUSTERED <span class="keyword">INDEX</span> PK_TEST <span class="keyword">ON</span> <span class="keyword">TEST</span>(OBJECT_ID)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">DECLARE</span> @<span class="keyword">Index</span> <span class="built_in">INT</span> =<span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line">WHILE @Index &lt; 10000</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">    <span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">TEST</span></span><br><span class="line">    <span class="keyword">SELECT</span> @<span class="keyword">Index</span>, <span class="string">'kerry'</span>+ <span class="keyword">CAST</span>(@<span class="keyword">Index</span> <span class="keyword">AS</span> <span class="built_in">VARCHAR</span>);</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">SET</span> @<span class="keyword">Index</span> = @<span class="keyword">Index</span> +<span class="number">1</span>;</span><br><span class="line"><span class="keyword">END</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">TEST</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="literal">NULL</span>, <span class="string">'only test1'</span> <span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="literal">NULL</span>, <span class="string">'only test2'</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">TEST</span> <span class="keyword">WHERE</span> OBJECT_ID <span class="keyword">IS</span> <span class="literal">NULL</span>;</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">TEST</span> <span class="keyword">WHERE</span>  OBJECT_ID <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/35c0ee4b22155ebeb02fe9f31a12f6ea.png" alt="clipboard"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/35c0ee4b22155ebeb02fe9f31a12f6ea.png" alt="clipboard"></p>
 <p>如果我在列NAME上面使用IS NULL 或IS NOT NULL进行查询，你会发现执行计划从聚集索引查找变为了聚集索引扫描。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">TEST</span> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">SELECT</span> <span class="number">10000</span>, <span class="literal">NULL</span> <span class="keyword">UNION</span> <span class="keyword">ALL</span> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">SELECT</span> <span class="number">10001</span>, <span class="literal">NULL</span> ; </span><br><span class="line"> </span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">TEST</span> <span class="keyword">WHERE</span> <span class="keyword">NAME</span> <span class="keyword">IS</span> <span class="literal">NULL</span>; </span><br><span class="line"> </span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">TEST</span> <span class="keyword">WHERE</span> <span class="keyword">NAME</span> <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/561380435ff21b8a9521ba9e077c3f6d.png" alt="clipboard"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/561380435ff21b8a9521ba9e077c3f6d.png" alt="clipboard"></p>
 <h3 id="情况5：聚集索引表-联合索引列">情况5：聚集索引表 联合索引列</h3>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">USE</span> <span class="keyword">Test</span>;</span><br><span class="line">GO</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="keyword">TEST</span>;</span><br><span class="line">GO</span><br><span class="line">   </span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">TEST</span> (OBJECT_ID  <span class="built_in">INT</span>, <span class="keyword">NAME</span> <span class="built_in">VARCHAR</span>(<span class="number">12</span>), AGE <span class="built_in">INT</span>);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">CREATE</span> CLUSTERED <span class="keyword">INDEX</span> PK_TEST <span class="keyword">ON</span> <span class="keyword">TEST</span>(OBJECT_ID)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">DECLARE</span> @<span class="keyword">Index</span> <span class="built_in">INT</span> =<span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line">WHILE @Index &lt; 10000</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">    <span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">TEST</span></span><br><span class="line">    <span class="keyword">SELECT</span> @<span class="keyword">Index</span>, <span class="string">'kerry'</span>+ <span class="keyword">CAST</span>(@<span class="keyword">Index</span> <span class="keyword">AS</span> <span class="built_in">VARCHAR</span>), <span class="keyword">floor</span>(<span class="keyword">rand</span>()*<span class="number">100</span>) ;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">SET</span> @<span class="keyword">Index</span> = @<span class="keyword">Index</span> +<span class="number">1</span>;</span><br><span class="line"><span class="keyword">END</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">TEST</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="number">10001</span>, <span class="string">'NULL'</span>, <span class="number">12</span> <span class="keyword">UNION</span> <span class="keyword">ALL</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="number">10002</span>, <span class="string">'NULL'</span>,<span class="number">24</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> IDX_TEST_N2 <span class="keyword">ON</span> <span class="keyword">TEST</span>(<span class="keyword">NAME</span>,AGE);</span><br><span class="line"><span class="keyword">UPDATE</span> <span class="keyword">STATISTICS</span> <span class="keyword">TEST</span> <span class="keyword">WITH</span> FULLSCAN;</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/01f046bd16d0b11e5a624849a39be543.png" alt="clipboard"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/01f046bd16d0b11e5a624849a39be543.png" alt="clipboard"></p>
 <p>如果联合索引中，谓词位于不位于第一列，那么IS NULL 或IS NOT NULL有会不会走索引呢？</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">INDEX</span> IDX_TEST_N2 <span class="keyword">ON</span> <span class="keyword">TEST</span>; </span><br><span class="line"> </span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">INDEX</span> IDX_TEST_N2 <span class="keyword">ON</span> <span class="keyword">TEST</span>(AGE,<span class="keyword">NAME</span>); </span><br><span class="line"> </span><br><span class="line"><span class="keyword">UPDATE</span> <span class="keyword">STATISTICS</span> <span class="keyword">TEST</span> <span class="keyword">WITH</span> FULLSCAN;</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/48da98a84d5b51f4078cdf2e8952aa4e.png" alt="clipboard10"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/48da98a84d5b51f4078cdf2e8952aa4e.png" alt="clipboard10"></p>
 <p>如上所示，它从索引查找变成索引扫描了。</p>
 <h3 id="小结">小结</h3>
 <ol>
@@ -953,6 +953,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -961,15 +969,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1021,11 +1021,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Live2D</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+                <a href="javascript:void(0)" class="js-tag color5">心知天气</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1034,10 +1038,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">评论系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">心知天气</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1065,6 +1065,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">背景图片</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ICP</a>
               </li>
              
@@ -1073,19 +1077,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">背景图片</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
+                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
+                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1101,6 +1101,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
               </li>
              
@@ -1110,10 +1114,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Beyond Compare 4</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1141,7 +1141,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">阿里云</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CMD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1157,11 +1165,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CMD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1174,10 +1178,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Code:blocks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1277,15 +1277,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">MapReduce</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1321,7 +1321,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color4">pip</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1329,11 +1333,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1377,14 +1377,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">CSDN资源</a>
               </li>
              
@@ -1401,19 +1393,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">EditPlus</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">文件名</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SSL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1429,6 +1421,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SSL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSDN</a>
               </li>
              
@@ -1441,15 +1441,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">304状态码</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">截图</a>
+                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1458,6 +1454,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GIF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">截图</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1489,14 +1489,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Grafana</a>
               </li>
              
@@ -1505,7 +1497,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
             
             <div class="clearfix"></div>

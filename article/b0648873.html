@@ -17,14 +17,14 @@
 <meta property="og:site_name" content="荷塘月色的博客">
 <meta property="og:description" content="有时我们需要在数据库中构建大量的基础数据（比如千万级别数据）进行查询操作的性能测试或者 sql 优化。我们通常会采用如下两种方式来创建测试数据：   方式一：编写代码，通过代码批量插库   方式二：编写存储过程和函数执行 但这两种方法都略显麻烦，本文使用 MySQL 自带的压力测试工具 mysqlslap 来实现测试数据的构建。如果想要了解 mysqlslap 更详细的用法，可以参考我之前写的文章">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/fb87edea03036fb105101139e720788e.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/70c9a7a2f757cb7d097953494e2b2c54.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/ef35d0193a573d7e293441c83e170ee6.png">
-<meta property="og:updated_time" content="2023-06-04T14:23:01.395Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/fb87edea03036fb105101139e720788e.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/70c9a7a2f757cb7d097953494e2b2c54.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/ef35d0193a573d7e293441c83e170ee6.png">
+<meta property="og:updated_time" content="2023-06-04T18:07:57.158Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL快速生成大量测试数据方法（无需编写代码、或存储过程）">
 <meta name="twitter:description" content="有时我们需要在数据库中构建大量的基础数据（比如千万级别数据）进行查询操作的性能测试或者 sql 优化。我们通常会采用如下两种方式来创建测试数据：   方式一：编写代码，通过代码批量插库   方式二：编写存储过程和函数执行 但这两种方法都略显麻烦，本文使用 MySQL 自带的压力测试工具 mysqlslap 来实现测试数据的构建。如果想要了解 mysqlslap 更详细的用法，可以参考我之前写的文章">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/img_convert/fb87edea03036fb105101139e720788e.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/fb87edea03036fb105101139e720788e.png">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -476,14 +476,14 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <a id="more"></a>
 <h3 id="1-准备工作">1，准备工作</h3>
 <p>假设我们要在 <strong>people</strong> 表里插入 <strong>1</strong> 百万条随机的测试数据，表结构如下：</p>
-<p><a href="https://www.hangge.com/blog/cache/detail_3071.html#" target="_blank" rel="noopener"><img src="https://img-blog.csdnimg.cn/img_convert/fb87edea03036fb105101139e720788e.png" alt="原文:MySQL - 快速生成大量测试数据方法（无需编写代码、或存储过程）"></a></p>
+<p><a href="https://www.hangge.com/blog/cache/detail_3071.html#" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/fb87edea03036fb105101139e720788e.png" alt="原文:MySQL - 快速生成大量测试数据方法（无需编写代码、或存储过程）"></a></p>
 <h3 id="2-插入数据">2，插入数据</h3>
 <p>（1）我们执行如下命令实现数据插入，为提高效率这里开启 <strong>10</strong> 个客户端线程同时插入，总共执行 <strong>1</strong> 百万次操作：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqlslap -uroot -pHangge_123 --concurrency=10 --number-of-queries=1000000 --create-schema=hangge --query="INSERT INTO people(name,age) VALUES (uuid(), RAND() * 100)"</span><br></pre></td></tr></table></figure>
 <p>（2）执行完毕可以发现总耗时 <strong>208</strong> 秒：</p>
-<p><a href="https://www.hangge.com/blog/cache/detail_3071.html#" target="_blank" rel="noopener"><img src="https://img-blog.csdnimg.cn/img_convert/70c9a7a2f757cb7d097953494e2b2c54.png" alt="原文:MySQL - 快速生成大量测试数据方法（无需编写代码、或存储过程）"></a></p>
+<p><a href="https://www.hangge.com/blog/cache/detail_3071.html#" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/70c9a7a2f757cb7d097953494e2b2c54.png" alt="原文:MySQL - 快速生成大量测试数据方法（无需编写代码、或存储过程）"></a></p>
 <p>（3）查看数据库，可以发现测试数据已经创建成功：</p>
-<p><a href="https://www.hangge.com/blog/cache/detail_3071.html#" target="_blank" rel="noopener"><img src="https://img-blog.csdnimg.cn/img_convert/ef35d0193a573d7e293441c83e170ee6.png" alt="原文:MySQL - 快速生成大量测试数据方法（无需编写代码、或存储过程）"></a></p>
+<p><a href="https://www.hangge.com/blog/cache/detail_3071.html#" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/ef35d0193a573d7e293441c83e170ee6.png" alt="原文:MySQL - 快速生成大量测试数据方法（无需编写代码、或存储过程）"></a></p>
 <hr>
 <p>原文出自：<a href="https://www.hangge.com/" target="_blank" rel="noopener">www.hangge.com</a> 转载请保留原文链接：<a href="https://www.hangge.com/blog/cache/detail_3071.html" target="_blank" rel="noopener">https://www.hangge.com/blog/cache/detail_3071.html</a></p>
 
@@ -908,6 +908,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -916,15 +924,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -976,11 +976,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Live2D</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+                <a href="javascript:void(0)" class="js-tag color5">心知天气</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -989,10 +993,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">评论系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">心知天气</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1020,6 +1020,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">背景图片</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ICP</a>
               </li>
              
@@ -1028,19 +1032,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">背景图片</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
+                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
+                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1056,6 +1056,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
               </li>
              
@@ -1065,10 +1069,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Beyond Compare 4</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1096,7 +1096,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">阿里云</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CMD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1112,11 +1120,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CMD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1129,10 +1133,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Code:blocks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1232,15 +1232,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">MapReduce</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1276,7 +1276,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color4">pip</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1284,11 +1288,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1332,14 +1332,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">CSDN资源</a>
               </li>
              
@@ -1356,19 +1348,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">EditPlus</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">文件名</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SSL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1384,6 +1376,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SSL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSDN</a>
               </li>
              
@@ -1396,15 +1396,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">304状态码</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">截图</a>
+                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1413,6 +1409,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GIF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">截图</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1444,14 +1444,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Grafana</a>
               </li>
              
@@ -1460,7 +1452,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
             
             <div class="clearfix"></div>

@@ -17,13 +17,13 @@
 <meta property="og:site_name" content="荷塘月色的博客">
 <meta property="og:description" content="设置 psql 默认是水平输出查询结果，一条记录占一行。而且和 mysql 不同的是，它还不换行，如果一行内容太多，后面的就看不见了。 如果想切换城竖式显示，只需要使用 \x 命令： 12345678910# \xExpanded display is on.# \xExpanded display is off.#中文postgres=# \x扩展显示已打开.postgres=# \x扩展显示已">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/353c7b0479f045e0951048391f1c04db.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/4dc385f121d44cd2913aeca39fcf7bab.png">
-<meta property="og:updated_time" content="2023-04-01T16:42:52.190Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/353c7b0479f045e0951048391f1c04db.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/4dc385f121d44cd2913aeca39fcf7bab.png">
+<meta property="og:updated_time" content="2023-06-04T18:07:56.986Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PostgreSQL命令行-psql竖式输出查询结果">
 <meta name="twitter:description" content="设置 psql 默认是水平输出查询结果，一条记录占一行。而且和 mysql 不同的是，它还不换行，如果一行内容太多，后面的就看不见了。 如果想切换城竖式显示，只需要使用 \x 命令： 12345678910# \xExpanded display is on.# \xExpanded display is off.#中文postgres=# \x扩展显示已打开.postgres=# \x扩展显示已">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/353c7b0479f045e0951048391f1c04db.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/353c7b0479f045e0951048391f1c04db.png">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -474,11 +474,11 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <p>这是横向打印的，复制出来没什么感觉，但是要是再命令行就不是那么回事了……</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">postgres=<span class="comment"># select * from pg_statistic limit 2;</span></span><br><span class="line"> starelid | staattnum | stainherit | stanullfrac | stawidth | stadistinct | stakind1 | stakind2 | stakind3 | stakind4 | stakind5 | staop1 | staop2 | staop3 | staop4 | staop5 | stacoll1 | stacoll2 | stacoll3 | stacoll4 | stacoll5 | stanumbers1 | stanumbers2  | stanumbers3 | stanumbers4 | stanumbers5 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             stavalues1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | stavalues2 | stavalues3 | stavalues4 | stavalues5</span><br><span class="line"><span class="comment">----------+-----------+------------+-------------+----------+-------------+----------+----------+----------+----------+----------+--------+--------+--------+--------+--------+----------+----------+----------+----------+----------+-------------+--------------+-------------+-------------+-------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------</span></span><br><span class="line">     1247 |         1 | f          |           0 |        4 |          -1 |        2 |        3 |        0 |        0 |        0 |    609 |    609 |      0 |      0 |      0 |        0 |        0 |        0 |        0 |        0 |             | &#123;0.95600975&#125; |             |             |             | &#123;16,20,24,28,71,114,199,600,604,651,719,791,1001,1006,1010,1014,1018,1022,1034,1043,1182,1186,1263,1561,1790,2204,2208,2249,2278,2283,2949,3115,3361,3615,3645,3770,3838,3907,3911,3927,4090,4192,5069,5080,12002,12006,12010,12014,12018,12022,12027,12031,12035,12039,12043,12047,12051,12055,12059,12063,12068,12072,12076,12080,12084,12092,12106,12122,12138,12151,12171,12183,12197,12211,12225,12238,12251,12265,12278,12293,12311,13170,13175,13181,13190,13205,13221,13237,13253,13268,13286,13298,13308,13321,13336,13351,13366,13382,13395,13408,13426&#125;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |            |            |            |</span><br><span class="line">     1247 |         2 | f          |           0 |       64 |          -1 |        2 |        3 |        0 |        0 |        0 |    660 |    660 |      0 |      0 |      0 |      950 |      950 |        0 |        0 |        0 |             | &#123;0.21692695&#125; |             |             |             | &#123;_aclitem,_bpchar,_character_data,_cstring,_float8,_int2vector,_int8range,_jsonpath,_macaddr8,_numrange,_pg_foreign_servers,_pg_snapshot,_record,_regconfig,_regoperator,_regtype,_time,_timetz,_tsvector,_varchar,aclitem,anycompatible,anyelement,applicable_roles,box,char,check_constraints,collation_character_set_applicability,column_options,constraint_column_usage,daterange,element_types,float4,foreign_server_options,gtsvector,int2,int8,json,language_handler,macaddr8,oid,pg_aggregate,pg_attrdef,pg_available_extension_versions,pg_collation,pg_cursors,pg_default_acl,pg_enum,pg_foreign_data_wrapper,pg_hba_file_rules,pg_language,pg_lsn,pg_ndistinct,pg_opfamily,pg_prepared_statements,pg_publication_rel,pg_replication_origin_status,pg_rules,pg_sequences,pg_shdescription,pg_stat_all_indexes,pg_stat_database,pg_stat_progress_basebackup,pg_stat_replication,pg_stat_sys_indexes,pg_stat_user_tables,pg_stat_xact_user_functions,pg_statio_all_tables,pg_statio_user_indexes,pg_statistic_ext,pg_subscription_rel,pg_timezone_names,pg_toast_1260,pg_toast_13302,pg_toast_2328,pg_toast_2606,pg_toast_2618,pg_toast_3079,pg_toast_3381,pg_toast_3466,pg_toast_6100,pg_ts_config,pg_ts_template,pg_user_mappings,record,regcollation,regoper,regrole,role_table_grants,routines,sql_implementation_info,table_constraints,tid,timestamptz,triggered_update_columns,tsrange,udt_privileges,user_mapping_options,varchar,views,yes_or_no&#125; |            |            |            |</span><br><span class="line">(2 行记录)</span><br></pre></td></tr></table></figure>
 <p>命令行截图：</p>
-<p><img src="https://img-blog.csdnimg.cn/353c7b0479f045e0951048391f1c04db.png" alt="在这里插入图片描述"><br>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/353c7b0479f045e0951048391f1c04db.png" alt="在这里插入图片描述"><br>
 开启竖式输出</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">postgres=<span class="comment"># \x</span></span><br><span class="line">扩展显示已打开.</span><br><span class="line">postgres=<span class="comment"># select * from pg_statistic limit 2;</span></span><br><span class="line">-[ RECORD 1 ]<span class="comment">--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span></span><br><span class="line">starelid    | 1247</span><br><span class="line">staattnum   | 1</span><br><span class="line">stainherit  | f</span><br><span class="line">stanullfrac | 0</span><br><span class="line">stawidth    | 4</span><br><span class="line">stadistinct | -1</span><br><span class="line">stakind1    | 2</span><br><span class="line">stakind2    | 3</span><br><span class="line">stakind3    | 0</span><br><span class="line">stakind4    | 0</span><br><span class="line">stakind5    | 0</span><br><span class="line">staop1      | 609</span><br><span class="line">staop2      | 609</span><br><span class="line">staop3      | 0</span><br><span class="line">staop4      | 0</span><br><span class="line">staop5      | 0</span><br><span class="line">stacoll1    | 0</span><br><span class="line">stacoll2    | 0</span><br><span class="line">stacoll3    | 0</span><br><span class="line">stacoll4    | 0</span><br><span class="line">stacoll5    | 0</span><br><span class="line">stanumbers1 |</span><br><span class="line">stanumbers2 | &#123;0.95600975&#125;</span><br><span class="line">stanumbers3 |</span><br><span class="line">stanumbers4 |</span><br><span class="line">stanumbers5 |</span><br><span class="line">stavalues1  | &#123;16,20,24,28,71,114,199,600,604,651,719,791,1001,1006,1010,1014,1018,1022,1034,1043,1182,1186,1263,1561,1790,2204,2208,2249,2278,2283,2949,3115,3361,3615,3645,3770,3838,3907,3911,3927,4090,4192,5069,5080,12002,12006,12010,12014,12018,12022,12027,12031,12035,12039,12043,12047,12051,12055,12059,12063,12068,12072,12076,12080,12084,12092,12106,12122,12138,12151,12171,12183,12197,12211,12225,12238,12251,12265,12278,12293,12311,13170,13175,13181,13190,13205,13221,13237,13253,13268,13286,13298,13308,13321,13336,13351,13366,13382,13395,13408,13426&#125;</span><br><span class="line">stavalues2  |</span><br><span class="line">stavalues3  |</span><br><span class="line">stavalues4  |</span><br><span class="line">stavalues5  |</span><br><span class="line">-[ RECORD 2 ]<span class="comment">--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span></span><br><span class="line">starelid    | 1247</span><br><span class="line">staattnum   | 2</span><br><span class="line">stainherit  | f</span><br><span class="line">stanullfrac | 0</span><br><span class="line">stawidth    | 64</span><br><span class="line">stadistinct | -1</span><br><span class="line">stakind1    | 2</span><br><span class="line">stakind2    | 3</span><br><span class="line">stakind3    | 0</span><br><span class="line">stakind4    | 0</span><br><span class="line">stakind5    | 0</span><br><span class="line">staop1      | 660</span><br><span class="line">staop2      | 660</span><br><span class="line">staop3      | 0</span><br><span class="line">staop4      | 0</span><br><span class="line">staop5      | 0</span><br><span class="line">stacoll1    | 950</span><br><span class="line">stacoll2    | 950</span><br><span class="line">stacoll3    | 0</span><br><span class="line">stacoll4    | 0</span><br><span class="line">stacoll5    | 0</span><br><span class="line">stanumbers1 |</span><br><span class="line">stanumbers2 | &#123;0.21692695&#125;</span><br><span class="line">stanumbers3 |</span><br><span class="line">stanumbers4 |</span><br><span class="line">stanumbers5 |</span><br><span class="line">stavalues1  | &#123;_aclitem,_bpchar,_character_data,_cstring,_float8,_int2vector,_int8range,_jsonpath,_macaddr8,_numrange,_pg_foreign_servers,_pg_snapshot,_record,_regconfig,_regoperator,_regtype,_time,_timetz,_tsvector,_varchar,aclitem,anycompatible,anyelement,applicable_roles,box,char,check_constraints,collation_character_set_applicability,column_options,constraint_column_usage,daterange,element_types,float4,foreign_server_options,gtsvector,int2,int8,json,language_handler,macaddr8,oid,pg_aggregate,pg_attrdef,pg_available_extension_versions,pg_collation,pg_cursors,pg_default_acl,pg_enum,pg_foreign_data_wrapper,pg_hba_file_rules,pg_language,pg_lsn,pg_ndistinct,pg_opfamily,pg_prepared_statements,pg_publication_rel,pg_replication_origin_status,pg_rules,pg_sequences,pg_shdescription,pg_stat_all_indexes,pg_stat_database,pg_stat_progress_basebackup,pg_stat_replication,pg_stat_sys_indexes,pg_stat_user_tables,pg_stat_xact_user_functions,pg_statio_all_tables,pg_statio_user_indexes,pg_statistic_ext,pg_subscription_rel,pg_timezone_names,pg_toast_1260,pg_toast_13302,pg_toast_2328,pg_toast_2606,pg_toast_2618,pg_toast_3079,pg_toast_3381,pg_toast_3466,pg_toast_6100,pg_ts_config,pg_ts_template,pg_user_mappings,record,regcollation,regoper,regrole,role_table_grants,routines,sql_implementation_info,table_constraints,tid,timestamptz,triggered_update_columns,tsrange,udt_privileges,user_mapping_options,varchar,views,yes_or_no&#125;</span><br><span class="line">stavalues2  |</span><br><span class="line">stavalues3  |</span><br><span class="line">stavalues4  |</span><br><span class="line">stavalues5  |</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">postgres=<span class="comment">#</span></span><br></pre></td></tr></table></figure>
 <p>截图：<br>
-<img src="https://img-blog.csdnimg.cn/4dc385f121d44cd2913aeca39fcf7bab.png" alt="在这里插入图片描述"></p>
+<img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/4dc385f121d44cd2913aeca39fcf7bab.png" alt="在这里插入图片描述"></p>
 
       
 
@@ -500,7 +500,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
     2022-07-17
     <br>
     <strong class="update-time">最后更新：</strong>
-    2023-04-02
+    2023-06-05
     <br>
     <strong class="article-titles">本文标题：</strong>
     <a href="https://yansheng836.github.io/article/b71d47b5.html" title="PostgreSQL命令行-psql竖式输出查询结果" target="_blank">PostgreSQL命令行-psql竖式输出查询结果</a>
@@ -927,6 +927,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -935,15 +943,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -995,11 +995,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Live2D</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+                <a href="javascript:void(0)" class="js-tag color5">心知天气</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1008,10 +1012,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">评论系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">心知天气</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1039,6 +1039,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">背景图片</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ICP</a>
               </li>
              
@@ -1047,19 +1051,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">背景图片</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
+                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
+                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1075,6 +1075,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
               </li>
              
@@ -1084,10 +1088,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Beyond Compare 4</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1115,7 +1115,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">阿里云</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CMD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1131,11 +1139,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CMD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1148,10 +1152,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Code:blocks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1251,15 +1251,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">MapReduce</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1295,7 +1295,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color4">pip</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1303,11 +1307,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1351,14 +1351,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">CSDN资源</a>
               </li>
              
@@ -1375,19 +1367,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">EditPlus</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">文件名</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SSL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1403,6 +1395,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SSL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSDN</a>
               </li>
              
@@ -1415,15 +1415,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">304状态码</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">截图</a>
+                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1432,6 +1428,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GIF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">截图</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1463,14 +1463,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Grafana</a>
               </li>
              
@@ -1479,7 +1471,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
             
             <div class="clearfix"></div>

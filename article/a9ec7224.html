@@ -17,18 +17,18 @@
 <meta property="og:site_name" content="荷塘月色的博客">
 <meta property="og:description" content="1，基本介绍  mysqlslap 是 MySQL 从 5.1.4 版开始官方自带的一个压力测试工具。它通过模拟多个并发客户端访问 MySQL 来执行压力测试，我们通过结果信息可以了解数据库的性能状况。 mysqlslap 是系统运维和 DBA 人员应该掌握一些常见的压力测试工具之一，其主要工作场景就是对数据库服务器做基准测试。比如：服务器的硬件资源能够支持多大的访问压力呢？优化了操作系统的内核参">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/8b1fe4695ed4ae4f729f0f43a12ffb6c.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/d06a12b608428b66aa0e3fdc8381f3fc.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/aaf952f1282d39f97ead522aaf3207b8.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/23282ffe8a476e177a687c3ab88dfa1d.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/773649f77d0f42822bd2eb858568d82b.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/0dcde0e1fdc2ae77a25a57f8df3fcea8.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/bc0f891ae9013ce1b4257265b9ee7758.png">
-<meta property="og:updated_time" content="2023-06-04T14:23:01.396Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/8b1fe4695ed4ae4f729f0f43a12ffb6c.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/d06a12b608428b66aa0e3fdc8381f3fc.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/aaf952f1282d39f97ead522aaf3207b8.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/23282ffe8a476e177a687c3ab88dfa1d.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/773649f77d0f42822bd2eb858568d82b.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/0dcde0e1fdc2ae77a25a57f8df3fcea8.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/bc0f891ae9013ce1b4257265b9ee7758.png">
+<meta property="og:updated_time" content="2023-06-04T18:07:57.161Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL自带的数据库压力测试工具mysqlslap使用详解">
 <meta name="twitter:description" content="1，基本介绍  mysqlslap 是 MySQL 从 5.1.4 版开始官方自带的一个压力测试工具。它通过模拟多个并发客户端访问 MySQL 来执行压力测试，我们通过结果信息可以了解数据库的性能状况。 mysqlslap 是系统运维和 DBA 人员应该掌握一些常见的压力测试工具之一，其主要工作场景就是对数据库服务器做基准测试。比如：服务器的硬件资源能够支持多大的访问压力呢？优化了操作系统的内核参">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/img_convert/8b1fe4695ed4ae4f729f0f43a12ffb6c.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/8b1fe4695ed4ae4f729f0f43a12ffb6c.png">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -485,12 +485,12 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <li><strong>Number of clients running queries</strong>：客户端数量</li>
 <li><strong>Average number of queries per client</strong>：每个客户端运行查询的平均数</li>
 </ul>
-<p><a href="https://www.hangge.com/blog/cache/detail_3068.html#" target="_blank" rel="noopener"><img src="https://img-blog.csdnimg.cn/img_convert/8b1fe4695ed4ae4f729f0f43a12ffb6c.png" alt="原文:mysqlslap - MySQL自带的数据库压力测试工具使用详解（附样例）"></a></p>
+<p><a href="https://www.hangge.com/blog/cache/detail_3068.html#" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/8b1fe4695ed4ae4f729f0f43a12ffb6c.png" alt="原文:mysqlslap - MySQL自带的数据库压力测试工具使用详解（附样例）"></a></p>
 <h3 id="3-打印实际的测试过程">3，打印实际的测试过程</h3>
 <p>（1）测试的过程需要生成测试表，插入测试数据，我们可以添加 <strong>–only-print</strong> 来打印实际的测试过程（不会实际执行）：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqlslap -uroot -pHangge_123 --auto-generate-sql --only-print</span><br></pre></td></tr></table></figure>
 <p>（2）运行结果如下，可以看到整个测试完成后会自动删除测试库，不会在数据库中留下痕迹。</p>
-<p><a href="https://www.hangge.com/blog/cache/detail_3068.html#" target="_blank" rel="noopener"><img src="https://img-blog.csdnimg.cn/img_convert/d06a12b608428b66aa0e3fdc8381f3fc.png" alt="原文:mysqlslap - MySQL自带的数据库压力测试工具使用详解（附样例）"></a></p>
+<p><a href="https://www.hangge.com/blog/cache/detail_3068.html#" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/d06a12b608428b66aa0e3fdc8381f3fc.png" alt="原文:mysqlslap - MySQL自带的数据库压力测试工具使用详解（附样例）"></a></p>
 <h3 id="4-添加并发">4，添加并发</h3>
 <p>（1）我们可以添加如下两个参数，模拟并发处理查询请求：</p>
 <ul>
@@ -499,12 +499,12 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqlslap -uroot -pHangge_123 --concurrency=100 --number-of-queries=1000 --auto-generate-sql</span><br></pre></td></tr></table></figure>
 <p>（2）运行结果如下（注意结果是完成 <strong>1000</strong> 次查询的总时间）：</p>
-<p><a href="https://www.hangge.com/blog/cache/detail_3068.html#" target="_blank" rel="noopener"><img src="https://img-blog.csdnimg.cn/img_convert/aaf952f1282d39f97ead522aaf3207b8.png" alt="原文:mysqlslap - MySQL自带的数据库压力测试工具使用详解（附样例）"></a></p>
+<p><a href="https://www.hangge.com/blog/cache/detail_3068.html#" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/aaf952f1282d39f97ead522aaf3207b8.png" alt="原文:mysqlslap - MySQL自带的数据库压力测试工具使用详解（附样例）"></a></p>
 <h3 id="5-重复的次数">5，重复的次数</h3>
 <p>（1）使用 <strong>–iterations</strong> 参数可以设置迭代执行的次数，即重复的次数（相同的测试进行 <strong>N</strong> 次，求一个平均值）。该次数指的是整个步骤的重复次数，包括准备数据、测试 <strong>load</strong>、清理。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqlslap -uroot -pHangge_123 --iterations=3 --concurrency=100 --number-of-queries=1000 --auto-generate-sql</span><br></pre></td></tr></table></figure>
 <p>（2）执行结果如下（注意结果是完成 <strong>1000</strong> 次查询的总时间）：</p>
-<p><a href="https://www.hangge.com/blog/cache/detail_3068.html#" target="_blank" rel="noopener"><img src="https://img-blog.csdnimg.cn/img_convert/23282ffe8a476e177a687c3ab88dfa1d.png" alt="原文:mysqlslap - MySQL自带的数据库压力测试工具使用详解（附样例）"></a></p>
+<p><a href="https://www.hangge.com/blog/cache/detail_3068.html#" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/23282ffe8a476e177a687c3ab88dfa1d.png" alt="原文:mysqlslap - MySQL自带的数据库压力测试工具使用详解（附样例）"></a></p>
 <h3 id="6-自动生成复杂表">6，自动生成复杂表</h3>
 <p>（1）自动测试时，创建的表结构非常简单，只有两列，实际的产品环境肯定会更复杂，我们可以使用参数指定测试表的列的数量和类型：</p>
 <ul>
@@ -513,7 +513,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqlslap -uroot -pHangge_123 --number-int-cols=5 --number-char-cols=20 --auto-generate-sql</span><br></pre></td></tr></table></figure>
 <p>（2）执行结果如下：</p>
-<p><a href="https://www.hangge.com/blog/cache/detail_3068.html#" target="_blank" rel="noopener"><img src="https://img-blog.csdnimg.cn/img_convert/773649f77d0f42822bd2eb858568d82b.png" alt="原文:mysqlslap - MySQL自带的数据库压力测试工具使用详解（附样例）"></a></p>
+<p><a href="https://www.hangge.com/blog/cache/detail_3068.html#" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/773649f77d0f42822bd2eb858568d82b.png" alt="原文:mysqlslap - MySQL自带的数据库压力测试工具使用详解（附样例）"></a></p>
 <h3 id="7-使用自己的测试库和测试语句">7，使用自己的测试库和测试语句</h3>
 <p>（1）自动测试可以帮助我们了解硬件层面的状况，我们也可以对指定的产品库进行测试：</p>
 <ul>
@@ -531,11 +531,11 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqlslap -uroot -pHangge_123 --concurrency=10 --number-of-queries=100 --create-schema=hangge --query=``"select_query.sql"` `--delimiter=``";"</span><br></pre></td></tr></table></figure>
 <h4 id="附一：解决-unknown-variable-default-character-set-utf8-错误">附一：解决“unknown variable ‘default-character-set=utf8’”错误</h4>
 <p>（1）如果我们执行 <strong>mysqlslap</strong> 命令时报如下错误：</p>
-<p><a href="https://www.hangge.com/blog/cache/detail_3068.html#" target="_blank" rel="noopener"><img src="https://img-blog.csdnimg.cn/img_convert/0dcde0e1fdc2ae77a25a57f8df3fcea8.png" alt="原文:mysqlslap - MySQL自带的数据库压力测试工具使用详解（附样例）"></a></p>
+<p><a href="https://www.hangge.com/blog/cache/detail_3068.html#" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/0dcde0e1fdc2ae77a25a57f8df3fcea8.png" alt="原文:mysqlslap - MySQL自带的数据库压力测试工具使用详解（附样例）"></a></p>
 <p>（2）解决办法有两种。一种是编辑 <strong>MySQL</strong> 配置文件 <strong>/etc/my.cnf</strong>，将里面如下配置注释掉：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">default-character-set=utf8</span><br></pre></td></tr></table></figure>
 <p>（3）或者我们可以在命令中添加 <strong>–no-defaults</strong> 参数（该参数必须放在第一位），使得本次命令不读取默认配置参数：</p>
-<p><a href="https://www.hangge.com/blog/cache/detail_3068.html#" target="_blank" rel="noopener"><img src="https://img-blog.csdnimg.cn/img_convert/bc0f891ae9013ce1b4257265b9ee7758.png" alt="原文:mysqlslap - MySQL自带的数据库压力测试工具使用详解（附样例）"></a></p>
+<p><a href="https://www.hangge.com/blog/cache/detail_3068.html#" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/img_convert/bc0f891ae9013ce1b4257265b9ee7758.png" alt="原文:mysqlslap - MySQL自带的数据库压力测试工具使用详解（附样例）"></a></p>
 <h4 id="附二：快速生成大量测试数据">附二：快速生成大量测试数据</h4>
 <p>使用 <strong>mysqlslap</strong> 也可以在数据库中构建大量的基础数据（比如千万级别数据）进行查询操作的性能测试或者 <strong>sql</strong> 优化，具体操作可以参考我写的另一篇文章：</p>
 <ul>
@@ -965,6 +965,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -973,15 +981,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1033,11 +1033,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Live2D</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+                <a href="javascript:void(0)" class="js-tag color5">心知天气</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1046,10 +1050,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">评论系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">心知天气</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1077,6 +1077,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">背景图片</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ICP</a>
               </li>
              
@@ -1085,19 +1089,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">背景图片</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
+                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
+                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1113,6 +1113,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
               </li>
              
@@ -1122,10 +1126,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Beyond Compare 4</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1153,7 +1153,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">阿里云</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CMD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1169,11 +1177,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CMD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1186,10 +1190,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Code:blocks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1289,15 +1289,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">MapReduce</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1333,7 +1333,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color4">pip</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1341,11 +1345,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1389,14 +1389,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">CSDN资源</a>
               </li>
              
@@ -1413,19 +1405,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">EditPlus</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">文件名</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SSL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1441,6 +1433,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SSL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSDN</a>
               </li>
              
@@ -1453,15 +1453,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">304状态码</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">截图</a>
+                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1470,6 +1466,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GIF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">截图</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1501,14 +1501,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Grafana</a>
               </li>
              
@@ -1517,7 +1509,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
             
             <div class="clearfix"></div>

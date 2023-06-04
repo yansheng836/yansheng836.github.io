@@ -17,16 +17,16 @@
 <meta property="og:site_name" content="荷塘月色的博客">
 <meta property="og:description" content="我们知道postgresql数据库通过数据多版本实现mvcc，pg又没有undo段，老版本的数据元组直接存放在数据页面中，这样带来的问题就是旧元组需要不断地进行清理以释放空间，这也是数据库膨胀的根本原因。 本文简单介绍一下postgresql数据库的元组、页面的结构以及索引查找流程。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2019122811310429.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191228113121335.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191228113133128.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191228113139310.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9oYWk5Mjh3dw==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191228113153144.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9oYWk5Mjh3dw==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2023-04-01T16:42:52.127Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/2019122811310429.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20191228113121335.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20191228113133128.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20191228113139310.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9oYWk5Mjh3dw==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20191228113153144.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9oYWk5Mjh3dw==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2023-06-04T18:07:56.822Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PostgreSQL的元组、页面结构及索引查找原理">
 <meta name="twitter:description" content="我们知道postgresql数据库通过数据多版本实现mvcc，pg又没有undo段，老版本的数据元组直接存放在数据页面中，这样带来的问题就是旧元组需要不断地进行清理以释放空间，这也是数据库膨胀的根本原因。 本文简单介绍一下postgresql数据库的元组、页面的结构以及索引查找流程。">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2019122811310429.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/2019122811310429.png">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -471,22 +471,22 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <h2 id="元组结构">元组结构</h2>
 <p>元组，也叫tuple，这个叫法是很学术的叫法，但是现在数据库中一般叫行或者记录。下面是元组的结构：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">HeapTupleFields</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    TransactionId t_xmin;       <span class="comment">/* inserting xact ID */</span></span><br><span class="line">    TransactionId t_xmax;       <span class="comment">/* deleting or locking xact ID */</span></span><br><span class="line">    <span class="keyword">union</span></span><br><span class="line">    &#123;</span><br><span class="line">        CommandId   t_cid;      <span class="comment">/* inserting or deleting command ID, or both */</span></span><br><span class="line">        TransactionId t_xvac;   <span class="comment">/* old-style VACUUM FULL xact ID */</span></span><br><span class="line">    &#125;           t_field3;</span><br><span class="line">&#125; HeapTupleFields;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">HeapTupleHeaderData</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">union</span></span><br><span class="line">    &#123;</span><br><span class="line">        HeapTupleFields t_heap;</span><br><span class="line">        DatumTupleFields t_datum;</span><br><span class="line">    &#125;           t_choice;</span><br><span class="line"></span><br><span class="line">    ItemPointerData t_ctid;     <span class="comment">/* current TID of this or newer tuple (or a</span></span><br><span class="line"><span class="comment">                                 * speculative insertion token) */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Fields below here must match MinimalTupleData! */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FIELDNO_HEAPTUPLEHEADERDATA_INFOMASK2 2</span></span><br><span class="line">    uint16      t_infomask2;    <span class="comment">/* number of attributes + various flags */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FIELDNO_HEAPTUPLEHEADERDATA_INFOMASK 3</span></span><br><span class="line">    uint16      t_infomask;     <span class="comment">/* various flag bits, see below */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FIELDNO_HEAPTUPLEHEADERDATA_HOFF 4</span></span><br><span class="line">    uint8       t_hoff;         <span class="comment">/* sizeof header incl. bitmap, padding */</span></span><br><span class="line">    <span class="comment">/* ^ - 23 bytes - ^ */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FIELDNO_HEAPTUPLEHEADERDATA_BITS 5</span></span><br><span class="line">    bits8       t_bits[FLEXIBLE_ARRAY_MEMBER];  <span class="comment">/* bitmap of NULLs */</span></span><br><span class="line">    <span class="comment">/* MORE DATA FOLLOWS AT END OF STRUCT */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/2019122811310429.png" alt="在这里插入图片描述"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/2019122811310429.png" alt="在这里插入图片描述"></p>
 <p>t_xmin：代表插入此元组的事务xid；<br>
 t_xmax：代表更新或者删除此元组的事务xid，如果该元组插入后未进行更新或者删除，t_xmax=0；<br>
 t_cid：command id，代表在当前事务中，已经执行过多少条sql，例如执行第一条sql时cid=0，执行第二条sql时cid=1；<br>
 t_ctid：保存着指向自身或者新元组的元组标识（tid），由两个数字组成，第一个数字代表物理块号，或者叫页面号，第二个数字代表元组号。在元组更新后tid指向新版本的元组，否则指向自己，这样其实就形成了新旧元组之间的“元组链”，这个链在元组查找和定位上起着重要作用。</p>
 <p>了解了元组结构，再简单了解下元组更新和删除过程。</p>
 <h2 id="更新过程">更新过程</h2>
-<p><img src="https://img-blog.csdnimg.cn/20191228113121335.png" alt="在这里插入图片描述"><br>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20191228113121335.png" alt="在这里插入图片描述"><br>
 上图中左边是一条新插入的元组，可以看到元组是xid=100的事务插入的，没有进行更新，所以t_xmax=0，同时t_ctid指向自己，0号页面的第一号元组。<br>
 右图是发生xid=101的事务更新该元组后的状态，更新在pg里相当于插入一条新元组，原来的元组的t_xmax变为了更新这条事务的xid=101，同时t_ctid指针指向了新插入的元组（0,2），0号页面第二号元组，第二号元组的t_xmin=101（插入该元组的xid），t_ctid=（0,2），没有发生更新，指向自己。</p>
 <h2 id="删除过程">删除过程</h2>
-<p><img src="https://img-blog.csdnimg.cn/20191228113133128.png" alt="在这里插入图片描述"><br>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20191228113133128.png" alt="在这里插入图片描述"><br>
 上图代表该元组被xid=102的事务删除，将t_xmax设置为删除事务的xid，t_ctid指向自己。</p>
 <h2 id="页面结构">页面结构</h2>
 <p>下面再来看看页面的结构</p>
-<p><img src="https://img-blog.csdnimg.cn/20191228113139310.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9oYWk5Mjh3dw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20191228113139310.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9oYWk5Mjh3dw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p>从上图可以看到，页面包括三种类型的数据<br>
 1.header data：数据头是page生成的时候随之产生的，由pageHeaderData定义结构，24个字节长，包含了page的相关信息，下面是数据结构：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">PageHeaderData</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="comment">/* XXX LSN is member of *any* block, not only page-organized ones */</span></span><br><span class="line">    PageXLogRecPtr pd_lsn;      <span class="comment">/* LSN: next byte after last byte of xlog</span></span><br><span class="line"><span class="comment">                                 * record for last change to this page */</span></span><br><span class="line">    uint16      pd_checksum;    <span class="comment">/* checksum */</span></span><br><span class="line">    uint16      pd_flags;       <span class="comment">/* flag bits, see below */</span></span><br><span class="line">    LocationIndex pd_lower;     <span class="comment">/* offset to start of free space */</span></span><br><span class="line">    LocationIndex pd_upper;     <span class="comment">/* offset to end of free space */</span></span><br><span class="line">    LocationIndex pd_special;   <span class="comment">/* offset to start of special space */</span></span><br><span class="line">    uint16      pd_pagesize_version;</span><br><span class="line">    TransactionId pd_prune_xid; <span class="comment">/* oldest prunable XID, or zero if none */</span></span><br><span class="line">    ItemIdData  pd_linp[FLEXIBLE_ARRAY_MEMBER]; <span class="comment">/* line pointer array */</span></span><br><span class="line">&#125; PageHeaderData;</span><br></pre></td></tr></table></figure>
@@ -498,7 +498,7 @@ pd_special: 索引页面中使用，它指向特殊空间的开头。</p>
 <p>3.heap tuple：存放真实的元组数据，注意元组是从页面的尾部向前堆积的，元组和行指针之间的是数据页的空闲空间。</p>
 <h2 id="索引查找">索引查找</h2>
 <p>看了页面和元组结构，再看看索引的结构。</p>
-<p><img src="https://img-blog.csdnimg.cn/20191228113153144.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9oYWk5Mjh3dw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20191228113153144.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9oYWk5Mjh3dw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p>以上图为例，索引的数据包含两部分（key=xxx，TID=(block=xxx,offset=xxx)），key表示真实数据，tid代表指向数据行的指针，具体block代表页面号，offset代表行偏移量，指向数据页面的line pointer，比如执行下面的查询语句</p>
 <p>select * from tbl where id=1000;</p>
 <p>key=1000，根据key值在索引中找到tid为5号页面的1号元组，再通过一号元组行指针找到元组1，检查元组1的t_ctid字段，发现指向了新的元组2，于是定位到真实元组数据2。</p>
@@ -924,6 +924,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -932,15 +940,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -992,11 +992,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Live2D</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+                <a href="javascript:void(0)" class="js-tag color5">心知天气</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1005,10 +1009,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">评论系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">心知天气</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1036,6 +1036,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">背景图片</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ICP</a>
               </li>
              
@@ -1044,19 +1048,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">背景图片</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
+                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
+                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1072,6 +1072,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
               </li>
              
@@ -1081,10 +1085,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Beyond Compare 4</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1112,7 +1112,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">阿里云</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CMD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1128,11 +1136,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CMD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1145,10 +1149,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Code:blocks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1248,15 +1248,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">MapReduce</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1292,7 +1292,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color4">pip</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1300,11 +1304,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1348,14 +1348,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">CSDN资源</a>
               </li>
              
@@ -1372,19 +1364,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">EditPlus</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">文件名</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SSL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1400,6 +1392,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SSL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSDN</a>
               </li>
              
@@ -1412,15 +1412,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">304状态码</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">截图</a>
+                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1429,6 +1425,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GIF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">截图</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1460,14 +1460,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Grafana</a>
               </li>
              
@@ -1476,7 +1468,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
             
             <div class="clearfix"></div>

@@ -17,17 +17,17 @@
 <meta property="og:site_name" content="荷塘月色的博客">
 <meta property="og:description" content="一、问题描述 最近写一个java的GUI，感觉不管是awt还是swing的默认字体都是不和我意，不得不自己设置字体；但是因为组件多，如果全部都有一个个加字体（像下面这样）就感觉很麻烦，代码也很冗余，所以就想着有没有办法设置全局的字体？ 12345678910// 这样JLabel jlExcel = new JLabel(&quot;请输入表格路径：&quot;);jlExcel.setFont(new Font(&quot;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190701113802843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190701114106984.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190701114106984.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190701120209327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190701135519607.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2019070114261293.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190701113802843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190701114106984.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190701114106984.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190701120209327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190701135519607.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/2019070114261293.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
 <meta property="og:updated_time" content="2019-07-01T06:12:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java Swing 设置全局的字体">
 <meta name="twitter:description" content="一、问题描述 最近写一个java的GUI，感觉不管是awt还是swing的默认字体都是不和我意，不得不自己设置字体；但是因为组件多，如果全部都有一个个加字体（像下面这样）就感觉很麻烦，代码也很冗余，所以就想着有没有办法设置全局的字体？ 12345678910// 这样JLabel jlExcel = new JLabel(&quot;请输入表格路径：&quot;);jlExcel.setFont(new Font(&quot;">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190701113802843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190701113802843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -505,21 +505,21 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.ys.gui;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.awt.FlowLayout;</span><br><span class="line"><span class="keyword">import</span> java.awt.Font;</span><br><span class="line"><span class="keyword">import</span> java.util.Enumeration;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.swing.JButton;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JFrame;</span><br><span class="line"><span class="keyword">import</span> javax.swing.JLabel;</span><br><span class="line"><span class="keyword">import</span> javax.swing.UIManager;</span><br><span class="line"><span class="keyword">import</span> javax.swing.plaf.FontUIResource;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestGlobalFont</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		JFrame jFrame = <span class="keyword">new</span> JFrame(<span class="string">"测试设置全局字体"</span>);</span><br><span class="line">		<span class="comment">// 初始化窗口</span></span><br><span class="line">		init(jFrame);</span><br><span class="line">		jFrame.setBounds(<span class="number">800</span>, <span class="number">400</span>, <span class="number">400</span>, <span class="number">400</span>);</span><br><span class="line">		jFrame.setVisible(<span class="keyword">true</span>);</span><br><span class="line">		jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Title</span> init</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@author</span> yansheng</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@version</span> v1.0</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@date</span> 2019-07-01 11:28:31</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@Description</span> 初始化窗口</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> jFrame   </span></span><br><span class="line"><span class="comment">	 * void </span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(JFrame jFrame)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">		FlowLayout flowLayout = <span class="keyword">new</span> FlowLayout(FlowLayout.LEFT);</span><br><span class="line">		jFrame.setLayout(flowLayout);</span><br><span class="line"></span><br><span class="line">		JLabel jLabel = <span class="keyword">new</span> JLabel(<span class="string">"JLabel显示文本信息"</span>);</span><br><span class="line">		jFrame.add(jLabel);</span><br><span class="line"></span><br><span class="line">		JButton jButton = <span class="keyword">new</span> JButton(<span class="string">"JButton按钮"</span>);</span><br><span class="line">		jFrame.add(jButton);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	* 统一设置字体，父界面设置之后，所有由父界面进入的子界面都不需要再次设置字体</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">InitGlobalFont</span><span class="params">(Font font)</span> </span>&#123;</span><br><span class="line">		FontUIResource fontRes = <span class="keyword">new</span> FontUIResource(font);</span><br><span class="line">		<span class="keyword">for</span> (Enumeration&lt;Object&gt; keys = UIManager.getDefaults().keys(); keys.hasMoreElements();) &#123;</span><br><span class="line">			Object key = keys.nextElement();</span><br><span class="line">			Object value = UIManager.get(key);</span><br><span class="line">			<span class="keyword">if</span> (value <span class="keyword">instanceof</span> FontUIResource) &#123;</span><br><span class="line">				UIManager.put(key, fontRes);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>注：init()方法非必须，但是好像一般都会用来初始化窗口及组件；如果自定义一个类继承JFrame或者Frame，那么在该类中一般也会用该方法，名字可自取，为方便理解这里统一命名为init。</p>
 <p>效果图：</p>
-<p><img src="https://img-blog.csdnimg.cn/20190701113802843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190701113802843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt></p>
 <h3 id="2-在main-方法中-定义窗口jframe前调用：">2、在main()方法中，定义窗口JFrame前调用：</h3>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		InitGlobalFont(<span class="keyword">new</span> Font(<span class="string">"宋体"</span>, Font.PLAIN, <span class="number">40</span>)); <span class="comment">// 统一设置字体</span></span><br><span class="line">		JFrame jFrame = <span class="keyword">new</span> JFrame(<span class="string">"测试设置全局字体"</span>);</span><br><span class="line">……</span><br></pre></td></tr></table></figure>
 <p>效果图：</p>
-<p><img src="https://img-blog.csdnimg.cn/20190701114106984.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190701114106984.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt></p>
 <h3 id="3-在init-方法中-初始化窗口jframe-未加载控件-时-即方法首行-调用：">3、在init()方法中，初始化窗口JFrame（未加载控件）时（即方法首行）调用：</h3>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(JFrame jFrame)</span> </span>&#123;</span><br><span class="line">		InitGlobalFont(<span class="keyword">new</span> Font(<span class="string">"宋体"</span>, Font.PLAIN, <span class="number">40</span>)); <span class="comment">// 统一设置字体</span></span><br><span class="line">		FlowLayout flowLayout = <span class="keyword">new</span> FlowLayout(FlowLayout.LEFT);</span><br><span class="line">		jFrame.setLayout(flowLayout);</span><br><span class="line">……</span><br></pre></td></tr></table></figure>
 <p>在布局后面加也OK。</p>
 <p>效果图：</p>
-<p><img src="https://img-blog.csdnimg.cn/20190701114106984.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190701114106984.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt></p>
 <h3 id="4-反例-即该方法的调用位置不对-没有效果的情况：">4、反例，即该方法的调用位置不对，没有效果的情况：</h3>
 <h4 id="4-1-在init-加载部分组件后调用：">4.1 在init()加载部分组件后调用：</h4>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(JFrame jFrame)</span> </span>&#123;</span><br><span class="line">    FlowLayout flowLayout = <span class="keyword">new</span> FlowLayout(FlowLayout.LEFT);</span><br><span class="line">    jFrame.setLayout(flowLayout);</span><br><span class="line"></span><br><span class="line">    JLabel jLabel = <span class="keyword">new</span> JLabel(<span class="string">"JLabel显示文本信息"</span>);</span><br><span class="line">    jFrame.add(jLabel);</span><br><span class="line">    InitGlobalFont(<span class="keyword">new</span> Font(<span class="string">"宋体"</span>, Font.PLAIN, <span class="number">40</span>)); <span class="comment">// 统一设置字体</span></span><br><span class="line">    JButton jButton = <span class="keyword">new</span> JButton(<span class="string">"JButton按钮"</span>);</span><br><span class="line">    jFrame.add(jButton);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>那么在它前面的加载的组件（字体设置）就会不起作用，效果如下：</p>
-<p><img src="https://img-blog.csdnimg.cn/20190701120209327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190701120209327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt></p>
 <h4 id="4-2-在init-全部加载组件后调用-如最后一行-：">4.2 在init()全部加载组件后调用（如最后一行）：</h4>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(JFrame jFrame)</span> </span>&#123;</span><br><span class="line">    FlowLayout flowLayout = <span class="keyword">new</span> FlowLayout(FlowLayout.LEFT);</span><br><span class="line">    jFrame.setLayout(flowLayout);</span><br><span class="line"></span><br><span class="line">    JLabel jLabel = <span class="keyword">new</span> JLabel(<span class="string">"JLabel显示文本信息"</span>);</span><br><span class="line">    jFrame.add(jLabel);</span><br><span class="line">    JButton jButton = <span class="keyword">new</span> JButton(<span class="string">"JButton按钮"</span>);</span><br><span class="line">    jFrame.add(jButton);</span><br><span class="line">    InitGlobalFont(<span class="keyword">new</span> Font(<span class="string">"宋体"</span>, Font.PLAIN, <span class="number">40</span>)); <span class="comment">// 统一设置字体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>无效。</p>
@@ -533,7 +533,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <p>分析一下该方法：打印一些信息，方便理解：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 统一设置字体，父界面设置之后，所有由父界面进入的子界面都不需要再次设置字体</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">InitGlobalFont</span><span class="params">(Font font)</span> </span>&#123;</span><br><span class="line">    FontUIResource fontRes = <span class="keyword">new</span> FontUIResource(font);</span><br><span class="line">    <span class="comment">// 打印字体信息</span></span><br><span class="line">    System.out.println(<span class="string">"fontRes:"</span> + fontRes);</span><br><span class="line">    <span class="keyword">for</span> (Enumeration&lt;Object&gt; keys = UIManager.getDefaults().keys(); keys.hasMoreElements();) &#123;</span><br><span class="line">        Object key = keys.nextElement();</span><br><span class="line">        Object value = UIManager.get(key);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (value <span class="keyword">instanceof</span> FontUIResource) &#123;</span><br><span class="line">            <span class="comment">// 打印默认的所有有关字体的信息</span></span><br><span class="line">            System.out.println(<span class="string">"\nkey:"</span> + key + <span class="string">"\nvalue:"</span> + value);</span><br><span class="line">            UIManager.put(key, fontRes);</span><br><span class="line">            <span class="comment">// 打印更改后的相关信息</span></span><br><span class="line">            System.out.println(<span class="string">"\nkey:"</span> + key + <span class="string">"\nvalue:"</span> + UIManager.get(key));</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>打印的（部分）内容：</p>
-<p><img src="https://img-blog.csdnimg.cn/20190701135519607.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20190701135519607.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt></p>
 <ol>
 <li>类 FontUIResource 实现 UIResource 的 java.awt.Font 的子类。设置默认字体属性的 UI 类应该使用此类。</li>
 <li>UIManager 管理当前外观、可用外观集合、外观更改时被通知的 <code>PropertyChangeListeners</code>、外观默认值以及获取各种默认值的便捷方法。<code>UIManager.</code>get(Object key)：从默认值中返回一个对象。</li>
@@ -546,7 +546,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <p>参考：（加一个不一样字体的按钮）</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(JFrame jFrame)</span> </span>&#123;</span><br><span class="line">    InitGlobalFont(<span class="keyword">new</span> Font(<span class="string">"宋体"</span>, Font.PLAIN, <span class="number">40</span>)); <span class="comment">// 统一设置字体</span></span><br><span class="line">    FlowLayout flowLayout = <span class="keyword">new</span> FlowLayout(FlowLayout.LEFT);</span><br><span class="line">    jFrame.setLayout(flowLayout);</span><br><span class="line"></span><br><span class="line">    JLabel jLabel = <span class="keyword">new</span> JLabel(<span class="string">"JLabel显示文本信息"</span>);</span><br><span class="line">    jFrame.add(jLabel);</span><br><span class="line">    JButton jButton = <span class="keyword">new</span> JButton(<span class="string">"JButton按钮"</span>);</span><br><span class="line">    jFrame.add(jButton);</span><br><span class="line"></span><br><span class="line">    JButton jButton1 = <span class="keyword">new</span> JButton(<span class="string">"这个按钮的字体是微软雅黑"</span>);</span><br><span class="line">    jButton1.setFont(<span class="keyword">new</span> Font(<span class="string">"微软雅黑"</span>, Font.BOLD, <span class="number">25</span>));</span><br><span class="line">    jFrame.add(jButton1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>效果图：</p>
-<p><img src="https://img-blog.csdnimg.cn/2019070114261293.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/2019070114261293.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt></p>
 <p>完事。</p>
 <hr>
 <p>引用：<a href="https://blog.csdn.net/lixinye0123/article/details/647921" target="_blank" rel="noopener">Swing技巧. 设置全局字体（sun jdk）</a><br>
@@ -1004,6 +1004,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -1012,15 +1020,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1072,11 +1072,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Live2D</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+                <a href="javascript:void(0)" class="js-tag color5">心知天气</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1085,10 +1089,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">评论系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">心知天气</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1116,6 +1116,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">背景图片</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ICP</a>
               </li>
              
@@ -1124,19 +1128,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">背景图片</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
+                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
+                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1152,6 +1152,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
               </li>
              
@@ -1161,10 +1165,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Beyond Compare 4</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1192,7 +1192,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">阿里云</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CMD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1208,11 +1216,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CMD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1225,10 +1229,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Code:blocks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1328,15 +1328,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">MapReduce</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1372,7 +1372,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color4">pip</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1380,11 +1384,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1428,14 +1428,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">CSDN资源</a>
               </li>
              
@@ -1452,19 +1444,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">EditPlus</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">文件名</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SSL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1480,6 +1472,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SSL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSDN</a>
               </li>
              
@@ -1492,15 +1492,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">304状态码</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">截图</a>
+                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1509,6 +1505,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GIF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">截图</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1540,14 +1540,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Grafana</a>
               </li>
              
@@ -1556,7 +1548,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
             
             <div class="clearfix"></div>

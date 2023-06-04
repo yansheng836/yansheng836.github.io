@@ -17,16 +17,16 @@
 <meta property="og:site_name" content="荷塘月色的博客">
 <meta property="og:description" content="1. 事务id回卷 在postgresql中，由于没有像oracle、mysql那样的undo来实现多版本并发控制，而是当执行dml操作时在表上创建新行，并在每行中用额外的列(xmin,xmax)来记录事务号(xmin为insert或回滚时的事务号、xmax为update或delete的事务号，注意xmin还会记录回滚时的事务号)，以此实现多版本并发控制，当然基于此也会导致postgresql中一">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/735ca65b488d44b8a827d0f028a28849.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N0eXB5YjIwMDI=,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/28b8298517dc456fb63ed99666360f7b.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N0eXB5YjIwMDI=,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/61362e7d605447fb882dde6c9afae908.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N0eXB5YjIwMDI=,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/329fd7f1b1b24002aa5b2af5ce606428.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N0eXB5YjIwMDI=,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/b94426731fda46b28bef936218c51331.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N0eXB5YjIwMDI=,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2023-04-01T16:42:52.190Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/735ca65b488d44b8a827d0f028a28849.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N0eXB5YjIwMDI=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/28b8298517dc456fb63ed99666360f7b.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N0eXB5YjIwMDI=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/61362e7d605447fb882dde6c9afae908.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N0eXB5YjIwMDI=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/329fd7f1b1b24002aa5b2af5ce606428.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N0eXB5YjIwMDI=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/b94426731fda46b28bef936218c51331.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N0eXB5YjIwMDI=,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2023-06-04T18:07:56.991Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PostgreSQL事务ID回卷">
 <meta name="twitter:description" content="1. 事务id回卷 在postgresql中，由于没有像oracle、mysql那样的undo来实现多版本并发控制，而是当执行dml操作时在表上创建新行，并在每行中用额外的列(xmin,xmax)来记录事务号(xmin为insert或回滚时的事务号、xmax为update或delete的事务号，注意xmin还会记录回滚时的事务号)，以此实现多版本并发控制，当然基于此也会导致postgresql中一">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/735ca65b488d44b8a827d0f028a28849.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N0eXB5YjIwMDI=,size_16,color_FFFFFF,t_70">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/735ca65b488d44b8a827d0f028a28849.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N0eXB5YjIwMDI=,size_16,color_FFFFFF,t_70">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -485,7 +485,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <p>\src\backend\access\transam\transam.c</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * TransactionIdPrecedes --- is id1 logically &lt; id2?</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">bool</span></span><br><span class="line">TransactionIdPrecedes(TransactionId id1, TransactionId id2)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * If either ID is a permanent XID then we can just do unsigned</span></span><br><span class="line"><span class="comment">	 * comparison.  If both are normal, do a modulo-2^32 comparison.</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	int32		diff;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (!TransactionIdIsNormal(id1) || !TransactionIdIsNormal(id2))</span><br><span class="line">		<span class="keyword">return</span> (id1 &lt; id2);</span><br><span class="line"></span><br><span class="line">	diff = (int32) (id1 - id2);</span><br><span class="line">	<span class="keyword">return</span> (diff &lt; <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>虽然txid空间有42亿，却并非按实际数字大小来判断可见性。postgresql将txid空间一分为二，对于某个特定的txid，其后约21亿个txid属于未来，均不可见；其前约21亿个txid属于过去，均可见。<br>
-<img src="https://img-blog.csdnimg.cn/735ca65b488d44b8a827d0f028a28849.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N0eXB5YjIwMDI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
+<img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/735ca65b488d44b8a827d0f028a28849.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N0eXB5YjIwMDI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
 例如对于txid=100的事务，从101到2^31 +100均为不可见事务(即n+1到n+2^31 )；从2^31 +101到99均为可见事务(即n+2^31+1到n-1)。</p>
 <h3 id="4-1-特殊事务和普通事务的比较">4.1. 特殊事务和普通事务的比较</h3>
 <p>首先利用transactionidisnormal判断当前txid是不是普通的txid(即txid&gt;3)，前面说过0-2都是保留的txid，它们比任何普通txid都要旧。<br>
@@ -519,11 +519,11 @@ return (diff &lt; 0);</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">error: database is <span class="keyword">not</span> accepting commands to avoid wraparound data loss in database “mydb”</span><br><span class="line">hint: stop the postmaster <span class="keyword">and</span> vacuum that database in single-user mode</span><br></pre></td></tr></table></figure>
 <p>所以冻结过程应该在平时不断地自动做而不是等到事务号需要回卷的时候才去做。这时就需要引入一个参数：vacuum_freeze_min_age(默认5000万)，当冻结过程在扫描表页面元组的时候发现元组xmin比当前事务号current_txid-vacuum_freeze_min_age更小时，就可以将该元组事务id置为2，换个角度理解，也就是对于当前事务来说，如果存在某个元组的年龄超过vacuum_freeze_min_age参数值时(这里可以这么理解，假如元组的xmin&lt;current_txid - vacuum_freeze_min_age，那么就会冻结该元组，那么换一下就是vacuum_freeze_min_age &lt; current_txid - xmin，即元组的年龄超过vacuum_freeze_min_age)，就可以在vacuum时把该元组事务号冻结。</p>
 <p>其中冻结又分为“惰性模式”和“急切模式”。惰性模式在扫描过程中仅使用vm文件，而急切模式会扫描的所有数据文件，并在可能的时候清理无用的clog文件。其中，vm文件如下：</p>
-<p><img src="https://img-blog.csdnimg.cn/28b8298517dc456fb63ed99666360f7b.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N0eXB5YjIwMDI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/28b8298517dc456fb63ed99666360f7b.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N0eXB5YjIwMDI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h3 id="5-1-惰性模式">5.1. 惰性模式</h3>
 <p>在冻结开始时，postgresql会计算freezelimit_txid的值，并冻结xmin小于freezelimit_txid的元组，freezelimit_txid的计算前面也提到过，freezelimit_txid=oldestxmin-vacuum_freeze_min_age，vacuum_freeze_min_age可以理解为一个元组可以做freeze的最小间隔年龄，因为事务回卷的问题，这个值最大设置为20亿，oldestxmin代表当前活跃的所有事务中的最小的事务标识，假如有100、101和102三个事务，那么oldestxmin就是100；如果不存在其他事务，那oldestxmin就是当前执行vacuum命令的事务id。普通vacuum进程会挨个扫描页面，同时配合vm可见性映射跳过不存在死元组的页面，将xmin小于freezelimit_txid的元组t_infomask置为xmin_frozen，清理完成之后，相关统计视图中如pg_stat_user_tables等，n_live_tuple、n_dead_tuple、vacuum_count、autovacuum_count、last_autovacuum、last_vacuum之类的统计信息会被更新。</p>
 <p>假设当前的oldestxmin为50002500，那么freezelimit_txid就为50002500 - 5000000 = 2500，那么所有xmin小于2500的元组都会被冻结，如下图，可以看到因为vm文件的原因，跳过了第1个page，导致其中的元组没有被冻结。<br>
-<img src="https://img-blog.csdnimg.cn/61362e7d605447fb882dde6c9afae908.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N0eXB5YjIwMDI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
+<img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/61362e7d605447fb882dde6c9afae908.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N0eXB5YjIwMDI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
 注意：在9.4之前的postgresql版本中，实际上会通过将一行的xmin替换为 frozentransactionid来实现冻结，这种frozentransactionid在行的 xmin系统列中是可见的。较新的版本只是设置一个标志位，保留行的原始xmin用于可能发生的鉴别用途。不过， 在9.4之前版本的数据库pg_upgrade中可能仍会找到 xmin等于frozentransactionid (2)的行。</p>
 <p>此外，系统目录可能会包含xmin等于bootstraptransactionid (1) 的行，这表示它们是在initdb的第一个阶段被插入的。和frozentransactionid相似，这个特殊的xid被认为比所有正常xid的年龄都要老。</p>
 <h3 id="5-2-急切模式">5.2. 急切模式</h3>
@@ -531,10 +531,10 @@ return (diff &lt; 0);</p>
 <p>每次vacuum都去扫描每个表所有符合条件的数据页显然是不现实的，所以我们要选择合理的aggressive vacuum周期。PostgreSQL 引入了参数vacuum_freeze_table_age来决定这个周期，同理该参数的最大值也只能是20亿，当表的年龄大于vacuum_freeze_table_age时，会执行急切冻结，表的年龄通过oldestxmin-pg_class.relfrozenxid计算得到，pg_class.relfrozenxid字段是在某个表被冻结后更新的，代表着某个表最近的冻结事务id。</p>
 <p>而pg_database.datfrozenxid代表着当前库所有表的最小冻结标识，所以只有当该库具有最小冻结标识的表被冻结时，pg_database.datfrozenxid字段才会被更新。急切冻结的触发条件是pg_database.datfrozenxid&lt;oldestxmin-vacuum_freeze_table_age，这其实和上面的说法不冲突，因为某个数据库所有表中的最老的relfrozenxid就是数据库的datfrozenxid，所以冻结可以用一句话来理解：当数据库中存在某个表的年龄大于vacuum_freeze_table_age参数设定值，就会执行急切冻结过程，当表中元组年龄超过vacuum_freeze_min_age，就可以被冻结，这里其实是必须和可以的区别。<br>
 假设oldestxmin为150002000，那么freezelimit_txid = 150002000 - 50000000 = 100002000，所有小于freezelimit_txid的元组都会被冻结，并且扫描每一个数据页面，即使某个页面已经被冻结过，如下：</p>
-<p><img src="https://img-blog.csdnimg.cn/329fd7f1b1b24002aa5b2af5ce606428.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N0eXB5YjIwMDI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/329fd7f1b1b24002aa5b2af5ce606428.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N0eXB5YjIwMDI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p>在postgresql9.6之后，对freeze进行了优化，在vm文件中添加了一个标志位all_frozen。</p>
 <p>在9.6之前，假如某一个页面之前已经被冻结过，但执行急切模式的freeze依旧会扫描该页面，在9.6之后，通过判断vm文件中的all_frozen标志位，即可判断是否需要冻结该页面，如下，第一个页面的all_frozen的标志位为1，那么就可以跳过该页面，继续冻结第二个页面，冻结完之后再将vm文件的all_frozen标志位置1：</p>
-<p><img src="https://img-blog.csdnimg.cn/b94426731fda46b28bef936218c51331.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N0eXB5YjIwMDI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/b94426731fda46b28bef936218c51331.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N0eXB5YjIwMDI=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p>至于autovacuum_freeze_max_age的参数，是针对autovacuum的，如果当前最新的txid减去元组的t_xmin&gt;=autovacuum_freeze_max_age，则元组对应的表会强制进行autovacuum(即使已经关闭了autovacuum)，自动进行freeze。该参数最小值为2亿，最大值为20亿。</p>
 <p>这里有疑问了，乍一看，有了vacuum_freeze_min_age和vacuum_freeze_table_age就可以解决了，为什么还需要autovacuum_freeze_max_age这个参数呢？举个例子，vacuum_freeze_min_age为2亿，vacuum_freeze_table_age为19亿，假设test表中的部分tuple的年龄达到了2亿，那么这个时候执行freeze的操作，表中部分tuple被冻结，部分没有被冻结，同时更新表的relfrozenxid为2亿。然后假设表的年龄从2亿又一直运行涨到了19亿，然后就需要去执行迫切模式的冻结，但此时某些元祖的年龄前后达到了21亿，超过了20亿的限制。这样就不能保证vacuum_freeze_table_age+vacuum_freeze_min_age&lt;20亿，此时就需要单独弄一个参数来保证新老事务差不超过20亿，这个参数就是autovacuum_freeze_max_age。这个参数会强制限制元组的年龄(oldestxmin-xmin)如果超过该值就必须进行急切冻结操作，这个限制是个硬限制，即使PostgreSQL已经关闭了autovacuum。</p>
 <p>当表的年龄大于autovacuum_freeze_max_age时(默认是2亿)，autovacuum进程会自动对表进行freeze。</p>
@@ -982,6 +982,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -990,15 +998,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1050,11 +1050,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Live2D</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+                <a href="javascript:void(0)" class="js-tag color5">心知天气</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1063,10 +1067,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">评论系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">心知天气</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1094,6 +1094,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">背景图片</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ICP</a>
               </li>
              
@@ -1102,19 +1106,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">背景图片</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
+                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
+                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1130,6 +1130,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
               </li>
              
@@ -1139,10 +1143,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Beyond Compare 4</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1170,7 +1170,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">阿里云</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CMD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1186,11 +1194,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CMD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1203,10 +1207,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Code:blocks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1306,15 +1306,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">MapReduce</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1350,7 +1350,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color4">pip</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1358,11 +1362,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1406,14 +1406,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">CSDN资源</a>
               </li>
              
@@ -1430,19 +1422,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">EditPlus</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">文件名</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SSL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1458,6 +1450,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SSL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSDN</a>
               </li>
              
@@ -1470,15 +1470,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">304状态码</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">截图</a>
+                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1487,6 +1483,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GIF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">截图</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1518,14 +1518,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Grafana</a>
               </li>
              
@@ -1534,7 +1526,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
             
             <div class="clearfix"></div>

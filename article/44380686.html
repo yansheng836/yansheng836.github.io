@@ -17,15 +17,15 @@
 <meta property="og:site_name" content="荷塘月色的博客">
 <meta property="og:description" content="最近学习HTML表单，感慨万千。虽然看起来好像不难学，但要是真自己实践起来问题却多多。这里是我写的一个简单的注册页面，只有“注册账号、密码、重输密码”三个文本框，还包含了原生JavaScript验证。（记一下，也希望能给有需要的人一点帮助。）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20181028144028168.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_27,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2018102814411329.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_27,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20181028144132339.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_27,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191027092352429.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20181028144028168.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_27,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/2018102814411329.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_27,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20181028144132339.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_27,color_FFFFFF,t_70">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20191027092352429.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
 <meta property="og:updated_time" content="2019-09-25T13:54:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML简单注册界面——含表单验证">
 <meta name="twitter:description" content="最近学习HTML表单，感慨万千。虽然看起来好像不难学，但要是真自己实践起来问题却多多。这里是我写的一个简单的注册页面，只有“注册账号、密码、重输密码”三个文本框，还包含了原生JavaScript验证。（记一下，也希望能给有需要的人一点帮助。）">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20181028144028168.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_27,color_FFFFFF,t_70">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20181028144028168.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_27,color_FFFFFF,t_70">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -470,14 +470,14 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <p>虽然看起来代码一大段，但是主要内容不多——简单的表单内容、然后是js验证，而且是分开验证，应该比较容易懂，结合注释应该可以理解，这里就不详解了。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>8_常用注册页面的表单实例（含验证）.html<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"keyword1,keyword2,keyword3"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"this is my page"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"content-type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!--&lt;link rel="stylesheet" type="text/css" href="./styles.css"&gt;--&gt;</span></span><br><span class="line"></span><br><span class="line">  	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">		body&#123;</span><br><span class="line">			background-image: url(https://imgchr.com/content/images/system/home_cover_1552414407320_3a5f92.jpg);</span><br><span class="line">			background-repeat: no-repeat;</span><br><span class="line"><span class="css">			<span class="comment">/* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */</span>    </span></span><br><span class="line"><span class="css">			<span class="selector-tag">background-attachment</span>: <span class="selector-tag">fixed</span>;  <span class="comment">/*此条属性必须设置否则可能无效*/</span>    </span></span><br><span class="line"><span class="css">			<span class="comment">/* 让背景图基于容器大小伸缩 */</span>   </span></span><br><span class="line">			background-size: cover;  </span><br><span class="line"><span class="css">			<span class="comment">/* 设置背景颜色，背景图加载过程中会显示背景色 */</span>   </span></span><br><span class="line"><span class="css">			<span class="selector-tag">background-color</span>: <span class="selector-id">#CCCCCC</span>;</span></span><br><span class="line">		&#125;</span><br><span class="line"><span class="css">		<span class="selector-id">#user_reg</span>&#123;</span></span><br><span class="line">			font-family: 微软雅黑;</span><br><span class="line">			font-size: 40px;</span><br><span class="line">			text-align: center;</span><br><span class="line">			margin-top: 200px;</span><br><span class="line">		&#125;</span><br><span class="line">		form&#123;</span><br><span class="line"><span class="css">			<span class="selector-tag">width</span>: 500<span class="selector-tag">px</span>;					<span class="comment">/*设置宽度，方便使其居中*/</span></span></span><br><span class="line"><span class="css">			<span class="selector-tag">margin</span>: 40<span class="selector-tag">px</span> <span class="selector-tag">auto</span> <span class="selector-tag">auto</span> <span class="selector-tag">auto</span>;	<span class="comment">/*上右下左*/</span></span></span><br><span class="line">			font-size: 25px;</span><br><span class="line">		&#125;</span><br><span class="line">		input&#123;</span><br><span class="line">			height: 30px;</span><br><span class="line">			width: 12em;</span><br><span class="line">			margin-top: 5px;</span><br><span class="line">			margin-bottom: 5px;</span><br><span class="line">		&#125;</span><br><span class="line"><span class="css">		<span class="comment">/*input标签下的属性选择器*/</span></span></span><br><span class="line"><span class="css">		<span class="selector-tag">input</span><span class="selector-attr">[type="submit"]</span>,<span class="selector-tag">input</span><span class="selector-attr">[type="reset"]</span>&#123;</span></span><br><span class="line">			height: 25px;</span><br><span class="line">			width: 5em;</span><br><span class="line">			margin-top: 5px;</span><br><span class="line">			margin-left: 6px;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="actionscript">	<span class="comment">//onblur失去焦点事件，用户离开输入框时执行 JavaScript 代码：</span></span></span><br><span class="line"><span class="actionscript">	<span class="comment">//函数1：验证邮箱格式</span></span></span><br><span class="line"><span class="actionscript">  	<span class="function"><span class="keyword">function</span> <span class="title">validate_username</span><span class="params">(username)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">  		<span class="comment">//定义正则表达式的变量:邮箱正则</span></span></span><br><span class="line"><span class="javascript">  		<span class="keyword">var</span> emailReg=<span class="regexp">/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/</span>;</span></span><br><span class="line"><span class="actionscript">  		<span class="comment">//console.log(username);</span></span></span><br><span class="line"><span class="actionscript">  		<span class="keyword">if</span>(username !=<span class="string">""</span> &amp;&amp; username.search(emailReg) != <span class="number">-1</span>)</span></span><br><span class="line">  		&#123;</span><br><span class="line"><span class="handlebars"><span class="xml">  			document.getElementById("test_user").innerHTML = "<span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">'green'</span> <span class="attr">size</span>=<span class="string">'3px'</span>&gt;</span>√邮箱格式正确<span class="tag">&lt;/<span class="name">font</span>&gt;</span>";</span></span></span><br><span class="line"><span class="actionscript">  		&#125;<span class="keyword">else</span>&#123;</span></span><br><span class="line"><span class="handlebars"><span class="xml">  			document.getElementById("test_user").innerHTML = "<span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">'red'</span> <span class="attr">size</span>=<span class="string">'3px'</span>&gt;</span>邮箱格式错误<span class="tag">&lt;/<span class="name">font</span>&gt;</span>";</span></span></span><br><span class="line">  		&#125;</span><br><span class="line">  	&#125;</span><br><span class="line">  </span><br><span class="line"><span class="actionscript"> 	<span class="comment">//函数2：验证密码是否符合要求：匹配6位密码，由数字和字母组成：</span></span></span><br><span class="line"><span class="actionscript">  	<span class="function"><span class="keyword">function</span> <span class="title">validate_password</span><span class="params">(password)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">  		<span class="comment">//^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]&#123;6-10&#125;$</span></span></span><br><span class="line"><span class="actionscript">		<span class="comment">//测试密码：12345y</span></span></span><br><span class="line"><span class="javascript">  		<span class="keyword">var</span> passwordReg=<span class="regexp">/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]&#123;6&#125;$/</span>;</span></span><br><span class="line"><span class="actionscript">  		<span class="keyword">if</span>(password != <span class="string">""</span> &amp;&amp; password.search(passwordReg) != <span class="number">-1</span>)</span></span><br><span class="line">  		&#123;</span><br><span class="line"><span class="handlebars"><span class="xml">  			document.getElementById("test_pw").innerHTML = "<span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">'green'</span> <span class="attr">size</span>=<span class="string">'3px'</span>&gt;</span>√密码格式正确<span class="tag">&lt;/<span class="name">font</span>&gt;</span>";</span></span></span><br><span class="line"><span class="actionscript">  		&#125;<span class="keyword">else</span>&#123;</span></span><br><span class="line"><span class="handlebars"><span class="xml">  			document.getElementById("test_pw").innerHTML = "<span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">'red'</span> <span class="attr">size</span>=<span class="string">'3px'</span>&gt;</span>密码格式错误<span class="tag">&lt;/<span class="name">font</span>&gt;</span>";</span></span></span><br><span class="line"><span class="actionscript">  			alert(<span class="string">"密码有6位，由数字和字母组成!"</span>);</span></span><br><span class="line">  		&#125;</span><br><span class="line">  	&#125;</span><br><span class="line">  	</span><br><span class="line"><span class="actionscript">	<span class="comment">//函数3：验证两次输入的密码是否一样</span></span></span><br><span class="line"><span class="actionscript">  	 <span class="function"><span class="keyword">function</span> <span class="title">validate_password2</span><span class="params">(password2)</span></span>&#123;</span></span><br><span class="line"><span class="javascript">  		<span class="keyword">var</span> password = <span class="built_in">document</span>.getElementById(<span class="string">"password"</span>).value;</span></span><br><span class="line"><span class="actionscript">  		<span class="comment">//测试：console.log(password);</span></span></span><br><span class="line"><span class="actionscript">  		<span class="comment">//测试：console.log(password2);</span></span></span><br><span class="line"><span class="actionscript">  		<span class="keyword">if</span> (password == <span class="string">""</span>)&#123;</span></span><br><span class="line"><span class="handlebars"><span class="xml">			document.getElementById("is_test_pw").innerHTML = "<span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">'red'</span> <span class="attr">size</span>=<span class="string">'3px'</span>&gt;</span>密码不为空<span class="tag">&lt;/<span class="name">font</span>&gt;</span>";</span></span></span><br><span class="line"><span class="actionscript">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(password==password2)&#123;</span></span><br><span class="line"><span class="handlebars"><span class="xml">  			document.getElementById("is_test_pw").innerHTML = "<span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">'green'</span> <span class="attr">size</span>=<span class="string">'3px'</span>&gt;</span>√两次输入的密码相同<span class="tag">&lt;/<span class="name">font</span>&gt;</span>";</span></span></span><br><span class="line"><span class="actionscript">  		&#125;<span class="keyword">else</span>&#123;</span></span><br><span class="line"><span class="handlebars"><span class="xml">  			document.getElementById("is_test_pw").innerHTML = "<span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">'red'</span> <span class="attr">size</span>=<span class="string">'3px'</span>&gt;</span>两次输入的密码不相同<span class="tag">&lt;/<span class="name">font</span>&gt;</span>";</span></span></span><br><span class="line"><span class="javascript">  			<span class="built_in">console</span>.log(<span class="string">"密码有6位，由数字和字母组成!"</span>);</span></span><br><span class="line">  		&#125;</span><br><span class="line">  	&#125; </span><br><span class="line">  	</span><br><span class="line"><span class="actionscript">	<span class="comment">//函数4：验证表单是否已经填好</span></span></span><br><span class="line"><span class="actionscript">  	<span class="function"><span class="keyword">function</span> <span class="title">validate_form</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="javascript">  		<span class="keyword">var</span> username = <span class="built_in">document</span>.getElementById(<span class="string">"username"</span>).value;</span></span><br><span class="line"><span class="javascript">  		<span class="keyword">var</span> password = <span class="built_in">document</span>.getElementById(<span class="string">"password"</span>).value;</span></span><br><span class="line"><span class="javascript">  		<span class="keyword">var</span> password2 = <span class="built_in">document</span>.getElementById(<span class="string">"password2"</span>).value;</span></span><br><span class="line"><span class="actionscript">  		<span class="comment">//console.log("表单填写正确，可以正常提交！");</span></span></span><br><span class="line">  	</span><br><span class="line"><span class="actionscript">  		<span class="comment">//这三个，如果任何一个有问题，都返回false</span></span></span><br><span class="line"><span class="actionscript">  		<span class="comment">//18128@qq.com		12345y</span></span></span><br><span class="line"><span class="javascript">  		<span class="keyword">var</span> emailReg=<span class="regexp">/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/</span>;</span></span><br><span class="line"><span class="javascript">  		<span class="keyword">var</span> passwordReg=<span class="regexp">/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]&#123;6&#125;$/</span>;</span></span><br><span class="line">  		</span><br><span class="line"><span class="actionscript">  		<span class="keyword">if</span>(username != <span class="string">""</span> &amp;&amp; emailReg.test(username))&#123;</span></span><br><span class="line"><span class="actionscript">  			<span class="keyword">if</span>(password !=<span class="string">""</span> &amp;&amp; passwordReg.test(password))&#123;</span></span><br><span class="line"><span class="actionscript">  				<span class="keyword">if</span>(password2==password)&#123;</span></span><br><span class="line"><span class="actionscript">  					alert(<span class="string">"信息填写正确，可以正常提交！"</span>);</span></span><br><span class="line"><span class="javascript">  					<span class="built_in">console</span>.log(<span class="string">"信息填写正确，可以正常提交！"</span>);</span></span><br><span class="line"><span class="actionscript">  					<span class="keyword">return</span> <span class="literal">true</span>;</span></span><br><span class="line"><span class="actionscript">  				&#125;<span class="keyword">else</span>&#123;</span></span><br><span class="line"><span class="actionscript">  					alert(<span class="string">"密码不一致，提交失败，请重新填写！"</span>);</span></span><br><span class="line"><span class="javascript">  					<span class="built_in">console</span>.log(<span class="string">"密码不一致，提交失败，请重新填写！"</span>);</span></span><br><span class="line"><span class="actionscript">  					<span class="keyword">return</span> <span class="literal">false</span>;</span></span><br><span class="line">  				&#125;</span><br><span class="line"><span class="actionscript">  			&#125;<span class="keyword">else</span>&#123;</span></span><br><span class="line"><span class="actionscript">  				alert(<span class="string">"密码格式错误，提交失败，请重新填写！"</span>);</span></span><br><span class="line"><span class="javascript">  				<span class="built_in">console</span>.log(<span class="string">"密码格式错误，提交失败，请重新填写！"</span>);</span></span><br><span class="line"><span class="actionscript">  				<span class="keyword">return</span> <span class="literal">false</span>;</span></span><br><span class="line">  			&#125;</span><br><span class="line"><span class="actionscript">  		&#125;<span class="keyword">else</span>&#123;</span></span><br><span class="line"><span class="actionscript">  			alert(<span class="string">"注册的账号不符合要求，提交失败，请重新填写！"</span>);</span></span><br><span class="line"><span class="javascript">  			<span class="built_in">console</span>.log(<span class="string">"注册的账号不符合要求，提交失败，请重新填写！"</span>);</span></span><br><span class="line"><span class="actionscript">  			<span class="keyword">return</span> <span class="literal">false</span>;</span></span><br><span class="line">  		&#125;</span><br><span class="line">  	&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"> <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"user_reg"</span>&gt;</span>用户注册:<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"./servlet/RegisterServlet"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">name</span>=<span class="string">"form"</span> &gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>请输入账号：<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"username"</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">placeholder</span>=<span class="string">"只能用邮箱注册"</span> <span class="attr">onblur</span>=<span class="string">"validate_username(this.value)"</span>/&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span> <span class="attr">id</span>=<span class="string">"test_user"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>请输入密码：<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">id</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">"6位密码由数字和字母组成"</span> <span class="attr">onblur</span>=<span class="string">"validate_password(this.value)"</span>/&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span> <span class="attr">id</span>=<span class="string">"test_pw"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>请确认密码：<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">id</span>=<span class="string">"password2"</span> <span class="attr">name</span>=<span class="string">"password2"</span> <span class="attr">onblur</span>=<span class="string">"validate_password2(this.value)"</span> /&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span> <span class="attr">id</span>=<span class="string">"is_test_pw"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span> &gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">id</span>=<span class="string">"submit_form"</span> <span class="attr">value</span>=<span class="string">"注册"</span> <span class="attr">onclick</span>=<span class="string">"return validate_form()"</span>/&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"reset"</span> <span class="attr">value</span>=<span class="string">"重置"</span>/&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>放几张效果图吧：</p>
-<p><img src="https://img-blog.csdnimg.cn/20181028144028168.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_27,color_FFFFFF,t_70" alt></p>
-<p><img src="https://img-blog.csdnimg.cn/2018102814411329.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_27,color_FFFFFF,t_70" alt></p>
-<p><img src="https://img-blog.csdnimg.cn/20181028144132339.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_27,color_FFFFFF,t_70" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20181028144028168.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_27,color_FFFFFF,t_70" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/2018102814411329.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_27,color_FFFFFF,t_70" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20181028144132339.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_27,color_FFFFFF,t_70" alt></p>
 <hr>
 <p>2019年9月25日更新：</p>
 <p>修改背景为在线图片，添加测试地址：<a href="https://codepen.io/yansheng836/pen/aboMEmb" target="_blank" rel="noopener">https://codepen.io/yansheng836/pen/aboMEmb</a></p>
 <p>截图：</p>
-<p><img src="https://img-blog.csdnimg.cn/20191027092352429.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yansheng836/github-oss/csdn-img/20191027092352429.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt></p>
 
       
 
@@ -930,6 +930,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
@@ -938,15 +946,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -998,11 +998,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Live2D</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+                <a href="javascript:void(0)" class="js-tag color5">心知天气</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1011,10 +1015,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">评论系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">心知天气</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1042,6 +1042,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">背景图片</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ICP</a>
               </li>
              
@@ -1050,19 +1054,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">背景图片</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
+                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
+                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1078,6 +1078,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
               </li>
              
@@ -1087,10 +1091,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Beyond Compare 4</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1118,7 +1118,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">阿里云</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CMD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1134,11 +1142,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CMD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1151,10 +1155,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Code:blocks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1254,15 +1254,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hadoop</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">MapReduce</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1298,7 +1298,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+                <a href="javascript:void(0)" class="js-tag color4">pip</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1306,11 +1310,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1354,14 +1354,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">CSDN资源</a>
               </li>
              
@@ -1378,19 +1370,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Gradle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">EditPlus</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">文件名</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SSL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1406,6 +1398,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SSL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTTPS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSDN</a>
               </li>
              
@@ -1418,15 +1418,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">304状态码</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">截图</a>
+                <a href="javascript:void(0)" class="js-tag color4">蓝桥杯</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1435,6 +1431,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GIF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">截图</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1466,14 +1466,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Grafana</a>
               </li>
              
@@ -1482,7 +1474,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
             
             <div class="clearfix"></div>
