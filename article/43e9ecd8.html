@@ -17,16 +17,16 @@
 <meta property="og:site_name" content="荷塘月色的博客">
 <meta property="og:description" content="我们常用说的视图一般是指 view，即普通视图；而物化视图则是materialized  view（materialized 使物质化，使具体化（materialize 的过去式和过去分词））。两者都是视图，但是名称不一样，说明两者还有有所差异的。下面就来简单介绍一下PostgreSQL中的视图和物化视图的差异。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://yansheng836.github.io/article/assets/baea60992c074e12b16883a688a38e63.png">
-<meta property="og:image" content="https://yansheng836.github.io/article/assets/baea60992c074e12b16883a688a38e63.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/baea60992c074e12b16883a688a38e63.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/bd9ba9571e8b4fb28d7e8a27af1bdba8.png">
 <meta property="og:image" content="https://yansheng836.github.io/article/assets/4ded55ea13214de9b7d15531224c12c3.png">
-<meta property="og:image" content="https://yansheng836.github.io/article/assets/baea60992c074e12b16883a688a38e63.png">
-<meta property="og:image" content="https://yansheng836.github.io/article/assets/4ded55ea13214de9b7d15531224c12c3.png">
-<meta property="og:updated_time" content="2022-08-11T15:34:10.111Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/662961dd72374d12b8711516a832ba2d.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f09eb1013be6466ab776ae212ce46b36.png">
+<meta property="og:updated_time" content="2023-04-01T16:42:52.502Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PostgreSQL视图和物化视图">
 <meta name="twitter:description" content="我们常用说的视图一般是指 view，即普通视图；而物化视图则是materialized  view（materialized 使物质化，使具体化（materialize 的过去式和过去分词））。两者都是视图，但是名称不一样，说明两者还有有所差异的。下面就来简单介绍一下PostgreSQL中的视图和物化视图的差异。">
-<meta name="twitter:image" content="https://yansheng836.github.io/article/assets/baea60992c074e12b16883a688a38e63.png">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/baea60992c074e12b16883a688a38e63.png">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -211,7 +211,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
         </nav>
 
         <div class="blog-counter">
-            <span>总文章数 302</span>
+            <span>总文章数 445</span>
         </div>
 
         <!-- 智能菜单 -->
@@ -402,7 +402,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-csdn-20220504/PostgreSQL视图和物化视图" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-csdn-20220101-20221231/PostgreSQL视图和物化视图" class="article article-type-post " itemscope itemprop="blogPost">
     <!-- 文章正文 -->
     <div class="article-inner">
     
@@ -506,13 +506,13 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <p>基础查询如下，后面我们会使用这个SQL来构造视图和物化视图。<br>
 （简单介绍下pg_class ：pgsql里面的一个内置系统表，是一个统计或者说是汇总的数据表。class就是类、对象，即pgsql里面的对象都会在这里面记录，比如实体表、视图、物化视图、索引、toast表等，详细信息可以查看官方文档。）</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> pg_class <span class="keyword">where</span> relnamespace != <span class="string">'11'</span> <span class="keyword">and</span> relnamespace != <span class="string">'13887'</span>  <span class="keyword">and</span> relkind = <span class="string">'r'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 创建一个表，备用</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Sheet4(</span><br><span class="line">	<span class="keyword">id</span> <span class="built_in">int8</span>,</span><br><span class="line">	<span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">100</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 查询该表的基础信息（元数据信息）</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> pg_class <span class="keyword">where</span> relnamespace != <span class="string">'11'</span> <span class="keyword">and</span> relnamespace != <span class="string">'13887'</span>  <span class="keyword">and</span> relkind = <span class="string">'r'</span> <span class="keyword">and</span>  relname = <span class="string">'Sheet4'</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="assets/baea60992c074e12b16883a688a38e63.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/baea60992c074e12b16883a688a38e63.png" alt="在这里插入图片描述"></p>
 <h3 id="4-1-视图">4.1 视图</h3>
 <h4 id="4-1-1-创建视图">4.1.1 创建视图</h4>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> <span class="string">"public"</span>.<span class="string">"v_user_tab"</span></span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> pg_class <span class="keyword">where</span> relnamespace != <span class="string">'11'</span> <span class="keyword">and</span> relnamespace != <span class="string">'13887'</span>  <span class="keyword">and</span> relkind = <span class="string">'r'</span>;</span><br></pre></td></tr></table></figure>
 <h4 id="4-1-2-使用视图">4.1.2 使用视图</h4>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 普通查询</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> v_user_tab;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> v_user_tab <span class="keyword">where</span> relname = <span class="string">'Sheet4'</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="assets/baea60992c074e12b16883a688a38e63.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/bd9ba9571e8b4fb28d7e8a27af1bdba8.png" alt="在这里插入图片描述"></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 关联查询，找命名空间是啥（public默认的）</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> pg_namespace;</span><br><span class="line"><span class="keyword">select</span> ns.nspname,vt.* <span class="keyword">from</span> v_user_tab vt <span class="keyword">left</span> <span class="keyword">join</span>  pg_namespace ns <span class="keyword">on</span> vt.relnamespace = ns.oid;</span><br><span class="line"><span class="keyword">select</span> ns.nspname,vt.* <span class="keyword">from</span> v_user_tab vt <span class="keyword">left</span> <span class="keyword">join</span>  pg_namespace ns <span class="keyword">on</span> vt.relnamespace = ns.oid <span class="keyword">where</span> relname = <span class="string">'Sheet4'</span>;</span><br></pre></td></tr></table></figure>
 <p><img src="assets/4ded55ea13214de9b7d15531224c12c3.png" alt="在这里插入图片描述"></p>
 <h4 id="4-1-3-查看视图的执行计划">4.1.3 查看视图的执行计划</h4>
@@ -534,9 +534,9 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">MATERIALIZED</span> <span class="keyword">VIEW</span> <span class="string">"public"</span>.<span class="string">"mv_user_tab"</span></span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> pg_class <span class="keyword">where</span> relnamespace != <span class="string">'11'</span> <span class="keyword">and</span> relnamespace != <span class="string">'13887'</span>  <span class="keyword">and</span> relkind = <span class="string">'r'</span>;</span><br></pre></td></tr></table></figure>
 <h4 id="4-2-2-使用物化视图">4.2.2 使用物化视图</h4>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 普通查询</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> mv_user_tab;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> mv_user_tab <span class="keyword">where</span> relname = <span class="string">'Sheet4'</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="assets/baea60992c074e12b16883a688a38e63.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/662961dd72374d12b8711516a832ba2d.png" alt="在这里插入图片描述"></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 关联查询</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> pg_namespace;</span><br><span class="line"><span class="keyword">select</span> ns.nspname,vt.* <span class="keyword">from</span> mv_user_tab vt <span class="keyword">left</span> <span class="keyword">join</span>  pg_namespace ns <span class="keyword">on</span> vt.relnamespace = ns.oid;</span><br><span class="line"><span class="keyword">select</span> ns.nspname,vt.* <span class="keyword">from</span> mv_user_tab vt <span class="keyword">left</span> <span class="keyword">join</span>  pg_namespace ns <span class="keyword">on</span> vt.relnamespace = ns.oid <span class="keyword">where</span> relname = <span class="string">'Sheet4'</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="assets/4ded55ea13214de9b7d15531224c12c3.png" alt="在这里插入图片描述"><br>
+<p><img src="https://img-blog.csdnimg.cn/f09eb1013be6466ab776ae212ce46b36.png" alt="在这里插入图片描述"><br>
 基础使用，到目前为止好像都没有差异。</p>
 <h4 id="4-2-3-查看物化视图的执行计划">4.2.3 查看物化视图的执行计划</h4>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">explain</span> <span class="keyword">select</span> * <span class="keyword">from</span> mv_user_tab <span class="keyword">where</span> relname = <span class="string">'Sheet4'</span>;</span><br><span class="line"></span><br><span class="line">Seq Scan on mv_user_tab  (cost=0.00..55.53 rows=1 width=260)</span><br><span class="line">  Filter: (relname = 'Sheet4'::name)</span><br></pre></td></tr></table></figure>
@@ -592,7 +592,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
     2022-05-01
     <br>
     <strong class="update-time">最后更新：</strong>
-    2022-08-11
+    2023-04-02
     <br>
     <strong class="article-titles">本文标题：</strong>
     <a href="https://yansheng836.github.io/article/43e9ecd8.html" title="PostgreSQL视图和物化视图" target="_blank">PostgreSQL视图和物化视图</a>
@@ -727,9 +727,18 @@ var elm2 = document.getElementsByClassName('eOZYiU');
   
 <nav id="article-nav">
   
+    <a href="/article/d060b747.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Git显示当前仓库占用大小的命令-简单
+        
+      </div>
+    </a>
   
-    <a href="/article/ec768f3c.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">fastjson序列化保持字段顺序</div>
+  
+    <a href="/article/a22bfa20.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PostgreSQL · 最佳实践 · EXPLAIN 使用浅析（优化器，查询计划）</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -846,7 +855,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
         <div class="footer-left">
             
             
-                &copy; 2019-2022
+                &copy; 2019-2023
             
             荷塘月色
         </div>
@@ -986,6 +995,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -1014,15 +1027,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1058,14 +1071,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DPlayer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">视频</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">APlayer</a>
               </li>
              
@@ -1074,11 +1079,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+                <a href="javascript:void(0)" class="js-tag color3">DPlayer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">视频</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Live2D</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1106,6 +1119,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">相册</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">百度统计</a>
               </li>
              
@@ -1114,11 +1131,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">相册</a>
+                <a href="javascript:void(0)" class="js-tag color4">ICP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ICP</a>
+                <a href="javascript:void(0)" class="js-tag color5">背景特效</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1130,15 +1147,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">背景特效</a>
+                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SEO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1154,10 +1167,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
               </li>
              
@@ -1167,6 +1176,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Beyond Compare 4</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1186,11 +1199,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">记忆</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color4">阿里云</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1214,10 +1231,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C语言</a>
               </li>
              
@@ -1230,15 +1243,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">(My)Eclipse</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">阿里云</a>
+                <a href="javascript:void(0)" class="js-tag color1">SQL Server</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1246,7 +1259,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SQL Server</a>
+                <a href="javascript:void(0)" class="js-tag color2">(My)Eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">调试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1255,10 +1272,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Lombok</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">调试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1306,15 +1319,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">List</a>
+                <a href="javascript:void(0)" class="js-tag color1">Swing</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">序列化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swing</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1334,14 +1343,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hadoop</a>
               </li>
              
@@ -1350,11 +1351,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1366,15 +1375,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Notepad++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Python基础</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">PyCharm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Notepad++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1386,15 +1395,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">pip</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1406,11 +1415,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">VMware</a>
+                <a href="javascript:void(0)" class="js-tag color5">lambda表达式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">lambda表达式</a>
+                <a href="javascript:void(0)" class="js-tag color2">VMware</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1530,7 +1539,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+                <a href="javascript:void(0)" class="js-tag color3">Navicat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Postman</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1539,6 +1552,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Java爬虫：Jsoup</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Grafana</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">NGINX</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
               </li>
             
             <div class="clearfix"></div>

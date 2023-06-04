@@ -204,7 +204,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
         </nav>
 
         <div class="blog-counter">
-            <span>总文章数 302</span>
+            <span>总文章数 445</span>
         </div>
 
         <!-- 智能菜单 -->
@@ -397,7 +397,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-csdn/如何从GitHub上下载指定项目的单个文件或文件夹" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-csdn-20210101-20210831/PostgreSQL COALESCE types text and integer cannot be matched" class="article article-type-post  article-index" itemscope itemprop="blogPost">
     <!-- 文章正文 -->
     <div class="article-inner">
     
@@ -406,7 +406,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/article/cd2a79b7.html">如何从GitHub上下载指定项目的单个文件或文件夹</a>
+      <a class="article-title" href="/article/72152d4e.html">PostgreSQL COALESCE types text and integer cannot be matched</a>
     </h1>
   
 
@@ -415,8 +415,1240 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 
 <!--引入不蒜子并添加文章访问量(结束) -->
 
-<a href="/article/cd2a79b7.html" class="archive-article-date">
-  	<time datetime="2019-09-04T05:37:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-04</time>
+<a href="/article/72152d4e.html" class="archive-article-date">
+  	<time datetime="2021-06-22T03:39:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-22</time>
+</a>
+        
+
+        <!-- 《开始添加字数统计-->
+         
+          
+
+<div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        
+       <i class="icon-statistics"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">289字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+         
+        <i class="icon-book icon"></i>
+        <span class="post-meta-item-text"> 阅读时长≈</span>
+        <span class="post-count">1分</span>
+      </span>
+    </span>
+</div>
+
+
+         
+        <!-- 添加字数统计完成》 -->
+
+      </header>
+    
+
+    <!-- 文章主要内容（入口、条目） -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>pgsql 使用 <code>COALESCE()</code> 函数时（使用Navicat查询工具），出现这个问题，中文意思应该是：“COALESCE类型不能匹配文本和整数”。</p>
+<p>问题语句差不多是这样的 <code>…… COALESCE('1',0)::int ……</code> ，然而当我直接使用这个语句进行测试，是没有问题的（如下）；但是如果内嵌到长的SQL语句里面就会报这个错误，很奇怪，不知道是查询工具的问题，还是函数自身问题（后续我又用pgadmin进行了测试，发现）。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="literal">null</span>::<span class="built_in">int</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="string">'1'</span>::<span class="built_in">int</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">COALESCE</span>(<span class="number">1</span>, <span class="number">0</span>)::<span class="built_in">int</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">COALESCE</span>(<span class="string">'1'</span>, <span class="number">0</span>)::<span class="built_in">int</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">COALESCE</span>(<span class="number">1</span>, <span class="string">'0'</span>)::<span class="built_in">int</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">COALESCE</span>(<span class="string">'1'</span>, <span class="string">'0'</span>)::<span class="built_in">int</span>;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/article/72152d4e.html#more">more >></a>
+        
+      
+
+        <!-- 《添加版权声明 -->
+        
+            <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+        
+        <!-- 添加版权声明》 -->
+
+      
+    </div>
+
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PostgreSQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/72152d4e.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+<!-- 评论系统 -->
+
+
+  
+    <article id="post-csdn-20210101-20210831/Git添加空文件夹" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <!-- 文章正文 -->
+    <div class="article-inner">
+    
+      <!-- 文章头部 -->
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/article/33c317e5.html">Git添加空文件夹</a>
+    </h1>
+  
+
+        
+        <!--引入不蒜子并添加文章访问量(开始) -->
+
+<!--引入不蒜子并添加文章访问量(结束) -->
+
+<a href="/article/33c317e5.html" class="archive-article-date">
+  	<time datetime="2021-06-19T10:59:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-19</time>
+</a>
+        
+
+        <!-- 《开始添加字数统计-->
+         
+          
+
+<div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        
+       <i class="icon-statistics"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">281字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+         
+        <i class="icon-book icon"></i>
+        <span class="post-meta-item-text"> 阅读时长≈</span>
+        <span class="post-count">1分</span>
+      </span>
+    </span>
+</div>
+
+
+         
+        <!-- 添加字数统计完成》 -->
+
+      </header>
+    
+
+    <!-- 文章主要内容（入口、条目） -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>git默认会忽略空文件夹，应该因为它认为这种文件没有什么太大的意义。</p>
+<p>但是有些什么场景下，我们可能需要提交一些空的文件夹，以达到某种特定的目的。</p>
+        
+          <a class="article-more-a" href="/article/33c317e5.html#more">more >></a>
+        
+      
+
+        <!-- 《添加版权声明 -->
+        
+            <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+        
+        <!-- 添加版权声明》 -->
+
+      
+    </div>
+
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/33c317e5.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+<!-- 评论系统 -->
+
+
+  
+    <article id="post-csdn-20210101-20210831/Git显示当前仓库占用大小的命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <!-- 文章正文 -->
+    <div class="article-inner">
+    
+      <!-- 文章头部 -->
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/article/4bd581a4.html">Git显示当前仓库占用大小的命令</a>
+    </h1>
+  
+
+        
+        <!--引入不蒜子并添加文章访问量(开始) -->
+
+<!--引入不蒜子并添加文章访问量(结束) -->
+
+<a href="/article/4bd581a4.html" class="archive-article-date">
+  	<time datetime="2021-06-19T10:36:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-19</time>
+</a>
+        
+
+        <!-- 《开始添加字数统计-->
+         
+          
+
+<div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        
+       <i class="icon-statistics"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">133字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+         
+        <i class="icon-book icon"></i>
+        <span class="post-meta-item-text"> 阅读时长≈</span>
+        <span class="post-count">1分</span>
+      </span>
+    </span>
+</div>
+
+
+         
+        <!-- 添加字数统计完成》 -->
+
+      </header>
+    
+
+    <!-- 文章主要内容（入口、条目） -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>git提供了相关的命令：<code>git count-objects -vH</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git count-objects -vH</span></span><br><span class="line">count: 82</span><br><span class="line">size: 72.78 MiB</span><br><span class="line">in-pack: 0</span><br><span class="line">packs: 0</span><br><span class="line">size-pack: 0 bytes</span><br><span class="line">prune-packable: 0</span><br><span class="line">garbage: 0</span><br><span class="line">size-garbage: 0 bytes</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/article/4bd581a4.html#more">more >></a>
+        
+      
+
+        <!-- 《添加版权声明 -->
+        
+            <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+        
+        <!-- 添加版权声明》 -->
+
+      
+    </div>
+
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/4bd581a4.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+<!-- 评论系统 -->
+
+
+  
+    <article id="post-csdn-20210101-20210831/vim.vi编辑工具实现多行注释和取消注释" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <!-- 文章正文 -->
+    <div class="article-inner">
+    
+      <!-- 文章头部 -->
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/article/d35b9a6a.html">vim/vi编辑工具实现多行注释和取消注释</a>
+    </h1>
+  
+
+        
+        <!--引入不蒜子并添加文章访问量(开始) -->
+
+<!--引入不蒜子并添加文章访问量(结束) -->
+
+<a href="/article/d35b9a6a.html" class="archive-article-date">
+  	<time datetime="2021-06-19T06:42:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-19</time>
+</a>
+        
+
+        <!-- 《开始添加字数统计-->
+         
+          
+
+<div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        
+       <i class="icon-statistics"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">203字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+         
+        <i class="icon-book icon"></i>
+        <span class="post-meta-item-text"> 阅读时长≈</span>
+        <span class="post-count">1分</span>
+      </span>
+    </span>
+</div>
+
+
+         
+        <!-- 添加字数统计完成》 -->
+
+      </header>
+    
+
+    <!-- 文章主要内容（入口、条目） -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>系统：Linux</p>
+<h2 id="多行注释：">多行注释：</h2>
+<ol>
+<li>进入命令行模式–&gt;</li>
+<li>将光标移动到要注释的第一行位置–&gt;</li>
+<li>按 <code>ctrl + v</code> 进入 visual block 模式–&gt;</li>
+<li>按字母j，或k（或者上下移动键）纵向选中需要注释的行–&gt;</li>
+<li>按大写字母I，进入插入模式–&gt;</li>
+<li>输入注释符号，例如#–&gt;</li>
+<li>按esc键就注释多行了。</li>
+</ol>
+        
+          <a class="article-more-a" href="/article/d35b9a6a.html#more">more >></a>
+        
+      
+
+        <!-- 《添加版权声明 -->
+        
+            <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+        
+        <!-- 添加版权声明》 -->
+
+      
+    </div>
+
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/d35b9a6a.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+<!-- 评论系统 -->
+
+
+  
+    <article id="post-csdn-20210101-20210831/window系统 telnet报错：‘telnet‘ 不是内部或外部命令，也不是可运行的程序 或批处理文件。" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <!-- 文章正文 -->
+    <div class="article-inner">
+    
+      <!-- 文章头部 -->
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/article/a7f3d940.html">window系统 telnet报错：‘telnet‘ 不是内部或外部命令，也不是可运行的程序 或批处理文件。</a>
+    </h1>
+  
+
+        
+        <!--引入不蒜子并添加文章访问量(开始) -->
+
+<!--引入不蒜子并添加文章访问量(结束) -->
+
+<a href="/article/a7f3d940.html" class="archive-article-date">
+  	<time datetime="2021-06-13T16:07:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-14</time>
+</a>
+        
+
+        <!-- 《开始添加字数统计-->
+         
+          
+
+<div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        
+       <i class="icon-statistics"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">167字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+         
+        <i class="icon-book icon"></i>
+        <span class="post-meta-item-text"> 阅读时长≈</span>
+        <span class="post-count">1分</span>
+      </span>
+    </span>
+</div>
+
+
+         
+        <!-- 添加字数统计完成》 -->
+
+      </header>
+    
+
+    <!-- 文章主要内容（入口、条目） -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如果在window系统的cmd命令行中执行 telnet 命令，遇到上图的报错时，可能您没有开启 telnet 功能，下面教大家开启此功能：</p>
+<p>1、打开控制面板，然后进入到 “程序” 里面：</p>
+<p>2、点击 “启用或关闭Windows功能”：</p>
+<p>3、选中 “Telnet客户端” 后，点击确定按钮即可：</p>
+<p>4、最后再一次测试 telnet 功能：</p>
+<p>成功启用了 telnet 功能，退出只需要 ctrl + c</p>
+<hr>
+<p>版权声明：本文为CSDN博主「David_jiahuan」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>
+原文链接：<a href="https://blog.csdn.net/David_jiahuan/article/details/102702903" target="_blank" rel="noopener">https://blog.csdn.net/David_jiahuan/article/details/102702903</a></p>
+
+      
+
+        <!-- 《添加版权声明 -->
+        
+            <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+        
+        <!-- 添加版权声明》 -->
+
+      
+    </div>
+
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">工具/资源</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CMD</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/a7f3d940.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+<!-- 评论系统 -->
+
+
+  
+    <article id="post-csdn-20210101-20210831/Navicat连接PostgreSQL遇到的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <!-- 文章正文 -->
+    <div class="article-inner">
+    
+      <!-- 文章头部 -->
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/article/474e4c2f.html">Navicat连接PostgreSQL遇到的问题</a>
+    </h1>
+  
+
+        
+        <!--引入不蒜子并添加文章访问量(开始) -->
+
+<!--引入不蒜子并添加文章访问量(结束) -->
+
+<a href="/article/474e4c2f.html" class="archive-article-date">
+  	<time datetime="2021-06-07T03:07:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-07</time>
+</a>
+        
+
+        <!-- 《开始添加字数统计-->
+         
+          
+
+<div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        
+       <i class="icon-statistics"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">187字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+         
+        <i class="icon-book icon"></i>
+        <span class="post-meta-item-text"> 阅读时长≈</span>
+        <span class="post-count">1分</span>
+      </span>
+    </span>
+</div>
+
+
+         
+        <!-- 添加字数统计完成》 -->
+
+      </header>
+    
+
+    <!-- 文章主要内容（入口、条目） -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-连接时-报错：authentication-method-10-not-supported">1.连接时，报错：authentication method 10 not supported</h2>
+<blockquote>
+<p>翻译为： 不支持认证方式10</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/2021060710572348.png#pic_left" alt="在这里插入图片描述"><br>
+看着很像配置有问题的情况。</p>
+        
+          <a class="article-more-a" href="/article/474e4c2f.html#more">more >></a>
+        
+      
+
+        <!-- 《添加版权声明 -->
+        
+            <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+        
+        <!-- 添加版权声明》 -->
+
+      
+    </div>
+
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">PostgreSQL</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">工具/资源</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Navicat</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/474e4c2f.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+<!-- 评论系统 -->
+
+
+  
+    <article id="post-csdn-20210101-20210831/移动端Web开发调试之Chrome远程调试(Remote Debugging)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <!-- 文章正文 -->
+    <div class="article-inner">
+    
+      <!-- 文章头部 -->
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/article/6dda00fe.html">移动端Web开发调试之Chrome远程调试(Remote Debugging)</a>
+    </h1>
+  
+
+        
+        <!--引入不蒜子并添加文章访问量(开始) -->
+
+<!--引入不蒜子并添加文章访问量(结束) -->
+
+<a href="/article/6dda00fe.html" class="archive-article-date">
+  	<time datetime="2021-06-02T08:17:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-02</time>
+</a>
+        
+
+        <!-- 《开始添加字数统计-->
+         
+          
+
+<div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        
+       <i class="icon-statistics"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">153字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+         
+        <i class="icon-book icon"></i>
+        <span class="post-meta-item-text"> 阅读时长≈</span>
+        <span class="post-count">1分</span>
+      </span>
+    </span>
+</div>
+
+
+         
+        <!-- 添加字数统计完成》 -->
+
+      </header>
+    
+
+    <!-- 文章主要内容（入口、条目） -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我是用手机USB连接进行调试的，首先需要开启手机的调试模式，不同机型可能会有所差异，建议百度。</p>
+        
+          <a class="article-more-a" href="/article/6dda00fe.html#more">more >></a>
+        
+      
+
+        <!-- 《添加版权声明 -->
+        
+            <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+        
+        <!-- 添加版权声明》 -->
+
+      
+    </div>
+
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">工具/资源</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Chrome</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/6dda00fe.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+<!-- 评论系统 -->
+
+
+  
+    <article id="post-csdn-20210101-20210831/JS实现replaceAll方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <!-- 文章正文 -->
+    <div class="article-inner">
+    
+      <!-- 文章头部 -->
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/article/d50d13af.html">JS实现replaceAll方法</a>
+    </h1>
+  
+
+        
+        <!--引入不蒜子并添加文章访问量(开始) -->
+
+<!--引入不蒜子并添加文章访问量(结束) -->
+
+<a href="/article/d50d13af.html" class="archive-article-date">
+  	<time datetime="2021-06-02T07:59:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-02</time>
+</a>
+        
+
+        <!-- 《开始添加字数统计-->
+         
+          
+
+<div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        
+       <i class="icon-statistics"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">415字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+         
+        <i class="icon-book icon"></i>
+        <span class="post-meta-item-text"> 阅读时长≈</span>
+        <span class="post-count">1分</span>
+      </span>
+    </span>
+</div>
+
+
+         
+        <!-- 添加字数统计完成》 -->
+
+      </header>
+    
+
+    <!-- 文章主要内容（入口、条目） -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="replace方法">replace方法</h2>
+<p>JS本来有replace()方法，请看w3school的说明( <a href="https://www.w3school.com.cn/jsref/jsref_replace.asp" target="_blank" rel="noopener">JavaScript replace() 方法</a> )：</p>
+<blockquote>
+<p><strong>定义和用法</strong><br>
+replace() 方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。<br>
+<strong>语法</strong><br>
+stringObject.replace(regexp/substr,replacement)<br>
+第一个参数为一个字符串或者一个正则表达式，第二个参数为一个字符串或者一个用于生成字符串的函数。</p>
+</blockquote>
+<p>注意重点：</p>
+<p>如果 regexp 具有全局标志 g，那么 replace() 方法将替换所有匹配的子串。否则，它只替换第一个匹配子串。</p>
+        
+          <a class="article-more-a" href="/article/d50d13af.html#more">more >></a>
+        
+      
+
+        <!-- 《添加版权声明 -->
+        
+            <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+        
+        <!-- 添加版权声明》 -->
+
+      
+    </div>
+
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/d50d13af.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+<!-- 评论系统 -->
+
+
+  
+    <article id="post-csdn-20210101-20210831/JS查找某个字符在字符串中出现的位置及次数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <!-- 文章正文 -->
+    <div class="article-inner">
+    
+      <!-- 文章头部 -->
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/article/f3b671b8.html">JS查找某个字符在字符串中出现的位置及次数</a>
+    </h1>
+  
+
+        
+        <!--引入不蒜子并添加文章访问量(开始) -->
+
+<!--引入不蒜子并添加文章访问量(结束) -->
+
+<a href="/article/f3b671b8.html" class="archive-article-date">
+  	<time datetime="2021-06-01T09:41:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-01</time>
+</a>
+        
+
+        <!-- 《开始添加字数统计-->
+         
+          
+
+<div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        
+       <i class="icon-statistics"></i>
+        <span class="post-meta-item-text">  字数统计: </span>
+        <span class="post-count">155字</span>
+      </span>
+    </span>
+
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+         
+        <i class="icon-book icon"></i>
+        <span class="post-meta-item-text"> 阅读时长≈</span>
+        <span class="post-count">1分</span>
+      </span>
+    </span>
+</div>
+
+
+         
+        <!-- 添加字数统计完成》 -->
+
+      </header>
+    
+
+    <!-- 文章主要内容（入口、条目） -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>str.inedxOf(‘要查找的字符串’,起始位置)；</p>
+<p>indexOf()方法可以返回某个字符在字符串在首次出现的位置，若没有在字符串中找到该字符，则返回-1。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'fdhfgcsaedvcfhgfh'</span>;</span><br><span class="line"><span class="keyword">var</span> index = str.indexOf(<span class="string">'f'</span>); <span class="comment">// 字符出现的位置</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">0</span>; <span class="comment">// 这个字符出现的次数</span></span><br><span class="line"><span class="keyword">while</span>(index !== <span class="number">-1</span>) &#123;</span><br><span class="line">            </span><br><span class="line">    <span class="built_in">console</span>.log(index); <span class="comment">// 打印字符串出现的位置</span></span><br><span class="line">    num++; <span class="comment">// 每出现一次 次数加一</span></span><br><span class="line">    index = str.indexOf(<span class="string">'f'</span>,index + <span class="number">1</span>); <span class="comment">// 从字符串出现的位置的下一位置开始继续查找</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'f一共出现了'</span> + num + <span class="string">'次'</span>);</span><br></pre></td></tr></table></figure>
+<hr>
+<p>转自 ： <a href="https://www.cnblogs.com/sunyan-blog/p/11783408.html" target="_blank" rel="noopener">https://www.cnblogs.com/sunyan-blog/p/11783408.html</a></p>
+
+      
+
+        <!-- 《添加版权声明 -->
+        
+            <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+        
+        <!-- 添加版权声明》 -->
+
+      
+    </div>
+
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/f3b671b8.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+<!-- 评论系统 -->
+
+
+  
+    <article id="post-csdn-20210101-20210831/JS字符串的裁剪" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <!-- 文章正文 -->
+    <div class="article-inner">
+    
+      <!-- 文章头部 -->
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/article/efef598a.html">JS字符串的裁剪</a>
+    </h1>
+  
+
+        
+        <!--引入不蒜子并添加文章访问量(开始) -->
+
+<!--引入不蒜子并添加文章访问量(结束) -->
+
+<a href="/article/efef598a.html" class="archive-article-date">
+  	<time datetime="2021-05-31T09:58:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-31</time>
 </a>
         
 
@@ -431,1082 +1663,6 @@ var elm2 = document.getElementsByClassName('eOZYiU');
        <i class="icon-statistics"></i>
         <span class="post-meta-item-text">  字数统计: </span>
         <span class="post-count">1.1k字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-         
-        <i class="icon-book icon"></i>
-        <span class="post-meta-item-text"> 阅读时长≈</span>
-        <span class="post-count">3分</span>
-      </span>
-    </span>
-</div>
-
-
-         
-        <!-- 添加字数统计完成》 -->
-
-      </header>
-    
-
-    <!-- 文章主要内容（入口、条目） -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Github 默认是不支持下载存储在仓库中的部分内容的，通常你需要使用某个项目就必须下载该项目的所有文件。但有时我们需要只下载某一个项目中的某个文件夹或文件的内容，这时应该怎么办呢？其实方法很简单，今天我们就来介绍两种方法来解决这个问题。</p>
-        
-          <a class="article-more-a" href="/article/cd2a79b7.html#more">more >></a>
-        
-      
-
-        <!-- 《添加版权声明 -->
-        
-            <!-- 《添加版权声明 -->
-<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
-
-
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <div class="declare" hidden="hidden"></div>
-
-<!-- 添加版权声明》 -->
-
-        
-        <!-- 添加版权声明》 -->
-
-      
-    </div>
-
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">工具/资源</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Chrome插件</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitZip</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DownGit</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/cd2a79b7.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-<!-- 评论系统 -->
-
-
-  
-    <article id="post-csdn/新建Eclipse工作空间，复制原有的配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <!-- 文章正文 -->
-    <div class="article-inner">
-    
-      <!-- 文章头部 -->
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/689c5754.html">新建Eclipse工作空间，复制原有的配置</a>
-    </h1>
-  
-
-        
-        <!--引入不蒜子并添加文章访问量(开始) -->
-
-<!--引入不蒜子并添加文章访问量(结束) -->
-
-<a href="/article/689c5754.html" class="archive-article-date">
-  	<time datetime="2019-08-31T13:36:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-31</time>
-</a>
-        
-
-        <!-- 《开始添加字数统计-->
-         
-          
-
-<div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        
-       <i class="icon-statistics"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">168字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-         
-        <i class="icon-book icon"></i>
-        <span class="post-meta-item-text"> 阅读时长≈</span>
-        <span class="post-count">1分</span>
-      </span>
-    </span>
-</div>
-
-
-         
-        <!-- 添加字数统计完成》 -->
-
-      </header>
-    
-
-    <!-- 文章主要内容（入口、条目） -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>新建Eclipse工作空间，复制原有的配置，保持原有环境的两种方法。</p>
-        
-          <a class="article-more-a" href="/article/689c5754.html#more">more >></a>
-        
-      
-
-        <!-- 《添加版权声明 -->
-        
-            <!-- 《添加版权声明 -->
-<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
-
-
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <div class="declare" hidden="hidden"></div>
-
-<!-- 添加版权声明》 -->
-
-        
-        <!-- 添加版权声明》 -->
-
-      
-    </div>
-
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">(My)Eclipse</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/689c5754.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-<!-- 评论系统 -->
-
-
-  
-    <article id="post-csdn/如何删除Eclipse里的某个工作空间？" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <!-- 文章正文 -->
-    <div class="article-inner">
-    
-      <!-- 文章头部 -->
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/77fcc6c1.html">如何删除Eclipse里的某个工作空间？</a>
-    </h1>
-  
-
-        
-        <!--引入不蒜子并添加文章访问量(开始) -->
-
-<!--引入不蒜子并添加文章访问量(结束) -->
-
-<a href="/article/77fcc6c1.html" class="archive-article-date">
-  	<time datetime="2019-08-31T13:22:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-31</time>
-</a>
-        
-
-        <!-- 《开始添加字数统计-->
-         
-          
-
-<div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        
-       <i class="icon-statistics"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">312字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-         
-        <i class="icon-book icon"></i>
-        <span class="post-meta-item-text"> 阅读时长≈</span>
-        <span class="post-count">1分</span>
-      </span>
-    </span>
-</div>
-
-
-         
-        <!-- 添加字数统计完成》 -->
-
-      </header>
-    
-
-    <!-- 文章主要内容（入口、条目） -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>很多时候，一个Eclipse中或多或少的都会有那么几个工作空间（workspace），但是久而久之你会发现有些工作空间你觉得不再需要了或者觉得碍眼，怎么办？其实很简单，方法有两种。</p>
-        
-          <a class="article-more-a" href="/article/77fcc6c1.html#more">more >></a>
-        
-      
-
-        <!-- 《添加版权声明 -->
-        
-            <!-- 《添加版权声明 -->
-<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
-
-
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <div class="declare" hidden="hidden"></div>
-
-<!-- 添加版权声明》 -->
-
-        
-        <!-- 添加版权声明》 -->
-
-      
-    </div>
-
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">(My)Eclipse</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/77fcc6c1.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-<!-- 评论系统 -->
-
-
-  
-    <article id="post-csdn/命令行运行javac，报错. 编码 GBK 的不可映射字符 (0x9C)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <!-- 文章正文 -->
-    <div class="article-inner">
-    
-      <!-- 文章头部 -->
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/fe95282d.html">命令行运行javac，报错. 编码 GBK 的不可映射字符 (0x9C)</a>
-    </h1>
-  
-
-        
-        <!--引入不蒜子并添加文章访问量(开始) -->
-
-<!--引入不蒜子并添加文章访问量(结束) -->
-
-<a href="/article/fe95282d.html" class="archive-article-date">
-  	<time datetime="2019-08-31T12:59:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-31</time>
-</a>
-        
-
-        <!-- 《开始添加字数统计-->
-         
-          
-
-<div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        
-       <i class="icon-statistics"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">734字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-         
-        <i class="icon-book icon"></i>
-        <span class="post-meta-item-text"> 阅读时长≈</span>
-        <span class="post-count">2分</span>
-      </span>
-    </span>
-</div>
-
-
-         
-        <!-- 添加字数统计完成》 -->
-
-      </header>
-    
-
-    <!-- 文章主要内容（入口、条目） -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>针对“命令行运行javac，报错: 编码 GBK 的不可映射字符 (0x9C)”问题，这篇文章分3部分内容进行了讲解：错误情况示例；原因分析；解决办法。</p>
-        
-          <a class="article-more-a" href="/article/fe95282d.html#more">more >></a>
-        
-      
-
-        <!-- 《添加版权声明 -->
-        
-            <!-- 《添加版权声明 -->
-<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
-
-
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <div class="declare" hidden="hidden"></div>
-
-<!-- 添加版权声明》 -->
-
-        
-        <!-- 添加版权声明》 -->
-
-      
-    </div>
-
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CMD</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Java基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/fe95282d.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-<!-- 评论系统 -->
-
-
-  
-    <article id="post-csdn/错误. 找不到或无法加载主类 Demo.class 的解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <!-- 文章正文 -->
-    <div class="article-inner">
-    
-      <!-- 文章头部 -->
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/b9c529a7.html">错误. 找不到或无法加载主类 Demo.class 的解决方法</a>
-    </h1>
-  
-
-        
-        <!--引入不蒜子并添加文章访问量(开始) -->
-
-<!--引入不蒜子并添加文章访问量(结束) -->
-
-<a href="/article/b9c529a7.html" class="archive-article-date">
-  	<time datetime="2019-08-31T12:47:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-31</time>
-</a>
-        
-
-        <!-- 《开始添加字数统计-->
-         
-          
-
-<div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        
-       <i class="icon-statistics"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">128字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-         
-        <i class="icon-book icon"></i>
-        <span class="post-meta-item-text"> 阅读时长≈</span>
-        <span class="post-count">1分</span>
-      </span>
-    </span>
-</div>
-
-
-         
-        <!-- 添加字数统计完成》 -->
-
-      </header>
-    
-
-    <!-- 文章主要内容（入口、条目） -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>问题：在命令行运行class文件，发生错误: 找不到或无法加载主类 Demo.class 原因：因为java 命令后面的文件不能有后缀名。 解决办法：运行java时候，后面的文件去掉后缀名。</p>
-        
-          <a class="article-more-a" href="/article/b9c529a7.html#more">more >></a>
-        
-      
-
-        <!-- 《添加版权声明 -->
-        
-            <!-- 《添加版权声明 -->
-<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
-
-
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <div class="declare" hidden="hidden"></div>
-
-<!-- 添加版权声明》 -->
-
-        
-        <!-- 添加版权声明》 -->
-
-      
-    </div>
-
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CMD</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Java基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/b9c529a7.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-<!-- 评论系统 -->
-
-
-  
-    <article id="post-csdn/解决MyEclipse10.x的Servers产生的at com.genuitec.eclipse.ast.deploy.core.Deployment.(Unknown Source)的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <!-- 文章正文 -->
-    <div class="article-inner">
-    
-      <!-- 文章头部 -->
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/8a7663d9.html">解决MyEclipse10.x的Servers产生的at com.genuitec.eclipse.ast.deploy.core.Deployment.(Unknown Source)的问题</a>
-    </h1>
-  
-
-        
-        <!--引入不蒜子并添加文章访问量(开始) -->
-
-<!--引入不蒜子并添加文章访问量(结束) -->
-
-<a href="/article/8a7663d9.html" class="archive-article-date">
-  	<time datetime="2019-08-30T09:07:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-30</time>
-</a>
-        
-
-        <!-- 《开始添加字数统计-->
-         
-          
-
-<div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        
-       <i class="icon-statistics"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">552字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-         
-        <i class="icon-book icon"></i>
-        <span class="post-meta-item-text"> 阅读时长≈</span>
-        <span class="post-count">2分</span>
-      </span>
-    </span>
-</div>
-
-
-         
-        <!-- 添加字数统计完成》 -->
-
-      </header>
-    
-
-    <!-- 文章主要内容（入口、条目） -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>网上找了一下，这个问题还是比较常见的，好像是非正常删除项目造成的，即不是在MyEclipse中删除项目，而是直接删除工作空间的项目，造成MyEclipse中有消息残留。</p>
-        
-          <a class="article-more-a" href="/article/8a7663d9.html#more">more >></a>
-        
-      
-
-        <!-- 《添加版权声明 -->
-        
-            <!-- 《添加版权声明 -->
-<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
-
-
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <div class="declare" hidden="hidden"></div>
-
-<!-- 添加版权声明》 -->
-
-        
-        <!-- 添加版权声明》 -->
-
-      
-    </div>
-
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">(My)Eclipse</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/8a7663d9.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-<!-- 评论系统 -->
-
-
-  
-    <article id="post-csdn/Java的native方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <!-- 文章正文 -->
-    <div class="article-inner">
-    
-      <!-- 文章头部 -->
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/8691db02.html">Java的native方法</a>
-    </h1>
-  
-
-        
-        <!--引入不蒜子并添加文章访问量(开始) -->
-
-<!--引入不蒜子并添加文章访问量(结束) -->
-
-<a href="/article/8691db02.html" class="archive-article-date">
-  	<time datetime="2019-08-25T09:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-25</time>
-</a>
-        
-
-        <!-- 《开始添加字数统计-->
-         
-          
-
-<div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        
-       <i class="icon-statistics"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">1.9k字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-         
-        <i class="icon-book icon"></i>
-        <span class="post-meta-item-text"> 阅读时长≈</span>
-        <span class="post-count">6分</span>
-      </span>
-    </span>
-</div>
-
-
-         
-        <!-- 添加字数统计完成》 -->
-
-      </header>
-    
-
-    <!-- 文章主要内容（入口、条目） -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>你知道Java的Native Method吗？如果没有，也许这篇文章可能会帮到你，展开话题：一. 什么是Native Method？二.为什么要使用Native Method？三.JVM怎样使Native Method跑起来？</p>
-        
-          <a class="article-more-a" href="/article/8691db02.html#more">more >></a>
-        
-      
-
-        <!-- 《添加版权声明 -->
-        
-            <!-- 《添加版权声明 -->
-<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
-
-
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <div class="declare" hidden="hidden"></div>
-
-<!-- 添加版权声明》 -->
-
-        
-        <!-- 添加版权声明》 -->
-
-      
-    </div>
-
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Java基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/8691db02.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-<!-- 评论系统 -->
-
-
-  
-    <article id="post-csdn/Hexo不渲染.md或者.html文件的方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <!-- 文章正文 -->
-    <div class="article-inner">
-    
-      <!-- 文章头部 -->
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/23607b19.html">Hexo不渲染.md或者.html文件的方法</a>
-    </h1>
-  
-
-        
-        <!--引入不蒜子并添加文章访问量(开始) -->
-
-<!--引入不蒜子并添加文章访问量(结束) -->
-
-<a href="/article/23607b19.html" class="archive-article-date">
-  	<time datetime="2019-08-18T07:36:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-18</time>
-</a>
-        
-
-        <!-- 《开始添加字数统计-->
-         
-          
-
-<div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        
-       <i class="icon-statistics"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">338字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-         
-        <i class="icon-book icon"></i>
-        <span class="post-meta-item-text"> 阅读时长≈</span>
-        <span class="post-count">1分</span>
-      </span>
-    </span>
-</div>
-
-
-         
-        <!-- 添加字数统计完成》 -->
-
-      </header>
-    
-
-    <!-- 文章主要内容（入口、条目） -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我们知道，在 source 文件夹下的所有 md 文件或者 html 文件都会被渲染，有时候我们不想这些文件被渲染怎么办？比如很多时候我们想要写一个 <a href="http://README.md" target="_blank" rel="noopener">README.md</a> 或者一些自定义的页面。比如百度或者谷歌在验证站长权限的时候，通常都会要求在主目录下添加一个 html 文件。</p>
-        
-          <a class="article-more-a" href="/article/23607b19.html#more">more >></a>
-        
-      
-
-        <!-- 《添加版权声明 -->
-        
-            <!-- 《添加版权声明 -->
-<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
-
-
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <div class="declare" hidden="hidden"></div>
-
-<!-- 添加版权声明》 -->
-
-        
-        <!-- 添加版权声明》 -->
-
-      
-    </div>
-
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/23607b19.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-<!-- 评论系统 -->
-
-
-  
-    <article id="post-csdn/Hexo文件压缩：使用hexo-neat插件压缩页面静态资源" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <!-- 文章正文 -->
-    <div class="article-inner">
-    
-      <!-- 文章头部 -->
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/120fd3f2.html">Hexo文件压缩：使用hexo-neat插件压缩页面静态资源</a>
-    </h1>
-  
-
-        
-        <!--引入不蒜子并添加文章访问量(开始) -->
-
-<!--引入不蒜子并添加文章访问量(结束) -->
-
-<a href="/article/120fd3f2.html" class="archive-article-date">
-  	<time datetime="2019-08-16T15:52:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-16</time>
-</a>
-        
-
-        <!-- 《开始添加字数统计-->
-         
-          
-
-<div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        
-       <i class="icon-statistics"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">1.3k字</span>
       </span>
     </span>
 
@@ -1531,148 +1687,13 @@ var elm2 = document.getElementsByClassName('eOZYiU');
     <!-- 文章主要内容（入口、条目） -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这篇文章针对下面的几个话题进行了讲解： 为什么要压缩页面静态资源， hexo的压缩静态资源插件， 如何使用hexo-neat。</p>
+        <h2 id="一-javascript字符串的处理方法">一.JavaScript字符串的处理方法</h2>
+<h3 id="1-split">1.split()</h3>
+<p>功能：使用一个指定的分隔符把一个字符串分割存储到数组</p>
+<p>例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str=”jpg|bmp|gif|ico|png”; </span><br><span class="line">arr=str.split(”|”);</span><br><span class="line"><span class="comment">//arr是一个包含字符值”jpg”、”bmp”、”gif”、”ico”和”png”的数组</span></span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/article/120fd3f2.html#more">more >></a>
-        
-      
-
-        <!-- 《添加版权声明 -->
-        
-            <!-- 《添加版权声明 -->
-<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
-
-
-<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
-
-  <div class="declare" hidden="hidden"></div>
-
-<!-- 添加版权声明》 -->
-
-        
-        <!-- 添加版权声明》 -->
-
-      
-    </div>
-
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo-neat</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">压缩</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/120fd3f2.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-<!-- 评论系统 -->
-
-
-  
-    <article id="post-csdn/Hexo. FATAL can not read a block mapping entry解决办法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-    <!-- 文章正文 -->
-    <div class="article-inner">
-    
-      <!-- 文章头部 -->
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/f10ba8f0.html">Hexo. FATAL can not read a block mapping entry解决办法</a>
-    </h1>
-  
-
-        
-        <!--引入不蒜子并添加文章访问量(开始) -->
-
-<!--引入不蒜子并添加文章访问量(结束) -->
-
-<a href="/article/f10ba8f0.html" class="archive-article-date">
-  	<time datetime="2019-08-16T14:38:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-16</time>
-</a>
-        
-
-        <!-- 《开始添加字数统计-->
-         
-          
-
-<div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        
-       <i class="icon-statistics"></i>
-        <span class="post-meta-item-text">  字数统计: </span>
-        <span class="post-count">256字</span>
-      </span>
-    </span>
-
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-         
-        <i class="icon-book icon"></i>
-        <span class="post-meta-item-text"> 阅读时长≈</span>
-        <span class="post-count">1分</span>
-      </span>
-    </span>
-</div>
-
-
-         
-        <!-- 添加字数统计完成》 -->
-
-      </header>
-    
-
-    <!-- 文章主要内容（入口、条目） -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在hexo中，这个问题是很常见。至于怎么解决？其实很简单！因为配置文件的格式要求比较严格，出现这种错误就是因为属性名和属性值之间少另一个空格而造成的；我们只需要根据报错信息找到对应位置添加一个空格就可以了。</p>
-        
-          <a class="article-more-a" href="/article/f10ba8f0.html#more">more >></a>
+          <a class="article-more-a" href="/article/efef598a.html#more">more >></a>
         
       
 
@@ -1702,7 +1723,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		
 		</ul>
@@ -1712,7 +1733,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 
       
         <p class="article-more-link">
-          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/f10ba8f0.html">展开全文 >></a>
+          <a class="article-more-a  hvr-shutter-in-horizontal" href="/article/efef598a.html">展开全文 >></a>
         </p>
       
 
@@ -1745,7 +1766,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/17/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/19/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/17/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/19/">Next &raquo;</a>
     </nav>
   
 
@@ -1759,7 +1780,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
         <div class="footer-left">
             
             
-                &copy; 2019-2022
+                &copy; 2019-2023
             
             荷塘月色
         </div>
@@ -1899,6 +1920,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -1927,15 +1952,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1971,14 +1996,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DPlayer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">视频</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">APlayer</a>
               </li>
              
@@ -1987,11 +2004,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+                <a href="javascript:void(0)" class="js-tag color3">DPlayer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">视频</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Live2D</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2019,6 +2044,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">相册</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">百度统计</a>
               </li>
              
@@ -2027,11 +2056,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">相册</a>
+                <a href="javascript:void(0)" class="js-tag color4">ICP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ICP</a>
+                <a href="javascript:void(0)" class="js-tag color5">背景特效</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2043,15 +2072,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">背景特效</a>
+                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SEO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2067,10 +2092,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
               </li>
              
@@ -2080,6 +2101,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Beyond Compare 4</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2099,11 +2124,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">记忆</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color4">阿里云</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2127,10 +2156,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C语言</a>
               </li>
              
@@ -2143,15 +2168,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">(My)Eclipse</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">阿里云</a>
+                <a href="javascript:void(0)" class="js-tag color1">SQL Server</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2159,7 +2184,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SQL Server</a>
+                <a href="javascript:void(0)" class="js-tag color2">(My)Eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">调试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2168,10 +2197,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Lombok</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">调试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2219,15 +2244,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">List</a>
+                <a href="javascript:void(0)" class="js-tag color1">Swing</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">序列化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swing</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2247,14 +2268,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hadoop</a>
               </li>
              
@@ -2263,11 +2276,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2279,15 +2300,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Notepad++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Python基础</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">PyCharm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Notepad++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2299,15 +2320,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">pip</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2319,11 +2340,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">VMware</a>
+                <a href="javascript:void(0)" class="js-tag color5">lambda表达式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">lambda表达式</a>
+                <a href="javascript:void(0)" class="js-tag color2">VMware</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2443,7 +2464,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+                <a href="javascript:void(0)" class="js-tag color3">Navicat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Postman</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2452,6 +2477,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Java爬虫：Jsoup</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Grafana</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">NGINX</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
               </li>
             
             <div class="clearfix"></div>

@@ -10,7 +10,7 @@
   <title>Notepad++中查找替换「换行符」 | 荷塘月色的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Notepad++ 是 Windows 中一款优秀的文本编辑软件功能非常强大。  重要说明 1、为更好的理解本文建议先阅读相关文章 – 不同操作系统中的换行符。 2、本文内容基于 Notepad++ 7.5.1 版本为方便书写若无特殊说明下文中内容均指在该软件版本下的操作。">
-<meta name="keywords" content="工具&#x2F;资源">
+<meta name="keywords" content="工具&#x2F;资源,Notepad++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Notepad++中查找替换「换行符」">
 <meta property="og:url" content="https://yansheng836.github.io/article/29bb67d6.html">
@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20181219093239448.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpamluZzc0MjE4MA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/201812191503534.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpamluZzc0MjE4MA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20210603152646533.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2021-09-12T10:15:44.771Z">
+<meta property="og:updated_time" content="2023-04-01T16:42:52.565Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Notepad++中查找替换「换行符」">
 <meta name="twitter:description" content="Notepad++ 是 Windows 中一款优秀的文本编辑软件功能非常强大。  重要说明 1、为更好的理解本文建议先阅读相关文章 – 不同操作系统中的换行符。 2、本文内容基于 Notepad++ 7.5.1 版本为方便书写若无特殊说明下文中内容均指在该软件版本下的操作。">
@@ -209,7 +209,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
         </nav>
 
         <div class="blog-counter">
-            <span>总文章数 302</span>
+            <span>总文章数 445</span>
         </div>
 
         <!-- 智能菜单 -->
@@ -400,7 +400,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-csdn-20210912/Notepad++中查找替换「换行符」" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-csdn-20210101-20210831/Notepad++中查找替换「换行符」" class="article article-type-post " itemscope itemprop="blogPost">
     <!-- 文章正文 -->
     <div class="article-inner">
     
@@ -487,9 +487,9 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 <p>下面列举常用的几种查找替换情况</p>
 <p>前提是要选中 <code>正则表达式</code> 模式</p>
 <table><thead><tr><th>查找目标</th><th>替换为</th><th>说明</th></tr></thead><tbody><tr><td>`\r\n`</td><td>`,\r\n`</td><td>在行尾加上逗号</td></tr><tr><td>`\r\n`</td><td></td><td>替换为空即合并多行内容为一行</td></tr><tr><td>`\r\n`</td><td>`\n`</td><td>把 windows 下的换行符替换为 linux 下的换行符</td></tr><tr><td>`\n`</td><td></td><td>把 \n 替换为空即把 windows 下的换行符替换为 Mac 下的换行符</td></tr><tr><td>`,`</td><td>`\r\n`</td><td>把逗号全部替换成换行</td></tr><tr><td>`\r\n\r\n`</td><td>`\r\n`</td><td>去掉空行</td></tr><tr><td>`1\s\s`</td><td>`1`</td><td>去掉 1 后的两个空格其中一个 \s 表示一个空格</td></tr><tr><td>`1两个半角空格`</td><td>`1`</td><td>可以直接在 1 后跟两个半角空格来匹配跟上面 \s 是一样的效果</td></tr><tr><td>`\r\n`</td><td>`\r\n`</td><td>在每行行首添加制表符即四个半角空格的效果</td></tr></tbody></table>
-### 特殊字符串转特殊字符
-<p>比如将 <code>\n</code> 字符串转为 <code>换行符</code>，我可以使用转义，比如<code>\\n</code> 实际搜的是<code>\n</code>字符串。<br>
-<img src="https://img-blog.csdnimg.cn/20210603152646533.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="特殊字符串转特殊字符">特殊字符串转特殊字符</h3>
+<p>比如将 <code>\n</code> 字符串转为 <code>换行符</code>，我可以使用转义，比如<code>\\n</code> 实际搜的是<code>\n</code>字符串。</p>
+<p><img src="https://img-blog.csdnimg.cn/20210603152646533.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTI4NzI2MA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <hr>
 <p>转自：<a href="https://blog.csdn.net/lijing742180/article/details/85174564" target="_blank" rel="noopener">Notepad++中查找替换「换行符」</a></p>
 
@@ -553,6 +553,10 @@ var elm2 = document.getElementsByClassName('eOZYiU');
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">工具/资源</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Notepad++</a>
         		</li>
       		
 		</ul>
@@ -626,7 +630,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          postman的body四个参数类型
+          Postman接口请求中的body的四种参数类型
         
       </div>
     </a>
@@ -660,7 +664,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-查找替换-换行符"><span class="toc-number">1.</span> <span class="toc-text">一、查找替换「换行符」</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-设置-显示行尾符"><span class="toc-number">1.1.</span> <span class="toc-text">1、设置「显示行尾符」</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-查找并替换-换行符"><span class="toc-number">1.2.</span> <span class="toc-text">2、查找并替换「换行符」</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-扩展：查找替换-空行-空白符"><span class="toc-number">2.</span> <span class="toc-text">二、扩展：查找替换「空行」、空白符</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-查找替换-换行符"><span class="toc-number">1.</span> <span class="toc-text">一、查找替换「换行符」</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-设置-显示行尾符"><span class="toc-number">1.1.</span> <span class="toc-text">1、设置「显示行尾符」</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-查找并替换-换行符"><span class="toc-number">1.2.</span> <span class="toc-text">2、查找并替换「换行符」</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-扩展：查找替换-空行-空白符"><span class="toc-number">2.</span> <span class="toc-text">二、扩展：查找替换「空行」、空白符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#特殊字符串转特殊字符"><span class="toc-number">2.1.</span> <span class="toc-text">特殊字符串转特殊字符</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -750,7 +754,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
         <div class="footer-left">
             
             
-                &copy; 2019-2022
+                &copy; 2019-2023
             
             荷塘月色
         </div>
@@ -890,6 +894,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -918,15 +926,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -962,14 +970,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DPlayer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">视频</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">APlayer</a>
               </li>
              
@@ -978,11 +978,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+                <a href="javascript:void(0)" class="js-tag color3">DPlayer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">视频</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Live2D</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1010,6 +1018,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">相册</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">百度统计</a>
               </li>
              
@@ -1018,11 +1030,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">相册</a>
+                <a href="javascript:void(0)" class="js-tag color4">ICP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ICP</a>
+                <a href="javascript:void(0)" class="js-tag color5">背景特效</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1034,15 +1046,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">背景特效</a>
+                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SEO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1058,10 +1066,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
               </li>
              
@@ -1071,6 +1075,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Beyond Compare 4</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1090,11 +1098,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">记忆</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color4">阿里云</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1118,10 +1130,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C语言</a>
               </li>
              
@@ -1134,15 +1142,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">(My)Eclipse</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">阿里云</a>
+                <a href="javascript:void(0)" class="js-tag color1">SQL Server</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1150,7 +1158,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SQL Server</a>
+                <a href="javascript:void(0)" class="js-tag color2">(My)Eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">调试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1159,10 +1171,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Lombok</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">调试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1210,15 +1218,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">List</a>
+                <a href="javascript:void(0)" class="js-tag color1">Swing</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">序列化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swing</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1238,14 +1242,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hadoop</a>
               </li>
              
@@ -1254,11 +1250,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1270,15 +1274,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Notepad++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Python基础</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">PyCharm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Notepad++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1290,15 +1294,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">pip</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1310,11 +1314,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">VMware</a>
+                <a href="javascript:void(0)" class="js-tag color5">lambda表达式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">lambda表达式</a>
+                <a href="javascript:void(0)" class="js-tag color2">VMware</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1434,7 +1438,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+                <a href="javascript:void(0)" class="js-tag color3">Navicat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Postman</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1443,6 +1451,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Java爬虫：Jsoup</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Grafana</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">NGINX</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
               </li>
             
             <div class="clearfix"></div>

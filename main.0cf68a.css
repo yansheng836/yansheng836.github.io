@@ -4043,3 +4043,10 @@ body > a{
     /*color: #673ab7;*/
     display:none;
 }
+
+/* 特殊节日设置灰色色调 
+html {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+    -webkit-filter: grayscale(100%);
+}
+*/

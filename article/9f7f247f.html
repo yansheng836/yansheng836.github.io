@@ -7,20 +7,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="content-language" content="zh-CN">
   <link rel="dns-prefetch" href="https://yansheng836.github.io">
-  <title>pgsql的一些常用的时间相关的内置函数 | 荷塘月色的博客</title>
+  <title>PostgreSQL的一些常用的时间相关的内置函数 | 荷塘月色的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="pgsql的一些常用的时间相关的内置函数：">
+  <meta name="description" content="PostgreSQL的一些常用的时间相关的内置函数：">
 <meta name="keywords" content="PostgreSQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pgsql的一些常用的时间相关的内置函数">
+<meta property="og:title" content="PostgreSQL的一些常用的时间相关的内置函数">
 <meta property="og:url" content="https://yansheng836.github.io/article/9f7f247f.html">
 <meta property="og:site_name" content="荷塘月色的博客">
-<meta property="og:description" content="pgsql的一些常用的时间相关的内置函数：">
+<meta property="og:description" content="PostgreSQL的一些常用的时间相关的内置函数：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-09-12T10:14:45.938Z">
+<meta property="og:updated_time" content="2023-04-01T16:42:52.549Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="pgsql的一些常用的时间相关的内置函数">
-<meta name="twitter:description" content="pgsql的一些常用的时间相关的内置函数：">
+<meta name="twitter:title" content="PostgreSQL的一些常用的时间相关的内置函数">
+<meta name="twitter:description" content="PostgreSQL的一些常用的时间相关的内置函数：">
   
   
     <link rel="icon" href="/assets/img/favicon.ico">
@@ -205,7 +205,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
         </nav>
 
         <div class="blog-counter">
-            <span>总文章数 302</span>
+            <span>总文章数 445</span>
         </div>
 
         <!-- 智能菜单 -->
@@ -396,7 +396,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-csdn-20210912/pgsql的一些常用的时间相关的内置函数" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-csdn-20210101-20210831/PostgreSQL的一些常用的时间相关的内置函数" class="article article-type-post " itemscope itemprop="blogPost">
     <!-- 文章正文 -->
     <div class="article-inner">
     
@@ -405,7 +405,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
         
   
     <h1 class="article-title" itemprop="name">
-      pgsql的一些常用的时间相关的内置函数
+      PostgreSQL的一些常用的时间相关的内置函数
     </h1>
   
 
@@ -459,7 +459,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
     <!-- 文章主要内容（入口、条目） -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>pgsql的一些常用的时间相关的内置函数：</p>
+        <p>PostgreSQL的一些常用的时间相关的内置函数：</p>
 <a id="more"></a>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 1.时间相关</span></span><br><span class="line"><span class="comment">-- 1.1 基本时间</span></span><br><span class="line"><span class="comment">-- 1.1.1 完整时间（日期+时间）</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">CURRENT_TIMESTAMP</span>; <span class="comment">--2021-01-01 12:00:14.654607+08</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>(); <span class="comment">-- 2021-01-01 12:09:09.433443+08</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1.1.2 日期</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">current_date</span>; <span class="comment">-- 2021-01-01</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1.1.3 时间</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">current_time</span>; <span class="comment">-- 12:00:14.631598+08</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1.1.4 本地时间日期</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">localtime</span>; <span class="comment">-- 本地时间。 12:00:00.653848</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">localtimestamp</span>; <span class="comment">--本地日期时间 2021-01-01 12:01:03.287146</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1.2 日期计算(使用 interval 关键字进行时间加减，interval 也可以不写(最好写上，有时候减法好像会有问题))</span></span><br><span class="line"><span class="comment">-- 1.2.1 年： years year y Y</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">now</span>();</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>() + <span class="built_in">interval</span> <span class="string">'2 years'</span>; <span class="comment">--2023-01-01 17:05:12.478947+08</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>() + <span class="built_in">interval</span> <span class="string">'2years'</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>() + <span class="built_in">interval</span> <span class="string">'2 y'</span>; </span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>() + <span class="built_in">interval</span> <span class="string">'2 Y'</span>; </span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>() - <span class="built_in">interval</span> <span class="string">'2 y'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1.2.2 月 month M (注意小写m是分钟)</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>() + <span class="built_in">interval</span> <span class="string">'1 month'</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>() + <span class="built_in">interval</span> <span class="string">'1 m'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1.2.3 日 day</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>() + <span class="built_in">interval</span> <span class="string">'1 day'</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>() + <span class="built_in">interval</span> <span class="string">'1 d'</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>() + <span class="built_in">interval</span> <span class="string">'1 days'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1.2.4 周 week w</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>() + <span class="built_in">interval</span> <span class="string">'1 week'</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>() + <span class="built_in">interval</span> <span class="string">'1 w'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1.2.5 小时 hour</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>() + <span class="built_in">interval</span> <span class="string">'1 hour'</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>() + <span class="built_in">interval</span> <span class="string">'1 h'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1.2.6 分钟 minute m</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>() + <span class="built_in">interval</span> <span class="string">'1 minute'</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>() + <span class="built_in">interval</span> <span class="string">'1 m'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1.2.7 秒 second s</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>();</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>() + <span class="built_in">interval</span> <span class="string">'1 second'</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>() + <span class="built_in">interval</span> <span class="string">'1 s'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1.2.8 省略interval</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>();</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>() +  <span class="string">'1 second'</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>() +  <span class="string">'1 s'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1.3 计算两个时间差 age(timestamp, timestamp)</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">now</span>();</span><br><span class="line"><span class="keyword">select</span> age(<span class="keyword">now</span>(), <span class="keyword">now</span>() +  <span class="string">'1 h'</span>);</span><br><span class="line"><span class="keyword">select</span> age(<span class="keyword">now</span>(), <span class="keyword">now</span>() +  <span class="string">'1 d'</span>);</span><br><span class="line"><span class="keyword">select</span> age(<span class="keyword">now</span>(), <span class="keyword">now</span>() +  <span class="string">'1 MONTH'</span>);</span><br><span class="line"><span class="keyword">select</span> age(<span class="keyword">now</span>(), <span class="keyword">now</span>() +  <span class="string">'1 y'</span>);</span><br><span class="line"><span class="keyword">select</span> age(<span class="keyword">now</span>(), <span class="keyword">now</span>() - <span class="built_in">INTERVAL</span> <span class="string">'1 y'</span>);</span><br><span class="line"><span class="comment">-- select age(now(), now() -  '1 y');  -- ERROR:  invalid input syntax for type timestamp with time zone: "1 y"</span></span><br><span class="line"><span class="keyword">select</span> age(<span class="keyword">now</span>(), <span class="built_in">timestamp</span> <span class="string">'1997-05-06'</span>);</span><br><span class="line"><span class="keyword">select</span> age(<span class="built_in">timestamp</span> <span class="string">'1997-05-06'</span>);</span><br><span class="line"><span class="keyword">select</span> age(<span class="built_in">timestamp</span> <span class="string">'1970-01-01'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1.4 时间字段的截取 (https://blog.qdac.cc/?p=70 , https://www.runoob.com/postgresql/postgresql-datetime.html ，http://www.postgres.cn/docs/9.4/functions-datetime.html)</span></span><br><span class="line"><span class="comment">-- 1.4.1 EXTRACT(field FROM source)   提取:field表示取的时间对象（年，月，日，小时等值），source 表示取的日期来源，类型为 timestamp、time 或 interval。</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">extract</span>(<span class="keyword">year</span> <span class="keyword">from</span> <span class="keyword">now</span>());</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">extract</span>(<span class="keyword">month</span> <span class="keyword">from</span> <span class="keyword">now</span>());</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">extract</span>(<span class="keyword">day</span> <span class="keyword">from</span> <span class="keyword">now</span>());</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">extract</span>(<span class="keyword">hour</span> <span class="keyword">from</span> <span class="keyword">now</span>());</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">extract</span>(<span class="keyword">minute</span> <span class="keyword">from</span> <span class="keyword">now</span>());</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">extract</span>(<span class="keyword">second</span> <span class="keyword">from</span> <span class="keyword">now</span>());</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">extract</span>(<span class="keyword">hour</span> <span class="keyword">from</span> <span class="keyword">now</span>());</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">extract</span>(<span class="keyword">hour</span> <span class="keyword">from</span> <span class="keyword">now</span>());</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 查看今天是一年中的第几天 day of year</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">extract</span>(doy <span class="keyword">from</span> <span class="keyword">now</span>());</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">extract</span>(doy <span class="keyword">from</span> <span class="built_in">date</span> <span class="string">'2020-12-31'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">--每周的星期号，星期天(0)到星期六(6)</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">extract</span>(dow <span class="keyword">from</span> <span class="keyword">now</span>()); <span class="comment">-- 5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 查看现在距1970-01-01 00:00:00 UTC 的秒数</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">extract</span>(epoch <span class="keyword">from</span> <span class="keyword">now</span>());</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 把epoch 值转换回时间戳</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">TIMESTAMP</span> <span class="keyword">WITH</span> <span class="built_in">TIME</span> ZONE <span class="string">'epoch'</span> + <span class="number">1369755555</span> * <span class="built_in">INTERVAL</span> <span class="string">'1 second'</span>; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1.4.2 date_part('field'，source) 获取子域(等效于extract)；</span></span><br><span class="line"><span class="keyword">select</span> date_part(<span class="string">'hour'</span>,<span class="keyword">now</span>());</span><br><span class="line"><span class="keyword">SELECT</span> date_part(<span class="string">'day'</span>, <span class="built_in">TIMESTAMP</span> <span class="string">'2001-02-16 20:38:40'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1.4.3 date_trunc('field'，source) 截断成指定的精度，不要的都置为0</span></span><br><span class="line"><span class="keyword">SELECT</span> date_trunc(<span class="string">'hour'</span>, <span class="built_in">timestamp</span> <span class="string">'2001-02-16 20:38:40'</span>);</span><br><span class="line"><span class="keyword">SELECT</span> date_trunc(<span class="string">'day'</span>, <span class="built_in">TIMESTAMP</span> <span class="string">'2001-02-16 20:38:40'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1.4.4 isfinite(date) 测试是否为有穷日期(不是 +/-无穷) ，返回true 或者false，不会用</span></span><br><span class="line"><span class="comment">-- infinite adj. 无限的，无穷的</span></span><br><span class="line"><span class="keyword">SELECT</span> isfinite(<span class="built_in">date</span> <span class="string">'2001-02-16'</span>);</span><br><span class="line"><span class="keyword">SELECT</span> isfinite(<span class="built_in">date</span> <span class="string">'0000-02-16'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1.4.5 justify_days(interval) 按照每月 30 天调整时间间隔</span></span><br><span class="line"><span class="comment">-- justify 使齐整</span></span><br><span class="line"><span class="keyword">SELECT</span> justify_days(<span class="built_in">interval</span> <span class="string">'35 days'</span>);  <span class="comment">-- 1 mon 5 days</span></span><br><span class="line"><span class="keyword">SELECT</span> justify_hours(<span class="built_in">interval</span> <span class="string">'25 h'</span>); <span class="comment">--1 day 01:00:00</span></span><br><span class="line"> <span class="comment">-- 使用justify_days和justify_hours调整时间间隔的同时进行正负号调整</span></span><br><span class="line"><span class="keyword">SELECT</span> justify_interval(<span class="built_in">interval</span> <span class="string">'1 mon -1 hour'</span>); <span class="comment">--29 days 23:00:00 </span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1.4.6 构造日期 make_date(year int, month int, day int)</span></span><br><span class="line"><span class="keyword">select</span> make_date(<span class="number">2013</span>, <span class="number">7</span>, <span class="number">15</span>);</span><br><span class="line"><span class="keyword">select</span> make_interval(<span class="keyword">days</span> := <span class="number">10</span>);</span><br><span class="line"><span class="keyword">select</span> make_time(<span class="number">8</span>, <span class="number">15</span>, <span class="number">23.5</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1.4.7  timeofday() 与clock_timestamp相同，但结果是一个text 字符串；</span></span><br><span class="line"><span class="keyword">select</span> clock_timestamp();</span><br><span class="line"><span class="keyword">SELECT</span> timeofday();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 1.5 日期转文本 https://blog.csdn.net/snn1410/article/details/7741283 </span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 模式	描述</span></span><br><span class="line"><span class="comment">-- HH	一天的小时数(01-12)</span></span><br><span class="line"><span class="comment">-- HH12	一天的小时数(01-12)</span></span><br><span class="line"><span class="comment">-- HH24	一天的小时数(00-23)</span></span><br><span class="line"><span class="comment">-- MI	分钟(00-59)</span></span><br><span class="line"><span class="comment">-- SS	秒(00-59)</span></span><br><span class="line"><span class="comment">-- MS	毫秒(000-999)</span></span><br><span class="line"><span class="comment">-- US	微秒(000000-999999)</span></span><br><span class="line"><span class="comment">-- AM	正午标识(大写)</span></span><br><span class="line"><span class="comment">-- Y,YYY	带逗号的年(4和更多位)</span></span><br><span class="line"><span class="comment">-- YYYY	年(4和更多位)</span></span><br><span class="line"><span class="comment">-- YYY	年的后三位</span></span><br><span class="line"><span class="comment">-- YY	年的后两位</span></span><br><span class="line"><span class="comment">-- Y	年的最后一位</span></span><br><span class="line"><span class="comment">-- MONTH	全长大写月份名(空白填充为9字符)</span></span><br><span class="line"><span class="comment">-- Month	全长混合大小写月份名(空白填充为9字符)</span></span><br><span class="line"><span class="comment">-- month	全长小写月份名(空白填充为9字符)</span></span><br><span class="line"><span class="comment">-- MON	大写缩写月份名(3字符)</span></span><br><span class="line"><span class="comment">-- Mon	缩写混合大小写月份名(3字符)</span></span><br><span class="line"><span class="comment">-- mon	小写缩写月份名(3字符)</span></span><br><span class="line"><span class="comment">-- MM	月份号(01-12)</span></span><br><span class="line"><span class="comment">-- DAY	全长大写日期名(空白填充为9字符)</span></span><br><span class="line"><span class="comment">-- Day	全长混合大小写日期名(空白填充为9字符)</span></span><br><span class="line"><span class="comment">-- day	全长小写日期名(空白填充为9字符)</span></span><br><span class="line"><span class="comment">-- DY	缩写大写日期名(3字符)</span></span><br><span class="line"><span class="comment">-- Dy	缩写混合大小写日期名(3字符)</span></span><br><span class="line"><span class="comment">-- dy	缩写小写日期名(3字符)</span></span><br><span class="line"><span class="comment">-- DDD	一年里的日子(001-366)</span></span><br><span class="line"><span class="comment">-- DD	一个月里的日子(01-31)</span></span><br><span class="line"><span class="comment">-- D	一周里的日子(1-7；周日是1)</span></span><br><span class="line"><span class="comment">-- W	一个月里的周数(1-5)(第一周从该月第一天开始)</span></span><br><span class="line"><span class="comment">-- WW	一年里的周数(1-53)(第一周从该年的第一天开始)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 注意这里不区分大小写</span></span><br><span class="line"><span class="keyword">select</span> to_char(<span class="keyword">current_date</span>,<span class="string">'yyyy'</span>);</span><br><span class="line"><span class="keyword">select</span> to_char(<span class="keyword">current_date</span>,<span class="string">'y'</span>); <span class="comment">-- 年的最后一位</span></span><br><span class="line"><span class="keyword">select</span> to_char(<span class="keyword">current_date</span>,<span class="string">'yy'</span>);</span><br><span class="line"><span class="keyword">select</span> to_char(<span class="keyword">current_date</span>,<span class="string">'yyy'</span>);</span><br><span class="line"><span class="keyword">SELECT</span> to_char(<span class="keyword">current_date</span> - <span class="built_in">interval</span> <span class="string">'1 day'</span>,<span class="string">'yyyy-MM-dd'</span>);</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">now</span>();</span><br><span class="line"><span class="keyword">SELECT</span> to_char(<span class="keyword">now</span>(),<span class="string">'YYYY-MM-DD HH24:MI:SS'</span>); <span class="comment">-- MM 月份，MI 分钟，SS 分钟，MS 毫秒</span></span><br><span class="line"><span class="keyword">SELECT</span> to_char(<span class="keyword">now</span>(),<span class="string">'yyyy-mm-dd hh24:mi:ss'</span>);</span><br><span class="line"><span class="keyword">SELECT</span> to_char(<span class="keyword">now</span>(),<span class="string">'YYYY-MM-DD HH24:MM:SS.MS'</span>);</span><br><span class="line"><span class="keyword">SELECT</span> to_char(<span class="keyword">now</span>(),<span class="string">'YYYY-MM-DD HH:MI:SS'</span>); <span class="comment">-- HH24 24 小时制，HH 12小时制</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 注意这里区分大小写 !!</span></span><br><span class="line"><span class="keyword">SELECT</span> to_char(<span class="keyword">now</span>(),<span class="string">'MONTH'</span>); <span class="comment">-- 全长大写月份名(空白填充为9字符) JANUARY  </span></span><br><span class="line"><span class="keyword">SELECT</span> to_char(<span class="keyword">now</span>(),<span class="string">'Month'</span>); <span class="comment">-- January  </span></span><br><span class="line"><span class="keyword">SELECT</span> to_char(<span class="keyword">now</span>(),<span class="string">'month'</span>); <span class="comment">-- 全长小写月份名(空白填充为9字符) january  </span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- DDD	一年里的日子(001-366)</span></span><br><span class="line"><span class="comment">-- DD	一个月里的日子(01-31)</span></span><br><span class="line"><span class="comment">-- D	一周里的日子(1-7；周日是1)</span></span><br><span class="line"><span class="comment">-- W	一个月里的周数(1-5)(第一周从该月第一天开始)</span></span><br><span class="line"><span class="comment">-- WW	一年里的周数(1-53)(第一周从该年的第一天开始)</span></span><br><span class="line"><span class="keyword">SELECT</span> to_char(<span class="keyword">now</span>(),<span class="string">'DDD'</span>); <span class="comment">-- 001</span></span><br></pre></td></tr></table></figure>
 <hr>
@@ -489,13 +489,13 @@ var elm2 = document.getElementsByClassName('eOZYiU');
     2021-01-01
     <br>
     <strong class="update-time">最后更新：</strong>
-    2021-09-12
+    2023-04-02
     <br>
     <strong class="article-titles">本文标题：</strong>
-    <a href="https://yansheng836.github.io/article/9f7f247f.html" title="pgsql的一些常用的时间相关的内置函数" target="_blank">pgsql的一些常用的时间相关的内置函数</a>
+    <a href="https://yansheng836.github.io/article/9f7f247f.html" title="PostgreSQL的一些常用的时间相关的内置函数" target="_blank">PostgreSQL的一些常用的时间相关的内置函数</a>
     <br>
     <strong class="article-url">本文链接：</strong>
-    <a href="https://yansheng836.github.io/article/9f7f247f.html" title="pgsql的一些常用的时间相关的内置函数" target="_blank">https://yansheng836.github.io/article/9f7f247f.html</a>
+    <a href="https://yansheng836.github.io/article/9f7f247f.html" title="PostgreSQL的一些常用的时间相关的内置函数" target="_blank">https://yansheng836.github.io/article/9f7f247f.html</a>
     <br>
     <strong class="copyright">版权声明：</strong>
     本作品采用
@@ -752,7 +752,7 @@ var elm2 = document.getElementsByClassName('eOZYiU');
         <div class="footer-left">
             
             
-                &copy; 2019-2022
+                &copy; 2019-2023
             
             荷塘月色
         </div>
@@ -892,6 +892,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -920,15 +924,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -964,14 +968,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DPlayer</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">视频</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">APlayer</a>
               </li>
              
@@ -980,11 +976,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
+                <a href="javascript:void(0)" class="js-tag color3">DPlayer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">视频</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Live2D</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1012,6 +1016,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">相册</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">百度统计</a>
               </li>
              
@@ -1020,11 +1028,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">相册</a>
+                <a href="javascript:void(0)" class="js-tag color4">ICP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ICP</a>
+                <a href="javascript:void(0)" class="js-tag color5">背景特效</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1036,15 +1044,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">背景特效</a>
+                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SEO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">utteranc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1060,10 +1064,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">工具软件</a>
               </li>
              
@@ -1073,6 +1073,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Beyond Compare 4</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1092,11 +1096,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">记忆</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color4">阿里云</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1120,10 +1128,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C语言</a>
               </li>
              
@@ -1136,15 +1140,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">(My)Eclipse</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">阿里云</a>
+                <a href="javascript:void(0)" class="js-tag color1">SQL Server</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1152,7 +1156,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SQL Server</a>
+                <a href="javascript:void(0)" class="js-tag color2">(My)Eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">调试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1161,10 +1169,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Lombok</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">调试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1212,15 +1216,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">List</a>
+                <a href="javascript:void(0)" class="js-tag color1">Swing</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">序列化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swing</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1240,14 +1240,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hadoop</a>
               </li>
              
@@ -1256,11 +1248,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Tomcat</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1272,15 +1272,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Notepad++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Python基础</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">PyCharm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Notepad++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1292,15 +1292,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">pip</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">防火墙</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1312,11 +1312,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">VMware</a>
+                <a href="javascript:void(0)" class="js-tag color5">lambda表达式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">lambda表达式</a>
+                <a href="javascript:void(0)" class="js-tag color2">VMware</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1436,7 +1436,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+                <a href="javascript:void(0)" class="js-tag color3">Navicat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Postman</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1445,6 +1449,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Java爬虫：Jsoup</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Grafana</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">NGINX</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">计算机</a>
               </li>
             
             <div class="clearfix"></div>
