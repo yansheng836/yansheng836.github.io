@@ -1,1 +1,97 @@
-[object Promise]
+@charset"utf-8";
+.link-box {
+    overflow: hidden;
+    padding: 5px;
+    /* border: 2px solid black; */
+}
+.link-box a {
+    float: left;
+    margin: 10px 10px;
+    width: 12% !important;
+    line-height: .5rem !important;
+    font-size: 1rem !important;
+    border-bottom: 0;
+    border-radius: 0rem !important;
+    background: #fff;
+    /* CSS3 文本效果：阴影 */
+    box-shadow: .3rem .3rem .3rem rgba(0, 0, 0, .2), 0 .2rem .2rem rgba(0, 0, 0, .2);
+    color: #2e2e2e;
+    text-decoration: none;
+    -webkit-transition: .3s;
+    transition: .3s;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    /* 无法选中文本 */
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.link-box a .thumb {
+    overflow: hidden;
+    background-color: #fff;
+    font-size: 0;
+}
+.link-box a .thumb img {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    -webkit-transition: .4s;
+    transition: .4s
+}
+.link-box a .content .title {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    color: #2e2e2e;
+    vertical-align: middle;
+    /* 超长显示省略号 */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    letter-spacing: 0rem;
+    font-weight: 300;
+    font-size: .6rem;
+    line-height: 1rem;
+}
+.link-box a .content {
+    text-align: center;
+}
+.link-box a .content .title {
+    padding: .4rem 0;
+    width: 100%;
+}
+/* 鼠标悬浮：图片上移 */
+.link-box a:hover {
+    text-decoration: none box-shadow: 0 1.375rem 2.6875rem rgba(0, 135, 202, 0.5) !important;
+    -webkit-box-shadow: 0 1.375rem 2.6875rem rgba(0, 135, 202, 0.5) !important;
+    -webkit-transform: translateY(-0.6rem);
+    transform: translateY(-0.6rem);
+    -moz-transform: none;
+}
+/* 消除全局的超链接样式的影响 */
+.link-box a:hover::after {
+    transform: scaleX(0);
+}
+@media screen and (max-width: 640px) {
+    .link-box {
+        margin: 0rem -3.5rem 0rem -0.1rem;
+    }
+    .link-box a {
+        width: 25% !important;
+        margin: 10px 10px;
+    }
+    .link-box a .content .title {
+        font-size:.6rem;
+        padding: .2rem 0;
+    }
+}
+/* 禁止PhotoSwipe插件（图片缩放插件）
+github: https://github.com/dimsemenov/PhotoSwipe，
+solve: https://photoswipe.com/documentation/seo.html 
+*/
+.pswp {
+    display:none;
+}

@@ -1,1 +1,15 @@
-[object Promise]
+@charset"utf-8";
+
+/* 设置头像旋转特效 */
+/* 控制旋转速度时间*/
+ .left-col #header .profilepic img {
+    -webkit-transition: -webkit-transform 1.0s ease-out;
+    -moz-transition: -moz-transform 1.0s ease-out;
+    transition: transform 1.0s ease-out;
+}
+/* 鼠标经过360% */
+ .left-col #header .profilepic img:hover {
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+}
