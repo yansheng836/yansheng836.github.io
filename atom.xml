@@ -5,9 +5,9 @@
   <subtitle>每天进步一点点</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://yansheng836.github.io/"/>
+  <link href="https://yansheng836.bitbucket.io/"/>
   <updated>2023-06-04T18:07:57.168Z</updated>
-  <id>https://yansheng836.github.io/</id>
+  <id>https://yansheng836.bitbucket.io/</id>
   
   <author>
     <name>荷塘月色</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Python版雪花算法生成唯一ID</title>
-    <link href="https://yansheng836.github.io/article/5a542ac.html"/>
-    <id>https://yansheng836.github.io/article/5a542ac.html</id>
+    <link href="https://yansheng836.bitbucket.io/article/5a542ac.html"/>
+    <id>https://yansheng836.bitbucket.io/article/5a542ac.html</id>
     <published>2023-05-28T17:54:30.000Z</published>
     <updated>2023-06-04T18:07:57.168Z</updated>
     
@@ -36,14 +36,14 @@
     
     
     
-      <category term="Python" scheme="https://yansheng836.github.io/tags/python/"/>
+      <category term="Python" scheme="https://yansheng836.bitbucket.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>解决PyCharm缓存文件过大问题</title>
-    <link href="https://yansheng836.github.io/article/2cebf237.html"/>
-    <id>https://yansheng836.github.io/article/2cebf237.html</id>
+    <link href="https://yansheng836.bitbucket.io/article/2cebf237.html"/>
+    <id>https://yansheng836.bitbucket.io/article/2cebf237.html</id>
     <published>2023-05-20T16:52:32.000Z</published>
     <updated>2023-06-04T18:07:57.181Z</updated>
     
@@ -61,16 +61,16 @@
     
     
     
-      <category term="PyCharm" scheme="https://yansheng836.github.io/tags/pycharm/"/>
+      <category term="Python" scheme="https://yansheng836.bitbucket.io/tags/python/"/>
     
-      <category term="Python" scheme="https://yansheng836.github.io/tags/python/"/>
+      <category term="PyCharm" scheme="https://yansheng836.bitbucket.io/tags/pycharm/"/>
     
   </entry>
   
   <entry>
     <title>Python解决“argument after  must be an iterable”报错</title>
-    <link href="https://yansheng836.github.io/article/b955235.html"/>
-    <id>https://yansheng836.github.io/article/b955235.html</id>
+    <link href="https://yansheng836.bitbucket.io/article/b955235.html"/>
+    <id>https://yansheng836.bitbucket.io/article/b955235.html</id>
     <published>2023-05-18T18:30:01.000Z</published>
     <updated>2023-06-04T18:07:57.171Z</updated>
     
@@ -84,14 +84,14 @@
     
     
     
-      <category term="Python" scheme="https://yansheng836.github.io/tags/python/"/>
+      <category term="Python" scheme="https://yansheng836.bitbucket.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>MySQL快速生成大量测试数据方法（无需编写代码、或存储过程）</title>
-    <link href="https://yansheng836.github.io/article/b0648873.html"/>
-    <id>https://yansheng836.github.io/article/b0648873.html</id>
+    <link href="https://yansheng836.bitbucket.io/article/b0648873.html"/>
+    <id>https://yansheng836.bitbucket.io/article/b0648873.html</id>
     <published>2023-05-03T09:09:52.000Z</published>
     <updated>2023-06-04T18:07:57.158Z</updated>
     
@@ -114,14 +114,14 @@
     
     
     
-      <category term="MySQL" scheme="https://yansheng836.github.io/tags/mysql/"/>
+      <category term="MySQL" scheme="https://yansheng836.bitbucket.io/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>NGINX一个server监听多个端口</title>
-    <link href="https://yansheng836.github.io/article/d638cc8b.html"/>
-    <id>https://yansheng836.github.io/article/d638cc8b.html</id>
+    <link href="https://yansheng836.bitbucket.io/article/d638cc8b.html"/>
+    <id>https://yansheng836.bitbucket.io/article/d638cc8b.html</id>
     <published>2023-05-03T09:09:52.000Z</published>
     <updated>2023-06-04T18:07:57.162Z</updated>
     
@@ -139,14 +139,14 @@
     
     
     
-      <category term="NGINX" scheme="https://yansheng836.github.io/tags/NGINX/"/>
+      <category term="NGINX" scheme="https://yansheng836.bitbucket.io/tags/NGINX/"/>
     
   </entry>
   
   <entry>
     <title>MySQL自带的数据库压力测试工具mysqlslap使用详解</title>
-    <link href="https://yansheng836.github.io/article/a9ec7224.html"/>
-    <id>https://yansheng836.github.io/article/a9ec7224.html</id>
+    <link href="https://yansheng836.bitbucket.io/article/a9ec7224.html"/>
+    <id>https://yansheng836.bitbucket.io/article/a9ec7224.html</id>
     <published>2023-05-03T09:07:48.000Z</published>
     <updated>2023-06-04T18:07:57.161Z</updated>
     
@@ -164,14 +164,14 @@
     
     
     
-      <category term="MySQL" scheme="https://yansheng836.github.io/tags/mysql/"/>
+      <category term="MySQL" scheme="https://yansheng836.bitbucket.io/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>MySQL 报错1040 ‘Too many connections‘ 原因及解决方案</title>
-    <link href="https://yansheng836.github.io/article/f772e40f.html"/>
-    <id>https://yansheng836.github.io/article/f772e40f.html</id>
+    <link href="https://yansheng836.bitbucket.io/article/f772e40f.html"/>
+    <id>https://yansheng836.bitbucket.io/article/f772e40f.html</id>
     <published>2023-05-03T09:00:39.000Z</published>
     <updated>2023-06-04T18:07:57.156Z</updated>
     
@@ -187,14 +187,14 @@
     
     
     
-      <category term="MySQL" scheme="https://yansheng836.github.io/tags/mysql/"/>
+      <category term="MySQL" scheme="https://yansheng836.bitbucket.io/tags/mysql/"/>
     
   </entry>
   
   <entry>
     <title>Grafana修改Dashboard默认时间范围</title>
-    <link href="https://yansheng836.github.io/article/491976e8.html"/>
-    <id>https://yansheng836.github.io/article/491976e8.html</id>
+    <link href="https://yansheng836.bitbucket.io/article/491976e8.html"/>
+    <id>https://yansheng836.bitbucket.io/article/491976e8.html</id>
     <published>2023-05-02T09:58:16.000Z</published>
     <updated>2023-06-04T18:07:57.141Z</updated>
     
@@ -208,14 +208,14 @@
     
     
     
-      <category term="Grafana" scheme="https://yansheng836.github.io/tags/Grafana/"/>
+      <category term="Grafana" scheme="https://yansheng836.bitbucket.io/tags/Grafana/"/>
     
   </entry>
   
   <entry>
     <title>Grafana常用模板</title>
-    <link href="https://yansheng836.github.io/article/8eb221b3.html"/>
-    <id>https://yansheng836.github.io/article/8eb221b3.html</id>
+    <link href="https://yansheng836.bitbucket.io/article/8eb221b3.html"/>
+    <id>https://yansheng836.bitbucket.io/article/8eb221b3.html</id>
     <published>2023-04-30T17:19:17.000Z</published>
     <updated>2023-06-04T18:07:57.140Z</updated>
     
@@ -229,14 +229,14 @@
     
     
     
-      <category term="Grafana" scheme="https://yansheng836.github.io/tags/Grafana/"/>
+      <category term="Grafana" scheme="https://yansheng836.bitbucket.io/tags/Grafana/"/>
     
   </entry>
   
   <entry>
     <title>Windows查看端口占用、杀死进程</title>
-    <link href="https://yansheng836.github.io/article/498c7510.html"/>
-    <id>https://yansheng836.github.io/article/498c7510.html</id>
+    <link href="https://yansheng836.bitbucket.io/article/498c7510.html"/>
+    <id>https://yansheng836.bitbucket.io/article/498c7510.html</id>
     <published>2023-04-30T17:13:31.000Z</published>
     <updated>2023-06-04T18:45:47.028Z</updated>
     
@@ -257,16 +257,16 @@
     
     
     
-      <category term="CMD" scheme="https://yansheng836.github.io/tags/cmd/"/>
+      <category term="CMD" scheme="https://yansheng836.bitbucket.io/tags/cmd/"/>
     
-      <category term="Windows" scheme="https://yansheng836.github.io/tags/windows/"/>
+      <category term="Windows" scheme="https://yansheng836.bitbucket.io/tags/windows/"/>
     
   </entry>
   
   <entry>
     <title>Linux磁盘挂载</title>
-    <link href="https://yansheng836.github.io/article/d9233db9.html"/>
-    <id>https://yansheng836.github.io/article/d9233db9.html</id>
+    <link href="https://yansheng836.bitbucket.io/article/d9233db9.html"/>
+    <id>https://yansheng836.bitbucket.io/article/d9233db9.html</id>
     <published>2023-04-30T13:06:41.000Z</published>
     <updated>2023-06-04T18:07:57.148Z</updated>
     
@@ -280,14 +280,14 @@
     
     
     
-      <category term="Linux" scheme="https://yansheng836.github.io/tags/linux/"/>
+      <category term="Linux" scheme="https://yansheng836.bitbucket.io/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>Linux查看服务器配置</title>
-    <link href="https://yansheng836.github.io/article/d7720e0.html"/>
-    <id>https://yansheng836.github.io/article/d7720e0.html</id>
+    <link href="https://yansheng836.bitbucket.io/article/d7720e0.html"/>
+    <id>https://yansheng836.bitbucket.io/article/d7720e0.html</id>
     <published>2023-04-30T12:51:39.000Z</published>
     <updated>2023-06-04T18:07:57.146Z</updated>
     
@@ -301,14 +301,14 @@
     
     
     
-      <category term="Linux" scheme="https://yansheng836.github.io/tags/linux/"/>
+      <category term="Linux" scheme="https://yansheng836.bitbucket.io/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>C语言正确使用extern关键字</title>
-    <link href="https://yansheng836.github.io/article/c649d86f.html"/>
-    <id>https://yansheng836.github.io/article/c649d86f.html</id>
+    <link href="https://yansheng836.bitbucket.io/article/c649d86f.html"/>
+    <id>https://yansheng836.bitbucket.io/article/c649d86f.html</id>
     <published>2023-04-15T17:58:41.000Z</published>
     <updated>2023-06-04T18:07:57.135Z</updated>
     
@@ -322,14 +322,14 @@
     
     
     
-      <category term="C语言" scheme="https://yansheng836.github.io/tags/c/"/>
+      <category term="C语言" scheme="https://yansheng836.bitbucket.io/tags/c/"/>
     
   </entry>
   
   <entry>
     <title>C语言标准库--官网</title>
-    <link href="https://yansheng836.github.io/article/57d60461.html"/>
-    <id>https://yansheng836.github.io/article/57d60461.html</id>
+    <link href="https://yansheng836.bitbucket.io/article/57d60461.html"/>
+    <id>https://yansheng836.bitbucket.io/article/57d60461.html</id>
     <published>2023-04-08T17:56:32.000Z</published>
     <updated>2023-06-04T18:07:57.133Z</updated>
     
@@ -371,14 +371,14 @@
     
     
     
-      <category term="C语言" scheme="https://yansheng836.github.io/tags/c/"/>
+      <category term="C语言" scheme="https://yansheng836.bitbucket.io/tags/c/"/>
     
   </entry>
   
   <entry>
     <title>C语言：__restrict关键字提升性能</title>
-    <link href="https://yansheng836.github.io/article/9b20682b.html"/>
-    <id>https://yansheng836.github.io/article/9b20682b.html</id>
+    <link href="https://yansheng836.bitbucket.io/article/9b20682b.html"/>
+    <id>https://yansheng836.bitbucket.io/article/9b20682b.html</id>
     <published>2023-04-08T17:49:12.000Z</published>
     <updated>2023-06-04T18:07:57.125Z</updated>
     
@@ -396,14 +396,14 @@
     
     
     
-      <category term="C语言" scheme="https://yansheng836.github.io/tags/c/"/>
+      <category term="C语言" scheme="https://yansheng836.bitbucket.io/tags/c/"/>
     
   </entry>
   
   <entry>
     <title>C语言intptr_t、uintptr_t数据类型的解析</title>
-    <link href="https://yansheng836.github.io/article/884da0d4.html"/>
-    <id>https://yansheng836.github.io/article/884da0d4.html</id>
+    <link href="https://yansheng836.bitbucket.io/article/884da0d4.html"/>
+    <id>https://yansheng836.bitbucket.io/article/884da0d4.html</id>
     <published>2023-04-05T16:46:43.000Z</published>
     <updated>2023-06-04T18:07:57.128Z</updated>
     
@@ -419,14 +419,14 @@
     
     
     
-      <category term="C语言" scheme="https://yansheng836.github.io/tags/c/"/>
+      <category term="C语言" scheme="https://yansheng836.bitbucket.io/tags/c/"/>
     
   </entry>
   
   <entry>
     <title>C语言typedef详解</title>
-    <link href="https://yansheng836.github.io/article/60c42210.html"/>
-    <id>https://yansheng836.github.io/article/60c42210.html</id>
+    <link href="https://yansheng836.bitbucket.io/article/60c42210.html"/>
+    <id>https://yansheng836.bitbucket.io/article/60c42210.html</id>
     <published>2023-04-05T16:35:21.000Z</published>
     <updated>2023-06-04T18:07:57.130Z</updated>
     
@@ -440,14 +440,14 @@
     
     
     
-      <category term="C语言" scheme="https://yansheng836.github.io/tags/c/"/>
+      <category term="C语言" scheme="https://yansheng836.bitbucket.io/tags/c/"/>
     
   </entry>
   
   <entry>
     <title>VSCode左下角显示大纲（显示所有函数方法）</title>
-    <link href="https://yansheng836.github.io/article/469cdac7.html"/>
-    <id>https://yansheng836.github.io/article/469cdac7.html</id>
+    <link href="https://yansheng836.bitbucket.io/article/469cdac7.html"/>
+    <id>https://yansheng836.bitbucket.io/article/469cdac7.html</id>
     <published>2023-04-05T16:15:57.000Z</published>
     <updated>2023-06-04T18:07:57.173Z</updated>
     
@@ -461,14 +461,14 @@
     
     
     
-      <category term="开发工具" scheme="https://yansheng836.github.io/tags/development-tool/"/>
+      <category term="开发工具" scheme="https://yansheng836.bitbucket.io/tags/development-tool/"/>
     
   </entry>
   
   <entry>
     <title>PostgreSQL查找配置文件位置、数据所在目录</title>
-    <link href="https://yansheng836.github.io/article/a8a7137b.html"/>
-    <id>https://yansheng836.github.io/article/a8a7137b.html</id>
+    <link href="https://yansheng836.bitbucket.io/article/a8a7137b.html"/>
+    <id>https://yansheng836.bitbucket.io/article/a8a7137b.html</id>
     <published>2023-04-05T13:39:30.000Z</published>
     <updated>2023-06-04T18:07:57.164Z</updated>
     
@@ -482,14 +482,14 @@
     
     
     
-      <category term="PostgreSQL" scheme="https://yansheng836.github.io/tags/postgresql/"/>
+      <category term="PostgreSQL" scheme="https://yansheng836.bitbucket.io/tags/postgresql/"/>
     
   </entry>
   
   <entry>
     <title>Windows的svchost.exe消耗很多流量，禁用Windows更新</title>
-    <link href="https://yansheng836.github.io/article/6d87f8ef.html"/>
-    <id>https://yansheng836.github.io/article/6d87f8ef.html</id>
+    <link href="https://yansheng836.bitbucket.io/article/6d87f8ef.html"/>
+    <id>https://yansheng836.bitbucket.io/article/6d87f8ef.html</id>
     <published>2023-04-01T15:10:22.000Z</published>
     <updated>2023-06-04T18:46:16.888Z</updated>
     
@@ -504,7 +504,7 @@
     
     
     
-      <category term="Windows" scheme="https://yansheng836.github.io/tags/windows/"/>
+      <category term="Windows" scheme="https://yansheng836.bitbucket.io/tags/windows/"/>
     
   </entry>
   
